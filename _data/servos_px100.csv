@@ -1,0 +1,6 @@
+ID,Joint Name,Servo,Baudrate
+1,waist,XL430-W250,1Mbps
+2,shoulder,XL430-W250,1Mbps
+3,elbow,XL430-W250,1Mbps
+4,wrist_angle,XL430-W250,1Mbps
+5,gripper,XL430-W250,1Mbps

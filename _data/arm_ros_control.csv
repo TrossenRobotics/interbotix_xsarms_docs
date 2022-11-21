@@ -1,0 +1,10 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to ``robot_model``, but could be anything)",$(arg robot_model)
+base_link_frame,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",base_link'
+show_ar_tag,"if true, the AR tag mount is included in the 'robot_description' parameter; if false, it is left out; set to true if using the AR tag mount in your project",false
+use_world_frame,"set this to true if you would like to load a 'world' frame to the 'robot_description' parameter which is located exactly at the 'base_link' frame of the robot; if using multiple robots or if you would like to attach the 'base_link' frame of the robot to a different frame, set this to false",true
+external_urdf_loc,the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot's urdf.xacro file,""""""
+use_rviz,launches Rviz,false
+mode_configs,the file path to the 'mode config' YAML file,refer to `xsarm_ros_control.launch`_
+dof,"the degrees of freedom of the arm; while the majority of the arms have 5 dof, others have 4 or 6 dof",5

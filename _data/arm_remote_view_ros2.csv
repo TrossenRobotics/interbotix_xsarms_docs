@@ -1,0 +1,3 @@
+"Argument","Description","Default","Choices"
+"robot_name","name of the robot (typically equal to ``robot_model``, but could be anything).","",""
+"rvizconfig","file path to the config file RViz should load.","LocalVar('FindPackageShare\(pkg= ``interbotix_xsarm_descriptions``\) + 'rviz' + 'xsarm_description.rviz'')",""

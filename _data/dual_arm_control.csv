@@ -1,0 +1,12 @@
+Argument,Description,Default Value
+robot_model_1,model type of the first Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name_1,arbitrary name that is unique to the first robot arm,"""arm_1"""
+base_link_1,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",'base_link'
+modes_1,the file path to the 'mode config' YAML file for the first robot,refer to `xsarm_dual.launch`_
+robot_model_2,model type of the second Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name_2,arbitrary name that is unique to the second robot arm,"""arm_2"""
+base_link_2,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",'base_link'
+modes_2,the file path to the 'mode config' YAML file for the second robot,refer to `xsarm_dual.launch`_
+use_sim,"if true, the Dynamixel simulator node is run; use RViz to visualize the robot's motion; if false, the real Dynamixel driver node is run",false
+use_dual_rviz,launches RViz to show both arms,false
+rvizconfig,file path to the config file RViz should load,refer to `xsarm_dual.launch`_

@@ -1,0 +1,168 @@
+============
+PincherX-100
+============
+
+Overview
+========
+
+The PincherX-100 Robot Arm belongs to the Interbotix X-Series family of arms featuring the
+DYNAMIXEL X-Series Smart Servo Motors. The X-Series actuators offer high torque, efficient heat
+dissipation and great durability all at a smaller form factor over previous DYNAMIXEL servos. The
+DYNAMIXEL `XL430-W250`_ servos offer high resolution of 4096 positions and user definable PID
+parameters, temperature monitoring, positional feedback, as well as voltage levels, load, and
+compliance settings are user accessible as well. At the heart of the PincherX-100 is the Robotis
+DYNAMIXEL U2D2 which enables easy access to DYNAMIXEL Wizard software as well as ROS. The
+PincherX-100 offers 4 degree of freedom and a full 360 degree of rotation.
+
+.. _`XL430-W250`: https://www.trossenrobotics.com/dynamixel-xl430-w250-t.aspx
+
+.. list-table::
+    :align: center
+
+    * - .. image:: /_images/px100.png
+            :align: center
+            :width: 600px
+
+      - .. table::
+            :align: center
+
+            +----------------------------------------+--------------------------------------+
+            | **PincherX-100**                                                              |
+            +========================================+======================================+
+            | Degrees of Freedom                     | 4                                    |
+            +----------------------------------------+--------------------------------------+
+            | Reach                                  | 300mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Span                             | 600mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Accuracy                               | 5mm                                  |
+            +----------------------------------------+--------------------------------------+
+            | Working Payload                        | 50g*                                 |
+            +----------------------------------------+--------------------------------------+
+            | Total Servos                           | 5                                    |
+            +----------------------------------------+--------------------------------------+
+            | Wrist Rotate                           | No                                   |
+            +----------------------------------------+--------------------------------------+
+
+.. note::
+
+    \* Working Payload for the PincherX-100 is inside its maximum reach, if intending to use a 50g
+    weight we recommend no more than a 50% extension of the arm.
+
+Default Joint Limits
+====================
+
+Default joint limits are the safe range of operation for each joint. These are set in the firmware,
+defined as degrees from Zero (servo centered).
+
+.. table::
+    :align: center
+
+    +-------------+-------+------+-------------+
+    | Joint       | Min   | Max  | Servo ID(s) |
+    +=============+=======+======+=============+
+    | Waist       | -180  | 180  | 1           |
+    +-------------+-------+------+-------------+
+    | Shoulder    | -111  | 107  | 2           |
+    +-------------+-------+------+-------------+
+    | Elbow       | -121  | 92   | 3           |
+    +-------------+-------+------+-------------+
+    | Wrist Angle | -180  | 180  | 4           |
+    +-------------+-------+------+-------------+
+    | Gripper     | 30mm  | 74mm | 5           |
+    +-------------+-------+------+-------------+
+
+Default Servo Configurations
+============================
+
+.. csv-table::
+    :file: ../_data/servos_px100.csv
+    :header-rows: 1
+    :widths: 5 10 10 10
+    :align: center
+
+Kinematic Properties
+====================
+
+Product of Exponentials [`Learn More`_]
+---------------------------------------
+
+.. math::
+
+    M & =
+    \begin{bmatrix}
+    1.0 & 0.0 & 0.0 & 0.248575 \\
+    0.0 & 1.0 & 0.0 & 0.0      \\
+    0.0 & 0.0 & 1.0 & 0.1931  \\
+    0.0 & 0.0 & 0.0 & 1.0
+    \end{bmatrix}
+
+    \\
+
+    Slist & =
+    \begin{bmatrix}
+    0.0 & 0.0 & 1.0 &  0.0    & 0.0 & 0.0   \\
+    0.0 & 1.0 & 0.0 & -0.0931 & 0.0 & 0.0   \\
+    0.0 & 1.0 & 0.0 & -0.1931 & 0.0 & 0.035 \\
+    0.0 & 1.0 & 0.0 & -0.1931 & 0.0 & 0.135
+    \end{bmatrix}^T
+
+.. _`Learn More`: https://en.wikipedia.org/wiki/Product_of_exponentials_formula
+
+Drawings and CAD Files
+======================
+
+Standard Version
+----------------
+
+.. image:: /_images/px100_drawing.png
+    :align: center
+    :width: 70%
+
+:download:`PX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
+
+.. raw:: html
+
+    <iframe
+        src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd968b685364e8a30d183?mode=embed"
+        width="100%"
+        height="600px"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        frameborder="0">
+    </iframe>
+
+- :download:`PX-100 Solid STEP Files </_downloads/solids/1_PXA-100-A.zip>`
+- `PX-100 Mesh STL Files`_
+
+.. _`PX-100 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/px100_meshes
+
+Mobile Version
+--------------
+
+The Mobile version of the PincherX-100 is a modified version to have a lower profile base which is
+easier to mount on mobile platforms. This base is compatible with the LoCoBot Platform.
+
+.. image:: /_images/px100-mobile_drawing.png
+    :align: center
+    :width: 70%
+
+:download:`PX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
+
+.. raw:: html
+
+    <iframe
+        src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd9689b47d308a8a2e2d5?mode=embed"
+        width="100%"
+        height="600px"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        frameborder="0">
+    </iframe>
+
+- :download:`Mobile PX-100 Solid STEP Files </_downloads/solids/1_PXA-100-M.zip>`
+- `Mobile PX-100 Mesh STL Files`_
+
+.. _`Mobile PX-100 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/mobile_px100_meshes

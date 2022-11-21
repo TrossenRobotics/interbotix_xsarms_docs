@@ -1,0 +1,9 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to robot_model, but could be anything)",$(arg robot_model)
+base_link_frame,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",base_link'
+use_rviz,launches RViz,true
+mode_configs,the file path to the 'mode config' YAML file,refer to `xsarm_pid.launch`_
+control_mode,the outputted command from the control loop - can be either 'pwm' or 'current',pwm
+gains_filepath,the file path to the 'gains' YAML file,refer to `xsarm_pid.launch`_
+launch_driver,true if the xsarm_control.launch file should be launched - set to false if you would like to run your own version of this file separately,true

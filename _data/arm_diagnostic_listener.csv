@@ -1,0 +1,5 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to ``robot_model``, but could be anything)","""$(arg robot_model)"""
+listener_config,the file path to the 'listener config' YAML file,refer to `xsarm_diagnostic_tool.launch`_
+bag_name,name of the `rosbag` for which to save data,"""listener_diagnostics"""

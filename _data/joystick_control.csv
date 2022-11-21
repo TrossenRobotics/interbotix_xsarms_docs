@@ -1,0 +1,10 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to robot_model, but could be anything)",$(arg robot_model)
+base_link_frame,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",base_link'
+use_rviz,launches RViz,true
+mode_configs,the file path to the 'mode config' YAML file,refer to `xsarm_control.launch`_
+threshold,value from 0 to 1 defining joystick sensitivity; a larger number means the joystick should be less sensitive,0.75
+controller,"type of controller ('ps3', 'ps4', or 'xbox360')",ps4
+launch_driver,true if the xsarm_control.launch file should be launched - set to false if you would like to run your own version of this file separately,true
+use_sim,"if true, the Dynamixel simulator node is run; use RViz to visualize the robot's motion; if false, the real Dynamixel driver node is run",false

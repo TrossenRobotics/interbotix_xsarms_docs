@@ -1,0 +1,140 @@
+==========
+ViperX-250
+==========
+
+Overview
+========
+
+The ViperX-250 Robot Arm belongs to the Interbotix X-Series family of arms featuring the DYNAMIXEL
+X-Series Smart Servo Motors. The X-Series actuators offer high torque, efficient heat dissipation
+and great durability all at a smaller form factor over previous DYNAMIXEL servos. The DYNAMIXEL
+`XM540-W270`_ & DYNAMIXEL `XM430-W350`_ servos offer high resolution of 4096 positions and user
+definable PID parameters, temperature monitoring, positional feedback, as well as voltage levels,
+load, and compliance settings are user accessible as well. At the heart of the ViperX-250 is the
+Robotis DYNAMIXEL U2D2 which enables easy access to DYNAMIXEL Wizard software as well as ROS. The
+ViperX-250 offers 5 degree of freedom and a full 360 degree of rotation.
+
+.. _`XM540-W270`: https://www.trossenrobotics.com/dynamixel-xm540-w270-t.aspx
+.. _`XM430-W350`: https://www.trossenrobotics.com/dynamixel-xm430-w350-t.aspx
+
+.. list-table::
+    :align: center
+
+    * - .. image:: /_images/vx250.png
+            :align: center
+            :width: 500px
+
+      - .. table::
+            :align: center
+
+            +----------------------------------------+--------------------------------------+
+            | **ViperX-250**                                                                |
+            +========================================+======================================+
+            | Degrees of Freedom                     | 5                                    |
+            +----------------------------------------+--------------------------------------+
+            | Reach                                  | 650mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Span                             | 1300mm                               |
+            +----------------------------------------+--------------------------------------+
+            | Accuracy                               | 1mm                                  |
+            +----------------------------------------+--------------------------------------+
+            | Working Payload                        | 450g*                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Servos                           | 7                                    |
+            +----------------------------------------+--------------------------------------+
+            | Wrist Rotate                           | Yes                                  |
+            +----------------------------------------+--------------------------------------+
+
+.. note::
+
+    \* Working Payload for the ViperX-250 is inside its maximum reach, if intending to use a 450g
+    weight we recommend no more than a 50% extension of the arm.
+
+Default Joint Limits
+====================
+
+Default joint limits are the safe range of operation for each joint. These are set in the firmware,
+defined as degrees from Zero (servo centered).
+
+.. table::
+    :align: center
+
+    +--------------+-------+------+-------------+
+    | Joint        | Min   | Max  | Servo ID(s) |
+    +==============+=======+======+=============+
+    | Waist        | -180  | 180  | 1           |
+    +--------------+-------+------+-------------+
+    | Shoulder     | -102  | 100  | 2+3         |
+    +--------------+-------+------+-------------+
+    | Elbow        | -102  | 92   | 4           |
+    +--------------+-------+------+-------------+
+    | Wrist Angle  | -100  | 123  | 5           |
+    +--------------+-------+------+-------------+
+    | Wrist Rotate | -180  | 180  | 6           |
+    +--------------+-------+------+-------------+
+    | Gripper      | 30mm  | 74mm | 7           |
+    +--------------+-------+------+-------------+
+
+Default Servo Configurations
+============================
+
+.. csv-table::
+    :file: ../_data/servos_vx250.csv
+    :header-rows: 1
+    :widths: 5 10 10 10
+    :align: center
+
+Kinematic Properties
+====================
+
+Product of Exponentials [`Learn More`_]
+---------------------------------------
+
+.. math::
+
+    M & =
+    \begin{bmatrix}
+    1.0 & 0.0 & 0.0 & 0.468575 \\
+    0.0 & 1.0 & 0.0 & 0.0      \\
+    0.0 & 0.0 & 1.0 & 0.37705  \\
+    0.0 & 0.0 & 0.0 & 1.0
+    \end{bmatrix}
+
+    \\
+
+    Slist & =
+    \begin{bmatrix}
+    0.0 & 0.0 & 1.0 &  0.0     & 0.0     & 0.0  \\
+    0.0 & 1.0 & 0.0 & -0.12705 & 0.0     & 0.0  \\
+    0.0 & 1.0 & 0.0 & -0.37705 & 0.0     & 0.06 \\
+    0.0 & 1.0 & 0.0 & -0.37705 & 0.0     & 0.31 \\
+    1.0 & 0.0 & 0.0 &  0.0     & 0.37705 & 0.0
+    \end{bmatrix}^T
+
+.. _`Learn More`: https://en.wikipedia.org/wiki/Product_of_exponentials_formula
+
+Drawings and CAD Files
+======================
+
+.. image:: /_images/vx250_drawing.png
+    :align: center
+    :width: 70%
+
+:download:`VX-250 Technical Drawing </_downloads/ViperX-250.pdf>`
+
+.. raw:: html
+
+    <iframe
+        src="https://trossenrobotics.autodesk360.com/shares/public/SH7f1edQT22b515c761e9a507ff8ae4d8fc7?mode=embed"
+        width="100%"
+        height="600px"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        frameborder="0">
+    </iframe>
+
+- :download:`VX-250 Solid STEP Files </_downloads/solids/7_VXA-250-M.zip>`
+- `VX-250 Mesh STL Files`_
+
+.. _`VX-250 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/vx250_meshes

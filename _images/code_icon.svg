@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="83.647179mm"
+   height="11.596183mm"
+   viewBox="0 0 83.647179 11.596183"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (1:1.1+202106031931+af4d65493e)"
+   sodipodi:docname="code_icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.5037598"
+     inkscape:cx="124.02247"
+     inkscape:cy="49.209987"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="-67.086891"
+       y="-49.632652"
+       width="490.84521"
+       height="186.86867"
+       id="rect76241" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-83.153373,-100.37848)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:99.7811;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="81.659134"
+       y="110.66553"
+       id="text2541"
+       inkscape:label="text2541"><tspan
+         x="81.659134"
+         y="110.66553"
+         id="tspan79589"><tspan
+           style="font-style:oblique;font-weight:bold;font-size:14.1111px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Bold Oblique';fill:#00b0f0"
+           id="tspan79587">&lt;/&gt;</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="111.79117"
+       y="110.12206"
+       id="text58033"><tspan
+         sodipodi:role="line"
+         id="tspan58031"
+         style="fill:#00b0f0;fill-opacity:1;stroke-width:0.264583"
+         x="111.79117"
+         y="110.12206">View Code</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,83.153373,100.37848)"
+       id="text76239"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect76241);fill:#000000;fill-opacity:1;stroke:none" />
+  </g>
+</svg>

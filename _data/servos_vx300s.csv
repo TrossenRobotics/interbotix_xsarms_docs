@@ -1,0 +1,10 @@
+ID,Joint Name,Servo,Baudrate
+1,waist,XM540-W270,1Mbps
+2,shoulder,XM540-W270,1Mbps
+3,shoulder_shadow,XM540-W270,1Mbps
+4,elbow,XM540-W270,1Mbps
+5,elbow_shadow,XM540-W270,1Mbps
+6,forearm_roll,XM540-W270,1Mbps
+7,wrist_angle,XM540-W270,1Mbps
+8,wrist_rotate,XM430-W350,1Mbps
+9,gripper,XM430-W350,1Mbps

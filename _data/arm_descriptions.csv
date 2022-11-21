@@ -1,0 +1,15 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to ``robot_model``, but could be anything)","""$(arg robot_model)"""
+base_link_frame,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",base_link'
+show_ar_tag,"if true, the AR tag mount is included in the 'robot_description' parameter; if false, it is left out; set to true if using the AR tag mount in your project",false
+show_gripper_bar,"if true, the gripper_bar link is included in the 'robot_description' parameter; if false, the gripper_bar and finger links are not loaded to the parameter server. Set to false if you have a custom gripper attachment",true
+show_gripper_fingers,"if true, the gripper fingers are included in the 'robot_description' parameter; if false, the gripper finger links are not loaded to the parameter server. Set to false if you have custom gripper fingers",true
+use_world_frame,"set this to true if you would like to load a 'world' frame to the 'robot_description' parameter which is located exactly at the 'base_link' frame of the robot; if using multiple robots or if you would like to attach the 'base_link' frame of the robot to a different frame, set this to false",true
+external_urdf_loc,the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot's urdf.xacro file,""""""
+use_rviz,launches RViz,true
+load_gazebo_configs,set this to true if Gazebo is being used; it makes sure to include Gazebo related configs in the 'robot_description' parameter so that the robot models show up black in Gazebo,false
+use_joint_pub,launches the joint_state_publisher node,false
+use_joint_pub_gui,launches the joint_state_publisher GUI,false
+rvizconfig,file path to the config file RViz should load,refer to `xsarm_description.launch`_
+model,file path to the robot-specific URDF including arguments to be passed in,refer to `xsarm_description.launch`_

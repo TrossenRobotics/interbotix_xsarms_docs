@@ -1,0 +1,11 @@
+Argument,Description,Default Value
+robot_model_master,model type of the master Interbotix Arm (the one being physically manipulated),""""""
+robot_model_puppet,model type of the puppet Interbotix Arm (the one that is torqued on and that responds to commands),""""""
+base_link_master,"name of the 'root' link on the 'master' arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",'base_link'
+base_link_puppet,"name of the 'root' link on the 'puppet' arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",'base_link'
+master_modes,the file path to the master 'mode config' YAML file,refer to `xsarm_puppet.launch`_
+puppet_modes,the file path to the puppet 'mode config' YAML file,refer to `xsarm_puppet.launch`_
+use_puppet_rviz,launches RViz to show both arms,true
+rvizconfig,file path to the config file RViz should load,refer to `xsarm_puppet.launch`_
+launch_driver,true if the `xsarm_control.launch` file should be launched - set to false if you would like to run your own version of this file separately,true
+use_sim,"if true, the Dynamixel simulator node is run; use RViz to visualize the robot's motion; if false, the real Dynamixel driver node is run",false

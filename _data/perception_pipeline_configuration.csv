@@ -1,0 +1,35 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to ``robot_model``, but could be anything)",$(arg robot_model)
+base_link_frame,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",base_link'
+show_gripper_bar,"if true, the gripper_bar link is included in the 'robot_description' parameter; if false, the gripper_bar and finger links are not loaded to the parameter server. Set to false if you have a custom gripper attachment",true
+show_gripper_fingers,"if true, the gripper fingers are included in the 'robot_description' parameter; if false, the gripper finger links are not loaded to the parameter server. Set to false if you have custom gripper fingers",true
+external_urdf_loc,the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot's urdf.xacro file,""""""
+use_rviz,launches RViz,true
+load_configs,"a boolean that specifies whether or not the initial register values (under the 'motors' heading) in a Motor Config file should be written to the motors; as the values being written are stored in each motor's EEPROM (which means the values are retained even after a power cycle), this can be set to false after the first time using the robot. Setting to false also shortens the node startup time by a few seconds and preserves the life of the EEPROM",true
+filters,"types of RealSense camera filters to use (in this case, the 'pointcloud' filter is needed)",pointcloud
+color_fps,frame rate of the color images taken on the RealSense camera,30
+depth_fps,frame rate of the depth images taken on the RealSense camera,30
+color_width,horizontal resolution of the color images taken on the RealSense camera,640
+color_height,vertical resolution of the color images taken on the RealSense camera,480
+filter_ns,name-space where the pointcloud related nodes and parameters are located,pc_filter
+filter_params,file location of the parameters used to tune the perception pipeline filters,refer to `xsarm_perception.launch`_
+use_pointcloud_tuner_gui,whether to show a GUI that a user can use to tune filter parameters,false
+enable_pipeline,"whether to enable the perception pipeline filters to run continuously; to save computer processing power, this should be set to False unless you are actively trying to tune the filter parameters; if False, the pipeline will only run if the ``get_cluster_positions`` ROS service is called",$(arg use_pointcloud_tuner_gui)
+cloud_topic,the absolute ROS topic name to subscribe to raw pointcloud data,/camera/depth/color/points
+tag_family,family to which the AprilTag belongs,tagStandard41h12
+standalone_tags,individual AprilTags the algorithm should be looking for,refer to `interbotix_perception_modules`_
+camera_frame,the camera frame in which the AprilTag will be detected,camera_color_optical_frame
+apriltag_ns,name-space where the AprilTag related nodes and parameters are located,apriltag
+camera_color_topic,the absolute ROS topic name to subscribe to color images,camera/color/image_raw
+camera_info_topic,the absolute ROS topic name to subscribe to the camera color info,camera/color/camera_info
+armtag_ns,name-space where the Armtag related nodes and parameters are located,armtag
+ref_frame,the reference frame that the armtag node should use when publishing a static transform for where the arm is relative to the camera,$(arg camera_frame)
+arm_base_frame,the child frame that the armtag node should use when publishing a static transform for where the arm is relative to the camera,$(arg robot_name)/$(arg base_link_frame)
+arm_tag_frame,name of the frame on the arm where the AprilTag is located (defined in the URDF usually),$(arg robot_name)/ar_tag_link
+use_armtag_tuner_gui,whether to show a GUI that a user can use to publish the 'ref_frame' to 'arm_base_frame' transform,false
+position_only,"whether only the position component of the detected AprilTag pose should be used when calculating the 'ref_frame' to 'arm_base_frame' transform; this should only be set to true if a tf chain already exists connecting the camera and arm base_link frame, and you just want to use the AprilTag to refine the pose further",false
+load_transforms,"whether or not the **static_trans_pub** node should publish any poses stored in the static_transforms.yaml file at startup; this should only be set to false if a tf chain already exists connecting the camera and arm base_link frame (usually defined in a URDF), and you'd rather use that tf chain as opposed to the one specified in the static_transforms.yaml file",true
+transform_filepath,"filepath to the static_transforms.yaml file used by the **static_trans_pub** node; if the file does not exist yet, this is where you'd like the file to be generated",refer to `xsarm_perception.launch`_
+rviz_frame,desired 'fixed frame' in RViz,$(arg robot_name)/$(arg base_link_frame)
+rvizconfig,filepath to the RViz config file,refer to `xsarm_perception.launch`_

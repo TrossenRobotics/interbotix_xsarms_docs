@@ -1,0 +1,1320 @@
+/* Sidebar header (and topbar for mobile) */
+
+.wy-side-nav-search,
+.wy-nav-top {
+    background: #333;
+}
+
+
+/* Sidebar */
+
+.wy-nav-side {
+    background: #f2f2f2;
+}
+
+
+/* Wider content */
+
+.wy-nav-content {
+    max-width: 90% !important;
+}
+
+
+/* Menu Text Color */
+
+.wy-menu-vertical {
+    color: black !important;
+    font-size: 95%
+}
+
+.wy-menu-vertical a {
+    color: black !important;
+    font-size: 95%
+}
+
+.wy-menu-vertical a:hover {
+    background-color: #c7c7c7;
+    cursor: pointer
+}
+
+
+/* all links (visited or not) should be the same color */
+
+a:visited {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+a {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+
+/*
+    override table width restrictions
+    https://github.com/readthedocs/sphinx_rtd_theme/issues/117#issuecomment-41506687
+ */
+
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+    white-space: normal;
+}
+
+.wy-table-responsive {
+    margin-bottom: 24px;
+    max-width: 100%;
+    overflow: visible;
+}
+
+
+/*
+    Override alternating table colors
+        This is to make single-row tables look better
+ */
+
+table.docutils tr.row-odd td {
+    background-color: transparent !important;
+}
+
+table.docutils tr.row-even td {
+    background-color: #f3f6f6 !important;
+}
+
+
+/*
+    change default font to Gilmer-Regular
+*/
+
+@font-face {
+    font-family: 'Gilmer-Regular';
+    src: url('gilmer-regular.eot');
+    src: url('gilmer-regular.eot?#iefix') format('embedded-opentype'), url('gilmer-regular.woff2') format('woff2'), url('gilmer-regular.woff') format('woff'), url('gilmer-regular.ttf') format('truetype'), url('gilmer-regular.svg#youworkforthem') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+.rst-content .toctree-wrapper>p.caption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+    font-family: "Gilmer-Regular" !important;
+}
+
+
+/*
+    style the "View Package on GitHub" Buttons
+*/
+
+a.docs-view-on-github-button {
+    background-color: #00b0f0;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    vertical-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin-top: 4px;
+    margin-left: 14px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 300px;
+    align-items: center;
+}
+
+img.docs-view-on-github-button-gh-logo {
+    vertical-align: center;
+    text-align: center;
+    margin-bottom: 0px !important;
+    padding-right: 10px;
+}
+
+
+/*
+    Change the code highlights style and gp icon
+*/
+
+div.highlight {
+    background-color: #eaeef2;
+}
+
+.highlight span.gp {
+    color: #404040;
+    font-weight: bold;
+}
+
+.rst-content .toctree-wrapper ul li>ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+/* X-SERIES CAROUSEL */
+
+
+/* Slide in & out settings */
+
+@keyframes slidein {
+    0% {
+        top: -400px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes slideout {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 400px;
+        opacity: 0;
+    }
+}
+
+h1.xseries-carousel-title-textbox {
+    color: #333;
+    font-weight: 600;
+    font-size: 36px;
+    text-align: left;
+    margin: 30px 33px 10px 33px;
+}
+
+
+/* All the visual content */
+
+div.carousel-content-container {
+    /* font-family: "Tahoma"; */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 30px 0px 30px 0px;
+}
+
+
+/* The visuals are displayed flex */
+
+div.carousel-content-container #flex-scene {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    max-width: 1100px;
+    height: 500px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12), 0 1px 11px rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+}
+
+
+/* Left side of the carousel */
+
+div.carousel-content-container #flex-scene #left-zone {
+    background: #fff;
+    height: 75%;
+    flex-grow: 0;
+    display: flex;
+    width: 340px;
+    align-items: center;
+    justify-content: left;
+}
+
+
+/* The full list */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list {
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item {
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+
+/* Individual list content/hides radio button */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"] {
+    display: none;
+}
+
+
+/* Individual list right-content */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label {
+    display: block;
+    opacity: 0.5;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 0px;
+}
+
+
+/* The whole left list */
+
+ul.xseries-carousel-list {
+    width: 1000px;
+    height: 460px;
+    line-height: 3em;
+    overflow: auto;
+    padding: 5px;
+}
+
+
+/* Button functionality */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label:first-letter {
+    text-transform: uppercase;
+}
+
+
+/* Makes pointer on hover */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+
+/* Content / Hidden */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content {
+    position: absolute;
+    left: 340px;
+    top: -500px;
+    max-width: 760px;
+    height: 475px;
+    animation-duration: 0.25s;
+    animation-name: slideout;
+    animation-timing-function: ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* Right title upper case - first letter */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content h1:first-letter {
+    text-transform: uppercase;
+}
+
+
+/* Right body text */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content p {
+    max-width: 90%;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+/* Checked content animation */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label {
+    opacity: 1;
+    animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+/* Animation settings */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~.content {
+    animation-duration: 0.75s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+/* Carousel Content container */
+
+div.carousel-content-container #flex-scene #middle-border {
+    background-color: #eee;
+    height: 75%;
+    flex-grow: 1;
+    max-width: 2px;
+    z-index: 0;
+}
+
+
+/* Right side of the carousel */
+
+div.carousel-content-container #flex-scene #right-zone {
+    background: #fff;
+    height: 100%;
+    flex-grow: 3;
+}
+
+
+/* Grey no hover */
+
+div.footer-social-flex {
+    display: flex;
+}
+
+figure.xseries-carousel-social1 {
+    width: 40px;
+    margin-right: 5px;
+    z-index: 2;
+}
+
+
+/* Grey on hover */
+
+figure.xseries-carousel-social1:hover {
+    cursor: pointer;
+    opacity: 0%;
+}
+
+
+/* Blue no hover */
+
+figure.xseries-carousel2-social1 {
+    width: 40px;
+    margin-right: 4px;
+    position: absolute;
+    z-index: 1;
+}
+
+figure.xseries-carousel-social2 {
+    width: 40px;
+    z-index: 2;
+}
+
+figure.xseries-carousel-social2:hover {
+    cursor: pointer;
+    opacity: 0%;
+}
+
+figure.xseries-carousel2-social2 {
+    width: 40px;
+    margin-right: 4px;
+    position: absolute;
+    z-index: 1;
+}
+
+figure.xseries-carousel-social3 {
+    width: 40px;
+    z-index: 2;
+}
+
+figure.xseries-carousel-social3:hover {
+    cursor: pointer;
+    opacity: 0%;
+}
+
+figure.xseries-carousel3-social1 {
+    width: 40px;
+    margin-right: 4px;
+    position: absolute;
+    z-index: 1;
+}
+
+
+/* Adds Margin to left label */
+
+p.xseries-left-label {
+    margin-left: 14px;
+    margin-top: 10px;
+}
+
+p.xseries-right-text-p {
+    margin-bottom: 0px;
+}
+
+
+/* Left Thumbnail 1 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label1:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/gazebo_arm.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 1 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec1 .xseries-right-pic1 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/gazebo_arm.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color/size Section 1 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content h1 {
+    color: #007cc4;
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label1 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 2 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label2:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/joystick-demo.jpg");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 2 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec2 .xseries-right-pic2 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/joystick-demo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 2 */
+
+h1.xseries-right-title2-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label2 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 3 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label3:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/xsarm_moveit_interface.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 3 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec3 .xseries-right-pic3 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/xsarm_moveit_interface.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 3 */
+
+h1.xseries-right-title3-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label3 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 4 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label4:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_control.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 4 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec4 .xseries-right-pic4 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_control.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 4 */
+
+h1.xseries-right-title4-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label4 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 5 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label5:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/python_perception_arm.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 5 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec5 .xseries-right-pic5 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/python_perception_arm.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 5 */
+
+h1.xseries-right-title5-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label5 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 6 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label6:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/moveit_interface_arm.jpg");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 6 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec6 .xseries-right-pic6 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/moveit_interface_arm.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 6 */
+
+h1.xseries-right-title6-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label6 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 7 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label7:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/diagnostic_tool_arm.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 7 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec7 .xseries-right-pic7 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/diagnostic_tool_arm.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 7 */
+
+h1.xseries-right-title7-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label7 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 8 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label8:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/pid_gains_config.png");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 8 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec8 .xseries-right-pic8 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/pid_gains_config.png");
+    background-position: center;
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 8 */
+
+h1.xseries-right-title8-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label8 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 9 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label9:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_joystick.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 9 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec9 .xseries-right-pic9 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_joystick.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 9 */
+
+h1.xseries-right-title9-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label9 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 10 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label10:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/puppet.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 10 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec10 .xseries-right-pic10 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/puppet.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 10 */
+
+h1.xseries-right-title10-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label10 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 11 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label11:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/record_playback.jpg");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 11 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec11 .xseries-right-pic11 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/record_playback.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 11 */
+
+h1.xseries-right-title11-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label11 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Left Thumbnail 12 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label.xseries-label12:before {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/python_demos.gif");
+    background-position: center;
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+}
+
+
+/* Right individual content section 12 */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec12 .xseries-right-pic12 {
+    height: 55%;
+    width: 90%;
+    background-image: url("https://trossenrobotics.com/Shared/X-Series content carousel/python_demos.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Right title color Section 12 */
+
+h1.xseries-right-title12-h1 {
+    color: #007cc4;
+    font-size: 28px;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.xseries-label12 {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+}
+
+
+/* Social icon edits 1 */
+
+figure.xseries-social-icon1 {
+    position: relative;
+    margin: 10% auto 0;
+    width: 40px;
+}
+
+figure.xseries-social-icon1 img {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    transition: opacity 0.25s ease-in-out;
+}
+
+figure.xseries-social-icon1 img.grey-icon:hover {
+    cursor: pointer;
+}
+
+figure.xseries-social-icon1 img.blue-icon {
+    opacity: 0%
+}
+
+figure.xseries-social-icon1 img.blue-icon:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+
+/* Social icon edits 2 */
+
+figure.xseries-social-icon2 {
+    position: relative;
+    margin: 10% auto 0;
+    width: 40px;
+}
+
+figure.xseries-social-icon2 img {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    transition: opacity 0.25s ease-in-out;
+}
+
+figure.xseries-social-icon2 img.grey-icon:hover {
+    opacity: 0%;
+    cursor: pointer;
+}
+
+figure.xseries-social-icon2 img.blue-icon {
+    opacity: 0%
+}
+
+figure.xseries-social-icon2 img.blue-icon:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+
+/* Social icon edits 3 */
+
+figure.xseries-social-icon3 {
+    position: relative;
+    margin: 10% auto 0;
+    width: 40px;
+}
+
+figure.xseries-social-icon3 img {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    transition: opacity 0.25s ease-in-out;
+}
+
+figure.xseries-social-icon3 img.grey-icon:hover {
+    opacity: 0%;
+    cursor: pointer;
+}
+
+figure.xseries-social-icon3 img.blue-icon {
+    opacity: 0%
+}
+
+figure.xseries-social-icon3 img.blue-icon:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+
+/* Fix */
+
+@media only screen and (max-width: 1484px) {
+    /* Right img margin */
+    div.content.content_sec1,
+    div.content.content_sec2,
+    div.content.content_sec3,
+    div.content.content_sec4,
+    div.content.content_sec5,
+    div.content.content_sec6,
+    div.content.content_sec7,
+    div.content.content_sec8,
+    div.content.content_sec9,
+    div.content.content_sec10,
+    div.content.content_sec11,
+    div.content.content_sec12 {
+        margin-top: 20px;
+    }
+}
+
+
+/* TABLET */
+
+@media only screen and (max-width: 1024px) {
+    h1.xseries-right-title1-h1,
+    h1.xseries-right-title2-h1,
+    h1.xseries-right-title3-h1,
+    h1.xseries-right-title4-h1,
+    h1.xseries-right-title5-h1,
+    h1.xseries-right-title6-h1,
+    h1.xseries-right-title7-h1,
+    h1.xseries-right-title8-h1,
+    h1.xseries-right-title9-h1,
+    h1.xseries-right-title10-h1,
+    h1.xseries-right-title11-h1,
+    h1.xseries-right-title12-h1 {
+        font-size: 27px;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content p {
+        font-size: 14px;
+    }
+    h1.xseries-carousel-title-textbox {
+        margin: 30px 20px 10px 20px;
+    }
+}
+
+
+/* Fix */
+
+@media only screen and (max-width: 990px) {
+    h1.xseries-right-title1-h1,
+    h1.xseries-right-title2-h1,
+    h1.xseries-right-title3-h1,
+    h1.xseries-right-title4-h1,
+    h1.xseries-right-title5-h1,
+    h1.xseries-right-title6-h1,
+    h1.xseries-right-title7-h1,
+    h1.xseries-right-title8-h1,
+    h1.xseries-right-title9-h1,
+    h1.xseries-right-title10-h1,
+    h1.xseries-right-title11-h1,
+    h1.xseries-right-title12-h1 {
+        text-align: center;
+    }
+}
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 736px) {
+    h1.xseries-right-title1-h1,
+    h1.xseries-right-title2-h1,
+    h1.xseries-right-title3-h1,
+    h1.xseries-right-title4-h1,
+    h1.xseries-right-title5-h1,
+    h1.xseries-right-title6-h1,
+    h1.xseries-right-title7-h1,
+    h1.xseries-right-title8-h1,
+    h1.xseries-right-title9-h1,
+    h1.xseries-right-title10-h1,
+    h1.xseries-right-title11-h1,
+    h1.xseries-right-title12-h1 {
+        font-size: 21px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec1 .xseries-right-pic1 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec2 .xseries-right-pic2 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec3 .xseries-right-pic3 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type=radio]~.content.content_sec4 .xseries-right-pic4 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec5 .xseries-right-pic5 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec6 .xseries-right-pic6 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec7 .xseries-right-pic7 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec8 .xseries-right-pic8 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec9 .xseries-right-pic9 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec10 .xseries-right-pic10 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec11 .xseries-right-pic11 {
+        height: 110px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec12 .xseries-right-pic12 {
+        height: 110px;
+        width: 85%;
+    }
+    p.xseries-left-label {
+        display: none;
+    }
+    div.carousel-content-container #flex-scene #left-zone {
+        width: 120px;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content {
+        left: 100px;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content p {
+        font-size: 13px;
+        width: 85%;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~.content {
+        left: 120px;
+    }
+    h1.xseries-carousel-title-textbox {
+        margin: 30px 0px 10px 0px;
+    }
+    div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type=radio]:checked~.content {
+        justify-content: flex-start;
+        left: 110px;
+        right: 3px;
+    }
+}
+
+
+/* LIVE TEMPLATE ISSUE FIX */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~label {
+    color: grey;
+    position: relative;
+}
+
+
+/* Color while on hover & selcted */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]:checked~label.static-container {
+    color: #007cc4;
+    border-right: solid 4px #007cc4;
+    display: grid;
+}
+
+
+/* Header Color fix */
+
+div.carousel-content-container #flex-scene #left-zone ul.xseries-carousel-list li.xseries-carousel-item input[type="radio"]~.content.content_sec1 h1.xseries-right-title1-h1 {
+    color: #007cc4;
+    font-size: 21px;
+}
+
+
+/* X-SERIES BODY TEXT */
+
+div.xseries-body-text-compress {
+    margin: 0px 35px 10px 35px;
+}
+
+
+/* TABLET */
+
+@media only screen and (max-width: 1024px) {
+    div.xseries-body-text-compress {
+        margin: 0px 20px 10px 20px;
+    }
+}
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 736px) {
+    div.xseries-body-text-compress {
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+div.carousel-thumbnail-container {
+    display: grid;
+    align-items: center;
+}
+
+
+/* gif start on click */
+
+.static,
+.active-ca {
+    grid-column: 1;
+    grid-row: 1;
+    width: 75px;
+    height: 50px;
+    margin-left: 15px;
+    background-position: center;
+    background-size: 75% 75%;
+    padding-top: 5px;
+    padding-right: 9px;
+    padding-bottom: 5px;
+    padding-left: 9px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+
+/* .static {
+    position: absolute;
+    background: white;
+} */
+
+.static:hover {
+    opacity: 0;
+}
+
+
+/* If elemt I want effected is inside the container */
+
+label.static-container:hover .static {
+    opacity: 0;
+}

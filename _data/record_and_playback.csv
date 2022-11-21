@@ -1,0 +1,10 @@
+Argument,Description,Default Value
+robot_model,model type of the Interbotix Arm such as 'wx200' or 'rx150',""""""
+robot_name,"name of the robot (typically equal to ``robot_model``, but could be anything)",$(arg robot_model)
+base_link_frame,"name of the 'root' link on the arm; typically 'base_link', but can be changed if attaching the arm to a mobile base that already has a 'base_link' frame",base_link'
+use_rviz,launches RViz,true
+record,record joint commands while physically manipulating the arm to a bagfile,false
+playback,play-back joint commands from a bagfile to a torqued on arm,false
+bag_name,Desired ROS bag file name,$(arg robot_name)_commands
+launch_driver,true if the `xsarm_control.launch` file should be launched - set to false if you would like to run your own version of this file separately,true
+use_sim,"if true, the Dynamixel simulator node is run; use RViz to visualize the robot's motion; if false, the real Dynamixel driver node is run",false

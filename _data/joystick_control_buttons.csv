@@ -1,0 +1,22 @@
+Button,Action
+START/OPTIONS,move robot arm to its Home pose
+SELECT/SHARE,move robot arm to its Sleep pose
+R2,rotate the 'waist' joint clockwise
+L2,rotate the 'waist' joint counterclockwise
+Triangle,increase gripper pressure in 0.125 step increments (max is 1)
+X,decrease gripper pressure in 0.125 step increments (min is 0)
+O,open gripper
+Square,close gripper
+D-pad Up,increase the control loop rate in 1 Hz step increments (max of 40)
+D-pad Down,decrease the control loop rate in 1 Hz step increments (min of 10)
+D-pad Left,coarse' control - sets the control loop rate to a user-preset 'fast' rate
+D-pad Right,fine' control - sets the control loop rate to a user-preset 'slow' rate
+Right stick Up/Down,increase/decrease pitch of the end-effector
+Right stick Left/Right,increase/decrease roll of the end-effector
+R3,reverses the Right stick Left/Right control
+Left stick Up/Down,move the end-effector (defined at 'ee_gripper_link') vertically in Cartesian space
+Left stick Left/Right,move the end-effector (defined at 'ee_gripper_link') horizontally in Cartesian space
+L3,reverses the Left stick Left/Right control
+R1,"if the arm has 6dof, this moves the end-effector in a negative direction along its own 'y' axis"
+L1,"if the arm has 6dof, this moves the end-effector in a positive direction along its own 'y' axis"
+PS,"if torqued on, holding for 3 seconds will torque off the robot; if torqued off, tapping the button will torque on the robot"
