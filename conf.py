@@ -8,7 +8,7 @@
 import time
 
 project = 'Interbotix X-Series Manipulators Documentation'
-author = 'Luke Schmitt'
+author = 'Trossen Robotics'
 copyright = "{}, {}".format(time.strftime("%Y"), author)
 
 # The short X.Y version
@@ -29,7 +29,8 @@ extensions = [
 ]
 
 # Used by the sphinx_copybutton extension - Define the prompt text that should be removed from
-# copied text in code blocks.copybutton_prompt_text = "$ "
+# copied text in code blocks.
+copybutton_prompt_text = "$ "
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = [
@@ -105,7 +106,9 @@ html_logo = "_images/logo_xsarms.png"
 # Add any paths that contain custom static files (such as style sheets) here, relative to this
 # directory. They are copied after the builtin static files, so a file named "default.css" will
 # overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = [
+    '_static'
+]
 
 # These paths are either relative to html_static_path or fully qualified paths (eg. https://...)
 html_css_files = [
