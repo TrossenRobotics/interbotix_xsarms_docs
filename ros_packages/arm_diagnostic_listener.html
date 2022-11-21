@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arm Diagnostic Listener &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PID Gains Test Environment" href="pid_gains_test_environment.html" />
+    <link rel="prev" title="Arm Diagnostic Tool" href="arm_diagnostic_tool.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arm Diagnostic Listener</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ROS Open Source Packages</a></li>
+      <li class="breadcrumb-item active">Arm Diagnostic Listener</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_packages/arm_diagnostic_listener.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="arm-diagnostic-listener">
+<h1>Arm Diagnostic Listener<a class="headerlink" href="#arm-diagnostic-listener" title="Permalink to this heading"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool"
+  class="docs-view-on-github-button"
+  target="_blank">
+  <img src="../_static/GitHub-Mark-Light-32px.png"
+      class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The diagnostic listener is intended to get joint information like present temperature from the
+robot while it executes any commanded trajectory. This is useful for when you would like the robot
+to move through a more complex motion than the more basic Diagnostic Tool is able to provide. The
+Listener subscribes to the joint states of the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/config/listener.yaml" rel="noopener noreferrer" target="_blank">configured</a> joints, periodically retrieves the
+Present_Temperature register from the DYNAMIXEL servos, and publishes the data to the namespaced
+<code class="docutils literal notranslate"><span class="pre">temperatures/joint_group</span></code> topic.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<img alt="../_images/xsarm_diagnostic_listener_flowchart.png" class="align-center" src="../_images/xsarm_diagnostic_listener_flowchart.png" style="width: 70%;" />
+<p>As shown above, the <cite>interbotix_xsarm_diagnostic_tool</cite> package relies on the existence of the
+<cite>interbotix_xs_sdk</cite> package. To get pointers about the nodes in the that package, please look at
+its README. The other nodes are described below:</p>
+<ul class="simple">
+<li><strong>record</strong> - responsible for recording the <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/joint_states</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/temperatures/joint_group</span></code> topics and saving it to a
+user-specified bagfile</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>To use this package, first configure the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/config/listener.yaml" rel="noopener noreferrer" target="_blank">listener.yaml</a> file to the joints you
+wish to observe. The default observe_joint parameters assume that the user is listening to the
+joints of an X-Series 6DOF arm, say a WidowX-250 6DOF.</p>
+<p>Next, launch the control application that you wish to profile the performance of. For example, one
+could have an application that moves the robot through a complicated trajectory and is not sure if
+the robot is able to manage the load or movements. The user would launch their application with
+whatever method the application is deigned for (Python, rosrun, etc.).</p>
+<p>The user would then launch this program using the command below, making sure to specify the
+<code class="docutils literal notranslate"><span class="pre">bag_name</span></code> argument.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_diagnostic_tool xsarm_diagnostic_listener.launch robot_model:<span class="o">=</span>wx250s bag_name:<span class="o">=</span>wx250s_application_diagnostics
+</pre></div>
+</div>
+<p>Once the control application is done, send the termination signal to the listener by entering
+<kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> in its terminal.</p>
+<p>To convert the <cite>rosbag</cite> data to a csv file, navigate to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/scripts" rel="noopener noreferrer" target="_blank">scripts</a> directory. If the
+‘bag2csv.py’ program is not yet executable, make it so by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod a+x bag2csv.py
+</pre></div>
+</div>
+<p>Next, type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python bag2csv.py wx250s waist wx250s_application_diagnostics.bag wx250s_application_diagnostics.csv
+</pre></div>
+</div>
+<p>The command is pretty self explanatory - the arguments are the robot name, the name of the joint to
+be observed, the bagfile name (the program expects it to be located in the ‘bag’ directory), and
+the desired CSV file name. To better understand how this program works, take a look at
+<a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/scripts/bag2csv.py" rel="noopener noreferrer" target="_blank">bag2csv.py</a>. Then, take a look at the table below to understand the launch file arguments.</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything)</td>
+<td>“$(arg robot_model)”</td>
+</tr>
+<tr class="row-even"><td>listener_config</td>
+<td>the file path to the ‘listener config’ YAML file</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/launch/xsarm_diagnostic_tool.launch" rel="noopener noreferrer" target="_blank">xsarm_diagnostic_tool.launch</a></td>
+</tr>
+<tr class="row-odd"><td>bag_name</td>
+<td>name of the <cite>rosbag</cite> for which to save data</td>
+<td>“listener_diagnostics”</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arm_diagnostic_tool.html" class="btn btn-neutral float-left" title="Arm Diagnostic Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pid_gains_test_environment.html" class="btn btn-neutral float-right" title="PID Gains Test Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

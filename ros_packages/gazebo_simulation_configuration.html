@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gazebo Configuration &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ROS Controllers Configuration" href="ros_control.html" />
+    <link rel="prev" title="Arm Control" href="arm_control.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gazebo Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-the-interbotix-arm-in-gazebo">Working with the Interbotix Arm in Gazebo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ROS Open Source Packages</a></li>
+      <li class="breadcrumb-item active">Gazebo Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_packages/gazebo_simulation_configuration.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="gazebo-configuration">
+<h1>Gazebo Configuration<a class="headerlink" href="#gazebo-configuration" title="Permalink to this heading"></a></h1>
+<a
+href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo"
+    class="docs-view-on-github-button" target="_blank"> <img
+    src="../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This package contains the necessary config files to get any of the many Interbotix X-Series arms
+simulated in Gazebo. Specifically, it contains the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo/config/interbotix_texture.gazebo" rel="noopener noreferrer" target="_blank">interbotix_texture.gazebo</a> file which allows
+the black texture of the robotic arms to display properly (following the method explained here). It
+also contains YAML files with tuned PID gains for the arm and gripper joints so that ros_control
+can control the arms effectively. This package has one of two applications. It can either be used
+in conjunction with MoveIt via the FollowJointTrajectory interface or it can be used by itself via
+the JointPositionController interface.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<img alt="../_images/xsarm_gazebo_flowchart.png" class="align-center" src="../_images/xsarm_gazebo_flowchart.png" />
+<p>As shown above, the <cite>interbotix_xsarm_gazebo</cite> package builds on top of the
+<cite>interbotix_xsarm_descriptions</cite> and <cite>gazebo_ros</cite> packages. To get familiar with the nodes in the
+<cite>interbotix_xsarm_descriptions</cite> package, please look at its README. The other nodes are described
+below:</p>
+<ul class="simple">
+<li><strong>gzserver</strong> - responsible for running the physics update-loop and sensor data generation</li>
+<li><strong>gzclient</strong> - provides a nice GUI to visualize the robot simulation</li>
+<li><strong>controller_manager</strong> - responsible for loading and starting a set of controllers at once, as
+well as automatically stopping and unloading those same controllers</li>
+<li><strong>spawn_model</strong> - adds the robot model as defined in the ‘robot_description’ parameter into the
+Gazebo world</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>To run this package, type the line below in a terminal (assuming the WidowX-250 is being launched
+with trajectory controllers). Note that if you’re using a 4 or 6 dof arm, you should set the
+<code class="docutils literal notranslate"><span class="pre">dof</span></code> launch file argument appropriately.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_gazebo xsarm_gazebo.launch robot_model:<span class="o">=</span>wx250 use_trajectory_controllers:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>Since by default, Gazebo is started in a ‘paused’ state (this is done to give time for the
+controllers to kick in), unpause the physics once it is fully loaded by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rosservice call /gazebo/unpause_physics
+</pre></div>
+</div>
+<p>This is the bare minimum needed to get up and running. Take a look at the table below to see how to
+further customize with other launch file arguments.</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything)</td>
+<td>$(arg robot_model)</td>
+</tr>
+<tr class="row-even"><td>base_link_frame</td>
+<td>name of the ‘root’ link on the arm; typically ‘base_link’, but can be changed if attaching the arm to a mobile base that already has a ‘base_link’ frame</td>
+<td>base_link’</td>
+</tr>
+<tr class="row-odd"><td>show_ar_tag</td>
+<td>if true, the AR tag mount is included in the ‘robot_description’ parameter; if false, it is left out; set to true if using the AR tag mount in your project</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>show_gripper_bar</td>
+<td>if true, the gripper_bar link is included in the ‘robot_description’ parameter; if false, the gripper_bar and finger links are not loaded to the parameter server. Set to false if you have a custom gripper attachment</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>show_gripper_fingers</td>
+<td>if true, the gripper fingers are included in the ‘robot_description’ parameter; if false, the gripper finger links are not loaded to the parameter server. Set to false if you have custom gripper fingers</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>use_world_frame</td>
+<td>set this to true if you would like to load a ‘world’ frame to the ‘robot_description’ parameter which is located exactly at the ‘base_link’ frame of the robot; if using multiple robots or if you would like to attach the ‘base_link’ frame of the robot to a different frame, set this to false</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>external_urdf_loc</td>
+<td>the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot’s urdf.xacro file</td>
+<td>“”</td>
+</tr>
+<tr class="row-even"><td>use_rviz</td>
+<td>launches RViz</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>world_name</td>
+<td>the file path to the Gazebo ‘world’ file to load</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo/launch/xsarm_gazebo.launch" rel="noopener noreferrer" target="_blank">xsarm_gazebo.launch</a></td>
+</tr>
+<tr class="row-even"><td>gui</td>
+<td>launch the Gazebo GUI</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>debug</td>
+<td>Start gzserver in debug mode using gdb</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>paused</td>
+<td>start Gazebo in a paused state</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>recording</td>
+<td>enable Gazebo state log recording</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>use_sim_time</td>
+<td>tells ROS nodes asking for time to get the Gazebo-published simulation time, published over the ROS topic /clock</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>use_position_controllers</td>
+<td>set to true to have the ability to command arbitrary positions to the arm joints in Gazebo</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>use_trajectory_controllers</td>
+<td>set to true to have the ability to command joint trajectories to the arm joints in Gazebo</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>dof</td>
+<td>degrees of freedom of the specified arm (only necessary if use_position_controllers is set to true)</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="video-tutorial">
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this heading"></a></h2>
+<div class="section" id="working-with-the-interbotix-arm-in-gazebo">
+<h3>Working with the Interbotix Arm in Gazebo<a class="headerlink" href="#working-with-the-interbotix-arm-in-gazebo" title="Permalink to this heading"></a></h3>
+<div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/k3zkgN7TYTE" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arm_control.html" class="btn btn-neutral float-left" title="Arm Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ros_control.html" class="btn btn-neutral float-right" title="ROS Controllers Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

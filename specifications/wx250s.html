@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WidowX-250 6DOF &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ViperX-250" href="vx250.html" />
+    <link rel="prev" title="WidowX-250" href="wx250.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Specifications</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#in-depth-specifications">In-Depth Specifications</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="px100.html">PincherX-100</a></li>
+<li class="toctree-l3"><a class="reference internal" href="px150.html">PincherX-150</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rx150.html">ReactorX-150</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rx200.html">ReactorX-200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wx200.html">WidowX-200</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wx250.html">WidowX-250</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">WidowX-250 6DOF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-joint-limits">Default Joint Limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-servo-configurations">Default Servo Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kinematic-properties">Kinematic Properties</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#product-of-exponentials-learn-more">Product of Exponentials [Learn More]</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#drawings-and-cad-files">Drawings and CAD Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vx250.html">ViperX-250</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vx300.html">ViperX-300</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vx300s.html">ViperX-300 6DOF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#arm-reach">Arm Reach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#workspace">Workspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#working-payload">Working Payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linkage-dimensions">Linkage Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#gripper-min-max">Gripper Min / Max</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Specifications</a></li>
+      <li class="breadcrumb-item active">WidowX-250 6DOF</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/specifications/wx250s.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="widowx-250-6dof">
+<h1>WidowX-250 6DOF<a class="headerlink" href="#widowx-250-6dof" title="Permalink to this heading"></a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>The WidowX-250 6DOF Robot Arm belongs to the Interbotix X-Series family of arms featuring the
+DYNAMIXEL X-Series Actuators from Robotis. The X-Series actuators offer higher torque, more
+efficient heat dissipation and better durability all at a smaller form factor over previous
+DYNAMIXEL servos. The DYNAMIXEL <a class="reference external" href="https://www.trossenrobotics.com/dynamixel-xm430-w350-t.aspx" rel="noopener noreferrer" target="_blank">XM430-W350</a> &amp; DYNAMIXEL <a class="reference external" href="https://www.trossenrobotics.com/dynamixel-xl430-w250-t.aspx" rel="noopener noreferrer" target="_blank">XL430-W250</a> servos offer high
+resolution of 4096 positions and user definable PID parameters, temperature monitoring, positional
+feedback, as well as voltage levels, load, and compliance settings are user accessible as well. At
+the heart of the WidowX-250 6DOF is the Robotis DYNAMIXEL U2D2 which enables easy access to
+DYNAMIXEL Wizard software as well as ROS. The WidowX-250 6DOF offers 6 degree of freedom and a
+full 360 degree of rotation.</p>
+<p>The main advantage to using a 6 degree of freedom arm is the increased maneuverability it provides.
+In general, the pose of an arm’s end-effector can be described by its position (x, y, z) and
+orientation (roll, pitch, yaw) in 3D space. While each of these six factors can be controlled
+independently with a 6DOF arm, one or more of them must be constrained with lower dof arms.</p>
+<table border="1" class="docutils align-center">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="../_images/wx250s.png" class="first last align-center" src="../_images/wx250s.png" style="width: 500px;" />
+</td>
+<td><table border="1" class="first last docutils align-center">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2"><strong>WidowX-250 6DOF</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Degrees of Freedom</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>Reach</td>
+<td>650mm</td>
+</tr>
+<tr class="row-even"><td>Total Span</td>
+<td>1300mm</td>
+</tr>
+<tr class="row-odd"><td>Accuracy</td>
+<td>1mm</td>
+</tr>
+<tr class="row-even"><td>Working Payload</td>
+<td>250g*</td>
+</tr>
+<tr class="row-odd"><td>Total Servos</td>
+<td>9</td>
+</tr>
+<tr class="row-even"><td>Wrist Rotate</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">* Working Payload for the WidowX-250 6DOF is inside its maximum reach, if intending to use a
+250g weight we recommend no more than a 50% extension of the arm.</p>
+</div>
+</div>
+<div class="section" id="default-joint-limits">
+<h2>Default Joint Limits<a class="headerlink" href="#default-joint-limits" title="Permalink to this heading"></a></h2>
+<p>Default joint limits are the safe range of operation for each joint. These are
+set in the firmware, defined as degrees from Zero (servo centered).</p>
+<table border="1" class="docutils align-center">
+<colgroup>
+<col width="35%" />
+<col width="18%" />
+<col width="15%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Joint</th>
+<th class="head">Min</th>
+<th class="head">Max</th>
+<th class="head">Servo ID(s)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Waist</td>
+<td>-180</td>
+<td>180</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Shoulder</td>
+<td>-108</td>
+<td>114</td>
+<td>2+3</td>
+</tr>
+<tr class="row-even"><td>Elbow</td>
+<td>-123</td>
+<td>92</td>
+<td>4+5</td>
+</tr>
+<tr class="row-odd"><td>Wrist Angle</td>
+<td>-100</td>
+<td>123</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>Forearm Roll</td>
+<td>-180</td>
+<td>180</td>
+<td>7</td>
+</tr>
+<tr class="row-odd"><td>Wrist Rotate</td>
+<td>-180</td>
+<td>180</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>Gripper</td>
+<td>30mm</td>
+<td>74mm</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="default-servo-configurations">
+<h2>Default Servo Configurations<a class="headerlink" href="#default-servo-configurations" title="Permalink to this heading"></a></h2>
+<table border="1" class="colwidths-given docutils align-center">
+<colgroup>
+<col width="14%" />
+<col width="29%" />
+<col width="29%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ID</th>
+<th class="head">Joint Name</th>
+<th class="head">Servo</th>
+<th class="head">Baudrate</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>waist</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>shoulder</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>shoulder_shadow</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>elbow</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>elbow_shadow</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>forearm_roll</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>wrist_angle</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>wrist_rotate</td>
+<td>XL430-W250</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-even"><td>9</td>
+<td>gripper</td>
+<td>XL430-W250</td>
+<td>1Mbps</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="kinematic-properties">
+<h2>Kinematic Properties<a class="headerlink" href="#kinematic-properties" title="Permalink to this heading"></a></h2>
+<div class="section" id="product-of-exponentials-learn-more">
+<h3>Product of Exponentials [<a class="reference external" href="https://en.wikipedia.org/wiki/Product_of_exponentials_formula" rel="noopener noreferrer" target="_blank">Learn More</a>]<a class="headerlink" href="#product-of-exponentials-learn-more" title="Permalink to this heading"></a></h3>
+<div class="math">
+<p><span class="math">M &amp; =
+\begin{bmatrix}
+1.0 &amp; 0.0 &amp; 0.0 &amp; 0.458325 \\
+0.0 &amp; 1.0 &amp; 0.0 &amp; 0.0      \\
+0.0 &amp; 0.0 &amp; 1.0 &amp; 0.36065  \\
+0.0 &amp; 0.0 &amp; 0.0 &amp; 1.0
+\end{bmatrix}
+
+\\
+
+Slist &amp; =
+\begin{bmatrix}
+0.0 &amp; 0.0 &amp; 1.0 &amp;  0.0     &amp; 0.0     &amp; 0.0     \\
+0.0 &amp; 1.0 &amp; 0.0 &amp; -0.11065 &amp; 0.0     &amp; 0.0     \\
+0.0 &amp; 1.0 &amp; 0.0 &amp; -0.36065 &amp; 0.0     &amp; 0.04975 \\
+1.0 &amp; 0.0 &amp; 0.0 &amp;  0.0     &amp; 0.36065 &amp; 0.0     \\
+0.0 &amp; 1.0 &amp; 0.0 &amp; -0.36065 &amp; 0.0     &amp; 0.29975 \\
+1.0 &amp; 0.0 &amp; 0.0 &amp;  0.0     &amp; 0.36065 &amp; 0.0
+\end{bmatrix}^T</span></p>
+</div></div>
+</div>
+<div class="section" id="drawings-and-cad-files">
+<h2>Drawings and CAD Files<a class="headerlink" href="#drawings-and-cad-files" title="Permalink to this heading"></a></h2>
+<img alt="../_images/wx250s_drawing.png" class="align-center" src="../_images/wx250s_drawing.png" style="width: 70%;" />
+<p><a class="reference download internal" download="" href="../_downloads/76b165c8ac050bca42a834760e6b1480/WidowX-250s.pdf"><code class="xref download docutils literal notranslate"><span class="pre">WX-250</span> <span class="pre">6DOF</span> <span class="pre">Technical</span> <span class="pre">Drawing</span></code></a></p>
+<iframe
+    src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd968e4764c968ec64523?mode=embed"
+    width="100%"
+    height="600px"
+    allowfullscreen="true"
+    webkitallowfullscreen="true"
+    mozallowfullscreen="true"
+    frameborder="0">
+</iframe><ul class="simple">
+<li><a class="reference download internal" download="" href="../_downloads/9a76e5616848ad80466e34ca488bb9f9/10_WXA-250-6DOF.zip"><code class="xref download docutils literal notranslate"><span class="pre">WX-250</span> <span class="pre">6DOF</span> <span class="pre">Solid</span> <span class="pre">STEP</span> <span class="pre">Files</span></code></a></li>
+<li><a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx250s_meshes" rel="noopener noreferrer" target="_blank">WX-250 6DOF Mesh STL Files</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wx250.html" class="btn btn-neutral float-left" title="WidowX-250" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vx250.html" class="btn btn-neutral float-right" title="ViperX-250" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

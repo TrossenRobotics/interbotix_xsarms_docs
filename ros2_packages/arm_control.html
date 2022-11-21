@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arm Control &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simulation Configuration" href="simulation_configuration.html" />
+    <link rel="prev" title="Arm Descriptions" href="arm_descriptions.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS 2 Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arm Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt2 Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ROS 2 Open Source Packages</a></li>
+      <li class="breadcrumb-item active">Arm Control</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros2_packages/arm_control.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="arm-control">
+<h1>Arm Control<a class="headerlink" href="#arm-control" title="Permalink to this heading"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_control"
+    class="docs-view-on-github-button"
+    target="_blank">
+    <img src="../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This package contains the configuration and launch files necessary to easily start the Interbotix
+Arm platform. This includes launching the <strong>xs_sdk</strong> node responsible for driving the DYNAMIXEL
+motors on the robot and loading the URDF to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter. Essentially, this
+package is what all ‘downstream’ ROS packages should reference to get the robot up and running.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<img alt="../_images/xsarm_control_flowchart_ros2.png" class="align-center" src="../_images/xsarm_control_flowchart_ros2.png" />
+<p>As shown in the image above, the <cite>interbotix_xsarm_control</cite> package builds on top of the
+<a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> and <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/tree/galactic/interbotix_ros_xseries/interbotix_xs_sdk" rel="noopener noreferrer" target="_blank">interbotix_xs_sdk</a> packages. Please
+take a look at those packages to get familiar with their nodes. You will also notice a config
+directory containing many YAML files. Each file (beside the modes.yaml one) specifies the names and
+initial register values for all the motors that make up a specific robot arm. There is also some
+‘meta-info’ like names of joint groups, the desired joint-topic name and publishing frequency,
+etc… For a full explanation of each of these parameters, check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_sdk/config/motor_configs_template.yaml" rel="noopener noreferrer" target="_blank">Motor Config file
+template</a>. The other file located in that directory is the Mode Config one (a.k.a modes.yaml). The
+parameters in this file define the desired operating modes for either a group of joints or single
+joints, and whether or not they should be torqued on/off at node startup. See more by referencing
+the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_sdk/config/mode_configs_template.yaml" rel="noopener noreferrer" target="_blank">Mode Config file template</a>. Typically, the Motor Config file is only defined here while the
+Mode Config file is also defined in any ‘downstream’ ROS package. This makes it easy for users to
+configure their desired motor operating modes depending on their project.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>To run this package on a physical robot, run the command below in a terminal (assuming the
+WidowX-200 arm is being used).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:<span class="o">=</span>wx200
+</pre></div>
+</div>
+<p>To run this package on a simulated robot, run the command below in a terminal (assuming the
+WidowX-200 arm is being used).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:<span class="o">=</span>wx200 use_sim:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>To further customize this launch file at run-time, refer to the table below, or run the command below</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_control xsarm_control.launch.py --show-args
+</pre></div>
+</div>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="17%" />
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+<th class="head">Choices</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm such as <code class="docutils literal notranslate"><span class="pre">wx200</span></code> or <code class="docutils literal notranslate"><span class="pre">rx150</span></code>.</td>
+<td>&#160;</td>
+<td><code class="docutils literal notranslate"><span class="pre">px100</span></code>, <code class="docutils literal notranslate"><span class="pre">px150</span></code>, <code class="docutils literal notranslate"><span class="pre">rx150</span></code>, <code class="docutils literal notranslate"><span class="pre">rx200</span></code>, <code class="docutils literal notranslate"><span class="pre">wx200</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">vx250</span></code>, <code class="docutils literal notranslate"><span class="pre">vx300</span></code>, <code class="docutils literal notranslate"><span class="pre">vx300s</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_px100</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_wx200</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_wx250s</span></code></td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything).</td>
+<td>LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_model</span></code>)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>use_rviz</td>
+<td>launches RViz if set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-odd"><td>motor_configs</td>
+<td>the file path to the ‘motor config’ YAML file.</td>
+<td>LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_control</span></code>) + ‘config’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_model</span></code>)’) + ‘.yaml’</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>mode_configs</td>
+<td>the file path to the ‘mode config’ YAML file.</td>
+<td>LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_control</span></code>) + ‘config’ + ‘modes.yaml’’)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>load_configs</td>
+<td>a boolean that specifies whether or not the initial register values (under the ‘motors’ heading) in a Motor Config file should be written to the motors; as the values being written are stored in each motor’s EEPROM (which means the values are retained even after a power cycle), this can be set to <code class="docutils literal notranslate"><span class="pre">false</span></code> after the first time using the robot. Setting to <code class="docutils literal notranslate"><span class="pre">false</span></code> also shortens the node startup time by a few seconds and preserves the life of the EEPROM.</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-even"><td>use_sim</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the DYNAMIXEL simulator node is run; use RViz to visualize the robot’s motion; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the real DYNAMIXEL driver node is run.</td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-odd"><td>use_sim_time</td>
+<td>tells ROS nodes asking for time to get the Gazebo-published simulation time, published over the ROS topic /clock; this value is automatically set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if using Gazebo hardware.</td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-even"><td>base_link_frame</td>
+<td>name of the ‘root’ link on the arm; typically <code class="docutils literal notranslate"><span class="pre">base_link</span></code>, but can be changed if attaching the arm to a mobile base that already has a <code class="docutils literal notranslate"><span class="pre">base_link</span></code> frame.</td>
+<td><code class="docutils literal notranslate"><span class="pre">base_link</span></code></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>use_gripper</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the default gripper is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is left out; set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if not using the default gripper.</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-even"><td>show_ar_tag</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the AR tag mount is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is left out; set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if using the AR tag mount in your project.</td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-odd"><td>show_gripper_bar</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the gripper_bar link is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the gripper_bar and finger links are not loaded. Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you have a custom gripper attachment.</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-even"><td>show_gripper_fingers</td>
+<td>if true, the gripper fingers are included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the gripper finger links are not loaded. Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you have custom gripper fingers.</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-odd"><td>use_world_frame</td>
+<td>set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> if you would like to load a ‘world’ frame to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter which is located exactly at the ‘base_link’ frame of the robot; if using multiple robots or if you would like to attach the ‘base_link’ frame of the robot to a different frame, set this to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+</tr>
+<tr class="row-even"><td>external_urdf_loc</td>
+<td>the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot’s urdf.xacro file.</td>
+<td>‘’</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>hardware_type</td>
+<td>configures the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter to use the actual hardware, fake hardware, or hardware simulated in Gazebo.</td>
+<td><code class="docutils literal notranslate"><span class="pre">actual</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">actual</span></code>, <code class="docutils literal notranslate"><span class="pre">fake</span></code>, <code class="docutils literal notranslate"><span class="pre">gz_classic</span></code></td>
+</tr>
+<tr class="row-even"><td>robot_description</td>
+<td>URDF of the robot; this is typically generated by the xacro command.</td>
+<td>Command(FindExec(<code class="docutils literal notranslate"><span class="pre">xacro</span></code>) + ‘ ‘ + LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_descriptions</span></code>) + ‘urdf’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_model</span></code>)’) + ‘.urdf.xacro ‘ + ‘robot_name:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_name</span></code>) + ‘ ‘ + ‘base_link_frame:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">base_link_frame</span></code>) + ‘ ‘ + ‘use_gripper:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">use_gripper</span></code>) + ‘ ‘ + ‘show_ar_tag:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">show_ar_tag</span></code>) + ‘ ‘ + ‘show_gripper_bar:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">show_gripper_bar</span></code>) + ‘ ‘ + ‘show_gripper_fingers:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">show_gripper_fingers</span></code>) + ‘ ‘ + ‘use_world_frame:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">use_world_frame</span></code>) + ‘ ‘ + ‘external_urdf_loc:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">external_urdf_loc</span></code>) + ‘ ‘ + ‘hardware_type:=’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">hardware_type</span></code>) + ‘ ‘)</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arm_descriptions.html" class="btn btn-neutral float-left" title="Arm Descriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="simulation_configuration.html" class="btn btn-neutral float-right" title="Simulation Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

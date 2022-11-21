@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATLAB Demos &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Joystick Control" href="joystick_control.html" />
+    <link rel="prev" title="Python Demos" href="python_demos.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MATLAB Demos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-the-interbotix-matlab-api">Working with the Interbotix MATLAB API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ROS Open Source Packages</a></li>
+      <li class="breadcrumb-item active">MATLAB Demos</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_packages/matlab_demos.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="matlab-demos">
+<h1>MATLAB Demos<a class="headerlink" href="#matlab-demos" title="Permalink to this heading"></a></h1>
+<a
+href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/matlab_demos"
+    class="docs-view-on-github-button" target="_blank"> <img
+    src="../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>These demos showcases various ways of using the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/main/interbotix_xs_toolbox/interbotix_xs_modules/src/interbotix_xs_modules/InterbotixArmXSInterface.m" rel="noopener noreferrer" target="_blank">Interbotix MATLAB Arm Module</a> (click the link to
+see the fully documented code; also check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/main/interbotix_xs_toolbox/interbotix_xs_modules" rel="noopener noreferrer" target="_blank">interbotix_xs_modules</a> package to get a better
+understanding on how this and other modules can be used). Simply put, this API was created so that
+users with little to no ROS experience would still have the ability to control any Interbotix Arm
+supported by the <cite>interbotix_xs_sdk</cite>. Specifically, the API also allows a user to make an arm go to
+desired end-effector poses or follow Cartesian trajectories. This last feature was made possible by
+the <a class="reference external" href="https://github.com/NxRLab/ModernRobotics" rel="noopener noreferrer" target="_blank">Modern Robotics: Mechanics, Planning, and Control Code Library</a>  created at Northwestern
+University.</p>
+<p>For the API to work, the arm joints must be set to ‘position’ control and the gripper set to ‘PWM’
+control (conveniently, these are the default configs in the <cite>interbotix_xsarm_control</cite> package).
+Furthermore, the API assumes that all the arm-joint motors’ <a class="reference external" href="http://emanual.robotis.com/docs/en/dxl/x/xm430-w350/#drive-mode" rel="noopener noreferrer" target="_blank">Drive Mode</a> registers are set to
+<a class="reference external" href="http://emanual.robotis.com/docs/en/dxl/x/xm430-w350/#profile-velocity112" rel="noopener noreferrer" target="_blank">Time-Based-Profile</a> (this is also the default configuration). In a nutshell, this setting makes
+it very easy for you as the user to customize the duration and smoothness of an arm’s motion from
+one pose to the next.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<img alt="../_images/xsarm_matlab_demos_flowchart.png" class="align-center" src="../_images/xsarm_matlab_demos_flowchart.png" />
+<p>The MATLAB Arm module (located in the <cite>interbotix_xs_modules</cite> ROS package) builds on top of the
+<cite>interbotix_xs_sdk</cite> package. To get familiar with the other nodes in the graph above, look at the
+various packages documentation.</p>
+<ul class="simple">
+<li><strong>robot_manipulation</strong> - a ROS node (operating ‘behind the scenes’) that takes in commands
+entered via the MATLAB API and publishes data to various ROS topics as necessary. It is not a
+classic ROS node in the sense that it can’t be launched from a ROS launch file or run from the
+terminal using a <code class="docutils literal notranslate"><span class="pre">rosrun</span></code> command. Rather, the MATLAB API module contains a Class that when
+instantiated, gives the node life. At the completion of a program, the object gets destroyed,
+killing the node.</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>To get started with the MATLAB demos, you must first build the Interbotix messages and setup your
+MATLAB workspace. Follow the <a class="reference external" href="../matlab_ros_interface/index.html#setup" rel="noopener noreferrer" target="_blank">MATLAB Setup Guide</a> for this process.</p>
+<p>Once your MATLAB workspace is properly configured, open up a terminal and type (assuming a
+WidowX-250 is being launched)…</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:<span class="o">=</span>wx250
+</pre></div>
+</div>
+<p>Then, in another terminal, navigate to the matlab_demos directory in the MATLAB console and type…</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">bartender</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You should observe the robot pick up a virtual bottle (from behind a virtual bar), rotate so that
+the end-effector is facing the opposite direction, pour a virtual drink (on the virtual bar), then
+place the ‘bottle’ down, and go to its Sleep pose.</p>
+<p>The other scripts work in a similar fashion, but you must make sure to change the robot name in the
+file to the arm you have. You might also have to adjust the commanded poses/trajectories if working
+with smaller arm models (like the PincherX 100) as some of them might by physically unattainable.
+To make things easier, each script also outlines the commands necessary to get the robot moving!</p>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<p>MATLAB does not delete timers when a workspace is cleared. A buildup of timers will accumulate if
+not handled properly, and your machine will slow down. To prevent this from occurring, you can run
+the <code class="docutils literal notranslate"><span class="pre">stop_timers()</span></code> method of the InterbotixManipulatorXS class at the end of each of your
+scripts. Examples of this process are in each of the MATLAB demo scripts. You can also run the
+commands <code class="docutils literal notranslate"><span class="pre">stop(timerfindall)</span></code> and <code class="docutils literal notranslate"><span class="pre">delete(timerfindall)</span></code>, though this may have unintended
+consequences if you have timers in objects other than the arm.</p>
+<p>When using the MATLAB modules, you may see the error <code class="docutils literal notranslate"><span class="pre">incoming</span> <span class="pre">connection</span> <span class="pre">failed:</span> <span class="pre">unable</span> <span class="pre">to</span>
+<span class="pre">receive</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">sender,</span> <span class="pre">check</span> <span class="pre">sender's</span> <span class="pre">logs</span> <span class="pre">for</span> <span class="pre">details</span></code>. This is just a result from how MATLAB
+constructs its rosservice objects and can be safely ignored.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you want to test out your code first on a simulated arm, make sure to set
+the <code class="docutils literal notranslate"><span class="pre">use_sim</span></code> arg to true like this:</p>
+<blockquote class="last">
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:<span class="o">=</span>wx250 use_sim:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="video-tutorial">
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this heading"></a></h2>
+<div class="section" id="working-with-the-interbotix-matlab-api">
+<h3>Working with the Interbotix MATLAB API<a class="headerlink" href="#working-with-the-interbotix-matlab-api" title="Permalink to this heading"></a></h3>
+<div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/gs4x_G837tI" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python_demos.html" class="btn btn-neutral float-left" title="Python Demos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="joystick_control.html" class="btn btn-neutral float-right" title="Joystick Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

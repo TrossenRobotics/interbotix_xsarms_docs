@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS Open Source Packages &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arm Descriptions" href="arm_descriptions.html" />
+    <link rel="prev" title="MATLAB-ROS Interface" href="../matlab_ros_interface/index.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ROS Open Source Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">ROS Open Source Packages</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_packages/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ros-open-source-packages">
+<h1>ROS Open Source Packages<a class="headerlink" href="#ros-open-source-packages" title="Permalink to this heading"></a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To use any of these packages, you must already have ROS and the X-Series Arm packages
+installed. If you do not have these installed, follow the steps detailed in the <a class="reference internal" href="../ros_interface/index.html"><span class="doc">ROS
+Interface Setup</span></a>.</p>
+</div>
+<p>Below is a list of all ROS packages meant to be used with the many X-Series robotic arms sold by
+Trossen Robotics. Packages were tested on Ubuntu Linux 18.04 and 20.04 using ROS Melodic and Noetic
+respectively. Additionally, all ROS nodes were written using Python or C++. However, any
+programming language capable of sending ROS messages can be used to control the robots. The core
+packages inside this repo are as follows:</p>
+<ul class="simple">
+<li><a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> - contains the meshes and URDFs
+(including accurate inertial models for the links) for all arm platforms</li>
+<li><a class="reference internal" href="arm_control.html"><span class="doc">interbotix_xsarm_control</span></a> - contains the motor configuration files and the
+‘root’ launch file that is responsible for launching the robot arm</li>
+<li><a class="reference internal" href="gazebo_simulation_configuration.html"><span class="doc">interbotix_xsarm_gazebo</span></a> - contains the config files
+necessary to launch an arm in Gazebo, including tuned PID gains for the ros_control package</li>
+<li><a class="reference internal" href="ros_control.html"><span class="doc">interbotix_xsarm_ros_control</span></a> - contains configuration files necessary to
+set up ROS controllers between MoveIt and the physical robot arm</li>
+<li><a class="reference internal" href="moveit_motion_planning_configuration.html"><span class="doc">interbotix_xsarm_moveit</span></a> - contains the config
+files necessary to launch an arm using MoveIt either in Gazebo, on the physical robot, or just
+in RViz</li>
+</ul>
+<p>There are also several packages demonstrating possible applications of the core packages. A list of
+those packages is below in order of importance:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+</ul>
+</div>
+<!--X-SERIES CAROUSEL LIVE-->
+<h1 class="xseries-carousel-title-textbox">OPEN SOURCE DEMOS</h1>
+<div class="carousel-content-container">
+    <div id="flex-scene">
+        <div id="left-zone">
+            <ul class="xseries-carousel-list">
+
+                <!-- Motion Planning -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control3" name="basic_carousel" checked="checked" />
+
+                    <label class="static-container" for="xseries-radio-control3" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/xsarm_moveit_interface.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/xsarm_moveit_interface.gif">
+                        </div>
+                        <p class="xseries-left-label">Motion Planning</p>
+                    </label>
+
+                    <div class="content content_sec3">
+                        <span class="xseries-right-pic3"></span>
+                        <h1 class="xseries-right-title3-h1">MoveIt Motion Planning Configuration</h1>
+                        <p class="xseries-right-text-p">Contains the necessary config files to get any of the X-Series
+                            arms working with MoveIt, the standard motion planning framework for ROS. This package also
+                            provides interfaces to work with the arms in a Gazebo simulation.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_moveit"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=Z9s3hRYcIp0" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/moveit_motion_planning_configuration.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Gazebo Simulation -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control1" name="basic_carousel"/>
+
+                    <!--<label class="xseries-label1" for="xseries-radio-control1" style="display: flex;">-->
+                    <label class="static-container" for="xseries-radio-control1" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/gazebo_arm.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/gazebo_arm.gif">
+                        </div>
+                        <p class="xseries-left-label">Gazebo Simulation</p>
+                    </label>
+
+                    <div class="content content_sec1">
+                        <span class="xseries-right-pic1"></span>
+                        <h1 class="xseries-right-title1-h1">Gazebo Simulation Configuration</h1>
+                        <p class="xseries-right-text-p">Contains configuration files, launch files, and example worlds
+                            to simulate the X-Series arms in Gazebo. Also has position and trajectory controllers with
+                            tunable PID gains so that ROS can control the arms.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=k3zkgN7TYTE" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/gazebo_simulation_configuration.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Joystick Control -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control2" name="basic_carousel" />
+
+                    <label class="xseries-label2" for="xseries-radio-control2" style="display: flex;">
+                        <p class="xseries-left-label">Joystick Control</p>
+                    </label>
+
+                    <div class="content content_sec2">
+                        <span class="xseries-right-pic2"></span>
+                        <h1 class="xseries-right-title2-h1">Joystick Control</h1>
+                        <p class="xseries-right-text-p">Control any X-Series arm using a Bluetooth joystick controller.
+                            This package can be used to control the movements of any X-Series robotic arm using a SONY
+                            PS3/PS4 controller or Microsoft Xbox360 controller (untested) via Bluetooth.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_joy"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=AyKjcZvu8lo" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/joystick_control.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Dual Arm Control -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control4" name="basic_carousel" />
+
+                    <label class="static-container" for="xseries-radio-control4" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_control.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_control.gif">
+                        </div>
+                        <p class="xseries-left-label">Dual Arm Control</p>
+                    </label>
+
+                    <div class="content content_sec4">
+                        <span class="xseries-right-pic4"></span>
+                        <h1 class="xseries-right-title4-h1">Dual Arm Control</h1>
+                        <p class="xseries-right-text-p">Enables the control of multiple X-Series arms using scripts.
+                            Configuration files are provided that allow for 2 or more arms to be controlled
+                            simultaneously using multithreading techniques.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=DnjbNXxBE_8" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/dual_arm_control.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Perception Pipeline Configuration -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control5" name="basic_carousel" />
+
+                    <label class="static-container" for="xseries-radio-control5" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/python_perception_arm.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/python_perception_arm.gif">
+                        </div>
+                        <p class="xseries-left-label">Perception Configuration</p>
+                    </label>
+
+                    <div class="content content_sec5">
+                        <span class="xseries-right-pic5"></span>
+                        <h1 class="xseries-right-title5-h1">Perception Pipeline Configuration</h1>
+                        <p class="xseries-right-text-p">Contains the necessary config and launch files to get any of the
+                            many Interbotix X-Series arms working with the perception pipeline, allowing for the arms to
+                            interact with depth cameras such as the RealSense D415.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_perception"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=03BZ6PLFOac" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/perception_pipeline_configuration.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- MoveIt Interface and API -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control6" name="basic_carousel" />
+
+                    <label class="xseries-label6" for="xseries-radio-control6" style="display: flex;">
+                        <p class="xseries-left-label">MoveIt Interface</p>
+                    </label>
+
+                    <div class="content content_sec6">
+                        <span class="xseries-right-pic6"></span>
+                        <h1 class="xseries-right-title6-h1">MoveIt Interface and API</h1>
+                        <p class="xseries-right-text-p">Contains a small API that allows a user to command desired
+                            end-effector poses to an Interbotix arm. Also has a modified version of the Move Group
+                            Python Interface Tutorial script for users to understand the basics of MoveIt Commander.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=Z9s3hRYcIp0" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/moveit_interface_and_api.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Arm Diagnostic Tool -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control7" name="basic_carousel" />
+
+                    <label class="static-container" for="xseries-radio-control7" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/diagnostic_tool_arm.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/diagnostic_tool_arm.gif">
+                        </div>
+                        <p class="xseries-left-label">Arm Diagnostic Tool</p>
+                    </label>
+
+                    <div class="content content_sec7">
+                        <span class="xseries-right-pic7"></span>
+                        <h1 class="xseries-right-title7-h1">Arm Diagnostic Tool</h1>
+                        <p class="xseries-right-text-p">Analyze the state of one joint or any number of joints over time
+                            while running through a script, or while playing back a ROS bag file. Visualize different
+                            parameters such as temperature, position, and effort over time.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=0N85vMS8LMU" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_diagnostic_tool.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- PID Gains -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control8" name="basic_carousel" />
+
+                    <label class="xseries-label8" for="xseries-radio-control8" style="display: flex;">
+                        <p class="xseries-left-label">PID Gains</p>
+                    </label>
+
+                    <div class="content content_sec8">
+                        <span class="xseries-right-pic8"></span>
+                        <h1 class="xseries-right-title8-h1">PID Gains Test Environment</h1>
+                        <p class="xseries-right-text-p">A way to test 'pwm' or 'current' PID gains when operating the
+                            arm in either 'pwm' or 'current' mode. The package moves the robot through a series of poses
+                            as a way to test the effects of different gains and control modes.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=U0v_0ZyX-SI" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/pid_gains_test_environment.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Dual Arm Joystick Control -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control9" name="basic_carousel" />
+
+                    <label class="static-container" for="xseries-radio-control9" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_joystick.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/dual_arm_joystick.gif">
+                        </div>
+                        <p class="xseries-left-label">Dual Arm Joystick</p>
+                    </label>
+
+                    <div class="content content_sec9">
+                        <span class="xseries-right-pic9"></span>
+                        <h1 class="xseries-right-title9-h1">Dual Arm Joystick Control</h1>
+                        <p class="xseries-right-text-p">Control two X-Series arms using a single joystick controller.
+                            Builds on top of the Joystick and Dual Control packages and contains only configuration and
+                            launch files, an example of ROS's modularity.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual_joy"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=AyKjcZvu8lo" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/dual_arm_joystick_control.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Arm Puppeteering -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control10" name="basic_carousel" />
+
+                    <label class="static-container" for="xseries-radio-control10" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/puppet.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/puppet.gif">
+                        </div>
+                        <p class="xseries-left-label">Arm Puppeteering</p>
+                    </label>
+
+                    <div class="content content_sec10">
+                        <span class="xseries-right-pic10"></span>
+                        <h1 class="xseries-right-title10-h1">Arm Puppeteering</h1>
+                        <p class="xseries-right-text-p">Imagine that you have two (or more) Interbotix arms with the
+                            same number of joints. What the xsarm_puppet allows you to do is to manually manipulate one
+                            of the arms and watch as the motion is repeated in real time on the second robot.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=DnjbNXxBE_8" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_puppeteering.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Record and Playback -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control11" name="basic_carousel" />
+
+                    <label class="xseries-label11" for="xseries-radio-control11" style="display: flex;">
+                        <p class="xseries-left-label">Record and Playback</p>
+                    </label>
+
+                    <div class="content content_sec11">
+                        <span class="xseries-right-pic11"></span>
+                        <h1 class="xseries-right-title11-h1">Record and Playback</h1>
+                        <p class="xseries-right-text-p">Untorque your arm and record manual movements to a ROS bag file.
+                            Play back the same motions as many times as you want.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=DnjbNXxBE_8" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_puppeteering.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Python Demos -->
+                <li class="xseries-carousel-item">
+                    <input type="radio" id="xseries-radio-control12" name="basic_carousel" />
+
+                    <label class="static-container" for="xseries-radio-control12" style="display: flex;">
+                        <div class="carousel-thumbnail-container">
+                            <img class="static"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/python_demos.png">
+                            <img class="active-ca"
+                                src="https://trossenrobotics.com/Shared/X-Series content carousel/python_demos.gif">
+                        </div>
+                        <p class="xseries-left-label">Python Demos</p>
+                    </label>
+
+                    <div class="content content_sec12">
+                        <span class="xseries-right-pic12"></span>
+                        <h1 class="xseries-right-title12-h1">Python Demos</h1>
+                        <p class="xseries-right-text-p">Showcase of examples for the Interbotix Python Arm Module. We
+                            made Python wrappers for the X-Series arm that allow users to control their arm without
+                            writing a single line of ROS code Module.</p>
+
+                        <div class="footer-social-flex">
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon1">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/python_demos"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/github-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon2">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.youtube.com/watch?v=KoqBEvz4GII" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/youtube-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <div style="display: flex;">
+                                <figure class="xseries-social-icon3">
+                                    <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
+                                        data-image="0">
+
+                                    <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/python_demos.html"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
+                                            data-image="0">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="middle-border" style="display: none;"></div>
+        <div id="right-zone"></div>
+    </div>
+</div><div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h2>
+<p>To contribute your own custom X-Series arm in this repo, you will need to do the following steps:</p>
+<ul class="simple">
+<li>Create a motor config file similar to the YAML files found in <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_control/config" rel="noopener noreferrer" target="_blank">xsarm_control/config</a>. To get
+familiar with the parameter names, checkout the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/main/interbotix_ros_xseries/interbotix_xs_sdk/config/motor_configs_template.yaml" rel="noopener noreferrer" target="_blank">Motor Config Template</a>. Note that the name of
+this file is what defines your robot_model name, and should be used when naming other files
+like the URDF.</li>
+<li>Create a URDF similar in structure to the ones found in <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">xsarm_descriptions/urdf</a>. Don’t
+forget to put all necessary meshes in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes" rel="noopener noreferrer" target="_blank">xsarm_descriptions/meshes</a> directory! Follow the
+naming convention for the links, joints, and frame poses as found in the other arm files for
+consistency.</li>
+<li>Create a set of <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo/config/position_controllers" rel="noopener noreferrer" target="_blank">Gazebo/ROS position controllers</a>.</li>
+<li>Create a set of <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo/config/trajectory_controllers" rel="noopener noreferrer" target="_blank">Gazebo/ROS trajectory controllers</a>.</li>
+<li>Create an <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_moveit/config/srdf" rel="noopener noreferrer" target="_blank">SRDF file</a> for Moveit. You should first use the MoveIt Setup Assistant Wizard for
+this step and then edit the generated SRDF file based on the structure of those files.</li>
+<li>Add the appropriate Screw axes and M matrices to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/main/interbotix_xs_toolbox/interbotix_xs_modules/src/interbotix_xs_modules/mr_descriptions.py" rel="noopener noreferrer" target="_blank">mr_descriptions.py</a> and
+<a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/main/interbotix_xs_toolbox/interbotix_xs_modules/src/interbotix_xs_modules/mr_descriptions.m" rel="noopener noreferrer" target="_blank">mr_descriptions.m</a> modules. For help doing this, refer to Chapter 4 in <a class="reference external" href="http://hades.mech.northwestern.edu/images/7/7f/MR.pdf" rel="noopener noreferrer" target="_blank">Modern Robotics</a> and
+<a class="reference external" href="https://www.youtube.com/watch?v=cKHsil0V6Qk&amp;ab_channel=NorthwesternRobotics" rel="noopener noreferrer" target="_blank">this video</a>, or check out our <a class="reference external" href="https://github.com/Interbotix/kinematics_from_description" rel="noopener noreferrer" target="_blank">kinematics_from_description</a> tool.</li>
+<li>Make sure to follow the same naming convention, structure, and documentation procedures as
+found in the repo before making a PR.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../matlab_ros_interface/index.html" class="btn btn-neutral float-left" title="MATLAB-ROS Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arm_descriptions.html" class="btn btn-neutral float-right" title="Arm Descriptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS Raspberry Pi 4B Setup &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ROS Quickstart Guide" href="quickstart.html" />
+    <link rel="prev" title="ROS Standard Software Setup" href="software_setup.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="software_setup.html">ROS Standard Software Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ROS Raspberry Pi 4B Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#flashing-ubuntu">Flashing Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modifying-username-hostname">Modifying Username/Hostname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-ubuntu-mate-desktop">Installing Ubuntu MATE Desktop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-boot-configs">Custom Boot Configs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#privileges">Privileges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fix-bluetooth-issue">Fix Bluetooth Issue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-ros">Install ROS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ps4-controller-setup">PS4 Controller Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#networking">Networking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">ROS Quickstart Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros2_software_setup.html">ROS 2 Standard Software Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros2_quickstart.html">ROS 2 Quickstart Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ros-1">ROS 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ros-2">ROS 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ROS Interface</a></li>
+      <li class="breadcrumb-item active">ROS Raspberry Pi 4B Setup</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/raspberry_pi_setup.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ros-raspberry-pi-4b-setup">
+<h1>ROS Raspberry Pi 4B Setup<a class="headerlink" href="#ros-raspberry-pi-4b-setup" title="Permalink to this heading"></a></h1>
+<p>This tutorial will walk you through how to get Ubuntu Linux and ROS working on a Raspberry Pi 4B
+from scratch. Specifically, it explains how the microSD card image found on any Interbotix robot
+sporting a RPi4 was created. By way of introduction, many types of operating systems exist for the
+Pi. This includes Ubuntu, Debian, and Raspbian. However, in order to get optimal compatibility with
+ROS, Ubuntu is really the way to go. As it turns out, the folks that maintain Ubuntu (a.k.a
+Canonical) maintain support for the Raspberry Pi 2, 3, and 4 as well. You can download these images
+from the <a class="reference external" href="https://ubuntu.com/download/raspberry-pi" rel="noopener noreferrer" target="_blank">Ubuntu Raspberry Pi page</a>.</p>
+<p>Now, as the name suggests, these are Server images, so they do not come with desktops. Similar to
+the operating systems, there a quite a number of desktop experiences one can choose from - like
+<cite>ubuntu-desktop</cite>, <cite>kubuntu-desktop</cite>, <cite>xubuntu-desktop</cite> to name a few. After doing some
+experimenting, We’ve found that the <cite>ubuntu-mate-desktop</cite> experience provided a pretty nice desktop
+experience and took up the least amount of RAM.</p>
+<p>Since we’re using the Pi 4, and the 64-bit has better performance, you should choose the <strong>20.04.2
+64-bit</strong> option.</p>
+<div class="section" id="hardware-requirements">
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this heading"></a></h2>
+<p>Instead of purchasing components separately, it’s much easier to get a Raspberry Pi 4B Kit (from
+Amazon or wherever) that comes with all necessary components. This includes a power cable,
+mini-to-full-size HDMI cable, case, fan, heatsinks, a class 10 microSD card (at least 32GB), and of
+course, the Pi itself (4GB RAM option seems to be pretty good, and is what we use at Interbotix).
+Note that using less than 4GB RAM on the RPi 4 can result in it freezing during code compilation
+(like when running the installation script for any of our RPi compatible robots). To get around
+this, you can change any mention of the <code class="docutils literal notranslate"><span class="pre">catkin_make</span></code> command in the robot installation scripts
+to <code class="docutils literal notranslate"><span class="pre">catkin_make</span> <span class="pre">-j1</span></code>.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.amazon.com/Vilros-Raspberry-Complete-Transparent-Cooled/dp/B07VFCB192/ref=sr_1_8?dchild=1&amp;keywords=rpi+4+kit&amp;qid=1615835937&amp;sr=8-8" rel="noopener noreferrer" target="_blank">Raspberry Pi 4B Kit</a></li>
+<li>HDMI monitor, mouse, Ethernet cable (that connects to Internet), and keyboard</li>
+<li>A laptop or desktop computer</li>
+</ul>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<div class="section" id="flashing-ubuntu">
+<h3>Flashing Ubuntu<a class="headerlink" href="#flashing-ubuntu" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li>First, download the <a class="reference external" href="https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04.2&amp;architecture=server-arm64+raspi" rel="noopener noreferrer" target="_blank">Ubuntu 20.04.2 64-bit Server Image</a> for the Raspberry
+Pi 4.</li>
+<li>Using a tool like <a class="reference external" href="https://www.balena.io/etcher/" rel="noopener noreferrer" target="_blank">balenaEtcher</a>, flash the OS image to the 32GB microSD
+card using your laptop or desktop computer. The process will take a few
+minutes.</li>
+<li>When done, eject the SD card and insert it into the Pi 4. Then connect the HDMI monitor, mouse,
+keyboard, and Ethernet cable to the Pi. Finally, connect the power cable, and turn the Pi on.</li>
+<li>After waiting a minute or so (in which time, some debugging messages will
+appear on the screen), you will be prompted to login. The default computer
+and user name is ubuntu, so just type ubuntu. At this point, you will be
+prompted to create a password which you should do.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that you must plug in the Ethernet and HDMI cables into the Pi before turning the Pi on.</p>
+</div>
+</div>
+<div class="section" id="modifying-username-hostname">
+<h3>Modifying Username/Hostname<a class="headerlink" href="#modifying-username-hostname" title="Permalink to this heading"></a></h3>
+<p>Depending on your application, you may want to change either your username or computer name to be
+something more unique than <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code>. The commands below illustrate how to modify the default
+<code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> username to <code class="docutils literal notranslate"><span class="pre">pibot</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">To modify the <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> user name to something else (in this case <code class="docutils literal notranslate"><span class="pre">pibot</span></code>), we need to add a
+temporary new user to do the modifications.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo adduser temp
+<span class="gp">$ </span>sudo adduser temp sudo
+<span class="gp">$ </span><span class="nb">exit</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now login to the <code class="docutils literal notranslate"><span class="pre">temp</span></code> user, at which point you can modify the <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> user to be
+<code class="docutils literal notranslate"><span class="pre">pibot</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo usermod -l pibot ubuntu
+<span class="gp">$ </span>sudo groupmod -n pibot ubuntu
+<span class="gp">$ </span>sudo usermod -d /home/pibot -m pibot
+<span class="gp">$ </span>sudo usermod -c <span class="s2">&quot;pibot&quot;</span> pibot
+<span class="gp">$ </span><span class="nb">exit</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now login to the <code class="docutils literal notranslate"><span class="pre">pibot</span></code> user, at which point you can delete the temporary <code class="docutils literal notranslate"><span class="pre">temp</span></code> user…</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo deluser temp
+<span class="gp">$ </span>sudo rm -r /home/temp
+</pre></div>
+</div>
+</li>
+</ol>
+<p>To change the default computer name, follow the commands below. This is useful if you plan to have
+multiple Pis on the same network later.</p>
+<ol class="arabic">
+<li><p class="first">Change the ‘hostname’ (a.k.a computer name) from ‘ubuntu’ to ‘pibot’ in the file below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo nano /etc/hostname
+</pre></div>
+</div>
+</li>
+<li><p class="first">At this point, it is a good idea to reboot to let the changes take effect. Before doing so,
+first type the command below to check if Linux is in the process of updating behind the scenes.
+It does this automatically for security updates.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ps aux <span class="p">|</span> grep -i apt
+</pre></div>
+</div>
+</li>
+</ol>
+<p>If you see apt.systemd.daily is using the apt process, just wait a few minutes until it’s done. You
+can verify that it’s done by running the above command every few minutes until apt.systemd.daily
+stops showing up. At that point, type:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo reboot
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="installing-ubuntu-mate-desktop">
+<h3>Installing Ubuntu MATE Desktop<a class="headerlink" href="#installing-ubuntu-mate-desktop" title="Permalink to this heading"></a></h3>
+<p>Now let’s do system updates.</p>
+<ol class="arabic">
+<li><p class="first">Login and type…</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
+<span class="gp">$ </span>sudo reboot
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Finally, install the desktop. The process should take about 20 minutes. Note that a message
+will pop up in the middle of the install asking you to choose between ‘lightdm’ and ‘gdm3’ as
+the default display manager. As Ubuntu Mate uses the ‘lightdm’ display manager, make sure to
+select ‘lightdm’.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install ubuntu-mate-desktop
+<span class="gp">$ </span>sudo reboot
+</pre></div>
+</div>
+</li>
+</ol>
+<p>At boot, the monitor should now display a login screen (instead of the terminal prompts from
+before). Before logging in, click the Ubuntu sign next to the username text box, and select ‘MATE’
+as the desktop environment. Then login. If you’d like to enable automatic login from now on…</p>
+<ol class="arabic simple">
+<li>Click the <strong>Power Icon</strong> on the top right of the desktop followed by <strong>System Settings</strong>.</li>
+<li>Click <strong>Login Window</strong>.</li>
+<li>Go to the <strong>Users</strong> tab.</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">pibot</span></code> for the Automatic login text box, then exit.</li>
+</ol>
+</div>
+<div class="section" id="custom-boot-configs">
+<h3>Custom Boot Configs<a class="headerlink" href="#custom-boot-configs" title="Permalink to this heading"></a></h3>
+<p>By default, the Raspberry Pi 4B has a max CPU clock frequency of 1.5 GHz. However, this can be
+upped to 2 GHz by following the commands below.</p>
+<ol class="arabic">
+<li><p class="first">Modify the boot config file</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> /boot/firmware/
+<span class="gp">$ </span>sudo nano usercfg.txt
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the following lines to the file above.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">over_voltage=6</span>
+<span class="go">arm_freq=2000</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">To exit nano, use <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">S</kbd> to save, and <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">X</kbd> to exit the
+application.</p>
+</li>
+<li><p class="first">Save the file and reboot</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo reboot
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Overclocking should only be done if the Pi has onboard heat sinks and an active cooling
+mechanism (i.e. a fan).</p>
+</div>
+</div>
+<div class="section" id="privileges">
+<h3>Privileges<a class="headerlink" href="#privileges" title="Permalink to this heading"></a></h3>
+<p>As with any Linux system, some operations will require the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> command (with password) to
+work. This can become cumbersome if you are trying to automate a process on your Pi, and can’t
+because somebody needs to enter a password (as is the case when it comes to controlling NeoPixel
+LEDs). To fix this, it is possible to give a user (in this case pibot) sudo privileges without
+requiring a password. Just open a terminal and type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">visudo</span></code>. This should open up a file at
+the bottom of which, you should add the following line:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pibot ALL=(ALL) NOPASSWD:ALL</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fix-bluetooth-issue">
+<h3>Fix Bluetooth Issue<a class="headerlink" href="#fix-bluetooth-issue" title="Permalink to this heading"></a></h3>
+<p>For whatever reason, the Bluetooth module on the Pi 4 is by default disabled. To enable on Ubuntu
+20.04, just type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">pi-bluetooth</span></code> in a terminal. If, for whatever reason, Ubuntu
+18.04 is installed on your Pi, it’s a bit more complicated. Just open a terminal and type the
+following.</p>
+<ol class="arabic">
+<li><p class="first">Add the ubuntu-pi-flavour-makers repo that contains the pi-bluetooth package that’s necessary
+to enable Bluetooth on the Pi and install pi-bluetooth.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo add-apt-repository ppa:ubuntu-pi-flavour-makers/ppa
+<span class="gp">$ </span>sudo apt purge linux-firmware-raspi2
+<span class="gp">$ </span>sudo apt install pi-bluetooth
+</pre></div>
+</div>
+</li>
+<li><p class="first">Note that you will see a message about the <em>hciuart.service</em> not working correctly. This is ok
+though as after a reboot, it will work just fine.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install linux-firmware-raspi2
+</pre></div>
+</div>
+</li>
+<li><p class="first">After running the command above, you will see an error message about one package trying to
+overwrite a file in another package. This can be fixed by
+typing.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dpkg -i --force-all /var/cache/apt/archives/linux-firmware-raspi2_XXXX_arm64.deb <span class="c1">#(The Xs are some arbitrary numbers which can be copied from the error message)</span>
+<span class="gp">$ </span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
+<span class="gp">$ </span>sudo reboot
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The Bluetooth fix mentioned above can be found in <a class="reference external" href="https://ubuntu-mate.community/t/error-updating-ubuntu-mate-18-04-on-pi-3b/20001/5" rel="noopener noreferrer" target="_blank">this Ubuntu Mate community thread</a>.</p>
+</div>
+<div class="section" id="install-ros">
+<h3>Install ROS<a class="headerlink" href="#install-ros" title="Permalink to this heading"></a></h3>
+<p>At this point, you can follow the instructions on the ROS Wiki to install <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu" rel="noopener noreferrer" target="_blank">ROS Melodic</a> (Ubuntu
+18.04) or <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu" rel="noopener noreferrer" target="_blank">ROS Noetic</a> (Ubuntu 20.04).</p>
+<p>Alternatively, you can use the xsarm convenience script we provide to install ROS, robot-specific
+packages, and configure any drivers and environment variables. The commands to download, configure
+and run the script are as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install curl
+<span class="gp">$ </span>curl <span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span> &gt; xsarm_rpi4_install.sh
+<span class="gp">$ </span>chmod +x xsarm_rpi4_install.sh
+<span class="gp">$ </span>./xsarm_rpi4_install.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="ps4-controller-setup">
+<h3>PS4 Controller Setup<a class="headerlink" href="#ps4-controller-setup" title="Permalink to this heading"></a></h3>
+<p>See the <a class="reference internal" href="../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">Raspberry Pi 4b &amp; SONY PS4 Controller</span></a>
+pairing guide.</p>
+</div>
+<div class="section" id="networking">
+<h3>Networking<a class="headerlink" href="#networking" title="Permalink to this heading"></a></h3>
+<p>Most users usually work with a Raspberry Pi in a headless state via SSH. This can make updating
+software on the Pi difficult if the Pi does not automatically connect to the Internet when booted.
+Typically though, it’s bad practice to have any robot connected to the Internet since it makes it
+easier for hackers to get control of them. One idea might be to just plug an Ethernet cable into
+the Pi if Internet is needed, but this doesn’t work in all cases since the Pi might be enclosed by
+a shell or in a hard to reach area. A better approach is to just connect a ‘master’ computer via
+Ethernet to an Internet connection, and then create a WiFi hotspot on the ‘master’ as well. Then
+all you need to do is to configure the Pi to act as a Client and automatically connect to the
+‘master’ computer’s hotspot when available. This way, you can share the ‘master’ computer’s
+Internet connection with the Pi when needed.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="software_setup.html" class="btn btn-neutral float-left" title="ROS Standard Software Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="ROS Quickstart Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

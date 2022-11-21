@@ -1,0 +1,137 @@
+============
+ReactorX-150
+============
+
+The ReactorX-150 Robot Arm belongs to the Interbotix X-Series family of arms featuring the
+DYNAMIXEL X-Series Smart Servo Motors. The X-Series actuators offer high torque, efficient heat
+dissipation and great durability all at a smaller form factor over previous DYNAMIXEL servos. The
+DYNAMIXEL `XM430-W350`_ & DYNAMIXEL `XL430-W250`_ servos offer high resolution of 4096 positions
+and user definable PID parameters, temperature monitoring, positional feedback, as well as voltage
+levels, load, and compliance settings are user accessible as well. At the heart of the ReactorX-150
+is the Robotis DYNAMIXEL U2D2 which enables easy access to DYNAMIXEL Wizard software as well as
+ROS. The ReactorX-150 offers 5 degree of freedom and a full 360 degree of rotation.
+
+.. _`XM430-W350`: https://www.trossenrobotics.com/dynamixel-xm430-w350-t.aspx
+.. _`XL430-W250`: https://www.trossenrobotics.com/dynamixel-xl430-w250-t.aspx
+
+.. list-table::
+    :align: center
+
+    * - .. image:: /_images/rx150.png
+            :align: center
+            :width: 500px
+
+      - .. table::
+            :align: center
+
+            +----------------------------------------+--------------------------------------+
+            | **ReactorX-150**                                                              |
+            +========================================+======================================+
+            | Degrees of Freedom                     | 5                                    |
+            +----------------------------------------+--------------------------------------+
+            | Reach                                  | 450mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Span                             | 900mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Accuracy                               | 2.5mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Working Payload                        | 100g*                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Servos                           | 6                                    |
+            +----------------------------------------+--------------------------------------+
+            | Wrist Rotate                           | Yes                                  |
+            +----------------------------------------+--------------------------------------+
+
+.. note::
+
+    \* Working Payload for the ReactorX-150 is inside its maximum reach, if intending to use a 100g
+    weight we recommend no more than a 50% extension of the arm.
+
+Default Joint Limits
+====================
+
+Default joint limits are the safe range of operation for each joint. These are set in the firmware,
+defined as degrees from Zero (servo centered).
+
+.. table::
+    :align: center
+
+    +--------------+-------+------+-------------+
+    | Joint        | Min   | Max  | Servo ID(s) |
+    +==============+=======+======+=============+
+    | Waist        | -180  | 180  | 1           |
+    +--------------+-------+------+-------------+
+    | Shoulder     | -106  | 100  | 2           |
+    +--------------+-------+------+-------------+
+    | Elbow        | -102  | 95   | 3           |
+    +--------------+-------+------+-------------+
+    | Wrist Angle  | -100  | 123  | 4           |
+    +--------------+-------+------+-------------+
+    | Wrist Rotate | -180  | 180  | 5           |
+    +--------------+-------+------+-------------+
+    | Gripper      | 30mm  | 74mm | 6           |
+    +--------------+-------+------+-------------+
+
+Default Servo Configurations
+============================
+
+.. csv-table::
+    :file: ../_data/servos_rx150.csv
+    :header-rows: 1
+    :widths: 5 10 10 10
+    :align: center
+
+Kinematic Properties
+====================
+
+Product of Exponentials [`Learn More`_]
+---------------------------------------
+
+.. math::
+
+    M & =
+    \begin{bmatrix}
+    1.0 & 0.0 & 0.0 & 0.358575 \\
+    0.0 & 1.0 & 0.0 & 0.0      \\
+    0.0 & 0.0 & 1.0 & 0.25457  \\
+    0.0 & 0.0 & 0.0 & 1.0
+    \end{bmatrix}
+
+    \\
+
+    Slist & =
+    \begin{bmatrix}
+    0.0 & 0.0 & 1.0 &  0.0     & 0.0     & 0.0  \\
+    0.0 & 1.0 & 0.0 & -0.10457 & 0.0     & 0.0  \\
+    0.0 & 1.0 & 0.0 & -0.25457 & 0.0     & 0.05 \\
+    0.0 & 1.0 & 0.0 & -0.25457 & 0.0     & 0.2  \\
+    1.0 & 0.0 & 0.0 &  0.0     & 0.25457 & 0.0
+    \end{bmatrix}^T
+
+.. _`Learn More`: https://en.wikipedia.org/wiki/Product_of_exponentials_formula
+
+Drawings and CAD Files
+======================
+
+.. image:: /_images/rx150_drawing.png
+    :align: center
+    :width: 70%
+
+:download:`RX-150 Technical Drawing </_downloads/ReactorX-150.pdf>`
+
+.. raw:: html
+
+    <iframe
+        src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd9688c82f5047467465e?mode=embed"
+        width="100%"
+        height="600px"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        frameborder="0">
+    </iframe>
+
+- :download:`RX-150 Solid STEP Files </_downloads/solids/3_RXA-150-M.zip>`
+- `RX-150 Mesh STL Files`_
+
+.. _`RX-150 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/rx150_meshes

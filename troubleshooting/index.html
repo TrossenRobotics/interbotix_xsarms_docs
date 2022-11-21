@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Troubleshooting &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Joystick Control" href="../ros2_packages/joystick_control.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dynamixel-wizard-2-0-tool">DYNAMIXEL Wizard 2.0 Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-issues">Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#can-t-find-dynamixel-id">Can’t find DYNAMIXEL ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#red-led-flashing-on-motor-s">Red LED Flashing on motor(s)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#failed-to-open-port-at-dev-ttydxl">Failed to open port at /dev/ttyDXL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#incorrect-status-packet">Incorrect status packet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#failed-to-write-value-on-items-to-id">Failed to write value[] on items[] to [ID : ]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#warn-writing-startup-register-values-to-eeprom">[WARN] Writing startup register values to EEPROM.</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#less-common-issues">Less Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#u2d2-not-recognized-no-symlink-created">U2D2 not recognized (no symlink created)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#helpful-tips">Helpful Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#increase-motor-accuracy">Increase Motor Accuracy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#range-of-motion-check">Range Of Motion Check</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/troubleshooting/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h1>
+<p>This guide walks a user through possible issues that can occur when using a DYNAMIXEL-based robot
+and how to fix them. If, after following this guide, the issues persists, take a look at the
+<a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues?q=is%3Aissue" rel="noopener noreferrer" target="_blank">interbotix_ros_manipulators bug tracker</a>. If you can’t find an answer there, feel free to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues/new/choose" rel="noopener noreferrer" target="_blank">open
+your own issue</a>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">These software packages are only supported on a Linux machine running ROS Melodic on Ubuntu
+18.04, ROS Noetic on Ubuntu 20.04, ROS 2 Galactic on Ubuntu 20.04, and ROS 2 Humble and Rolling
+on Ubuntu 22.04, not on any other operating system (ex. Mac, Windows), or in a virtual machine.</p>
+</div>
+<div class="section" id="dynamixel-wizard-2-0-tool">
+<span id="dynamixel-wizard-tool-label"></span><h2>DYNAMIXEL Wizard 2.0 Tool<a class="headerlink" href="#dynamixel-wizard-2-0-tool" title="Permalink to this heading"></a></h2>
+<p>For debugging purposes, we highly recommend to install the <a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/" rel="noopener noreferrer" target="_blank">DYNAMIXEL Wizard 2.0</a> tool created by
+ROBOTIS (our motor supplier). This tool makes it easy to find and view and configure the registers
+of all the motors attached to the U2D2 from a graphical interface. After following the
+<a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/#software-installation" rel="noopener noreferrer" target="_blank">installation instructions</a> for your platform, open up the Wizard, and click the <strong>Options</strong>
+button. A window similar to the one below should pop up.</p>
+<img alt="../_images/wizard_options.png" class="align-center" src="../_images/wizard_options.png" style="width: 50%;" />
+<p>All of our X-Series robots use motors with Protocol 2.0 and a baud-rate set to 1000000 bps.
+Additionally, none of our robots currently use more than 36 motors. As such, to properly scan for
+the motors in your robot, you should at least select the following options:</p>
+<ul class="simple">
+<li>Protocol 2.0</li>
+<li>Port that U2D2 controller is connected to (typically ttyUSB0)</li>
+<li>Baudrate of 1000000 bps</li>
+<li>ID range from 0 - 36</li>
+</ul>
+<p>After configuring the options, press <strong>OK</strong> and hit the <strong>Scan</strong> button. The DYNAMIXELs should
+appear on the left-hand pane of the Wizard. If some motors are missing, open up the <strong>Options</strong> tab
+again and additionally select the following options:</p>
+<ul class="simple">
+<li>Protocol 1.0 checkbox</li>
+<li>Baudrate of 57600 bps</li>
+</ul>
+<p>Press <strong>OK</strong> and hit the <strong>Scan</strong> button again. The reasoning behind this last step is that ROBOTIS
+by default ships all new motors with baudrates of 57600 bps and IDs of 1. At Interbotix, we try to
+change the baudrates to 1000000 bps, but occasionally a motor could slip through the system. If
+that’s the case with you, the baud rate can easily be changed by clicking the ‘Baud Rate (Bus)’
+register, selecting the ‘1 Mbps’ option in the pane on the lower right corner, and clicking
+<strong>Save</strong>.</p>
+</div>
+<div class="section" id="common-issues">
+<h2>Common Issues<a class="headerlink" href="#common-issues" title="Permalink to this heading"></a></h2>
+<div class="section" id="can-t-find-dynamixel-id">
+<h3>Can’t find DYNAMIXEL ID<a class="headerlink" href="#can-t-find-dynamixel-id" title="Permalink to this heading"></a></h3>
+<p>If you see a red error message in the terminal after launching the ROS driver node that says
+<code class="docutils literal notranslate"><span class="pre">[xs_sdk]</span> <span class="pre">Can't</span> <span class="pre">find</span> <span class="pre">DYNAMIXEL</span> <span class="pre">ID</span> <span class="pre">'1',</span> <span class="pre">Joint</span> <span class="pre">Name</span> <span class="pre">:</span> <span class="pre">'waist'</span></code> or similar, don’t panic! All the
+node is trying to say is that it tried to ping the motor with that ID and joint name, but never
+received a response. This could happen due to a few reasons:</p>
+<ul class="simple">
+<li><cite>One or more motors are in an error state</cite> - If any motor has a red flashing LED, the ROS node
+will not be able to find it during startup. In this case, unplug/replug power from from the
+motor hub and try again.</li>
+<li><cite>Motor has an incorrect baud rate</cite> - The ROS driver node expects all motors to be set to
+communicate at 1 Mbps. However, it’s possible that the motor specified in the error message has
+an incorrect baudrate (probably 57600 bps as that’s the default ROBOTIS ships them with). To
+fix this, head up to the <a class="reference internal" href="#dynamixel-wizard-2-0-tool">DYNAMIXEL Wizard 2.0 Tool</a> section above to learn how to set the
+correct baudrate.</li>
+<li><cite>No power</cite> - In order for the ROS node to find the motors, let alone move them, the motor hub
+must be plugged in to a 12V power supply (that can deliver at least 1A). For those connecting
+your 12V power supply to power strips, verify that the power strip is connected to an outlet
+and is turned on. If using a battery, make sure that it still has enough power.</li>
+<li><cite>Loose Cable</cite> - Verify that all 3-pin cables chaining the DYNAMIXELs together (including the
+U2D2 and power hub) are snugly fit into their housings. If not, use a finger to press them in,
+and try again.</li>
+<li><cite>Servos share an ID</cite> - If two or more servos share the same ID, the ROS driver will be unable
+to find any servos on the chain. To check if this is the case, connect servos to the U2D2
+one-at-a-time and re-scan using the <a class="reference internal" href="#dynamixel-wizard-2-0-tool">DYNAMIXEL Wizard 2.0 Tool</a> according to the options
+above. If two or more servos do indeed share the same ID, you can set the proper IDs according
+to the Default Servo Configurations in your robot’s <a class="reference internal" href="../specifications/index.html#specifications-in-depth-specifications-label"><span class="std std-ref">In-Depth Specifications</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="red-led-flashing-on-motor-s">
+<h3>Red LED Flashing on motor(s)<a class="headerlink" href="#red-led-flashing-on-motor-s" title="Permalink to this heading"></a></h3>
+<p>If a motor’s LED is flashing roughly once per second, this indicates that it is in an error state.
+In this state, the motor will torque off and not respond to commands. Two common reasons this can
+happen is if it is ‘overloaded’ or ‘overheated’.</p>
+<p>Overloading can occur if a motor is commanded to go to a position, but physically cannot due to an
+obstacle being in the way. This typically comes up if doing position control with a two-fingered
+gripper. If the gripper is commanded to <cite>fully</cite> close around a small rigid object, the motor will
+stall and after a few seconds, go into an error state. Thus, if doing position control with a
+gripper, make sure to close the gripper just enough to grasp the object but not more.
+Alternatively, use PWM or Current control.</p>
+<p>Overheating can occur if commanding high PWM or current values to a motor for a long period of
+time. To counteract this, either send lower commands or shorten the time that high commands are
+sent.</p>
+<p>In any event, to fix this error, either power cycle the motors (unplug/replug the power cable to
+the motor hub), or call the <code class="docutils literal notranslate"><span class="pre">reboot_motors</span></code> ROS service for those particular motors. The
+advantage of doing the second approach is that the ROS session does not have to be shut down
+beforehand.</p>
+</div>
+<div class="section" id="failed-to-open-port-at-dev-ttydxl">
+<h3>Failed to open port at /dev/ttyDXL<a class="headerlink" href="#failed-to-open-port-at-dev-ttydxl" title="Permalink to this heading"></a></h3>
+<p>If you see a red error message in the terminal after launching the ROS driver node that says
+<code class="docutils literal notranslate"><span class="pre">[xs_sdk]</span> <span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">open</span> <span class="pre">port</span> <span class="pre">at</span> <span class="pre">ttyDXL</span></code>, that means the computer cannot find the U2D2 device.
+This could happen due to a couple of reasons.</p>
+<ul class="simple">
+<li><cite>MicroUSB cable is not plugged in</cite> - Verify that you have actually connected the U2D2 to your
+computer with a microUSB cable. Then try again.</li>
+<li><cite>Port is busy</cite> - If you have the DYNAMIXEL Wizard 2.0 tool open and connected to the U2D2, make
+sure to either click the <strong>Disconnect</strong> button on the top left of the window or close out of
+the Wizard before running the ROS driver node. This way the port won’t be busy when the driver
+node is run.</li>
+</ul>
+</div>
+<div class="section" id="incorrect-status-packet">
+<h3>Incorrect status packet<a class="headerlink" href="#incorrect-status-packet" title="Permalink to this heading"></a></h3>
+<p>If you see 4 repeating red error messages in the terminal during node operation
+that say</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[TxRxResult] Incorrect status packet!</span>
+<span class="go">groupSyncRead getdata failed</span>
+<span class="go">groupSyncRead getdata failed</span>
+<span class="go">groupSyncRead getdata failed</span>
+</pre></div>
+</div>
+<p>This series of errors means the computer failed to read some of the registers on the motors
+(typically, it’s the Present Position, Present_Velocity, and Present_Current/Present_Load registers
+as these are read constantly so that the joint state topic can be updated). This could happen if
+the microUSB cable connecting the computer to the U2D2 is not plugged in fully, or if one or more
+of the 3-pin cables connecting the DYNAMIXELs together become loose during operation. To stop these
+errors, just push in all loose cables.</p>
+<p>In some cases, you may need to replace the USB-&gt;Micro USB cable between the U2D2 your control
+computer, or even the 3-pin cables between servos. Contact <a class="reference external" href="https://www.trossenrobotics.com/contact.aspx" rel="noopener noreferrer" target="_blank">Trossen Robotics support</a> if this is
+the case.</p>
+</div>
+<div class="section" id="failed-to-write-value-on-items-to-id">
+<h3>Failed to write value[] on items[] to [ID : ]<a class="headerlink" href="#failed-to-write-value-on-items-to-id" title="Permalink to this heading"></a></h3>
+<p>This error message means that something went wrong when writing configurations to the EEPROM
+registers. This can be fixed by power-cycling the robot and re-launching the control software.</p>
+</div>
+<div class="section" id="warn-writing-startup-register-values-to-eeprom">
+<h3>[WARN] Writing startup register values to EEPROM.<a class="headerlink" href="#warn-writing-startup-register-values-to-eeprom" title="Permalink to this heading"></a></h3>
+<p>This warning means that the robot’s servos’ EEPROM registers were written to on startup. This only
+needs to be done once if using a default motor configuration file. Writing to the EEPROM on startup
+shortens the EEPROM’s life and takes a few extra seconds every time the robot is powered on.</p>
+<p>To prevent this from happening in the future, the <code class="docutils literal notranslate"><span class="pre">load_configs</span></code> argument to the xsarm_control
+package should be set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, or, if using the xs_driver, the <code class="docutils literal notranslate"><span class="pre">write_eeprom_on_startup</span></code>
+constructor argument should be set to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</div>
+</div>
+<div class="section" id="less-common-issues">
+<h2>Less Common Issues<a class="headerlink" href="#less-common-issues" title="Permalink to this heading"></a></h2>
+<div class="section" id="u2d2-not-recognized-no-symlink-created">
+<h3>U2D2 not recognized (no symlink created)<a class="headerlink" href="#u2d2-not-recognized-no-symlink-created" title="Permalink to this heading"></a></h3>
+<p>You may run into an issue where the computer is able to detect that it is connected to a device via
+<code class="docutils literal notranslate"><span class="pre">lsusb</span></code>, but no entry is created in the <code class="docutils literal notranslate"><span class="pre">/dev</span></code> directory. One possible reason may be that the
+FTDI drivers are out of date or not compatible with the U2D2 device. To fix this issue, download
+the latest recommended <a class="reference external" href="https://ftdichip.com/drivers/vcp-drivers/" rel="noopener noreferrer" target="_blank">VCP drivers</a> for Linux. Then reload and install the drivers by navigating
+to the unpacked driver and running the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo modprobe ftdi_sio
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="helpful-tips">
+<h2>Helpful Tips<a class="headerlink" href="#helpful-tips" title="Permalink to this heading"></a></h2>
+<div class="section" id="increase-motor-accuracy">
+<h3>Increase Motor Accuracy<a class="headerlink" href="#increase-motor-accuracy" title="Permalink to this heading"></a></h3>
+<p>One of the awesome things about Protocol 2.0 supporting DYNAMIXELs is their internal tunable
+feedback-controllers (either PID for position control or PI for velocity control). Default values
+are assigned to the PID gains, but if they are not strong enough, one can simply increase their
+values. Specifically, it is recommended to increase the Position_P_Gain register as many of our
+products work in the position operating mode. However, this register should not be increased too
+much (more than a few hundred points above its default) or it could cause the motor to overload.</p>
+</div>
+<div class="section" id="range-of-motion-check">
+<h3>Range Of Motion Check<a class="headerlink" href="#range-of-motion-check" title="Permalink to this heading"></a></h3>
+<p>For some of our robots, (like arms or turrets), the waist/pan motor has a limit of -180/180
+degrees. To make this range feasible, the 3-pin cable connecting the waist/pan motor to the
+shoulder/tilt motor is extra long. As a result, it is quite possible for someone to manually turn
+this joint 360 degrees in an untorqued state, and then end up trying to operate the robot in that
+state. This could lead to quite a few issues - like the cable being pulled out during operation, or
+the cable physically preventing the robot from rotating.</p>
+<p>To fix this, we recommend cautiously flipping the robot upside down to look into the base cavity
+(as it’s hollow). It should be readily apparent by looking at the 3-pin cable going from the
+waist/pan motor to the shoulder/tilt motor if it’s wound up or straight. If it’s wound up,
+carefully rotate the waist/pan motor in the direction that ‘straightens’ the cable. Alternatively,
+you can check the ‘straightness’ of the cable without flipping the robot by checking its tautness
+from the hole by the shoulder/tilt motors. If it feels too taught, rotate the waist/pan motor in
+the direction that loosens it.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../ros2_packages/joystick_control.html" class="btn btn-neutral float-left" title="Joystick Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

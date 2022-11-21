@@ -1,0 +1,140 @@
+==========
+WidowX-200
+==========
+
+Overview
+========
+
+The WidowX-200 Robot Arm belongs to the Interbotix X-Series family of arms featuring the DYNAMIXEL
+X-Series Smart Servo Motors. The X-Series actuators offer high torque, efficient heat dissipation
+and great durability all at a smaller form factor over previous DYNAMIXEL servos. The DYNAMIXEL
+`XM430-W350`_ & DYNAMIXEL `XL430-W250`_ servos offer high resolution of 4096 positions and user
+definable PID parameters, temperature monitoring, positional feedback, as well as voltage levels,
+load, and compliance settings are user accessible as well. At the heart of the WidowX-200 is the
+Robotis DYNAMIXEL U2D2 which enables easy access to DYNAMIXEL Wizard software as well as ROS. The
+WidowX-200 offers 5 degree of freedom and a full 360 degree of rotation.
+
+.. _`XM430-W350`: https://www.trossenrobotics.com/dynamixel-xm430-w350-t.aspx
+.. _`XL430-W250`: https://www.trossenrobotics.com/dynamixel-xl430-w250-t.aspx
+
+.. list-table::
+    :align: center
+
+    * - .. image:: /_images/wx200.png
+            :align: center
+            :width: 500px
+
+      - .. table::
+            :align: center
+
+            +----------------------------------------+--------------------------------------+
+            | **WidowX-200**                                                                |
+            +========================================+======================================+
+            | Degrees of Freedom                     | 5                                    |
+            +----------------------------------------+--------------------------------------+
+            | Reach                                  | 550mm                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Span                             | 1100mm                               |
+            +----------------------------------------+--------------------------------------+
+            | Accuracy                               | 1mm                                  |
+            +----------------------------------------+--------------------------------------+
+            | Working Payload                        | 200g*                                |
+            +----------------------------------------+--------------------------------------+
+            | Total Servos                           | 7                                    |
+            +----------------------------------------+--------------------------------------+
+            | Wrist Rotate                           | Yes                                  |
+            +----------------------------------------+--------------------------------------+
+
+.. note::
+
+    \* Working Payload for the WidowX-200 is inside its maximum reach, if intending to use a 200g
+    weight we recommend no more than a 50% extension of the arm.
+
+Default Joint Limits
+====================
+
+Default joint limits are the safe range of operation for each joint. These are set in the firmware,
+defined as degrees from Zero (servo centered).
+
+.. table::
+    :align: center
+
+    +--------------+-------+------+-------------+
+    | Joint        | Min   | Max  | Servo ID(s) |
+    +==============+=======+======+=============+
+    | Waist        | -180  | 180  | 1           |
+    +--------------+-------+------+-------------+
+    | Shoulder     | -108  | 113  | 2+3         |
+    +--------------+-------+------+-------------+
+    | Elbow        | -108  | 93   | 4           |
+    +--------------+-------+------+-------------+
+    | Wrist Angle  | -100  | 123  | 5           |
+    +--------------+-------+------+-------------+
+    | Wrist Rotate | -180  | 180  | 6           |
+    +--------------+-------+------+-------------+
+    | Gripper      | 30mm  | 74mm | 7           |
+    +--------------+-------+------+-------------+
+
+Default Servo Configurations
+============================
+
+.. csv-table::
+    :file: ../_data/servos_wx200.csv
+    :header-rows: 1
+    :widths: 5 10 10 10
+    :align: center
+
+Kinematic Properties
+====================
+
+Product of Exponentials [`Learn More`_]
+---------------------------------------
+
+.. math::
+
+    M & =
+    \begin{bmatrix}
+    1.0 & 0.0 & 0.0 & 0.408575 \\
+    0.0 & 1.0 & 0.0 & 0.0      \\
+    0.0 & 0.0 & 1.0 & 0.31065  \\
+    0.0 & 0.0 & 0.0 & 1.0
+    \end{bmatrix}
+
+    \\
+
+    Slist & =
+    \begin{bmatrix}
+    0.0 & 0.0 & 1.0 &  0.0     & 0.0 & 0.0  \\
+    0.0 & 1.0 & 0.0 & -0.11065 & 0.0 & 0.0  \\
+    0.0 & 1.0 & 0.0 & -0.31065 & 0.0 & 0.05 \\
+    0.0 & 1.0 & 0.0 & -0.31065 & 0.0 & 0.25 \\
+    1.0 & 0.0 & 0.0 &  0.0     & 0.31065 & 0.0
+    \end{bmatrix}^T
+
+.. _`Learn More`: https://en.wikipedia.org/wiki/Product_of_exponentials_formula
+
+Drawings and CAD Files
+======================
+
+.. image:: /_images/wx200_drawing.png
+    :align: center
+    :width: 70%
+
+:download:`WX-200 Technical Drawing </_downloads/WidowX-200.pdf>`
+
+.. raw:: html
+
+    <iframe
+        src="https://trossenrobotics.autodesk360.com/shares/public/SH7f1edQT22b515c761ed068dac17391232a?mode=embed"
+        width="100%"
+        height="600px"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        frameborder="0">
+    </iframe>
+
+- :download:`WX-200 Solid STEP Files </_downloads/solids/5_WXA-200-M.zip>`
+- `WX-200 Mesh STL Files`_
+
+.. _`WX-200 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes

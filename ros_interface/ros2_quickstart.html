@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS 2 Quickstart Guide &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.webp"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python-ROS Interface" href="../python_ros_interface/index.html" />
+    <link rel="prev" title="ROS 2 Standard Software Setup" href="ros2_software_setup.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="software_setup.html">ROS Standard Software Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">ROS Quickstart Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros2_software_setup.html">ROS 2 Standard Software Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ROS 2 Quickstart Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#video-tutorial">Video Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ros-1">ROS 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ros-2">ROS 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ROS Interface</a></li>
+      <li class="breadcrumb-item active">ROS 2 Quickstart Guide</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/ros2_quickstart.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ros-2-quickstart-guide">
+<h1>ROS 2 Quickstart Guide<a class="headerlink" href="#ros-2-quickstart-guide" title="Permalink to this heading"></a></h1>
+<p>This guide is intended to get the use familiar with the basic functions and interfaces of the ROS 2
+Interface.</p>
+<ol class="arabic">
+<li><p class="first">Get familiar with the virtual robot model by launching it in RViz and playing with the
+<cite>joint_state_publisher</cite>. Note that you must specify which arm model is being used as a command
+line argument. For example, the WidowX-200 robot arm can be launched with the command below.
+Make sure to press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> in the terminal when to end the session you’re done.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_descriptions xsarm_description.launch.py robot_model:<span class="o">=</span>wx200 use_joint_pub_gui:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<img alt="../_images/rviz_remote.png" class="align-center" src="../_images/rviz_remote.png" style="width: 70%;" />
+<ol class="arabic" start="2">
+<li><p class="first">Get familiar with the physical robot arm (we’ll use a ViperX-250 as an example) by executing
+the following command in the terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:<span class="o">=</span>vx250
+</pre></div>
+</div>
+</li>
+<li><p class="first">By default, all the motors in the robot are torqued on so it will be very difficult to manually
+manipulate it. To torque off all the motors, execute the command below in another terminal.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This command will cause the robot arm to collapse (if it’s not already resting) so manually
+hold or secure it before executing.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 service call /vx250/torque_enable interbotix_xs_msgs/srv/TorqueEnable <span class="s2">&quot;{cmd_type: &#39;group&#39;, name: &#39;all&#39;, enable: false}&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The command above torques off every motor in the <code class="docutils literal notranslate"><span class="pre">all</span></code> group. This is a special group
+that includes every Dynamixel motor in the manipulator. To only torque off the arm motors,
+change the name from <code class="docutils literal notranslate"><span class="pre">all</span></code> to <code class="docutils literal notranslate"><span class="pre">arm</span></code>.</p>
+<table border="1" class="colwidths-given last docutils align-center">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Group Name</th>
+<th class="head">Servos in Group</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">all</span></code></td>
+<td>Every DYNAMIXEL servo on the robot</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">arm</span></code></td>
+<td>All DYNAMIXEL servos on the arm excluding the gripper</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p class="first">Now you should be able to freely manipulate the arm and gripper. Take note of how the RViz
+model accurately mimics the real robot. To make the robot hold a certain pose, manually hold
+the robot in the desired pose and execute the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 service call /vx250/torque_enable interbotix_xs_msgs/srv/TorqueEnable <span class="s2">&quot;{cmd_type: &#39;group&#39;, name: &#39;all&#39;, enable: true}&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Let go and observe how the arm stays in place.</p>
+</li>
+<li><p class="first">Hold on to the robot and shutdown all nodes by pressing <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> in the terminal
+where you started the launch file.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Ending the control process will cause the robot arm to collapse (if it’s not already
+resting) so manually hold or secure it before executing.</p>
+</div>
+</li>
+<li><p class="first">Another way to check if all functions work is to launch the <cite>interbotix_xsarm_joy</cite> package.
+This package allows you to control your arm using a Bluetooth controller. See it’s usage
+details in <a class="reference external" href="../ros2_packages/joystick_control.html" rel="noopener noreferrer" target="_blank">its documentation page</a>.</p>
+</li>
+</ol>
+<p>That ends the quickstart tutorial. To get familiar with the architecture and launch file arguments,
+refer to the READMEs of the core packages. Start with the <a class="reference internal" href="../ros2_packages/arm_descriptions.html"><span class="doc">X-Series Arm Descriptions</span></a> package, then the <a class="reference internal" href="../ros2_packages/arm_control.html"><span class="doc">X-Series Arm Control</span></a> package. Next, look at the <a class="reference internal" href="../ros2_packages/simulation_configuration.html"><span class="doc">Gazebo Configuration</span></a> package followed by the <a class="reference internal" href="../ros2_packages/ros_control.html"><span class="doc">ROS Controllers
+Configuration</span></a> and <a class="reference internal" href="../ros2_packages/moveit_motion_planning_configuration.html"><span class="doc">MoveIt Configuration</span></a> packages. This is the most logical approach
+to take to gain a better understanding of how they relate to each other.</p>
+<p>Afterwards, feel free to check out the demo projects like <a class="reference internal" href="../ros2_packages/joystick_control.html"><span class="doc">Joystick Control</span></a>, or any of the other <a class="reference internal" href="../ros2_packages/index.html"><span class="doc">ROS 2 Open Source Packages</span></a>.</p>
+<div class="section" id="video-tutorial">
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this heading"></a></h2>
+<div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/vGCIU6CX72M" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ros2_software_setup.html" class="btn btn-neutral float-left" title="ROS 2 Standard Software Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../python_ros_interface/index.html" class="btn btn-neutral float-right" title="Python-ROS Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Luke Schmitt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
