@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -128,7 +126,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="matlab-ros-interface">
-<h1>MATLAB-ROS Interface<a class="headerlink" href="#matlab-ros-interface" title="Permalink to this heading"></a></h1>
+<h1>MATLAB-ROS Interface<a class="headerlink" href="#matlab-ros-interface" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The Interbotix MATLAB-ROS Interface requires that the <a class="reference internal" href="../ros_interface/index.html"><span class="doc">ROS Interface</span></a> has already been installed.</p>
@@ -145,11 +143,11 @@ Python’s major version matches what’s required. Visit MATLAB’s <a class="r
 for more information.</p>
 </div>
 <div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
 <p>Before you are able to use the MATLAB-ROS API, you must first build the Interbotix messages and
 setup your MATLAB workspace. Convenience scripts have been provided to make this process easier.</p>
 <div class="section" id="building-the-interbotix-ros-messages">
-<h3>Building the Interbotix ROS Messages<a class="headerlink" href="#building-the-interbotix-ros-messages" title="Permalink to this heading"></a></h3>
+<h3>Building the Interbotix ROS Messages<a class="headerlink" href="#building-the-interbotix-ros-messages" title="Permalink to this headline"></a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You only have to build the Interbotix ROS messages once in a workspace.</p>
@@ -179,7 +177,7 @@ a message.</li>
 </ol>
 </div>
 <div class="section" id="setting-up-your-matlab-workspace">
-<h3>Setting up your MATLAB Workspace<a class="headerlink" href="#setting-up-your-matlab-workspace" title="Permalink to this heading"></a></h3>
+<h3>Setting up your MATLAB Workspace<a class="headerlink" href="#setting-up-your-matlab-workspace" title="Permalink to this headline"></a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You must follow this process every time you open a new session of MATLAB. See <a class="reference internal" href="#making-startup-easier">Making Startup
@@ -205,9 +203,9 @@ return false with a message.</li>
 </div>
 </div>
 <div class="section" id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading"></a></h2>
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline"></a></h2>
 <div class="section" id="transforms">
-<h3>Transforms<a class="headerlink" href="#transforms" title="Permalink to this heading"></a></h3>
+<h3>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline"></a></h3>
 <img alt="../_images/xsarm_demos_frames.png" class="align-center" src="../_images/xsarm_demos_frames.png" style="width: 40%;" />
 <p>End-effector poses are specified from <cite>/&lt;robot_name&gt;/ee_gripper_link</cite> (a.k.a the ‘Body’ frame) to
 <cite>/&lt;robot_name&gt;/base_link</cite> (a.k.a the ‘Space’ frame). In the code documentation, this transform is
@@ -245,7 +243,7 @@ end-effector. The method <code class="docutils literal notranslate"><span class=
 of the end-effector using the end-effector’s yaw as a basis for its frame of reference.</p>
 </div>
 <div class="section" id="timing-parameters">
-<h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this heading"></a></h3>
+<h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this headline"></a></h3>
 <p>The MATLAB API uses four different timing parameters to shape the time profile of movements.</p>
 <p>The first two parameters are used to determine the time profile of the arm when completing moves
 from one pose to another. These can be set in the constructor of the object, or by using the
@@ -267,9 +265,9 @@ accelerating/decelerating (must be equal to or less than half of <strong>wp_movi
 </div>
 </div>
 <div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
 <div class="section" id="set-ee-pose-matrix">
-<h3>set_ee_pose_matrix<a class="headerlink" href="#set-ee-pose-matrix" title="Permalink to this heading"></a></h3>
+<h3>set_ee_pose_matrix<a class="headerlink" href="#set-ee-pose-matrix" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">set_ee_pose_matrix</span></code> allows the user to specify a desired pose in the form of the homogeneous
 transformation matrix, <strong>T_sd</strong>. This method attempts to solve the inverse kinematics of the arm
 for the desired pose. If a solution is not found, the method returns False. If the IK problem is
@@ -282,7 +280,7 @@ and returns False. Make sure to take this behavior into account when writing you
 </div>
 </div>
 <div class="section" id="set-ee-pose-components">
-<h3>set_ee_pose_components<a class="headerlink" href="#set-ee-pose-components" title="Permalink to this heading"></a></h3>
+<h3>set_ee_pose_components<a class="headerlink" href="#set-ee-pose-components" title="Permalink to this headline"></a></h3>
 <p>Some users prefer not to think in terms of transformation or rotation matrices. That’s where the
 <code class="docutils literal notranslate"><span class="pre">set_ee_pose_components</span></code> method comes in handy. In this method, you define <strong>T_sd</strong> in terms of
 the components it represents - specifically the x, y, z, roll, pitch, and yaw of the ‘Body’ frame
@@ -295,7 +293,7 @@ ignored.</p>
 </div>
 </div>
 <div class="section" id="set-ee-cartesian-trajectory">
-<h3>set_ee_cartesian_trajectory<a class="headerlink" href="#set-ee-cartesian-trajectory" title="Permalink to this heading"></a></h3>
+<h3>set_ee_cartesian_trajectory<a class="headerlink" href="#set-ee-cartesian-trajectory" title="Permalink to this headline"></a></h3>
 <p>When specifying a desired pose using the methods mentioned above, your arm will its end-effector to
 the desired pose in a curved path. This makes it difficult to perform movements that are
 ‘orientation-sensitive’ (like carrying a small cup of water without spilling). To get around this,
@@ -324,9 +322,9 @@ to the one above with respect to the ‘Space’ frame would have to be defined 
 </div>
 </div>
 <div class="section" id="tips-best-practices">
-<h2>Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Permalink to this heading"></a></h2>
+<h2>Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Permalink to this headline"></a></h2>
 <div class="section" id="control-sequence">
-<h3>Control Sequence<a class="headerlink" href="#control-sequence" title="Permalink to this heading"></a></h3>
+<h3>Control Sequence<a class="headerlink" href="#control-sequence" title="Permalink to this headline"></a></h3>
 <p>The recommended way to control an arm through a series of movements from its Sleep pose is as
 follows:</p>
 <ol class="arabic simple">
@@ -342,7 +340,7 @@ times as necessary to do a task (pick, place, etc…).</li>
 <p>You can refer to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/matlab_demos/bartender.py" rel="noopener noreferrer" target="_blank">bartender</a> script to see the above method put into action.</p>
 </div>
 <div class="section" id="making-startup-easier">
-<span id="making-startup-easier-label"></span><h3>Making Startup Easier<a class="headerlink" href="#making-startup-easier" title="Permalink to this heading"></a></h3>
+<span id="making-startup-easier-label"></span><h3>Making Startup Easier<a class="headerlink" href="#making-startup-easier" title="Permalink to this headline"></a></h3>
 <p>The process of starting MATLAB, navigating to the matlab_demos folder, and running the startup
 script is tedious. It is recommended to write a bash script to make this process easier. The MATLAB
 GUI is also somewhat resource intensive so it is recommended to use the <code class="docutils literal notranslate"><span class="pre">-nodesktop</span></code> flag to run
@@ -371,7 +369,7 @@ it in the terminal. An example script is provided:</p>
 </div>
 </div>
 <div class="section" id="miscellaneous-tips">
-<h3>Miscellaneous Tips<a class="headerlink" href="#miscellaneous-tips" title="Permalink to this heading"></a></h3>
+<h3>Miscellaneous Tips<a class="headerlink" href="#miscellaneous-tips" title="Permalink to this headline"></a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If using a 6DOF arm, it is also possible to use the <code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code> method to
@@ -391,9 +389,9 @@ movements.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
 <div class="section" id="matlab-runs-slowly-after-some-time">
-<h3>MATLAB runs slowly after some time<a class="headerlink" href="#matlab-runs-slowly-after-some-time" title="Permalink to this heading"></a></h3>
+<h3>MATLAB runs slowly after some time<a class="headerlink" href="#matlab-runs-slowly-after-some-time" title="Permalink to this headline"></a></h3>
 <p>MATLAB does not delete timers when a workspace is cleared. A buildup of timers will accumulate if
 not handled properly, and your machine will slow down. To prevent this from occurring, you can run
 the <code class="docutils literal notranslate"><span class="pre">stop_timers()</span></code> method of the InterbotixManipulatorXS class at the end of each of your
@@ -402,13 +400,13 @@ commands <code class="docutils literal notranslate"><span class="pre">stop(timer
 consequences if you have timers in objects other than the arm.</p>
 </div>
 <div class="section" id="incoming-connection-failed">
-<h3>Incoming Connection Failed<a class="headerlink" href="#incoming-connection-failed" title="Permalink to this heading"></a></h3>
+<h3>Incoming Connection Failed<a class="headerlink" href="#incoming-connection-failed" title="Permalink to this headline"></a></h3>
 <p>You will see the error <code class="docutils literal notranslate"><span class="pre">incoming</span> <span class="pre">connection</span> <span class="pre">failed:</span> <span class="pre">unable</span> <span class="pre">to</span> <span class="pre">receive</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">sender,</span> <span class="pre">check</span>
 <span class="pre">sender's</span> <span class="pre">logs</span> <span class="pre">for</span> <span class="pre">details</span></code>. This is just a result from how MATLAB constructs its rosservice
 objects and can be safely ignored.</p>
 </div>
 <div class="section" id="cannot-connect-to-ros-master">
-<h3>Cannot connect to ROS master<a class="headerlink" href="#cannot-connect-to-ros-master" title="Permalink to this heading"></a></h3>
+<h3>Cannot connect to ROS master<a class="headerlink" href="#cannot-connect-to-ros-master" title="Permalink to this headline"></a></h3>
 <p>You may see the error below, letting you know that ROS is unable to connect to the ROS master. This
 means that your ROS_IP or ROS_MASTER_URI is incorrect, or that you just don’t have a ROS process
 running. This is commonly seen when you forget to launch interbotix_xsarm_control before
@@ -422,9 +420,9 @@ instantiating an Interbotix module object.</p>
 </div>
 </div>
 <div class="section" id="video-tutorial">
-<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this heading"></a></h2>
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline"></a></h2>
 <div class="section" id="working-with-the-interbotix-matlab-ros-api">
-<h3>Working with the Interbotix MATLAB-ROS API<a class="headerlink" href="#working-with-the-interbotix-matlab-ros-api" title="Permalink to this heading"></a></h3>
+<h3>Working with the Interbotix MATLAB-ROS API<a class="headerlink" href="#working-with-the-interbotix-matlab-ros-api" title="Permalink to this headline"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 22.500000%; padding-top: 30px; position: relative; text-align: center; width: 40%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/gs4x_G837tI" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>

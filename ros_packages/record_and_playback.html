@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -125,7 +123,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="record-and-playback">
-<h1>Record And Playback<a class="headerlink" href="#record-and-playback" title="Permalink to this heading"></a></h1>
+<h1>Record And Playback<a class="headerlink" href="#record-and-playback" title="Permalink to this headline"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet"
     class="docs-view-on-github-button"
     target="_blank">
@@ -133,7 +131,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>Imagine that you would like to have the robot arm perform some motions to achieve a specific task.
 One way of doing this would be to create a <a class="reference external" href="http://docs.ros.org/melodic/api/trajectory_msgs/html/msg/JointTrajectory.html" rel="noopener noreferrer" target="_blank">JointTrajectory</a> of desired joint positions at
 specific times which you could then command the robot. Alternatively (and much less time
@@ -143,7 +141,7 @@ motions on the same robot later. This ‘record/playback’ feature is made poss
 <strong>xsarm_puppet_single</strong>.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <p>As shown below, the <cite>interbotix_xsarm_puppet</cite> package builds on top of the
 <cite>interbotix_xsarm_control</cite> package. To get familiar with that package, please look at its README.
 The nodes specific to this package are described below.</p>
@@ -162,7 +160,7 @@ on state; the playback is delayed 3 seconds to give time for the <strong>xs_sdk<
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To record joint commands while manipulating a single robot (let’s say the PincherX-150), type the
 following in a terminal:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_puppet xsarm_puppet_single.launch robot_model:<span class="o">=</span>px150 record:<span class="o">=</span><span class="nb">true</span>
@@ -237,7 +235,7 @@ below.</p>
 </table>
 </div>
 <div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
 <p>There is a bag file in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet/bag" rel="noopener noreferrer" target="_blank">bag</a> directory. It was created using the ‘record/playback’ feature
 with the WidowX 250 arm. See if you can figure out what it does! As a hint, it involves rubber
 ducks. To run it in simulation, type…</p>
@@ -246,9 +244,9 @@ ducks. To run it in simulation, type…</p>
 </div>
 </div>
 <div class="section" id="video-tutorial">
-<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this heading"></a></h2>
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline"></a></h2>
 <div class="section" id="record-playback-x-series-arm-demo">
-<h3>Record &amp; Playback X-Series Arm Demo<a class="headerlink" href="#record-playback-x-series-arm-demo" title="Permalink to this heading"></a></h3>
+<h3>Record &amp; Playback X-Series Arm Demo<a class="headerlink" href="#record-playback-x-series-arm-demo" title="Permalink to this headline"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/uHEyd6nuYzI" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>

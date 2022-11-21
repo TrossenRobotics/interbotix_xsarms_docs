@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -111,7 +109,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="joystick-control">
-<h1>Joystick Control<a class="headerlink" href="#joystick-control" title="Permalink to this heading"></a></h1>
+<h1>Joystick Control<a class="headerlink" href="#joystick-control" title="Permalink to this headline"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_joy"
         class="docs-view-on-github-button"
         target="_blank">
@@ -119,7 +117,7 @@
                 class="docs-view-on-github-button-gh-logo">
         View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package can be used to control the movements of any X-Series robotic arm using a SONY PS3/PS4
 controller or Microsoft Xbox360 controller (untested) via Bluetooth. In this demo, the ‘arm’ joints
 are set to work in ‘position’ control mode while the gripper operates in ‘PWM’ mode. Refer to the
@@ -130,7 +128,7 @@ in Cartesian space. This is done using the <a class="reference external" href="h
 University.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_joy_flowchart_ros2.png" class="align-center" src="../_images/xsarm_joy_flowchart_ros2.png" style="width: 70%;" />
 <p>As shown above, the <cite>interbotix_xsarm_joy</cite> package builds on top of the <cite>interbotix_xsarm_control</cite>
 package. To get pointers about the nodes in that package, please look at its README. The other
@@ -147,7 +145,7 @@ PS3/PS4 joystick, other buttons allow position-ik to be performed using all the 
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>After pairing your Bluetooth joystick controller using the <a class="reference internal" href="../getting_started/pairing_controller.html"><span class="doc">Pairing Your Controller</span></a> Guide, type the following in a terminal (let’s say to
 control the WidowX-200 arm):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_joy xsarm_joy.launch.py robot_model:<span class="o">=</span>wx200

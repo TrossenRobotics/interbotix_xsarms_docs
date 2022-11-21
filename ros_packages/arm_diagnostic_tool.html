@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -125,7 +123,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="arm-diagnostic-tool">
-<h1>Arm Diagnostic Tool<a class="headerlink" href="#arm-diagnostic-tool" title="Permalink to this heading"></a></h1>
+<h1>Arm Diagnostic Tool<a class="headerlink" href="#arm-diagnostic-tool" title="Permalink to this headline"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool"
   class="docs-view-on-github-button"
   target="_blank">
@@ -133,14 +131,14 @@
       class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package is meant to be used as a way to analyze joint data over time. For example, if the user
 would like the arm to perform a certain task but is not sure if it will ‘strain’ a specific arm
 joint too much, then this tool would be an easy way to record, save (to a rosbag and CSV file), and
 view data live while the joint in question rotates.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_diagnostic_tool_flowchart.png" class="align-center" src="../_images/xsarm_diagnostic_tool_flowchart.png" style="width: 70%;" />
 <p>As shown above, the <cite>interbotix_xsarm_diagnostic_tool</cite> package builds on top of the
 <cite>interbotix_xsarm_control</cite> package. To get pointers about the nodes in the that package, please
@@ -161,7 +159,7 @@ plots joint temperature [C] vs. time [s].</li>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To use this package, first manually manipulate the arm (let’s say the PincherX-150) until the
 desired starting pose is reached. Then type the command below (if testing the waist joint):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_diagnostic_tool xsarm_diagnostic_tool.launch robot_model:<span class="o">=</span>px150 cmd_joint:<span class="o">=</span>waist observe_joint:<span class="o">=</span>waist bag_name:<span class="o">=</span>px150_diagnostics
@@ -249,7 +247,7 @@ the desired CSV file name. To better understand how this program works, take a l
 </table>
 </div>
 <div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
 <p>If choosing to rotate the ‘waist’ joint, make sure during the initial step of manually positioning
 the arm that it is NOT rotated past the joint limit (+/-180 degrees). Otherwise, the cable
 connecting the ‘waist’ motor to the ‘shoulder’ motor(s) can be ripped out.</p>
@@ -259,9 +257,9 @@ case, the CSV file and picture in that directory show diagnostics for the waist 
 200 arm as it rotates for 100 seconds.</p>
 </div>
 <div class="section" id="video-tutorial">
-<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this heading"></a></h2>
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline"></a></h2>
 <div class="section" id="diagnostic-tool-x-series-arm-demo">
-<h3>Diagnostic Tool X-Series Arm Demo<a class="headerlink" href="#diagnostic-tool-x-series-arm-demo" title="Permalink to this heading"></a></h3>
+<h3>Diagnostic Tool X-Series Arm Demo<a class="headerlink" href="#diagnostic-tool-x-series-arm-demo" title="Permalink to this headline"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/0N85vMS8LMU" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>

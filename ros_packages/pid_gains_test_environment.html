@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -120,7 +118,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="pid-gains-test-environment">
-<h1>PID Gains Test Environment<a class="headerlink" href="#pid-gains-test-environment" title="Permalink to this heading"></a></h1>
+<h1>PID Gains Test Environment<a class="headerlink" href="#pid-gains-test-environment" title="Permalink to this headline"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid"
     class="docs-view-on-github-button"
     target="_blank">
@@ -128,7 +126,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package can be used as a way to test ‘pwm’ or ‘current’ PID gains when operating the arm in
 either ‘pwm’ or ‘current’ mode. PID gains are read into the controller node from the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/config/gains.yaml" rel="noopener noreferrer" target="_blank">gains.yaml</a>
 file. The node then commands the arm to its ‘home’ pose and waits ten seconds for it to settle.
@@ -137,7 +135,7 @@ Finally, the node commands all the motors to either zero pwm or zero current (ef
 them off) before shutting itself down.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_pid_flowchart.png" class="align-center" src="../_images/xsarm_pid_flowchart.png" />
 <p>As shown above, the <cite>interbotix_xsarm_pid</cite> package builds on top of the <cite>interbotix_xsarm_control</cite>
 package. To get pointers about the nodes in the that package, please look at its README. The node
@@ -149,7 +147,7 @@ PID gains from <a class="reference external" href="https://github.com/Interbotix
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To run this package, first create a ‘gains.yaml’ file similar to the one <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/config/gains.yaml" rel="noopener noreferrer" target="_blank">here</a> with your desired
 ‘pwm’ or ‘current’ PID gains. Then run the command below (assuming the ReactorX-150 is being used
 in ‘pwm’ mode).</p>

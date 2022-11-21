@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -120,7 +118,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="ros-controllers-configuration">
-<h1>ROS Controllers Configuration<a class="headerlink" href="#ros-controllers-configuration" title="Permalink to this heading"></a></h1>
+<h1>ROS Controllers Configuration<a class="headerlink" href="#ros-controllers-configuration" title="Permalink to this headline"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_ros_control"
     class="docs-view-on-github-button"
     target="_blank">
@@ -128,7 +126,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package provides the necessary ROS controllers needed to get MoveIt to control any physical
 Interbotix X-Series arm. It essentially takes in Joint Trajectory commands from MoveIt (via the
 FollowJointTrajectoryAction interface) and then publishes joint commands at the right time to the
@@ -138,7 +136,7 @@ used with MoveIt, it could technically be used with any other node that can inte
 the <a class="reference external" href="http://wiki.ros.org/joint_trajectory_controller" rel="noopener noreferrer" target="_blank">joint_trajectory_controller</a> package.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_ros_control_flowchart.png" class="align-center" src="../_images/xsarm_ros_control_flowchart.png" />
 <p>As explained in the Overview, this package builds on top of the <cite>interbotix_xsarm_control</cite> package
 (which starts the <strong>xs_sdk</strong> node), and is typically used in conjunction with the
@@ -152,7 +150,7 @@ to the correct topics (subscribed to by the <strong>xs_sdk</strong> node) at the
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>This package is not meant to be used by itself but included in a launch file within your custom ROS
 package (which should expose a FollowJointTrajectoryAction interface).</p>
 <p>To run this package, type the line below in a terminal (assuming a PincherX-150 is being launched).

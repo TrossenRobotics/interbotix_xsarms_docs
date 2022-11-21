@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -114,7 +112,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h1>
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h1>
 <p>This guide walks a user through possible issues that can occur when using a DYNAMIXEL-based robot
 and how to fix them. If, after following this guide, the issues persists, take a look at the
 <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues?q=is%3Aissue" rel="noopener noreferrer" target="_blank">interbotix_ros_manipulators bug tracker</a>. If you can’t find an answer there, feel free to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues/new/choose" rel="noopener noreferrer" target="_blank">open
@@ -126,7 +124,7 @@ your own issue</a>.</p>
 on Ubuntu 22.04, not on any other operating system (ex. Mac, Windows), or in a virtual machine.</p>
 </div>
 <div class="section" id="dynamixel-wizard-2-0-tool">
-<span id="dynamixel-wizard-tool-label"></span><h2>DYNAMIXEL Wizard 2.0 Tool<a class="headerlink" href="#dynamixel-wizard-2-0-tool" title="Permalink to this heading"></a></h2>
+<span id="dynamixel-wizard-tool-label"></span><h2>DYNAMIXEL Wizard 2.0 Tool<a class="headerlink" href="#dynamixel-wizard-2-0-tool" title="Permalink to this headline"></a></h2>
 <p>For debugging purposes, we highly recommend to install the <a class="reference external" href="https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/" rel="noopener noreferrer" target="_blank">DYNAMIXEL Wizard 2.0</a> tool created by
 ROBOTIS (our motor supplier). This tool makes it easy to find and view and configure the registers
 of all the motors attached to the U2D2 from a graphical interface. After following the
@@ -157,9 +155,9 @@ register, selecting the ‘1 Mbps’ option in the pane on the lower right corne
 <strong>Save</strong>.</p>
 </div>
 <div class="section" id="common-issues">
-<h2>Common Issues<a class="headerlink" href="#common-issues" title="Permalink to this heading"></a></h2>
+<h2>Common Issues<a class="headerlink" href="#common-issues" title="Permalink to this headline"></a></h2>
 <div class="section" id="can-t-find-dynamixel-id">
-<h3>Can’t find DYNAMIXEL ID<a class="headerlink" href="#can-t-find-dynamixel-id" title="Permalink to this heading"></a></h3>
+<h3>Can’t find DYNAMIXEL ID<a class="headerlink" href="#can-t-find-dynamixel-id" title="Permalink to this headline"></a></h3>
 <p>If you see a red error message in the terminal after launching the ROS driver node that says
 <code class="docutils literal notranslate"><span class="pre">[xs_sdk]</span> <span class="pre">Can't</span> <span class="pre">find</span> <span class="pre">DYNAMIXEL</span> <span class="pre">ID</span> <span class="pre">'1',</span> <span class="pre">Joint</span> <span class="pre">Name</span> <span class="pre">:</span> <span class="pre">'waist'</span></code> or similar, don’t panic! All the
 node is trying to say is that it tried to ping the motor with that ID and joint name, but never
@@ -188,7 +186,7 @@ to the Default Servo Configurations in your robot’s <a class="reference intern
 </ul>
 </div>
 <div class="section" id="red-led-flashing-on-motor-s">
-<h3>Red LED Flashing on motor(s)<a class="headerlink" href="#red-led-flashing-on-motor-s" title="Permalink to this heading"></a></h3>
+<h3>Red LED Flashing on motor(s)<a class="headerlink" href="#red-led-flashing-on-motor-s" title="Permalink to this headline"></a></h3>
 <p>If a motor’s LED is flashing roughly once per second, this indicates that it is in an error state.
 In this state, the motor will torque off and not respond to commands. Two common reasons this can
 happen is if it is ‘overloaded’ or ‘overheated’.</p>
@@ -207,7 +205,7 @@ advantage of doing the second approach is that the ROS session does not have to 
 beforehand.</p>
 </div>
 <div class="section" id="failed-to-open-port-at-dev-ttydxl">
-<h3>Failed to open port at /dev/ttyDXL<a class="headerlink" href="#failed-to-open-port-at-dev-ttydxl" title="Permalink to this heading"></a></h3>
+<h3>Failed to open port at /dev/ttyDXL<a class="headerlink" href="#failed-to-open-port-at-dev-ttydxl" title="Permalink to this headline"></a></h3>
 <p>If you see a red error message in the terminal after launching the ROS driver node that says
 <code class="docutils literal notranslate"><span class="pre">[xs_sdk]</span> <span class="pre">Failed</span> <span class="pre">to</span> <span class="pre">open</span> <span class="pre">port</span> <span class="pre">at</span> <span class="pre">ttyDXL</span></code>, that means the computer cannot find the U2D2 device.
 This could happen due to a couple of reasons.</p>
@@ -221,7 +219,7 @@ node is run.</li>
 </ul>
 </div>
 <div class="section" id="incorrect-status-packet">
-<h3>Incorrect status packet<a class="headerlink" href="#incorrect-status-packet" title="Permalink to this heading"></a></h3>
+<h3>Incorrect status packet<a class="headerlink" href="#incorrect-status-packet" title="Permalink to this headline"></a></h3>
 <p>If you see 4 repeating red error messages in the terminal during node operation
 that say</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[TxRxResult] Incorrect status packet!</span>
@@ -241,12 +239,12 @@ computer, or even the 3-pin cables between servos. Contact <a class="reference e
 the case.</p>
 </div>
 <div class="section" id="failed-to-write-value-on-items-to-id">
-<h3>Failed to write value[] on items[] to [ID : ]<a class="headerlink" href="#failed-to-write-value-on-items-to-id" title="Permalink to this heading"></a></h3>
+<h3>Failed to write value[] on items[] to [ID : ]<a class="headerlink" href="#failed-to-write-value-on-items-to-id" title="Permalink to this headline"></a></h3>
 <p>This error message means that something went wrong when writing configurations to the EEPROM
 registers. This can be fixed by power-cycling the robot and re-launching the control software.</p>
 </div>
 <div class="section" id="warn-writing-startup-register-values-to-eeprom">
-<h3>[WARN] Writing startup register values to EEPROM.<a class="headerlink" href="#warn-writing-startup-register-values-to-eeprom" title="Permalink to this heading"></a></h3>
+<h3>[WARN] Writing startup register values to EEPROM.<a class="headerlink" href="#warn-writing-startup-register-values-to-eeprom" title="Permalink to this headline"></a></h3>
 <p>This warning means that the robot’s servos’ EEPROM registers were written to on startup. This only
 needs to be done once if using a default motor configuration file. Writing to the EEPROM on startup
 shortens the EEPROM’s life and takes a few extra seconds every time the robot is powered on.</p>
@@ -256,9 +254,9 @@ constructor argument should be set to <code class="docutils literal notranslate"
 </div>
 </div>
 <div class="section" id="less-common-issues">
-<h2>Less Common Issues<a class="headerlink" href="#less-common-issues" title="Permalink to this heading"></a></h2>
+<h2>Less Common Issues<a class="headerlink" href="#less-common-issues" title="Permalink to this headline"></a></h2>
 <div class="section" id="u2d2-not-recognized-no-symlink-created">
-<h3>U2D2 not recognized (no symlink created)<a class="headerlink" href="#u2d2-not-recognized-no-symlink-created" title="Permalink to this heading"></a></h3>
+<h3>U2D2 not recognized (no symlink created)<a class="headerlink" href="#u2d2-not-recognized-no-symlink-created" title="Permalink to this headline"></a></h3>
 <p>You may run into an issue where the computer is able to detect that it is connected to a device via
 <code class="docutils literal notranslate"><span class="pre">lsusb</span></code>, but no entry is created in the <code class="docutils literal notranslate"><span class="pre">/dev</span></code> directory. One possible reason may be that the
 FTDI drivers are out of date or not compatible with the U2D2 device. To fix this issue, download
@@ -270,9 +268,9 @@ to the unpacked driver and running the following:</p>
 </div>
 </div>
 <div class="section" id="helpful-tips">
-<h2>Helpful Tips<a class="headerlink" href="#helpful-tips" title="Permalink to this heading"></a></h2>
+<h2>Helpful Tips<a class="headerlink" href="#helpful-tips" title="Permalink to this headline"></a></h2>
 <div class="section" id="increase-motor-accuracy">
-<h3>Increase Motor Accuracy<a class="headerlink" href="#increase-motor-accuracy" title="Permalink to this heading"></a></h3>
+<h3>Increase Motor Accuracy<a class="headerlink" href="#increase-motor-accuracy" title="Permalink to this headline"></a></h3>
 <p>One of the awesome things about Protocol 2.0 supporting DYNAMIXELs is their internal tunable
 feedback-controllers (either PID for position control or PI for velocity control). Default values
 are assigned to the PID gains, but if they are not strong enough, one can simply increase their
@@ -281,7 +279,7 @@ products work in the position operating mode. However, this register should not 
 much (more than a few hundred points above its default) or it could cause the motor to overload.</p>
 </div>
 <div class="section" id="range-of-motion-check">
-<h3>Range Of Motion Check<a class="headerlink" href="#range-of-motion-check" title="Permalink to this heading"></a></h3>
+<h3>Range Of Motion Check<a class="headerlink" href="#range-of-motion-check" title="Permalink to this headline"></a></h3>
 <p>For some of our robots, (like arms or turrets), the waist/pan motor has a limit of -180/180
 degrees. To make this range feasible, the 3-pin cable connecting the waist/pan motor to the
 shoulder/tilt motor is extra long. As a result, it is quite possible for someone to manually turn

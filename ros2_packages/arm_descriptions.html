@@ -18,9 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -115,7 +113,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="arm-descriptions">
-<h1>Arm Descriptions<a class="headerlink" href="#arm-descriptions" title="Permalink to this heading"></a></h1>
+<h1>Arm Descriptions<a class="headerlink" href="#arm-descriptions" title="Permalink to this headline"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions"
     class="docs-view-on-github-button"
     target="_blank">
@@ -123,7 +121,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package contains the URDFs and meshes for the many X-Series Interbotix Arms. The STL files for
 each robot are located in a unique folder inside the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes" rel="noopener noreferrer" target="_blank">meshes</a> directory. Also in the ‘meshes’
 directory is the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png" rel="noopener noreferrer" target="_blank">interbotix_black.png</a> picture. The appearance and texture of the robots come
@@ -134,7 +132,7 @@ Interbotix X-Series Arms core ROS packages in the sub-repo reference this packag
 robot description.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_descriptions_flowchart_ros2.png" class="align-center" src="../_images/xsarm_descriptions_flowchart_ros2.png" />
 <p>This package contains the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/launch/xsarm_description.launch.py" rel="noopener noreferrer" target="_blank">xsarm_description.launch.py</a> file responsible for loading parts or all
 of the robot model. It launches up to four nodes as described below:</p>
@@ -150,7 +148,7 @@ robot and publish the results via the <code class="docutils literal notranslate"
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>This package contains two launch files:</p>
 <ul class="simple">
 <li>xsarm_description.launch.py - should be included in any launch tree in which you want to load
@@ -158,7 +156,7 @@ and parse the URDF, or can be launched to view any robot model’s URDF in RViz.
 <li>remote_view.launch.py which simply loads RViz in the proper namespace.</li>
 </ul>
 <div class="section" id="id1">
-<h3>xsarm_description.launch.py<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<h3>xsarm_description.launch.py<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>To run this launch file, enter the command below in a terminal. Note that the <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>
 argument must be specified as the name of one of the URDF files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">urdf</a> directory
 (excluding the ‘.urdf.xacro’ part). For example, to launch the ReactorX-150 arm, type:</p>
@@ -266,7 +264,7 @@ further customize with other launch file arguments.</p>
 </table>
 </div>
 <div class="section" id="remote-view-launch-py">
-<h3>remote_view.launch.py<a class="headerlink" href="#remote-view-launch-py" title="Permalink to this heading"></a></h3>
+<h3>remote_view.launch.py<a class="headerlink" href="#remote-view-launch-py" title="Permalink to this headline"></a></h3>
 <p>To run this launch file, enter the command below in a terminal.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_descriptions remote_view.launch.py robot_model:<span class="o">=</span>rx150 use_joint_pub_gui:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
