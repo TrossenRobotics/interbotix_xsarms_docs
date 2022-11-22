@@ -120,7 +120,7 @@ html_css_files = [
 html_favicon = 'favicon.webp'
 
 # remove "View page source" link
-html_show_sourcelink = False
+html_show_sourcelink = True
 
 # Suffix to be appended to source links, unless they have this suffix already.
 html_sourcelink_suffix = ''
