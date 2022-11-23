@@ -37,7 +37,7 @@ Interbotix robot via the MoveIt Commander Python module.
 Structure
 =========
 
-.. image:: /_images/xsarm_moveit_interface_flowchart_ros2.png
+.. image:: images/xsarm_moveit_interface_flowchart_ros2.png
     :align: center
 
 As shown above, this package builds on top of of the `interbotix_xsarm_moveit` package. To get
@@ -99,7 +99,7 @@ user can press one of five buttons. They are:
 
 -   **Clear Markers** - This resets all MoveIt visual tools displays
 
-.. image:: /_images/moveit_interface_gui.png
+.. image:: images/moveit_interface_gui.png
     :align: center
 
 .. note::

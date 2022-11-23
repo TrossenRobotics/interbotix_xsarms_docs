@@ -52,10 +52,9 @@ Flashing Ubuntu
     minutes.
 3.  When done, eject the SD card and insert it into the Pi 4. Then connect the HDMI monitor, mouse,
     keyboard, and Ethernet cable to the Pi. Finally, connect the power cable, and turn the Pi on.
-4.  After waiting a minute or so (in which time, some debugging messages will
-    appear on the screen), you will be prompted to login. The default computer
-    and user name is ubuntu, so just type ubuntu. At this point, you will be
-    prompted to create a password which you should do.
+4.  After waiting a minute or so (in which time, some debugging messages will appear on the
+    screen), you will be prompted to login. The default computer and user name is ubuntu, so just
+    type ubuntu. At this point, you will be prompted to create a password which you should do.
 
 .. note::
 

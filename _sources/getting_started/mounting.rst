@@ -7,7 +7,7 @@ There are many options for securing your Interbotix X-Series Arm for practical a
 Diving Weights
 ==============
 
-.. image:: /_images/divingweight.jpg
+.. image:: images/divingweight.jpg
     :width: 300
     :align: center
     :alt: Image of a soft diving weight keeping an X-Series arm in place
@@ -44,7 +44,7 @@ attach your arm to a piece of `MDF hardboard`_ easily.
 
 .. _3/4" #8 Rounded Pan Head Wood Screws : https://www.mcmaster.com/90935A197/
 
-.. image:: /_images/8roundedpanheadscrew.png
+.. image:: images/8roundedpanheadscrew.png
     :width: 300
     :align: center
     :alt: Image of a pan head screw used to fix the robot base into place
@@ -61,7 +61,7 @@ attach your arm to a piece of `MDF hardboard`_ easily.
 
 .. _MDF hardboard: https://www.amazon.com/18mm-24-MDF-Board/dp/B07NSGBGDS/
 
-.. image:: /_images/thumbscrewdiagram.png
+.. image:: images/thumbscrewdiagram.png
     :width: 300
     :align: center
     :alt: Image of a pan head screw used to fix the robot base into place

@@ -26,7 +26,7 @@ independently with a 6DOF arm, one or more of them must be constrained with lowe
 .. list-table::
     :align: center
 
-    * - .. image:: /_images/vx300s.png
+    * - .. image:: images/vx300s.png
             :align: center
             :width: 500px
 
@@ -128,11 +128,11 @@ Product of Exponentials
 Drawings and CAD Files
 ======================
 
-.. image:: /_images/vx300s_drawing.png
+.. image:: images/vx300s_drawing.png
     :align: center
     :width: 70%
 
-:download:`VX-300 6DOF Technical Drawing </_downloads/ViperX-300s.pdf>`
+:download:`ViperX-300 6DOF Technical Drawing </_downloads/ViperX-300s.pdf>`
 
 .. raw:: html
 
@@ -146,7 +146,5 @@ Drawings and CAD Files
         frameborder="0">
     </iframe>
 
-- :download:`VX-300 6DOF Solid STEP Files </_downloads/solids/9_VXA-300S-M.zip>`
-- `VX-300 6DOF Mesh STL Files`_
-
-.. _`VX-300 6DOF Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/vx300s_meshes
+- :download:`ViperX-300 6DOF Solid STEP Files </_downloads/solids/9_VXA-300S-M.zip>`
+- `ViperX-300 6DOF Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/vx300s_meshes>`_

@@ -34,7 +34,7 @@ SONY PS4 Controller (Recommended)
 8.  To reconnect, just press the **PS Button** (no need to hold it down). After blinking white a
     few times, the LED should turn blue.
 
-.. image:: /_images/ps4.jpg
+.. image:: images/ps4.jpg
     :width: 70%
     :align: center
 

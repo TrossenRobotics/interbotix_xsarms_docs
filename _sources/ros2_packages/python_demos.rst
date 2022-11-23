@@ -40,7 +40,7 @@ one pose to the next.
 Structure
 =========
 
-.. image:: /_images/xsarm_python_demos_flowchart_ros2.png
+.. image:: images/xsarm_python_demos_flowchart_ros2.png
     :align: center
 
 The Python Arm module (located in the `interbotix_xs_modules` ROS package) builds on top of the

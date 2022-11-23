@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python-ROS Interface &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MATLAB-ROS Interface" href="matlab_ros_interface.html" />
+    <link rel="prev" title="ROS 2 Quickstart Guide" href="ros_interface/ros2_quickstart.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html">
+            <img src="_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_interface.html">ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python-ROS Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#terminology">Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#transforms">Transforms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timing-parameters">Timing Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-ee-pose-matrix">set_ee_pose_matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-ee-pose-components">set_ee_pose_components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-ee-cartesian-trajectory">set_ee_cartesian_trajectory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-best-practices">Tips &amp; Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#control-sequence">Control Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#miscellaneous-tips">Miscellaneous Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-robot-robot-name-is-not-discoverable-did-you-enter-the-right-robot-model"><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">robot</span> <span class="pre">'robot_name'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">discoverable.</span> <span class="pre">Did</span> <span class="pre">you</span> <span class="pre">enter</span> <span class="pre">the</span> <span class="pre">right</span> <span class="pre">robot_model?</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-the-interbotix-python-api">Working with the Interbotix Python API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros1_packages.html">ROS 1 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Python-ROS Interface</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/python_ros_interface.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="python-ros-interface">
+<h1>Python-ROS Interface<a class="headerlink" href="#python-ros-interface" title="Permalink to this headline"></a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Interbotix Python-ROS Interface requires that the <a class="reference internal" href="ros_interface.html"><span class="doc">ROS Interface</span></a> has already been installed.</p>
+</div>
+<p>For usage and structure information on the Python interface that builds on top of ROS, check out
+the <a class="reference internal" href="ros1_packages/python_demos.html"><span class="doc">Python Demos</span></a> page. Further documentation of the Python
+API’s functionality can be found on this page. Note that you can check the source code methods’
+docstrings for information on each method.</p>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline"></a></h2>
+<div class="section" id="transforms">
+<h3>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline"></a></h3>
+<img alt="_images/xsarm_demos_frames1.png" class="align-center" src="_images/xsarm_demos_frames1.png" style="width: 40%;" />
+<p>End-effector poses are specified from <cite>/&lt;robot_name&gt;/ee_gripper_link</cite> (a.k.a the ‘Body’ frame) to
+<cite>/&lt;robot_name&gt;/base_link</cite> (a.k.a the ‘Space’ frame). In the code documentation, this transform is
+knows as <strong>T_sb</strong> (i.e. the transform that specifies the ‘Body’ frame ‘b’ in terms of the ‘Space’
+frame ‘s’). In the image above, you can see both of these frames. The X axes are in red, the Y axes
+are in green, and the Z axes are in blue. The rotation and translation information is stored in a
+<a class="reference external" href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/3-3-1-homogeneous-transformation-matrices/" rel="noopener noreferrer" target="_blank">homogeneous transformation matrix</a>.</p>
+<div class="math">
+<p><span class="math">T =
+\begin{bmatrix}
+    R &amp; p \\
+    0 &amp; 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+    r_{11} &amp; r_{12} &amp; r_{13} &amp; p_1 \\
+    r_{21} &amp; r_{22} &amp; r_{23} &amp; p_2 \\
+    r_{31} &amp; r_{32} &amp; r_{33} &amp; p_3 \\
+    0     &amp; 0      &amp; 0       &amp; 1 \\
+\end{bmatrix}</span></p>
+</div><p>In a homogeneous transformation matrix, the first three rows and three columns <span class="math">R</span> define a
+3-dimensional rotation matrix that describes the orientation of the ‘Body’ frame with respect to
+the ‘Space’ frame. The first three rows and the fourth column <span class="math">p</span> of the matrix represent the
+translational position (i.e. xyz) of the ‘Body’ frame with respect to the ‘Space’ frame. The fourth
+row of the matrix is always [0 0 0 1] for matrix multiplication purposes.</p>
+<p>You will see two other homogeneous transformation matrices in the code: <strong>T_sd</strong> and <strong>T_sy</strong>.
+<strong>T_sd</strong> defines the desired end-effector pose with respect to the ‘Space’ frame. This
+transformation is used in methods like <code class="docutils literal notranslate"><span class="pre">set_ee_pose_matrix</span></code>, where a single desired pose is to be
+solved for. <strong>T_sy</strong> is a transform from the ‘Body’ frame to a virtual frame with the exact same x,
+y, z, roll, and pitch as the ‘Space’ frame. However, it contains the ‘yaw’ of the ‘Body’ frame.
+Thus, if the end-effector is located at xyz = [0.2, 0.2, 0.2] with respect to the ‘Space’ frame,
+this converts to xyz = [0.2828, 0, 0.2] with respect to the virtual frame of the <strong>T_sy</strong>
+transformation. This convention helps simplify how you think about the relative movement of the
+end-effector. The method <code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code> uses <strong>T_sy</strong> to command relative movement
+of the end-effector using the end-effector’s yaw as a basis for its frame of reference.</p>
+</div>
+<div class="section" id="timing-parameters">
+<h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this headline"></a></h3>
+<p>The Python API uses four different timing parameters to shape the time profile of movements.</p>
+<p>The first two parameters are used to determine the time profile of the arm when completing moves
+from one pose to another. These can be set in the constructor of the object, or by using the
+<code class="docutils literal notranslate"><span class="pre">set_trajectory_time</span></code> method.</p>
+<ul class="simple">
+<li><strong>moving_time</strong> - duration in seconds it should take for all joints in the arm to complete one
+move.</li>
+<li><strong>accel_time</strong> - duration in seconds it should take for all joints in the arm to
+accelerate/decelerate to/from max speed.</li>
+</ul>
+<p>The second two parameters are used to define the time profile of waypoints within a trajectory.
+These are used in functions that build trajectories consisting of a series of waypoints such as
+<code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code>.</p>
+<ul class="simple">
+<li><strong>wp_moving_time</strong> - duration in seconds that each waypoint in the trajectory should move.</li>
+<li><strong>wp_accel_time</strong> - duration in seconds that each waypoint in the trajectory should be
+accelerating/decelerating (must be equal to or less than half of <strong>wp_moving_time</strong>).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
+<div class="section" id="set-ee-pose-matrix">
+<h3>set_ee_pose_matrix<a class="headerlink" href="#set-ee-pose-matrix" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">set_ee_pose_matrix</span></code> allows the user to specify a desired pose in the form of the homogeneous
+transformation matrix, <strong>T_sd</strong>. This method attempts to solve the inverse kinematics of the arm
+for the desired pose. If a solution is not found, the method returns False. If the IK problem is
+solved successfully, each joint’s limits are checked against the IK solver’s output. If the
+solution is valid, the list of joint positions is returned. Otherwise, False is returned.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If an IK solution is found, the method will always return it even if it exceeds joint limits
+and returns False. Make sure to take this behavior into account when writing your own scripts.</p>
+</div>
+</div>
+<div class="section" id="set-ee-pose-components">
+<h3>set_ee_pose_components<a class="headerlink" href="#set-ee-pose-components" title="Permalink to this headline"></a></h3>
+<p>Some users prefer not to think in terms of transformation or rotation matrices. That’s where the
+<code class="docutils literal notranslate"><span class="pre">set_ee_pose_components</span></code> method comes in handy. In this method, you define <strong>T_sd</strong> in terms of
+the components it represents - specifically the x, y, z, roll, pitch, and yaw of the ‘Body’ frame
+with respect to the ‘Space’ frame (where x, y, and z are in meters, and roll, pitch and yaw are in
+radians).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If using an arm with less than 6dof, the ‘yaw’ parameter, even if specified, will always be
+ignored.</p>
+</div>
+</div>
+<div class="section" id="set-ee-cartesian-trajectory">
+<h3>set_ee_cartesian_trajectory<a class="headerlink" href="#set-ee-cartesian-trajectory" title="Permalink to this headline"></a></h3>
+<p>When specifying a desired pose using the methods mentioned above, your arm will its end-effector to
+the desired pose in a curved path. This makes it difficult to perform movements that are
+‘orientation-sensitive’ (like carrying a small cup of water without spilling). To get around this,
+the <code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code> method is provided. This method defines a trajectory using a
+series of waypoints that the end-effector should follow as it travels from its current pose to the
+desired pose such that it moves in a straight line. The number of waypoints generated depends on
+the duration of the trajectory (a.k.a <strong>moving_time</strong>), along with the period of time between
+waypoints (a.k.a <strong>wp_period</strong>). For example, if the whole trajectory should take 2 seconds and the
+waypoint period is 0.05 seconds, there will be a total of 2/0.05 = 40 waypoints. Besides for these
+method arguments, there is also <strong>wp_moving_time</strong> and <strong>wp_accel_time</strong>. Respectively, these
+parameters refer to the duration of time it should take for the arm joints to go from one waypoint
+to the next, and the time it should spend accelerating while doing so. Together, they help to
+perform smoothing on the trajectory. If the values are too small, the joints will do a good job
+following the waypoints but the motion might be very jerky. If the values are too large, the motion
+will be very smooth, but the joints will not do a good job following the waypoints.</p>
+<p>This method accepts relative values only. So if the end-effector is located at xyz = [0.2, 0, 0.2],
+and then the method is called with ‘z=0.3’ as the argument, the new pose will be xyz = [0.2, 0,
+0.5].</p>
+<p>End-effector poses are defined with respect to the virtual frame <strong>T_sy</strong> as defined above. If you
+want the end-effector to move 0.3 meters along the X-axis of <strong>T_sy</strong>, I can call the method with
+‘x=0.3’ as the argument, and it will move to xyz = [0.5828, 0, 0.2] with respect to <strong>T_sy</strong>. This
+way, you only have to think in 1 dimension. However, if the end-effector poses were defined in the
+‘Space’ frame, then relative poses would have to be 2 dimensional. For example, the pose equivalent
+to the one above with respect to the ‘Space’ frame would have to be defined as xyz = [0.412, 0.412,
+0.2].</p>
+</div>
+</div>
+<div class="section" id="tips-best-practices">
+<h2>Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Permalink to this headline"></a></h2>
+<div class="section" id="control-sequence">
+<h3>Control Sequence<a class="headerlink" href="#control-sequence" title="Permalink to this headline"></a></h3>
+<p>The recommended way to control an arm through a series of movements from its Sleep pose is as
+follows:</p>
+<ol class="arabic simple">
+<li>Command the arm to go to its Home pose or any end-effector pose where ‘y’ is defined as 0 (so
+that the upper-arm link moves out of its cradle).</li>
+<li>Command the waist joint until the end-effector is pointing in the desired direction.</li>
+<li>Command poses to the end-effector using the <code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code> method as many
+times as necessary to do a task (pick, place, etc…).</li>
+<li>Repeat the above two steps as necessary.</li>
+<li>Command the arm to its Home pose.</li>
+<li>Command the arm to its Sleep pose.</li>
+</ol>
+<p>You can refer to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/python_demos/bartender.py" rel="noopener noreferrer" target="_blank">bartender</a> script to see the above method put into action.</p>
+</div>
+<div class="section" id="miscellaneous-tips">
+<h3>Miscellaneous Tips<a class="headerlink" href="#miscellaneous-tips" title="Permalink to this headline"></a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If using a 6dof arm, it is also possible to use the <code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code> method to
+move the end-effector along the ‘Y-axis’ of <strong>T_sy</strong> or to perform ‘yaw’ motion.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some functions allow you to provide a <strong>custom_guess</strong> parameter to the IK solver. If you know
+where the arm should be close to in terms of joint positions, providing the solver with them
+will allow it to find the solution faster, more robustly, and avoid joint flips.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The end-effector should not be pitched past +/- 89 degrees as that can lead to unintended
+movements.</p>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<div class="section" id="the-robot-robot-name-is-not-discoverable-did-you-enter-the-right-robot-model">
+<h3><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">robot</span> <span class="pre">'robot_name'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">discoverable.</span> <span class="pre">Did</span> <span class="pre">you</span> <span class="pre">enter</span> <span class="pre">the</span> <span class="pre">right</span> <span class="pre">robot_model?</span></code><a class="headerlink" href="#the-robot-robot-name-is-not-discoverable-did-you-enter-the-right-robot-model" title="Permalink to this headline"></a></h3>
+<p>This error means that essential ROS services can’t be found under the ‘robot_name’ namespace. Check
+that the robot name given to your robot and the xsarm_control robot_model/robot_name parameter
+match.</p>
+</div>
+</div>
+<div class="section" id="video-tutorial">
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline"></a></h2>
+<div class="section" id="working-with-the-interbotix-python-api">
+<h3>Working with the Interbotix Python API<a class="headerlink" href="#working-with-the-interbotix-python-api" title="Permalink to this headline"></a></h3>
+<div class="video_wrapper align-center" style="padding-bottom: 22.500000%; padding-top: 30px; position: relative; text-align: center; width: 40%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/KoqBEvz4GII" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ros_interface/ros2_quickstart.html" class="btn btn-neutral float-left" title="ROS 2 Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="matlab_ros_interface.html" class="btn btn-neutral float-right" title="MATLAB-ROS Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

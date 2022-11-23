@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveIt Interface and API &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Demos" href="python_demos.html" />
+    <link rel="prev" title="Perception Configuration" href="perception_pipeline_configuration.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MoveIt Interface and API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-interbotix-moveit-interface-ros-package">Using The Interbotix MoveIt Interface ROS Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros1_packages.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+      <li class="breadcrumb-item active">MoveIt Interface and API</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros1_packages/moveit_interface_and_api.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="moveit-interface-and-api">
+<h1>MoveIt Interface and API<a class="headerlink" href="#moveit-interface-and-api" title="Permalink to this headline"></a></h1>
+<a
+href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface"
+    class="docs-view-on-github-button" target="_blank"> <img
+    src="../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>This package contains a small API modeled after the <a class="reference external" href="https://github.com/ros-planning/moveit_tutorials/blob/482dc9db944c785870274c35223b4d06f2f0bc90/doc/move_group_interface/src/move_group_interface_tutorial.cpp" rel="noopener noreferrer" target="_blank">Move Group C++ Interface Tutorial</a> that
+allows a user to command desired end-effector poses to an Interbotix arm. It is not meant to be
+all-encompassing but rather should be viewed as a starting point for someone interested in creating
+their own MoveIt interface to interact with an arm. The package also contains a small GUI that can
+be used to pose the end-effector.</p>
+<p>Finally, this package also contains a modified version of the <a class="reference external" href="https://github.com/ros-planning/moveit_tutorials/blob/482dc9db944c785870274c35223b4d06f2f0bc90/doc/move_group_python_interface/scripts/move_group_python_interface_tutorial.py" rel="noopener noreferrer" target="_blank">Move Group Python Interface
+Tutorial</a> script that can be used as a guide for those users who would like to interface with an
+Interbotix robot via the MoveIt Commander Python module.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<img alt="../_images/xsarm_moveit_interface_flowchart.png" class="align-center" src="../_images/xsarm_moveit_interface_flowchart.png" />
+<p>As shown above, this package builds on top of of the <cite>interbotix_xsarm_moveit</cite> package. To get
+familiar with that package, please refer to its README. The <cite>interbotix_xsarm_moveit_interface</cite>
+nodes are described below:</p>
+<ul class="simple">
+<li><strong>moveit_interface</strong> - a small C++ API that makes it easier for a user to command custom poses
+to the end-effector of an Interbotix arm; it uses MoveIt’s planner behind the scenes to
+generate desired joint trajectories</li>
+<li><strong>moveit_interface_gui</strong> - a GUI (modeled after the one in the joint_state_publisher_gui
+package) that allows a user to enter in desired end-effector poses via text fields or sliders;
+it uses the moveit_interface API to plan and execute trajectories</li>
+<li><strong>moveit_python_interface</strong> - a modified version of the script used in the <a class="reference external" href="https://github.com/ros-planning/moveit_tutorials/blob/482dc9db944c785870274c35223b4d06f2f0bc90/doc/move_group_python_interface/scripts/move_group_python_interface_tutorial.py" rel="noopener noreferrer" target="_blank">Move Group Python
+Interface Tutorial</a> that is meant to work with an Interbotix arm; just press ‘Enter’ in the
+terminal to walk through the different steps; the desired joint state goal, pose goal, and
+end-effector offset (when attaching the box) are stored in YAML files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/config" rel="noopener noreferrer" target="_blank">config</a>
+directory</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that all the nodes defined above live in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/main/interbotix_common_toolbox/interbotix_moveit_interface" rel="noopener noreferrer" target="_blank">interbotix_ros_toolboxes</a> repo. That is
+because these nodes, besides for being used here, are also used in other repositories (like
+<cite>interbotix_ros_rovers</cite>). To make it easier to maintain, it made more sense to keep one
+instance of them in the toolbox repository instead of having duplicates in multiple
+repositories.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>To run this package on the physical robot, type the line below in a terminal (assuming the
+ViperX-300 is being launched). Note that if you’re using a 4 or 6 dof arm, you should set the
+<code class="docutils literal notranslate"><span class="pre">dof</span></code> launch file argument appropriately.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_moveit_interface xsarm_moveit_interface.launch robot_model:<span class="o">=</span>vx300
+<span class="go">use_cpp_interface:=true use_actual:=true</span>
+</pre></div>
+</div>
+<p>A GUI should pop-up similar to the one below. In it, a user should specify the desired position and
+orientation of the end-effector (as defined by the ‘ee_gripper_link’ w.r.t. the ‘world’ frame).
+This can be done either via the slider bars or by entering values into the text fields. Next, a
+user can press one of five buttons. They are:</p>
+<ul class="simple">
+<li><strong>Plan Pose</strong> - MoveIt will attempt to find a trajectory that places the end-effector at the
+desired position and orientation</li>
+<li><strong>Plan Position</strong> - MoveIt will attempt to find a trajectory that places the end-effector at
+the desired position, ignoring orientation</li>
+<li><strong>Plan Orientation</strong> - MoveIt will attempt to find a trajectory that places the end-effector at
+the desired orientation, ignoring position</li>
+<li><strong>Execute</strong> - Once a valid plan has been found, this button can be pressed to actually execute
+the trajectory on the robot</li>
+<li><strong>Reset</strong> - This resets all slider bars to the middle and text fields to ‘0.00’</li>
+</ul>
+<img alt="../_images/moveit_interface_gui.png" class="align-center" src="../_images/moveit_interface_gui.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Occasionally, MoveIt will be unsuccessful in finding a valid trajectory. This could be for one
+of two reasons. Either the desired pose is not physically attainable by the arm or the random
+seed generated by MoveIt was a bad guess. If it is clear that the pose is physically
+attainable, try hitting the desired ‘Plan’ button a few more times.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is significantly more difficult for the planner to find a valid trajectory when specifying
+poses and orientations rather than just positions, especially for lower dof arms.</p>
+</div>
+<p>This is the bare minimum needed to get up and running. Take a look at the table below to see how to
+further customize with other launch file arguments.</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything)</td>
+<td>$(arg robot_model)</td>
+</tr>
+<tr class="row-even"><td>base_link_frame</td>
+<td>name of the ‘root’ link on the arm; typically ‘base_link’, but can be changed if attaching the arm to a mobile base that already has a ‘base_link’ frame</td>
+<td>base_link’</td>
+</tr>
+<tr class="row-odd"><td>show_ar_tag</td>
+<td>if true, the AR tag mount is included in the ‘robot_description’ parameter; if false, it is left out; set to true if using the AR tag mount in your project</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>use_world_frame</td>
+<td>set this to true if you would like to load a ‘world’ frame to the ‘robot_description’ parameter which is located exactly at the ‘base_link’ frame of the robot; if using multiple robots or if you would like to attach the ‘base_link’ frame of the robot to a different frame, set this to false</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>external_urdf_loc</td>
+<td>the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot’s urdf.xacro file</td>
+<td>“”</td>
+</tr>
+<tr class="row-even"><td>external_srdf_loc</td>
+<td>the file path to the custom srdf.xacro file that you would like to include in the Interbotix robot’s srdf.xacro file. Note that this should only contain ‘disable collision’ tags for collisions between the original Interbotix Arm and other links that are defined in the file specified by <code class="docutils literal notranslate"><span class="pre">external_urdf_loc</span></code></td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>mode_configs</td>
+<td>the file path to the ‘mode config’ YAML file</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/launch/xsarm_moveit_interface.launch" rel="noopener noreferrer" target="_blank">xsarm_moveit_interface.launch</a></td>
+</tr>
+<tr class="row-even"><td>use_moveit_rviz</td>
+<td>a boolean that if true, displays RViz with the MoveIt plugin; if false, MoveIt runs in a headless state</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>rviz_frame</td>
+<td>defines the fixed frame parameter in RViz. Note that if ‘use_world_frame’ is False, this parameter should be changed to a frame that exists</td>
+<td>world</td>
+</tr>
+<tr class="row-even"><td>use_gazebo</td>
+<td>launch MoveIt with a Gazebo simulated robot</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>use_actual</td>
+<td>launch MoveIt with the physical robot</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>use_fake</td>
+<td>launch MoveIt with a MoveIt generated fake robot</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>dof</td>
+<td>the degrees of freedom of the arm; while the majority of the arms have 5 dof, others have 4 or 6 dof</td>
+<td>5</td>
+</tr>
+<tr class="row-even"><td>world_name</td>
+<td>the file path to the Gazebo ‘world’ file to load (if simulating)</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/launch/xsarm_moveit_interface.launch" rel="noopener noreferrer" target="_blank">xsarm_moveit_interface.launch</a></td>
+</tr>
+<tr class="row-odd"><td>use_cpp_interface</td>
+<td>launch the custom <strong>moveit_interface</strong> C++ API node</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>moveit_interface_gui</td>
+<td>launch a custom GUI to interface with the <strong>moveit_interface</strong> node so that the user can command specific end-effector poses (defined by ‘ee_gripper_link’)</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>use_python_interface</td>
+<td>launch the Python Interface Tutorial node</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="video-tutorial">
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline"></a></h2>
+<div class="section" id="using-the-interbotix-moveit-interface-ros-package">
+<h3>Using The Interbotix MoveIt Interface ROS Package<a class="headerlink" href="#using-the-interbotix-moveit-interface-ros-package" title="Permalink to this headline"></a></h3>
+<div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/Z9s3hRYcIp0" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="perception_pipeline_configuration.html" class="btn btn-neutral float-left" title="Perception Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python_demos.html" class="btn btn-neutral float-right" title="Python Demos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

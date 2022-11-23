@@ -28,7 +28,7 @@ the `joint_trajectory_controller`_ package.
 Structure
 =========
 
-.. image:: /_images/xsarm_ros_control_flowchart_ros2.png
+.. image:: images/xsarm_ros_control_flowchart_ros2.png
     :align: center
 
 As explained in the Overview, this package builds on top of the `interbotix_xsarm_control` package

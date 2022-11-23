@@ -57,23 +57,23 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS Interface</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ros_interface.html">ROS Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="software_setup.html">ROS Standard Software Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ROS Quickstart Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros2_software_setup.html">ROS 2 Standard Software Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros2_quickstart.html">ROS 2 Quickstart Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#ros-1">ROS 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#ros-2">ROS 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_interface.html#ros-1">ROS 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_interface.html#ros-2">ROS 2</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ros2_packages/index.html">ROS 2 Open Source Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
         </div>
@@ -90,7 +90,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">ROS Interface</a></li>
+          <li class="breadcrumb-item"><a href="../ros_interface.html">ROS Interface</a></li>
       <li class="breadcrumb-item active">ROS Quickstart Guide</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/quickstart.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -178,14 +178,14 @@ resting) so manually hold or secure it before executing.</p>
 </li>
 <li><p class="first">Another way to check if all functions work is to launch the <cite>interbotix_xsarm_joy</cite> package.
 This package allows you to control your arm using a Bluetooth controller. See it’s usage
-details in <a class="reference external" href="../ros_packages/joystick_control.html" rel="noopener noreferrer" target="_blank">its documentation page</a>.</p>
+details in <a class="reference external" href="../ros1_packages/joystick_control.html" rel="noopener noreferrer" target="_blank">its documentation page</a>.</p>
 </li>
 </ol>
 <p>That ends the quickstart tutorial. To get familiar with the architecture and launch file arguments,
-refer to the READMEs of the core packages. Start with the <a class="reference internal" href="../ros_packages/arm_descriptions.html"><span class="doc">X-Series Arm Descriptions</span></a> package, then the <a class="reference internal" href="../ros_packages/arm_control.html"><span class="doc">X-Series Arm Control</span></a> package. Next, look at the <a class="reference internal" href="../ros_packages/gazebo_simulation_configuration.html"><span class="doc">Gazebo Configuration</span></a> package followed by the <a class="reference internal" href="../ros_packages/ros_control.html"><span class="doc">ROS Controllers
-Configuration</span></a> and <a class="reference internal" href="../ros_packages/moveit_motion_planning_configuration.html"><span class="doc">MoveIt Configuration</span></a> packages. This is the most logical approach
+refer to the READMEs of the core packages. Start with the <a class="reference internal" href="../ros1_packages/arm_descriptions.html"><span class="doc">X-Series Arm Descriptions</span></a> package, then the <a class="reference internal" href="../ros1_packages/arm_control.html"><span class="doc">X-Series Arm Control</span></a> package. Next, look at the <a class="reference internal" href="../ros1_packages/gazebo_simulation_configuration.html"><span class="doc">Gazebo Configuration</span></a> package followed by the <a class="reference internal" href="../ros1_packages/ros_control.html"><span class="doc">ROS Controllers
+Configuration</span></a> and <a class="reference internal" href="../ros1_packages/moveit_motion_planning_configuration.html"><span class="doc">MoveIt Configuration</span></a> packages. This is the most logical approach
 to take to gain a better understanding of how they relate to each other.</p>
-<p>Afterwards, feel free to check out the demo projects like <a class="reference internal" href="../ros_packages/joystick_control.html"><span class="doc">Joystick Control</span></a> and <a class="reference internal" href="../ros_packages/record_and_playback.html"><span class="doc">Record &amp; Playback</span></a>, or any of the other <a class="reference internal" href="../ros_packages/index.html"><span class="doc">ROS Open Source Packages</span></a>.</p>
+<p>Afterwards, feel free to check out the demo projects like <a class="reference internal" href="../ros1_packages/joystick_control.html"><span class="doc">Joystick Control</span></a> and <a class="reference internal" href="../ros1_packages/record_and_playback.html"><span class="doc">Record &amp; Playback</span></a>, or any of the other <a class="reference internal" href="../ros1_packages.html"><span class="doc">ROS Open Source Packages</span></a>.</p>
 </div>
 
 

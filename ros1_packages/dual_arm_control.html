@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dual Arm Control &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dual Arm Joystick Control" href="dual_arm_joystick_control.html" />
+    <link rel="prev" title="Arm Puppeteering" href="arm_puppeteering.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dual Arm Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-multiple-arms">Working With Multiple Arms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros1_packages.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+      <li class="breadcrumb-item active">Dual Arm Control</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros1_packages/dual_arm_control.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="dual-arm-control">
+<h1>Dual Arm Control<a class="headerlink" href="#dual-arm-control" title="Permalink to this headline"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual"
+  class="docs-view-on-github-button"
+  target="_blank">
+  <img src="../_static/GitHub-Mark-Light-32px.png"
+      class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>This package shows how to get two X-Series arms working together. While the example here is
+specifically geared for two WidowX 200 arms, there is no limit to the number of arms that can be
+used (except USB ports on your computer). Also, any of the X-Series arms can be used together - not
+just WidowX 200 arms. For the purpose of the demo, the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/main/interbotix_xs_toolbox/interbotix_xs_modules/src/interbotix_xs_modules/arm.py" rel="noopener noreferrer" target="_blank">Interbotix Python Arm Module</a> is used, so
+you should familiarize yourself with the functions there and also look at the README in the
+<a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/python_demos" rel="noopener noreferrer" target="_blank">python_demos</a> directory.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<img alt="../_images/xsarm_dual_flowchart.png" class="align-center" src="../_images/xsarm_dual_flowchart.png" />
+<p>As shown above, the <cite>interbotix_xsarm_dual</cite> package builds on top of the <cite>interbotix_xsarm_control</cite>
+package. The number of instances that the <cite>interbotix_xsarm_control</cite> package is included in the
+<cite>xsarm_dual</cite> launch file is equivalent to the number of robots being used. See the other packages
+for descriptions of their nodes.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>To get started, make sure that the U2D2s for both robots are not connected to your computer. Then
+connect the U2D2 that you’d like to be <code class="docutils literal notranslate"><span class="pre">robot_1</span></code> (as defined in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/scripts/xsarm_dual.py" rel="noopener noreferrer" target="_blank">demo python script</a>).
+Afterwards, connect the robot you’d like to be <code class="docutils literal notranslate"><span class="pre">robot_2</span></code>. The reason for this is that Linux
+assigns USB port names starting at 0 and going up. So the first U2D2 plugged in will be called
+<code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB0</span></code> while the second U2D2 plugged in will be called <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB1</span></code>. If you’re
+familiar with udev rules, you can create a unique symlink for each U2D2 by finding its serial id
+with the following command (make sure you do this with only one U2D2 plugged in at a time)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>udevadm info -a -n /dev/ttyUSB0 <span class="p">|</span> grep <span class="o">{</span>serial<span class="o">}</span>
+</pre></div>
+</div>
+<p>The output should look similar to the below but with a different ID…</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ATTRS{serial}==&quot;FT4NQ5QO&quot;</span>
+</pre></div>
+</div>
+<p>Then go to <code class="docutils literal notranslate"><span class="pre">/etc/udev/rules.d</span></code> and edit the <code class="docutils literal notranslate"><span class="pre">99-interbotix-udev.rules</span></code> file by adding the line
+below for each of your U2D2s. Note that we’ve used the serial ID above and gave a custom symlink of
+<code class="docutils literal notranslate"><span class="pre">ttyRBT1</span></code> arbitrarily.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SUBSYSTEM==&quot;tty&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, ATTRS{serial}==&quot;FT4NQ5QO&quot;, ENV{ID_MM_DEVICE_IGNORE}=&quot;1&quot;, ATTR{device/latency_timer}=&quot;1&quot;, SYMLINK+=&quot;ttyRBT1&quot;</span>
+</pre></div>
+</div>
+<p>Now make sure to update the <code class="docutils literal notranslate"><span class="pre">port</span></code> name in the ‘modes.yaml’ files in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/config" rel="noopener noreferrer" target="_blank">config</a> directory to
+point to your new symlinks. Then unplug/replug the U2D2s to refresh the ports and run the launch
+file below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_dual xsarm_dual.launch
+</pre></div>
+</div>
+<p>Then navigate to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/scripts" rel="noopener noreferrer" target="_blank">scripts</a> directory and run the command</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python xsarm_dual.py  <span class="c1"># python3 xsarm_dual.py if using ROS Noetic</span>
+</pre></div>
+</div>
+<p>To further customize the launch file at run-time (like with a different robot model), look at the
+table below:</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model_1</td>
+<td>model type of the first Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name_1</td>
+<td>arbitrary name that is unique to the first robot arm</td>
+<td>“arm_1”</td>
+</tr>
+<tr class="row-even"><td>base_link_1</td>
+<td>name of the ‘root’ link on the arm; typically ‘base_link’, but can be changed if attaching the arm to a mobile base that already has a ‘base_link’ frame</td>
+<td>‘base_link’</td>
+</tr>
+<tr class="row-odd"><td>modes_1</td>
+<td>the file path to the ‘mode config’ YAML file for the first robot</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/launch/xsarm_dual.launch" rel="noopener noreferrer" target="_blank">xsarm_dual.launch</a></td>
+</tr>
+<tr class="row-even"><td>robot_model_2</td>
+<td>model type of the second Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name_2</td>
+<td>arbitrary name that is unique to the second robot arm</td>
+<td>“arm_2”</td>
+</tr>
+<tr class="row-even"><td>base_link_2</td>
+<td>name of the ‘root’ link on the arm; typically ‘base_link’, but can be changed if attaching the arm to a mobile base that already has a ‘base_link’ frame</td>
+<td>‘base_link’</td>
+</tr>
+<tr class="row-odd"><td>modes_2</td>
+<td>the file path to the ‘mode config’ YAML file for the second robot</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/launch/xsarm_dual.launch" rel="noopener noreferrer" target="_blank">xsarm_dual.launch</a></td>
+</tr>
+<tr class="row-even"><td>use_sim</td>
+<td>if true, the Dynamixel simulator node is run; use RViz to visualize the robot’s motion; if false, the real Dynamixel driver node is run</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>use_dual_rviz</td>
+<td>launches RViz to show both arms</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>rvizconfig</td>
+<td>file path to the config file RViz should load</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/launch/xsarm_dual.launch" rel="noopener noreferrer" target="_blank">xsarm_dual.launch</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="video-tutorial">
+<h2>Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permalink to this headline"></a></h2>
+<div class="section" id="working-with-multiple-arms">
+<h3>Working With Multiple Arms<a class="headerlink" href="#working-with-multiple-arms" title="Permalink to this headline"></a></h3>
+<div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/DnjbNXxBE_8?start=30" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arm_puppeteering.html" class="btn btn-neutral float-left" title="Arm Puppeteering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dual_arm_joystick_control.html" class="btn btn-neutral float-right" title="Dual Arm Joystick Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -23,7 +23,7 @@ package is what all 'downstream' ROS packages should reference to get the robot 
 Structure
 =========
 
-.. image:: /_images/xsarm_control_flowchart_ros2.png
+.. image:: images/xsarm_control_flowchart_ros2.png
     :align: center
 
 As shown in the image above, the `interbotix_xsarm_control` package builds on top of the

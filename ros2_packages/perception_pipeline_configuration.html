@@ -57,13 +57,13 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../specifications/index.html">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ros_interface/index.html">ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface/index.html">Python-ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface/index.html">MATLAB-ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ros_packages/index.html">ROS Open Source Packages</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ROS 2 Open Source Packages</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
@@ -95,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
         </div>
@@ -112,7 +112,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">ROS 2 Open Source Packages</a></li>
+          <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">Perception Configuration</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros2_packages/perception_pipeline_configuration.rst" class="fa fa-github"> Edit on GitHub</a>
@@ -164,7 +164,7 @@ will interfere with the depth camera’s ability to locate them through its use 
 Similarly, the workspace should not be in direct sunlight as that also interferes with the camera’s
 depth sensing abilities. Otherwise, the arm, camera, and small objects can be arbitrarily placed.
 For the <cite>pick and place demo</cite>, you should setup your workspace area as shown below.</p>
-<img alt="../_images/pick_place_demo_setup.png" class="align-center" src="../_images/pick_place_demo_setup.png" />
+<img alt="../_images/pick_place_demo_setup1.png" class="align-center" src="../_images/pick_place_demo_setup1.png" />
 <p>Before the arm picks up any object, two things must be done. First, the camera must know where the
 arm is relative to itself. One way of doing this is by manually measuring the offset from the
 camera’s color optical frame to the robot’s <code class="docutils literal notranslate"><span class="pre">base_link</span></code> frame and publishing it as a static
@@ -180,7 +180,7 @@ being used)…</p>
 </div>
 <p>RViz should pop up along with two standalone GUIs. One of those GUIs will look like the picture
 below.</p>
-<img alt="../_images/armtag_tuner_gui.png" class="align-center" src="../_images/armtag_tuner_gui.png" />
+<img alt="../_images/armtag_tuner_gui1.png" class="align-center" src="../_images/armtag_tuner_gui1.png" />
 <p>Depending on how you setup your arm and camera in your workspace, the AprilTag on the arm may not
 be visible to the camera. To make it visible, first torque off all the arm joints by opening a
 terminal and typing…</p>
@@ -216,7 +216,7 @@ cluster to be, and is the position returned to the user from the <code class="do
 function. These TFs are temporary and will fade from RViz after a minute is up. The arm will then
 line up its <code class="docutils literal notranslate"><span class="pre">ee_gripper_link</span></code> to be in the same spot as each of these cluster positions and
 hopefully pick up the objects.</p>
-<img alt="../_images/object_cluster_tf.png" class="align-center" src="../_images/object_cluster_tf.png" />
+<img alt="../_images/object_cluster_tf1.png" class="align-center" src="../_images/object_cluster_tf1.png" />
 <p>After running the demo, <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> from the launch file. The ‘camera to arm base_link’
 transform will automatically be saved in a file called ‘static_transforms.yaml’ in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/config" rel="noopener noreferrer" target="_blank">config</a>
 directory. Now, you can run the demo script headless - first by running the command below.</p>

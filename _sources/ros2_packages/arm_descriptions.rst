@@ -31,7 +31,7 @@ robot description.
 Structure
 =========
 
-.. image:: /_images/xsarm_descriptions_flowchart_ros2.png
+.. image:: images/xsarm_descriptions_flowchart_ros2.png
     :align: center
 
 This package contains the `xsarm_description.launch.py`_ file responsible for loading parts or all

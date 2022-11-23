@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arm Control &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gazebo Configuration" href="gazebo_simulation_configuration.html" />
+    <link rel="prev" title="Arm Descriptions" href="arm_descriptions.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arm Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pid_gains_test_environment.html">PID Gains Test Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros1_packages.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+      <li class="breadcrumb-item active">Arm Control</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros1_packages/arm_control.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="arm-control">
+<h1>Arm Control<a class="headerlink" href="#arm-control" title="Permalink to this headline"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_control"
+    class="docs-view-on-github-button"
+    target="_blank">
+    <img src="../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>This package contains the configuration and launch files necessary to easily start the Interbotix
+Arm platform. This includes launching the <strong>xs_sdk</strong> node responsible for driving the DYNAMIXEL
+motors on the robot and loading the URDF to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter. Essentially, this
+package is what all ‘downstream’ ROS packages should reference to get the robot up and running.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<img alt="../_images/xsarm_control_flowchart.png" class="align-center" src="../_images/xsarm_control_flowchart.png" />
+<p>As shown in the image above, the <cite>interbotix_xsarm_control</cite> package builds on top of the
+<a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> and <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/tree/main/interbotix_ros_xseries/interbotix_xs_sdk" rel="noopener noreferrer" target="_blank">interbotix_xs_sdk</a> packages. Please
+take a look at those packages to get familiar with their nodes. You will also notice a config
+directory containing many YAML files. Each file (beside the modes.yaml one) specifies the names and
+initial register values for all the motors that make up a specific robot arm. There is also some
+‘meta-info’ like names of joint groups, the desired joint-topic name and publishing frequency,
+etc… For a full explanation of each of these parameters, check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/main/interbotix_ros_xseries/interbotix_xs_sdk/config/motor_configs_template.yaml" rel="noopener noreferrer" target="_blank">Motor Config file
+template</a>. The other file located in that directory is the Mode Config one (a.k.a modes.yaml). The
+parameters in there define the desired operating modes for either a group of joints or single
+joints, and whether or not they should be torqued on/off at node startup. See more by referencing
+the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/main/interbotix_ros_xseries/interbotix_xs_sdk/config/mode_configs_template.yaml" rel="noopener noreferrer" target="_blank">Mode Config file template</a>. Typically, the Motor Config file is only defined here while the
+Mode Config file is also defined in any ‘downstream’ ROS package. This makes it easy for users to
+configure their desired motor operating modes depending on their project.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>To run this package on the physical robot, type the line below in a terminal (assuming the
+WidowX-200 arm is being used).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:<span class="o">=</span>wx200
+</pre></div>
+</div>
+<p>To run this package on a simulated robot, run the command below in a terminal (assuming the
+WidowX-200 arm is being used).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:<span class="o">=</span>wx200 use_sim:<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>To further customize the launch file at run-time, refer to the table below.</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything)</td>
+<td>“$(arg robot_model)”</td>
+</tr>
+<tr class="row-even"><td>base_link_frame</td>
+<td>name of the ‘root’ link on the arm; typically ‘base_link’, but can be changed if attaching the arm to a mobile base that already has a ‘base_link’ frame</td>
+<td>‘base_link’</td>
+</tr>
+<tr class="row-odd"><td>show_ar_tag</td>
+<td>if true, the AR tag mount is included in the ‘robot_description’ parameter; if false, it is left out; set to true if using the AR tag mount in your project</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>show_gripper_bar</td>
+<td>if true, the gripper_bar link is included in the ‘robot_description’ parameter; if false, the gripper_bar and finger links are not loaded to the parameter server. Set to false if you have a custom gripper attachment</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>show_gripper_fingers</td>
+<td>if true, the gripper fingers are included in the ‘robot_description’ parameter; if false, the gripper finger links are not loaded to the parameter server. Set to false if you have custom gripper fingers</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>use_world_frame</td>
+<td>set this to true if you would like to load a ‘world’ frame to the ‘robot_description’ parameter which is located exactly at the ‘base_link’ frame of the robot; if using multiple robots or if you would like to attach the ‘base_link’ frame of the robot to a different frame, set this to false</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>external_urdf_loc</td>
+<td>the file path to the custom urdf.xacro file that you would like to include in the Interbotix robot’s urdf.xacro file</td>
+<td>“”</td>
+</tr>
+<tr class="row-even"><td>use_rviz</td>
+<td>launches RViz</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>motor_configs</td>
+<td>the file path to the ‘motor config’ YAML file</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_control/launch/xsarm_control.launch" rel="noopener noreferrer" target="_blank">xsarm_control.launch</a></td>
+</tr>
+<tr class="row-even"><td>mode_configs</td>
+<td>the file path to the ‘mode config’ YAML file</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_control/launch/xsarm_control.launch" rel="noopener noreferrer" target="_blank">xsarm_control.launch</a></td>
+</tr>
+<tr class="row-odd"><td>load_configs</td>
+<td>a boolean that specifies whether or not the initial register values (under the ‘motors’ heading) in a Motor Config file should be written to the motors; as the values being written are stored in each motor’s EEPROM (which means the values are retained even after a power cycle), this can be set to false after the first time using the robot. Setting to false also shortens the node startup time by a few seconds and preserves the life of the EEPROM</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>use_sim</td>
+<td>if true, the Dynamixel simulator node is run; use RViz to visualize the robot’s motion; if false, the real Dynamixel driver node is run</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arm_descriptions.html" class="btn btn-neutral float-left" title="Arm Descriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gazebo_simulation_configuration.html" class="btn btn-neutral float-right" title="Gazebo Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -31,7 +31,7 @@ includes a D415 camera and stand), visit `its store page`_.
 Structure
 =========
 
-.. image:: /_images/xsarm_perception_flowchart_ros2.png
+.. image:: images/xsarm_perception_flowchart_ros2.png
     :align: center
 
 As shown above, this package builds on top of the `interbotix_xsarm_control` and
@@ -57,7 +57,7 @@ For the `pick and place demo`, you should setup your workspace area as shown bel
 
 .. _`pick and place demo`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py
 
-.. image:: /_images/pick_place_demo_setup.png
+.. image:: images/pick_place_demo_setup.png
     :align: center
 
 Before the arm picks up any object, two things must be done. First, the camera must know where the
@@ -81,7 +81,7 @@ being used)...
 RViz should pop up along with two standalone GUIs. One of those GUIs will look like the picture
 below.
 
-.. image:: /_images/armtag_tuner_gui.png
+.. image:: images/armtag_tuner_gui.png
     :align: center
 
 Depending on how you setup your arm and camera in your workspace, the AprilTag on the arm may not
@@ -129,7 +129,7 @@ function. These TFs are temporary and will fade from RViz after a minute is up. 
 line up its ``ee_gripper_link`` to be in the same spot as each of these cluster positions and
 hopefully pick up the objects.
 
-.. image:: /_images/object_cluster_tf.png
+.. image:: images/object_cluster_tf.png
     :align: center
 
 After running the demo, :kbd:`Ctrl` + :kbd:`C` from the launch file. The 'camera to arm base_link'

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PID Gains Test Environment &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arm Puppeteering" href="arm_puppeteering.html" />
+    <link rel="prev" title="Arm Diagnostic Listener" href="arm_diagnostic_listener.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ros_interface.html">ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gazebo_simulation_configuration.html">Gazebo Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS Controllers Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt Interface and API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab_demos.html">MATLAB Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_tool.html">Arm Diagnostic Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arm_diagnostic_listener.html">Arm Diagnostic Listener</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PID Gains Test Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arm_puppeteering.html">Arm Puppeteering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_control.html">Dual Arm Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dual_arm_joystick_control.html">Dual Arm Joystick Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros1_packages.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+      <li class="breadcrumb-item active">PID Gains Test Environment</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros1_packages/pid_gains_test_environment.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="pid-gains-test-environment">
+<h1>PID Gains Test Environment<a class="headerlink" href="#pid-gains-test-environment" title="Permalink to this headline"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid"
+    class="docs-view-on-github-button"
+    target="_blank">
+    <img src="../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>This package can be used as a way to test ‘pwm’ or ‘current’ PID gains when operating the arm in
+either ‘pwm’ or ‘current’ mode. PID gains are read into the controller node from the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/config/gains.yaml" rel="noopener noreferrer" target="_blank">gains.yaml</a>
+file. The node then commands the arm to its ‘home’ pose and waits ten seconds for it to settle.
+Then it commands the arm to its ‘sleep’ pose and waits another ten seconds for it to settle.
+Finally, the node commands all the motors to either zero pwm or zero current (effectively torquing
+them off) before shutting itself down.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<img alt="../_images/xsarm_pid_flowchart.png" class="align-center" src="../_images/xsarm_pid_flowchart.png" />
+<p>As shown above, the <cite>interbotix_xsarm_pid</cite> package builds on top of the <cite>interbotix_xsarm_control</cite>
+package. To get pointers about the nodes in the that package, please look at its README. The node
+specific to this package is described below.</p>
+<ul class="simple">
+<li><strong>xsarm_pid</strong> - contains a simple PID controller to command the arm joints (excluding gripper)
+first to their ‘home’ positions and then to their ‘sleep’ positions; it receives the desired
+PID gains from <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/config/gains.yaml" rel="noopener noreferrer" target="_blank">gains.yaml</a> and the <code class="docutils literal notranslate"><span class="pre">control_mode</span></code> as a parameter.</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<p>To run this package, first create a ‘gains.yaml’ file similar to the one <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/config/gains.yaml" rel="noopener noreferrer" target="_blank">here</a> with your desired
+‘pwm’ or ‘current’ PID gains. Then run the command below (assuming the ReactorX-150 is being used
+in ‘pwm’ mode).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_pid xsarm_pid.launch robot_model:<span class="o">=</span>rx150 control_mode:<span class="o">=</span>pwm
+</pre></div>
+</div>
+<p>To further customize the launch of the robot, take a look at the table below.</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm such as ‘wx200’ or ‘rx150’</td>
+<td>“”</td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to robot_model, but could be anything)</td>
+<td>$(arg robot_model)</td>
+</tr>
+<tr class="row-even"><td>base_link_frame</td>
+<td>name of the ‘root’ link on the arm; typically ‘base_link’, but can be changed if attaching the arm to a mobile base that already has a ‘base_link’ frame</td>
+<td>base_link’</td>
+</tr>
+<tr class="row-odd"><td>use_rviz</td>
+<td>launches RViz</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>mode_configs</td>
+<td>the file path to the ‘mode config’ YAML file</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/launch/xsarm_pid.launch" rel="noopener noreferrer" target="_blank">xsarm_pid.launch</a></td>
+</tr>
+<tr class="row-odd"><td>control_mode</td>
+<td>the outputted command from the control loop - can be either ‘pwm’ or ‘current’</td>
+<td>pwm</td>
+</tr>
+<tr class="row-even"><td>gains_filepath</td>
+<td>the file path to the ‘gains’ YAML file</td>
+<td>refer to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/launch/xsarm_pid.launch" rel="noopener noreferrer" target="_blank">xsarm_pid.launch</a></td>
+</tr>
+<tr class="row-odd"><td>launch_driver</td>
+<td>true if the xsarm_control.launch file should be launched - set to false if you would like to run your own version of this file separately</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arm_diagnostic_listener.html" class="btn btn-neutral float-left" title="Arm Diagnostic Listener" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arm_puppeteering.html" class="btn btn-neutral float-right" title="Arm Puppeteering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
