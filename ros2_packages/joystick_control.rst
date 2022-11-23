@@ -29,7 +29,7 @@ University.
 Structure
 =========
 
-.. image:: /_images/xsarm_joy_flowchart_ros2.png
+.. image:: images/xsarm_joy_flowchart_ros2.png
 	:width: 70%
 	:align: center
 
@@ -77,7 +77,7 @@ To understand how the joystick buttons map to controlling the robot, look at the
 below. Note that while the Xbox360 has a slightly different naming convention, the button placement
 is essentially the same:
 
-.. image:: /_images/ps3.jpg
+.. image:: images/ps3.jpg
 	:width: 70%
 	:align: center
 

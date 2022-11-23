@@ -20,7 +20,7 @@ WidowX-200 offers 5 degree of freedom and a full 360 degree of rotation.
 .. list-table::
     :align: center
 
-    * - .. image:: /_images/wx200.png
+    * - .. image:: images/wx200.png
             :align: center
             :width: 500px
 
@@ -116,11 +116,11 @@ Product of Exponentials [`Learn More`_]
 Drawings and CAD Files
 ======================
 
-.. image:: /_images/wx200_drawing.png
+.. image:: images/wx200_drawing.png
     :align: center
     :width: 70%
 
-:download:`WX-200 Technical Drawing </_downloads/WidowX-200.pdf>`
+:download:`WidowX-200 Technical Drawing </_downloads/WidowX-200.pdf>`
 
 .. raw:: html
 
@@ -134,7 +134,5 @@ Drawings and CAD Files
         frameborder="0">
     </iframe>
 
-- :download:`WX-200 Solid STEP Files </_downloads/solids/5_WXA-200-M.zip>`
-- `WX-200 Mesh STL Files`_
-
-.. _`WX-200 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes
+- :download:`WidowX-200 Solid STEP Files </_downloads/solids/5_WXA-200-M.zip>`
+- `WidowX-200 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes>`_

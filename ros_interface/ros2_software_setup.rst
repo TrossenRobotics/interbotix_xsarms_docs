@@ -72,9 +72,9 @@ Requirements
 Below is a list of the hardware you will need to get started:
 
 - One of the X-Series Robot Arm Kits mentioned above
-- Computer running Ubuntu Linux 20.04
+- Computer running Ubuntu Linux 20.04 or 22.04
 
-.. warning::
+.. important::
 
     Virtual Linux machines have not been tested are **not supported**.
 
@@ -206,7 +206,7 @@ Quickstart Guide <./ros2_quickstart>`.
 Troubleshooting
 ===============
 
-Refer to the :doc:`X-Series Troubleshooting guide <../troubleshooting/index>` to try to solve your
+Refer to the :doc:`X-Series Troubleshooting guide <../troubleshooting>` to try to solve your
 problem. If you still need help, feel free to `open an Issue`_ on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same
 difficulty can benefit. This repository is actively maintained and any open Issues will be

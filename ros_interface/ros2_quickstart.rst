@@ -14,7 +14,7 @@ Interface.
 
         $ ros2 launch interbotix_xsarm_descriptions xsarm_description.launch.py robot_model:=wx200 use_joint_pub_gui:=true
 
-.. image:: /_images/rviz_remote.png
+.. image:: images/rviz_remote.png
     :align: center
     :width: 70%
 
@@ -90,7 +90,7 @@ to take to gain a better understanding of how they relate to each other.
 
 Afterwards, feel free to check out the demo projects like :doc:`Joystick Control
 <../ros2_packages/joystick_control>`, or any of the other :doc:`ROS 2 Open Source Packages
-<../ros2_packages/index>`.
+<../ros2_packages>`.
 
 Video Tutorial
 ==============

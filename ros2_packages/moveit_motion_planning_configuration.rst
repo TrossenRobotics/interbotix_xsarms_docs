@@ -24,7 +24,7 @@ physical robot hardware, or a MoveIt-generated fake robot.
 Structure
 =========
 
-.. image:: /_images/xsarm_moveit_flowchart_ros2.png
+.. image:: images/xsarm_moveit_flowchart_ros2.png
     :align: center
 
 As shown above, this package builds on top of the `interbotix_xsarm_sim`,

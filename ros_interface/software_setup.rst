@@ -72,9 +72,9 @@ Requirements
 Below is a list of the hardware you will need to get started:
 
 - One of the X-Series Robot Arm Kits mentioned above
-- Computer running Ubuntu Linux 18.04 or 20.04
+- Computer running Ubuntu Linux 18.04, 20.04, or 22.04
 
-.. warning::
+.. important::
 
     Virtual Linux machines have not been tested are **not supported**.
 
@@ -165,11 +165,11 @@ Remote Install
 For some robotic projects, you may want to run your robot in a 'headless' state on some computer
 (like a NUC or Raspberry Pi), and monitor the robot's state (in RViz for example) on your personal
 (a.k.a remote) computer over a local network. For this to work, run the installation script below
-on your personal computer running Linux Ubuntu 18.04 or 20.04. Note that ROS and RViz must already
-be installed! As an FYI, the script will prompt you to insert the hostname of the robot (NOT the
-remote) computer. As an example, if you wanted to monitor the state of-a robot arm purchased with a
-Raspberry Pi 4B Kit, you would set the hostname to ``pibot``. To find out the hostname of the robot
-computer, just open a terminal and type ``hostname``.
+on your personal computer running Linux Ubuntu 18.04, 20.04, or 22.04. Note that ROS and RViz must
+already be installed! As an FYI, the script will prompt you to insert the hostname of the robot
+(NOT the remote) computer. As an example, if you wanted to monitor the state of-a robot arm
+purchased with a Raspberry Pi 4B Kit, you would set the hostname to ``pibot``. To find out the
+hostname of the robot computer, just open a terminal and type ``hostname``.
 
     .. code-block:: console
 
@@ -208,7 +208,7 @@ Guide <./quickstart>`.
 Troubleshooting
 ===============
 
-Refer to the :doc:`X-Series Troubleshooting guide <../troubleshooting/index>` to try to solve your
+Refer to the :doc:`X-Series Troubleshooting guide <../troubleshooting>` to try to solve your
 problem. If you still need help, feel free to `open an Issue`_ on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same
 difficulty can benefit. This repository is actively maintained and any open Issues will be

@@ -19,7 +19,7 @@ PincherX-100 offers 4 degree of freedom and a full 360 degree of rotation.
 .. list-table::
     :align: center
 
-    * - .. image:: /_images/px100.png
+    * - .. image:: images/px100.png
             :align: center
             :width: 600px
 
@@ -115,11 +115,11 @@ Drawings and CAD Files
 Standard Version
 ----------------
 
-.. image:: /_images/px100_drawing.png
+.. image:: images/px100_drawing.png
     :align: center
     :width: 70%
 
-:download:`PX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
+:download:`PincherX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
 
 .. raw:: html
 
@@ -133,10 +133,8 @@ Standard Version
         frameborder="0">
     </iframe>
 
-- :download:`PX-100 Solid STEP Files </_downloads/solids/1_PXA-100-A.zip>`
-- `PX-100 Mesh STL Files`_
-
-.. _`PX-100 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/px100_meshes
+- :download:`PincherX-100 Solid STEP Files </_downloads/solids/1_PXA-100-A.zip>`
+- `PincherX-100 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/px100_meshes>`_
 
 Mobile Version
 --------------
@@ -144,11 +142,11 @@ Mobile Version
 The Mobile version of the PincherX-100 is a modified version to have a lower profile base which is
 easier to mount on mobile platforms. This base is compatible with the LoCoBot Platform.
 
-.. image:: /_images/px100-mobile_drawing.png
+.. image:: images/px100-mobile_drawing.png
     :align: center
     :width: 70%
 
-:download:`PX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
+:download:`PincherX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
 
 .. raw:: html
 
@@ -162,7 +160,5 @@ easier to mount on mobile platforms. This base is compatible with the LoCoBot Pl
         frameborder="0">
     </iframe>
 
-- :download:`Mobile PX-100 Solid STEP Files </_downloads/solids/1_PXA-100-M.zip>`
-- `Mobile PX-100 Mesh STL Files`_
-
-.. _`Mobile PX-100 Mesh STL Files`: https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/mobile_px100_meshes
+- :download:`Mobile PincherX-100 Solid STEP Files </_downloads/solids/1_PXA-100-M.zip>`
+- `Mobile PincherX-100 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/mobile_px100_meshes>`_

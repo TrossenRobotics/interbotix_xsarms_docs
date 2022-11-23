@@ -14,7 +14,7 @@ Interface.
 
         $ roslaunch interbotix_xsarm_descriptions xsarm_description.launch robot_model:=wx200 use_joint_pub_gui:=true
 
-.. image:: /_images/rviz_remote.png
+.. image:: images/rviz_remote.png
     :align: center
     :width: 70%
 
@@ -77,18 +77,18 @@ Interface.
     This package allows you to control your arm using a Bluetooth controller. See it's usage
     details in `its documentation page`_.
 
-.. _`its documentation page`: ../ros_packages/joystick_control.html
+.. _`its documentation page`: ../ros1_packages/joystick_control.html
 
 That ends the quickstart tutorial. To get familiar with the architecture and launch file arguments,
 refer to the READMEs of the core packages. Start with the :doc:`X-Series Arm Descriptions
-<../ros_packages/arm_descriptions>` package, then the :doc:`X-Series Arm Control
-<../ros_packages/arm_control>` package. Next, look at the :doc:`Gazebo Configuration
-<../ros_packages/gazebo_simulation_configuration>` package followed by the :doc:`ROS Controllers
-Configuration <../ros_packages/ros_control>` and :doc:`MoveIt Configuration
-<../ros_packages/moveit_motion_planning_configuration>` packages. This is the most logical approach
+<../ros1_packages/arm_descriptions>` package, then the :doc:`X-Series Arm Control
+<../ros1_packages/arm_control>` package. Next, look at the :doc:`Gazebo Configuration
+<../ros1_packages/gazebo_simulation_configuration>` package followed by the :doc:`ROS Controllers
+Configuration <../ros1_packages/ros_control>` and :doc:`MoveIt Configuration
+<../ros1_packages/moveit_motion_planning_configuration>` packages. This is the most logical approach
 to take to gain a better understanding of how they relate to each other.
 
 Afterwards, feel free to check out the demo projects like :doc:`Joystick Control
-<../ros_packages/joystick_control>` and :doc:`Record & Playback
-<../ros_packages/record_and_playback>`, or any of the other :doc:`ROS Open Source Packages
-<../ros_packages/index>`.
+<../ros1_packages/joystick_control>` and :doc:`Record & Playback
+<../ros1_packages/record_and_playback>`, or any of the other :doc:`ROS Open Source Packages
+<../ros1_packages>`.

@@ -27,7 +27,7 @@ description of each supported simulation environment's configuration.
 Structure
 =========
 
-.. image:: /_images/xsarm_gz_classic_flowchart_ros2.png
+.. image:: images/xsarm_gz_classic_flowchart_ros2.png
     :align: center
 
 As shown above, the `interbotix_xsarm_sim` package builds on top of the
