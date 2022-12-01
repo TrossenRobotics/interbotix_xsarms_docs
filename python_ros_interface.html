@@ -21,6 +21,7 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -138,8 +139,8 @@ knows as <strong>T_sb</strong> (i.e. the transform that specifies the ‘Body’
 frame ‘s’). In the image above, you can see both of these frames. The X axes are in red, the Y axes
 are in green, and the Z axes are in blue. The rotation and translation information is stored in a
 <a class="reference external" href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/3-3-1-homogeneous-transformation-matrices/" rel="noopener noreferrer" target="_blank">homogeneous transformation matrix</a>.</p>
-<div class="math">
-<p><span class="math">T =
+<div class="math notranslate nohighlight">
+\[\begin{split}T =
 \begin{bmatrix}
     R &amp; p \\
     0 &amp; 1
@@ -150,10 +151,10 @@ are in green, and the Z axes are in blue. The rotation and translation informati
     r_{21} &amp; r_{22} &amp; r_{23} &amp; p_2 \\
     r_{31} &amp; r_{32} &amp; r_{33} &amp; p_3 \\
     0     &amp; 0      &amp; 0       &amp; 1 \\
-\end{bmatrix}</span></p>
-</div><p>In a homogeneous transformation matrix, the first three rows and three columns <span class="math">R</span> define a
+\end{bmatrix}\end{split}\]</div>
+<p>In a homogeneous transformation matrix, the first three rows and three columns <span class="math notranslate nohighlight">\(R\)</span> define a
 3-dimensional rotation matrix that describes the orientation of the ‘Body’ frame with respect to
-the ‘Space’ frame. The first three rows and the fourth column <span class="math">p</span> of the matrix represent the
+the ‘Space’ frame. The first three rows and the fourth column <span class="math notranslate nohighlight">\(p\)</span> of the matrix represent the
 translational position (i.e. xyz) of the ‘Body’ frame with respect to the ‘Space’ frame. The fourth
 row of the matrix is always [0 0 0 1] for matrix multiplication purposes.</p>
 <p>You will see two other homogeneous transformation matrices in the code: <strong>T_sd</strong> and <strong>T_sy</strong>.
