@@ -23,7 +23,7 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.graphviz',
     'sphinxcontrib.youtube',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     'sphinx_copybutton',
     'sphinx_tabs.tabs',
 ]
