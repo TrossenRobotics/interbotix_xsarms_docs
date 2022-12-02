@@ -1313,8 +1313,25 @@ div.carousel-thumbnail-container {
 }
 
 
-/* If elemt I want effected is inside the container */
+/* If element I want effected is inside the container */
 
 label.static-container:hover .static {
     opacity: 0;
+}
+
+
+div.ros-distros-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h2.ros-distros-links-titles {
+    margin-bottom: 5px;
+}
+
+div.ros-distros-links img {
+    height: 220px;
+    width: auto;
 }

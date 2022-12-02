@@ -1,8 +1,8 @@
 ======================
-ROS 2 Quickstart Guide
+ROS 1 Quickstart Guide
 ======================
 
-This guide is intended to get the use familiar with the basic functions and interfaces of the ROS 2
+This guide is intended to get the use familiar with the basic functions and interfaces of the ROS 1
 Interface.
 
 1.  Get familiar with the virtual robot model by launching it in RViz and playing with the
@@ -12,7 +12,7 @@ Interface.
 
     .. code-block:: console
 
-        $ ros2 launch interbotix_xsarm_descriptions xsarm_description.launch.py robot_model:=wx200 use_joint_pub_gui:=true
+        $ roslaunch interbotix_xsarm_descriptions xsarm_description.launch robot_model:=wx200 use_joint_pub_gui:=true
 
 .. image:: images/rviz_remote.png
     :align: center
@@ -23,7 +23,7 @@ Interface.
 
     .. code-block:: console
 
-        $ ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=vx250
+        $ roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=vx250
 
 3.  By default, all the motors in the robot are torqued on so it will be very difficult to manually
     manipulate it. To torque off all the motors, execute the command below in another terminal.
@@ -35,7 +35,7 @@ Interface.
 
     .. code-block:: console
 
-        $ ros2 service call /vx250/torque_enable interbotix_xs_msgs/srv/TorqueEnable "{cmd_type: 'group', name: 'all', enable: false}"
+        $ rosservice call /vx250/torque_enable "{cmd_type: 'group', name: 'all', enable: false}"
 
     .. note::
 
@@ -61,12 +61,12 @@ Interface.
 
     .. code-block:: console
 
-        $ ros2 service call /vx250/torque_enable interbotix_xs_msgs/srv/TorqueEnable "{cmd_type: 'group', name: 'all', enable: true}"
+        $ rosservice call /vx250/torque_enable "{cmd_type: 'group', name: 'all', enable: true}"
 
 5.  Let go and observe how the arm stays in place.
 
-6.  Hold on to the robot and shutdown all nodes by pressing :kbd:`Ctrl` + :kbd:`C` in the terminal
-    where you started the launch file.
+6.  Hold on to the robot and shutdown all nodes by pressing :kbd:`Ctrl` + :kbd:`C` in the terminal where you
+    started the launch file.
 
     .. warning::
 
@@ -77,24 +77,18 @@ Interface.
     This package allows you to control your arm using a Bluetooth controller. See it's usage
     details in `its documentation page`_.
 
-.. _`its documentation page`: ../ros2_packages/joystick_control.html
+.. _`its documentation page`: /ros1_packages/joystick_control.html
 
 That ends the quickstart tutorial. To get familiar with the architecture and launch file arguments,
 refer to the READMEs of the core packages. Start with the :doc:`X-Series Arm Descriptions
-<../ros2_packages/arm_descriptions>` package, then the :doc:`X-Series Arm Control
-<../ros2_packages/arm_control>` package. Next, look at the :doc:`Gazebo Configuration
-<../ros2_packages/simulation_configuration>` package followed by the :doc:`ROS Controllers
-Configuration <../ros2_packages/ros_control>` and :doc:`MoveIt Configuration
-<../ros2_packages/moveit_motion_planning_configuration>` packages. This is the most logical approach
+</ros1_packages/arm_descriptions>` package, then the :doc:`X-Series Arm Control
+</ros1_packages/arm_control>` package. Next, look at the :doc:`Gazebo Configuration
+</ros1_packages/gazebo_simulation_configuration>` package followed by the :doc:`ROS Controllers
+Configuration </ros1_packages/ros_control>` and :doc:`MoveIt Configuration
+</ros1_packages/moveit_motion_planning_configuration>` packages. This is the most logical approach
 to take to gain a better understanding of how they relate to each other.
 
 Afterwards, feel free to check out the demo projects like :doc:`Joystick Control
-<../ros2_packages/joystick_control>`, or any of the other :doc:`ROS 2 Open Source Packages
-<../ros2_packages>`.
-
-Video Tutorial
-==============
-
-.. youtube:: vGCIU6CX72M
-    :width: 70%
-    :align: center
+</ros1_packages/joystick_control>` and :doc:`Record & Playback
+</ros1_packages/record_and_playback>`, or any of the other :doc:`ROS Open Source Packages
+</ros1_packages>`.
