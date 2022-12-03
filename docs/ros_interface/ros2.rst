@@ -20,7 +20,7 @@ See the :doc:`ROS 2 Interface Overview <ros2/overview>` for details.
     :caption: Table of Contents:
     :titlesonly:
 
+    ros2/overview.rst
     ros2/software_setup.rst
     ros2/quickstart.rst
-    ros2/overview.rst
     ros2/config.rst

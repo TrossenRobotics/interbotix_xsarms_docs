@@ -8,7 +8,6 @@ supported distributions (either ROS 1 or ROS 2) to learn more about each ROS Int
 .. raw:: html
 
     <div style="text-align: center;">
-
         <a href="./ros_interface/ros1.html">
             <h2 class="ros-distros-links-titles">Supported ROS 1 Distributions</h2>
             <div class="ros-distros-links">
@@ -25,7 +24,6 @@ supported distributions (either ROS 1 or ROS 2) to learn more about each ROS Int
                 <img alt="ROS 2 Rolling" src="_static/rolling.png" title="ROS 2 Rolling" height="220" />
             </div>
         </a>
-
     </div>
 
 .. toctree::
