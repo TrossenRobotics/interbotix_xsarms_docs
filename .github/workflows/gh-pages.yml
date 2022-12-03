@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          submodules: recursive
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -25,10 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install --upgrade --requirement ./requirements.txt
       - name: Build Site
-        run: make html
+        run: cd docs && make html
       - name: Deploy Site
         if: ${{ success() }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/html/
+          publish_dir: ./docs/_build/html/

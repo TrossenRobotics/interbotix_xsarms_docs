@@ -22,10 +22,11 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.extlinks',
     'sphinx.ext.graphviz',
-    'sphinxcontrib.youtube',
     'sphinx.ext.mathjax',
+    'sphinxcontrib.youtube',
     'sphinx_copybutton',
     'sphinx_tabs.tabs',
+    'sphinx_collapse',
 ]
 
 # Used by the sphinx_copybutton extension - Define the prompt text that should be removed from

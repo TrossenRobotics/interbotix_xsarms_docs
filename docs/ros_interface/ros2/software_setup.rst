@@ -1,6 +1,6 @@
-===========================
-ROS Standard Software Setup
-===========================
+=============================
+ROS 2 Standard Software Setup
+=============================
 
 .. contents::
   :local:
@@ -8,7 +8,7 @@ ROS Standard Software Setup
 Compatible Models
 =================
 
-The ROS Interface packages can be used with any of the Interbotix arm kits listed below. Next to
+The ROS 2 Interface packages can be used with any of the Interbotix arm kits listed below. Next to
 each name is the codename used to describe it in software (specifically for the ``robot_model``
 argument in launch files). There are up to four parts in a name. In general, the first two letters
 represent model type (ex. ``wx`` for 'WidowX'). The number afterwards corresponds to the length of
@@ -25,34 +25,34 @@ arm is designed to be mounted on a mobile base.
       - Robot Documentation
       - Codename
     * - `PincherX-100 Robot Arm`_
-      - :doc:`PincherX-100 Robot Arm Documentation <../specifications/px100>`
+      - :doc:`PincherX-100 Robot Arm Documentation </specifications/px100>`
       - ``px100``
     * - `PincherX-150 Robot Arm`_
-      - :doc:`PincherX-150 Robot Arm Documentation <../specifications/px150>`
+      - :doc:`PincherX-150 Robot Arm Documentation </specifications/px150>`
       - ``px150``
     * - `ReactorX-150 Robot Arm`_
-      - :doc:`ReactorX-150 Robot Arm Documentation <../specifications/rx150>`
+      - :doc:`ReactorX-150 Robot Arm Documentation </specifications/rx150>`
       - ``rx150``
     * - `ReactorX-200 Robot Arm`_
-      - :doc:`ReactorX-200 Robot Arm Documentation <../specifications/rx200>`
+      - :doc:`ReactorX-200 Robot Arm Documentation </specifications/rx200>`
       - ``rx200``
     * - `WidowX-200 Robot Arm`_
-      - :doc:`WidowX-200 Robot Arm Documentation <../specifications/wx200>`
+      - :doc:`WidowX-200 Robot Arm Documentation </specifications/wx200>`
       - ``wx200``
     * - `WidowX-250 Robot Arm`_
-      - :doc:`WidowX-250 Robot Arm Documentation <../specifications/wx250>`
+      - :doc:`WidowX-250 Robot Arm Documentation </specifications/wx250>`
       - ``wx250``
     * - `WidowX-250 Robot Arm 6DOF`_
-      - :doc:`WidowX-250 Robot Arm 6DOF Documentation <../specifications/wx250s>`
+      - :doc:`WidowX-250 Robot Arm 6DOF Documentation </specifications/wx250s>`
       - ``wx250s``
     * - `ViperX-250 Robot Arm`_
-      - :doc:`ViperX-250 Robot Arm Documentation <../specifications/vx250>`
+      - :doc:`ViperX-250 Robot Arm Documentation </specifications/vx250>`
       - ``vx250``
     * - `ViperX-300 Robot Arm`_
-      - :doc:`ViperX-300 Robot Arm Documentation <../specifications/vx300>`
+      - :doc:`ViperX-300 Robot Arm Documentation </specifications/vx300>`
       - ``vx300``
     * - `ViperX-300 Robot Arm 6DOF`_
-      - :doc:`ViperX-300 Robot Arm 6DOF Documentation <../specifications/vx300s>`
+      - :doc:`ViperX-300 Robot Arm 6DOF Documentation </specifications/vx300s>`
       - ``vx300s``
 
 .. _PincherX-100 Robot Arm: https://www.trossenrobotics.com/pincherx-100-robot-arm.aspx
@@ -72,7 +72,7 @@ Requirements
 Below is a list of the hardware you will need to get started:
 
 - One of the X-Series Robot Arm Kits mentioned above
-- Computer running Ubuntu Linux 18.04, 20.04, or 22.04
+- Computer running Ubuntu Linux 20.04 or 22.04
 
 .. important::
 
@@ -89,23 +89,20 @@ AMD64 Architecture
 
 If your computer uses an Intel or AMD based processor (which is the case for NUCs, most laptops and
 desktop computers), follow the commands below to download and run the installation script. Specify
-the version of ROS that you want to install using the ``-d`` flag followed by the distribution's
-codename. Alternatively, you can run it without the ``-d`` flag and the script will install
-packages for the ROS 1 distribution supported by the version of Ubuntu, or the latest stable
-release of ROS 2 if using Ubuntu version 22.04 or later. See the `list of currently supported
-distributions`_. Note that the script will also install the full desktop version of ROS if it's not
-yet on your system, ask you if you want to install the Interbotix Perception packages and ask you
-if you want to install the MATLAB-ROS API. The commands below demonstrate the process of running
-the installation script for ROS 1 Noetic.
+the version of ROS 2 that you want to install using the ``-d`` flag followed by the distribution's
+codename. See the `list of currently supported distributions`_. Note that the script will also
+install the full desktop version of ROS 2 if it's not yet on your system, ask you if you want to
+install the Interbotix Perception packages and ask you if you want to install the MATLAB-ROS API.
+The commands below demonstrate the process of running the installation script for ROS 2 Galactic.
 
-.. _`list of currently supported distributions`: https://github.com/Interbotix/interbotix_ros_manipulators/security/policy#supported-versions
+.. _interbotix_ros_arms: https://github.com/Interbotix/interbotix_ros_arms
 
     .. code-block:: console
 
         $ sudo apt install curl
         $ curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/amd64/xsarm_amd64_install.sh' > xsarm_amd64_install.sh
         $ chmod +x xsarm_amd64_install.sh
-        $ ./xsarm_amd64_install.sh -d noetic
+        $ ./xsarm_amd64_install.sh -d galactic
 
     .. note::
 
@@ -119,6 +116,8 @@ the installation script for ROS 1 Noetic.
 
             ...
 
+.. _`list of currently supported distributions`: https://github.com/Interbotix/interbotix_ros_manipulators/security/policy#supported-versions
+
 Raspberry Pi 4B (ARM64 Architecture)
 ------------------------------------
 
@@ -127,12 +126,11 @@ anything as the Pi should already come preloaded with all the necessary software
 your own Raspberry Pi 4B from a third party, feel free to follow the `Raspberry Pi 4B Setup
 instructions`_ to get it properly setup before following the commands below. If you only purchased
 the stand-alone Raspberry Pi 4B Kit from our store (which comes pre-configured with Ubuntu and
-ROS), and would like to use it with an arm, then follow the commands below to download and run the
-installation script. Note that the script will install the full desktop version of ROS if it's not
-yet on your system, ask you for your desired robot model (ex. wx200), and prompt you about whether
-or not you'd like the Joystick ROS package to start at boot. The commands below
-demonstrate the process of running the installation script for ROS 1 Noetic.
-
+ROS 2), and would like to use it with an arm, then follow the commands below to download and run the
+installation script. Note that the script will install the full desktop version of ROS 2 if it's not
+yet on your system, ask you for your desired robot model (ex. ``wx200``), and prompt you about
+whether or not you'd like the Joystick ROS 2 package to start at boot. The commands below
+demonstrate the process of running the installation script for ROS 2 Galactic.
 
 .. _Raspberry Pi 4B Setup instructions: ./raspberry_pi_setup.html
 
@@ -141,7 +139,7 @@ demonstrate the process of running the installation script for ROS 1 Noetic.
         $ sudo apt install curl
         $ curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh' > xsarm_rpi4_install.sh
         $ chmod +x xsarm_rpi4_install.sh
-        $ ./xsarm_rpi4_install.sh -d noetic
+        $ ./xsarm_rpi4_install.sh -d galactic
 
 If you **do** want to have the Joystick ROS package start at boot, you will first have to pair your
 PS4 controller with the Pi. Refer to the :ref:`RPi PS4 Controller Setup Guide
@@ -159,31 +157,31 @@ PS4 controller with the Pi. Refer to the :ref:`RPi PS4 Controller Setup Guide
 
             ...
 
-Remote Install
---------------
+.. Remote Install
+.. --------------
 
-For some robotic projects, you may want to run your robot in a 'headless' state on some computer
-(like a NUC or Raspberry Pi), and monitor the robot's state (in RViz for example) on your personal
-(a.k.a remote) computer over a local network. For this to work, run the installation script below
-on your personal computer running Linux Ubuntu 18.04, 20.04, or 22.04. Note that ROS and RViz must
-already be installed! As an FYI, the script will prompt you to insert the hostname of the robot
-(NOT the remote) computer. As an example, if you wanted to monitor the state of-a robot arm
-purchased with a Raspberry Pi 4B Kit, you would set the hostname to ``pibot``. To find out the
-hostname of the robot computer, just open a terminal and type ``hostname``.
+.. For some robotic projects, you may want to run your robot in a 'headless' state on some computer
+.. (like a NUC or Raspberry Pi), and monitor the robot's state (in RViz for example) on your personal
+.. (a.k.a remote) computer over a local network. For this to work, run the installation script below
+.. on your personal computer running Linux Ubuntu 18.04 or 20.04. Note that ROS and RViz must already
+.. be installed! As an FYI, the script will prompt you to insert the hostname of the robot (NOT the
+.. remote) computer. As an example, if you wanted to monitor the state of-a robot arm purchased with a
+.. Raspberry Pi 4B Kit, you would set the hostname to ``pibot``. To find out the hostname of the robot
+.. computer, just open a terminal and type ``hostname``.
 
-    .. code-block:: console
+..     .. code-block:: console
 
-        $ sudo apt install curl
-        $ curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/xsarm_remote_install.sh' > xsarm_remote_install.sh
-        $ chmod +x xsarm_remote_install.sh
-        $ ./xsarm_remote_install.sh
+..         $ sudo apt install curl
+..         $ curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/xsarm_remote_install.sh' > xsarm_remote_install.sh
+..         $ chmod +x xsarm_remote_install.sh
+..         $ ./xsarm_remote_install.sh
 
-Be aware that the installation script will export the `ROS_MASTER_URI` environment variable in your
-personal computer's ~/.bashrc file to ``http://<hostname>.local:11311``. Make sure to comment out
-this line when done monitoring or your personal computer will complain about not being able to find
-its ROS Master.
+.. Be aware that the installation script will export the `ROS_MASTER_URI` environment variable in your
+.. personal computer's ~/.bashrc file to ``http://<hostname>.local:11311``. Make sure to comment out
+.. this line when done monitoring or your personal computer will complain about not being able to find
+.. its ROS Master.
 
-.. _installation-checks-label:
+.. _ros2-installation-checks-label:
 
 Installation Checks
 ===================
@@ -200,37 +198,18 @@ expected output are below:
 Next Steps
 ==========
 
-If the ROS Interface installed properly, you can continue on to the :doc:`ROS Interface Quickstart
-Guide <./quickstart>`.
+If the ROS 2 Interface installed properly, you can continue on to the :doc:`ROS 2 Interface
+Quickstart Guide <./quickstart>`.
 
-.. _troubleshooting-label:
+.. _ros2-troubleshooting-label:
 
 Troubleshooting
 ===============
 
-Refer to the :doc:`X-Series Troubleshooting guide <../troubleshooting>` to try to solve your
+Refer to the :doc:`X-Series Troubleshooting guide </troubleshooting>` to try to solve your
 problem. If you still need help, feel free to `open an Issue`_ on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same
 difficulty can benefit. This repository is actively maintained and any open Issues will be
 addressed as soon as possible.
 
 .. _open an Issue: https://github.com/Interbotix/interbotix_ros_manipulators/issues
-
-.. Keeping your Installation Updated
-.. =================================
-
-.. Because the Interbotix X-Series Arm packages are not (currently) handled through a package manager
-.. and instead through a source installation, updates must be installed manually by the user. To do
-.. this, follow the steps detailed below:
-
-.. 1.  Check if an update exists in any of the three repositories using the ``git fetch`` command.
-.. 2.  
-
-Video Tutorial
-==============
-
-X-Series Arm ROS Installation Guide
------------------------------------
-
-.. youtube:: kZx2tNVfQAQ
-    :align: center

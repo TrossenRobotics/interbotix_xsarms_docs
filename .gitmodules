@@ -1,0 +1,24 @@
+[submodule "interbotix_ros_core_ros1"]
+	path = docs/sources/ros1/interbotix_ros_core
+	url = https://github.com/Interbotix/interbotix_ros_core.git
+	branch = main
+[submodule "interbotix_ros_core_ros2"]
+	path = docs/sources/ros2/interbotix_ros_core
+	url = https://github.com/Interbotix/interbotix_ros_core.git
+	branch = rolling
+[submodule "interbotix_ros_manipulators_ros1"]
+	path = docs/sources/ros1/interbotix_ros_manipulators
+	url = https://github.com/Interbotix/interbotix_ros_manipulators.git
+	branch = main
+[submodule "interbotix_ros_manipulators_ros2"]
+	path = docs/sources/ros2/interbotix_ros_manipulators
+	url = https://github.com/Interbotix/interbotix_ros_manipulators.git
+	branch = rolling
+[submodule "interbotix_ros_toolboxes_ros1"]
+	path = docs/sources/ros1/interbotix_ros_toolboxes
+	url = https://github.com/Interbotix/interbotix_ros_toolboxes.git
+	branch = main
+[submodule "interbotix_ros_toolboxes_ros2"]
+	path = docs/sources/ros2/interbotix_ros_toolboxes
+	url = https://github.com/Interbotix/interbotix_ros_toolboxes.git
+	branch = rolling
