@@ -4,28 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROS Standard Software Setup &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinx_collapse.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ROS Raspberry Pi 4B Setup" href="raspberry_pi_setup.html" />
-    <link rel="prev" title="ROS Interface" href="../ros_interface.html" />
+    <link rel="prev" title="interbotix_xs_sdk" href="overview/xs_sdk.html" />
    
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -45,11 +46,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+            <a href="../../index.html">
+            <img src="../../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -57,40 +58,42 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../specifications.html">Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../ros_interface.html">ROS Interface</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ROS Standard Software Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#compatible-models">Compatible Models</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#software-installation">Software Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#amd64-architecture">AMD64 Architecture</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#raspberry-pi-4b-arm64-architecture">Raspberry Pi 4B (ARM64 Architecture)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#remote-install">Remote Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ros_interface.html">ROS Interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../ros1.html">ROS 1 Interface</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html">ROS 1 Interface Overview</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ROS Standard Software Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#compatible-models">Compatible Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#software-installation">Software Installation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#amd64-architecture">AMD64 Architecture</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#raspberry-pi-4b-arm64-architecture">Raspberry Pi 4B (ARM64 Architecture)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#remote-install">Remote Install</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#installation-checks">Installation Checks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#x-series-arm-ros-installation-guide">X-Series Arm ROS Installation Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-checks">Installation Checks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#video-tutorial">Video Tutorial</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#x-series-arm-ros-installation-guide">X-Series Arm ROS Installation Guide</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html">ROS Quickstart Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ros2_software_setup.html">ROS 2 Standard Software Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ros2_quickstart.html">ROS 2 Quickstart Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ros_interface.html#ros-1">ROS 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ros_interface.html#ros-2">ROS 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">ROS 1 Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">ROS 1 Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../python_ros_interface.html">Python-ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros2.html">ROS 2 Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
         </div>
@@ -99,18 +102,19 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Interbotix X-Series Manipulators Documentation</a>
+          <a href="../../index.html">Interbotix X-Series Manipulators Documentation</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="../ros_interface.html">ROS Interface</a></li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../ros_interface.html">ROS Interface</a></li>
+          <li class="breadcrumb-item"><a href="../ros1.html">ROS 1 Interface</a></li>
       <li class="breadcrumb-item active">ROS Standard Software Setup</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/software_setup.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/ros1/software_setup.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -141,7 +145,7 @@
 </div>
 <div class="section" id="compatible-models">
 <h2><a class="toc-backref" href="#id2">Compatible Models</a><a class="headerlink" href="#compatible-models" title="Permalink to this headline"></a></h2>
-<p>The ROS Interface packages can be used with any of the Interbotix arm kits listed below. Next to
+<p>The ROS 1 Interface packages can be used with any of the Interbotix arm kits listed below. Next to
 each name is the codename used to describe it in software (specifically for the <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>
 argument in launch files). There are up to four parts in a name. In general, the first two letters
 represent model type (ex. <code class="docutils literal notranslate"><span class="pre">wx</span></code> for ‘WidowX’). The number afterwards corresponds to the length of
@@ -163,43 +167,43 @@ arm is designed to be mounted on a mobile base.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><a class="reference external" href="https://www.trossenrobotics.com/pincherx-100-robot-arm.aspx" rel="noopener noreferrer" target="_blank">PincherX-100 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/px100.html"><span class="doc">PincherX-100 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/px100.html"><span class="doc">PincherX-100 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">px100</span></code></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://www.trossenrobotics.com/pincherx-150-robot-arm.aspx" rel="noopener noreferrer" target="_blank">PincherX-150 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/px150.html"><span class="doc">PincherX-150 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/px150.html"><span class="doc">PincherX-150 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">px150</span></code></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://www.trossenrobotics.com/reactorx-150-robot-arm.aspx" rel="noopener noreferrer" target="_blank">ReactorX-150 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/rx150.html"><span class="doc">ReactorX-150 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/rx150.html"><span class="doc">ReactorX-150 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">rx150</span></code></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://www.trossenrobotics.com/reactorx-200-robot-arm.aspx" rel="noopener noreferrer" target="_blank">ReactorX-200 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/rx200.html"><span class="doc">ReactorX-200 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/rx200.html"><span class="doc">ReactorX-200 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">rx200</span></code></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://www.trossenrobotics.com/widowx-200-robot-arm.aspx" rel="noopener noreferrer" target="_blank">WidowX-200 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/wx200.html"><span class="doc">WidowX-200 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/wx200.html"><span class="doc">WidowX-200 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">wx200</span></code></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://www.trossenrobotics.com/widowx-250-robot-arm.aspx" rel="noopener noreferrer" target="_blank">WidowX-250 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/wx250.html"><span class="doc">WidowX-250 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/wx250.html"><span class="doc">WidowX-250 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">wx250</span></code></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://www.trossenrobotics.com/widowx-250-robot-arm-6dof.aspx" rel="noopener noreferrer" target="_blank">WidowX-250 Robot Arm 6DOF</a></td>
-<td><a class="reference internal" href="../specifications/wx250s.html"><span class="doc">WidowX-250 Robot Arm 6DOF Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/wx250s.html"><span class="doc">WidowX-250 Robot Arm 6DOF Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">wx250s</span></code></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://www.trossenrobotics.com/viperx-250-robot-arm.aspx" rel="noopener noreferrer" target="_blank">ViperX-250 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/vx250.html"><span class="doc">ViperX-250 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/vx250.html"><span class="doc">ViperX-250 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">vx250</span></code></td>
 </tr>
 <tr class="row-even"><td><a class="reference external" href="https://www.trossenrobotics.com/viperx-300-robot-arm.aspx" rel="noopener noreferrer" target="_blank">ViperX-300 Robot Arm</a></td>
-<td><a class="reference internal" href="../specifications/vx300.html"><span class="doc">ViperX-300 Robot Arm Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/vx300.html"><span class="doc">ViperX-300 Robot Arm Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">vx300</span></code></td>
 </tr>
 <tr class="row-odd"><td><a class="reference external" href="https://www.trossenrobotics.com/viperx-300-robot-arm-6dof.aspx" rel="noopener noreferrer" target="_blank">ViperX-300 Robot Arm 6DOF</a></td>
-<td><a class="reference internal" href="../specifications/vx300s.html"><span class="doc">ViperX-300 Robot Arm 6DOF Documentation</span></a></td>
+<td><a class="reference internal" href="../../specifications/vx300s.html"><span class="doc">ViperX-300 Robot Arm 6DOF Documentation</span></a></td>
 <td><code class="docutils literal notranslate"><span class="pre">vx300s</span></code></td>
 </tr>
 </tbody>
@@ -274,7 +278,7 @@ demonstrate the process of running the installation script for ROS 1 Noetic.</p>
 </div>
 </div></blockquote>
 <p>If you <strong>do</strong> want to have the Joystick ROS package start at boot, you will first have to pair your
-PS4 controller with the Pi. Refer to the <a class="reference internal" href="../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">RPi PS4 Controller Setup Guide</span></a> for details.</p>
+PS4 controller with the Pi. Refer to the <a class="reference internal" href="../../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">RPi PS4 Controller Setup Guide</span></a> for details.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -332,7 +336,7 @@ Guide</span></a>.</p>
 </div>
 <div class="section" id="troubleshooting">
 <span id="troubleshooting-label"></span><h2><a class="toc-backref" href="#id10">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
-<p>Refer to the <a class="reference internal" href="../troubleshooting.html"><span class="doc">X-Series Troubleshooting guide</span></a> to try to solve your
+<p>Refer to the <a class="reference internal" href="../../troubleshooting.html"><span class="doc">X-Series Troubleshooting guide</span></a> to try to solve your
 problem. If you still need help, feel free to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues" rel="noopener noreferrer" target="_blank">open an Issue</a> on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same
 difficulty can benefit. This repository is actively maintained and any open Issues will be
@@ -352,7 +356,7 @@ addressed as soon as possible.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../ros_interface.html" class="btn btn-neutral float-left" title="ROS Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="overview/xs_sdk.html" class="btn btn-neutral float-left" title="interbotix_xs_sdk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="raspberry_pi_setup.html" class="btn btn-neutral float-right" title="ROS Raspberry Pi 4B Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS 1 Configuration &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinx_collapse.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ROS 2 Interface" href="../ros2.html" />
+    <link rel="prev" title="ROS 1 Quickstart Guide" href="quickstart.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ros_interface.html">ROS Interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../ros1.html">ROS 1 Interface</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html">ROS 1 Interface Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software_setup.html">ROS Standard Software Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">ROS 1 Quickstart Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ROS 1 Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#network-configuration">Network Configuration</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#ros-ip">ROS_IP</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#x-series-sdk-configuration">X-Series SDK Configuration</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#motor-configs">Motor Configs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mode-configs">Mode Configs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ros2.html">ROS 2 Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../ros_interface.html">ROS Interface</a></li>
+          <li class="breadcrumb-item"><a href="../ros1.html">ROS 1 Interface</a></li>
+      <li class="breadcrumb-item active">ROS 1 Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/ros1/config.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ros-1-configuration">
+<h1>ROS 1 Configuration<a class="headerlink" href="#ros-1-configuration" title="Permalink to this headline"></a></h1>
+<div class="section" id="network-configuration">
+<h2>Network Configuration<a class="headerlink" href="#network-configuration" title="Permalink to this headline"></a></h2>
+<div class="section" id="ros-ip">
+<h3>ROS_IP<a class="headerlink" href="#ros-ip" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="sb">`</span>hostname -I <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f1<span class="sb">`</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$ROS_IP</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">127</span>.0.0.1
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="x-series-sdk-configuration">
+<h2>X-Series SDK Configuration<a class="headerlink" href="#x-series-sdk-configuration" title="Permalink to this headline"></a></h2>
+<div class="section" id="motor-configs">
+<span id="motor-configs-file-ros1"></span><h3>Motor Configs<a class="headerlink" href="#motor-configs" title="Permalink to this headline"></a></h3>
+<p>The motors can be configured on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#motor-configs-param-ros1"><span class="std std-ref">motor_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
+options is below:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The xs_sdk <a class="reference internal" href="overview/xs_sdk.html#load-configs-param-ros1"><span class="std std-ref">load_configs parameter</span></a> must be set to <code class="docutils literal notranslate"><span class="pre">true</span></code> for the
+configurations to take effect.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The motor_configs only need to be set once per robot configuration - meaning that the
+<a class="reference internal" href="overview/xs_sdk.html#load-configs-param-ros1"><span class="std std-ref">load_configs parameter</span></a> can be set to <code class="docutils literal notranslate"><span class="pre">false</span></code> after the first
+boot.</p>
+</div>
+<div class="sphinx_collapse docutils container">
+<input class="sphinx_collapse__input" id="c3bd4e71-988b-416d-86db-da293f1ccd5c" name="c3bd4e71-988b-416d-86db-da293f1ccd5c" type="checkbox"><label class="sphinx_collapse__label" for="c3bd4e71-988b-416d-86db-da293f1ccd5c"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file &#39;organizes&#39; the motors in any Dynamixel-based robot into meaningful units. Every robot must</span>
+<span class="c1"># have at least one instance of this file located in a &#39;config&#39; directory in their root &#39;control&#39; ROS package.</span>
+<span class="c1"># Note that all parameters are mandatory unless stated otherwise. This file demos the setup for the VX300S robot.</span>
+<span class="c1">#</span>
+<span class="c1"># Refer to http://emanual.robotis.com/#control-table to look up the control registers for the various motors.</span>
+<span class="c1">#</span>
+<span class="c1"># SETUP OF REGISTERS FOR THE INTERBOTIX PLATFORMS</span>
+<span class="c1">#</span>
+<span class="c1"># All registers were left to their default values except for the ones listed here:</span>
+<span class="c1">#   1) ID.........................The ID of the Dynamixel servo. Valids IDs go from 1 - 251.</span>
+<span class="c1">#   2) Baud_Rate..................The speed at which serial communication occurs. All motors have this set to 1M</span>
+<span class="c1">#                                 baud (corresponds to a register value of &#39;3&#39;)</span>
+<span class="c1">#   3) Return_Delay_Time..........The amount of time the servo delays in sending a reply packet after receiving a</span>
+<span class="c1">#                                 command packet. A value of &#39;0&#39; tells the servo to send a reply without any delay.</span>
+<span class="c1">#   4) Drive_Mode:................Used to define what direction is positive rotation. A value of &#39;0&#39; means CCW is</span>
+<span class="c1">#                                 positive while a value of &#39;1&#39; means CW is positive. It also defines if profiles are</span>
+<span class="c1">#                                 built based on velocity or time. &#39;Velocity&#39; is the default (value of &#39;0&#39;) and &#39;Time&#39;</span>
+<span class="c1">#                                 is a value of &#39;4&#39;. Adding the &#39;direction&#39; value to the &#39;profile&#39; value gives the</span>
+<span class="c1">#                                 appropiate register value</span>
+<span class="c1">#   5) Velocity_Limit.............Defines the max speed of the motor. A value of &#39;131&#39; correpsonds to a max speed</span>
+<span class="c1">#                                 of PI rad/s</span>
+<span class="c1">#   6) Min_Position_Limit.........Defines the minimum limit of a joint. Values range from 0 to 4095 with 2048</span>
+<span class="c1">#                                 being equivalent to &#39;0&#39; rad and 0 being &#39;-PI&#39; rad.</span>
+<span class="c1">#   7) Max_Position_Limit.........Defines the maximum limit of a joint. Values range from 0 to 4095 with 2048</span>
+<span class="c1">#                                 being equivalent to &#39;0&#39; rad and 4095 being &#39;PI&#39; rad.</span>
+<span class="c1">#   8) Secondary_ID...............If a joint is controlled by two motors (usually by the shoulder or elbow), one motor</span>
+<span class="c1">#                                 can be set to follow the commands of another motor by setting this register to the ID</span>
+<span class="c1">#                                 of the master. A value of &#39;255&#39; disables this.</span>
+<span class="c1">#</span>
+<span class="c1"># Each motor&#39;s configs are grouped under the name of the joint the motor is controlling. The names are defined at</span>
+<span class="c1"># http://support.interbotix.com/ under the &#39;Specifications&#39; section. (Click a robot and scroll down to the &#39;Default Joint Limits&#39; section.)</span>
+
+<span class="n">port</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyDXL</span>                                                               <span class="c1"># Optional; specifies the USB port that connects to the U2D2; defaults to &#39;/dev/ttyDXL&#39;</span>
+
+<span class="n">joint_order</span><span class="p">:</span> <span class="p">[</span><span class="n">waist</span><span class="p">,</span> <span class="n">shoulder</span><span class="p">,</span> <span class="n">elbow</span><span class="p">,</span> <span class="n">wrist_angle</span><span class="p">,</span> <span class="n">wrist_rotate</span><span class="p">,</span> <span class="n">gripper</span><span class="p">]</span>       <span class="c1"># Defines the order in which the joints will appear in a JointState message; joint names must match those in the URDF (if present)</span>
+<span class="n">sleep_positions</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.55</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>                               <span class="c1"># Optional; specified joint positions that define a &#39;rest&#39; pose where it is safe to torque off the robot; defaults to 0 for each joint</span>
+
+<span class="n">joint_state_publisher</span><span class="p">:</span>                                                          <span class="c1"># Joint State Publisher Settings...</span>
+  <span class="n">update_rate</span><span class="p">:</span> <span class="mi">100</span>                                                              <span class="c1"># Optional; rate at which the motor states are sampled (and potentially published) in Hz; defaults to &#39;100&#39;</span>
+  <span class="n">publish_states</span><span class="p">:</span> <span class="n">true</span>                                                          <span class="c1"># Optional; boolean that either enables or disables the Publisher; defaults to &#39;true&#39;</span>
+  <span class="n">topic_name</span><span class="p">:</span> <span class="n">joint_states</span>                                                      <span class="c1"># Optional; desired JointState topic name; defaults to &#39;joint_states&#39;</span>
+
+<span class="n">groups</span><span class="p">:</span>                                                                         <span class="c1"># Optional; defines an unlimited number of joint groups in the robot; custom &#39;group&#39; names can be used.</span>
+  <span class="n">arm</span><span class="p">:</span> <span class="p">[</span><span class="n">waist</span><span class="p">,</span> <span class="n">shoulder</span><span class="p">,</span> <span class="n">elbow</span><span class="p">,</span> <span class="n">wrist_angle</span><span class="p">,</span> <span class="n">wrist_rotate</span><span class="p">]</span>                      <span class="c1"># Optional; groups can contain overlapping joints but those joints will retain the operating mode of the latter group.</span>
+                                                                                <span class="c1"># Note that &#39;all&#39; is a special group name that contains all the joints in the &#39;joint_order&#39; sequence.</span>
+<span class="n">grippers</span><span class="p">:</span>                                                                       <span class="c1"># Optional; defines an unlimited number of Interbotix grippers; custom &#39;gripper&#39; names can be used.</span>
+  <span class="n">gripper</span><span class="p">:</span>                                                                      <span class="c1"># Example gripper name</span>
+    <span class="n">horn_radius</span><span class="p">:</span> <span class="mf">0.022</span>                                                          <span class="c1"># Optional; length in meters from the middle of the gripper servo horn to its edge; defaults to &#39;0.014&#39;</span>
+    <span class="n">arm_length</span><span class="p">:</span> <span class="mf">0.036</span>                                                           <span class="c1"># Optional; length in meters from the end of the servo horn to a finger; defaults to &#39;0.024&#39;</span>
+    <span class="n">left_finger</span><span class="p">:</span> <span class="n">left_finger</span>                                                    <span class="c1"># Optional; name of the &#39;left_finger&#39; joint; this must match the name in the URDF (if present); defaults to &#39;left_finger&#39;</span>
+    <span class="n">right_finger</span><span class="p">:</span> <span class="n">right_finger</span>                                                  <span class="c1"># Optional; name of the &#39;right_finger&#39; joint; this must match the name in the URDF (if present); defaults to &#39;right_finger&#39;</span>
+
+<span class="n">shadows</span><span class="p">:</span>                                                                        <span class="c1"># Optional; list of any &#39;master&#39; motors and all of its shadows (usually 1, but could be unlimited)</span>
+  <span class="n">shoulder</span><span class="p">:</span>
+    <span class="n">shadow_list</span><span class="p">:</span> <span class="p">[</span><span class="n">shoulder_shadow</span><span class="p">]</span>
+    <span class="n">calibrate</span><span class="p">:</span> <span class="n">true</span>                                                             <span class="c1"># Optional; set to true if the master and shadow servos make up a single joint and the shadows should be calibrated to read the exact same value as the master</span>
+  <span class="n">elbow</span><span class="p">:</span>
+    <span class="n">shadow_list</span><span class="p">:</span> <span class="p">[</span><span class="n">elbow_shadow</span><span class="p">]</span>
+    <span class="n">calibrate</span><span class="p">:</span> <span class="n">true</span>
+
+<span class="n">sisters</span><span class="p">:</span>                                                                        <span class="c1"># Optional; list of any &#39;2in1&#39; motors and their corresponding &#39;sister&#39;; order is irrelevant</span>
+
+<span class="n">motors</span><span class="p">:</span>                                                                         <span class="c1"># List of all motors and the default values that should be written to the EEPROM registers; Note that any EEPROM register can be added;</span>
+  <span class="n">waist</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">4095</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">255</span>
+
+  <span class="n">shoulder</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">841</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">3196</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">255</span>
+
+  <span class="n">shoulder_shadow</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">841</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">3196</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">2</span>
+
+  <span class="n">elbow</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">1002</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">3196</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">255</span>
+
+  <span class="n">elbow_shadow</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">1002</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">3196</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">4</span>
+
+  <span class="n">wrist_angle</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">6</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">570</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">3264</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">255</span>
+
+  <span class="n">wrist_rotate</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">7</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">4095</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">255</span>
+
+  <span class="n">gripper</span><span class="p">:</span>
+    <span class="n">ID</span><span class="p">:</span> <span class="mi">8</span>
+    <span class="n">Baud_Rate</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">Return_Delay_Time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Drive_Mode</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Velocity_Limit</span><span class="p">:</span> <span class="mi">131</span>
+    <span class="n">Min_Position_Limit</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">Max_Position_Limit</span><span class="p">:</span> <span class="mi">4095</span>
+    <span class="n">Secondary_ID</span><span class="p">:</span> <span class="mi">255</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mode-configs">
+<span id="mode-configs-file-ros1"></span><h3>Mode Configs<a class="headerlink" href="#mode-configs" title="Permalink to this headline"></a></h3>
+<p>The startup operating modes can be set on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#mode-configs-param-ros1"><span class="std std-ref">mode_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
+options is below:</p>
+<div class="sphinx_collapse docutils container">
+<input class="sphinx_collapse__input" id="18f32e6e-fa00-4fd5-861b-f068ad175f1d" name="18f32e6e-fa00-4fd5-861b-f068ad175f1d" type="checkbox"><label class="sphinx_collapse__label" for="18f32e6e-fa00-4fd5-861b-f068ad175f1d"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is used to customize the initial operating modes of all joint groups and individual joints in a robot.</span>
+<span class="c1"># It should be placed in the &#39;config&#39; directory of any ROS package that builds ontop of the interbotix_xs_sdk.</span>
+<span class="c1"># Example values are shown as well. All parameters are mandatory unless stated otherwise</span>
+
+<span class="n">port</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyDXL</span>                             <span class="c1"># Optional; specifies the USB port that connects to the U2D2;</span>
+                                              <span class="c1"># if specified, it overwrites the port in the &#39;motor_configs&#39; yaml file.</span>
+                                              <span class="c1"># if the &#39;port&#39; parameter and its value are left out, the port in the &#39;motor_configs&#39; yaml file is used.</span>
+                                              <span class="c1"># if the &#39;port&#39; parameter is specified but the value is not, it defaults to &#39;/dev/ttyDXL&#39;</span>
+
+<span class="n">groups</span><span class="p">:</span>                                       <span class="c1"># Optional; specify initial Operating Modes for all joint groups (as detailed in the &#39;motor_configs&#39; yaml file under &#39;groups&#39;)</span>
+  <span class="n">arm</span><span class="p">:</span>                                        <span class="c1"># Example joint group name</span>
+    <span class="n">operating_mode</span><span class="p">:</span> <span class="n">position</span>                  <span class="c1"># Optional; refer to the &#39;OperatingModes&#39; Service description file in the &#39;srv&#39; directory for the seven modes; defaults to &#39;position&#39;</span>
+    <span class="n">profile_type</span><span class="p">:</span> <span class="n">time</span>                        <span class="c1"># Optional; refer to the &#39;OperatingModes&#39; Service description file in the &#39;srv&#39; directory for the two profile types; defaults to &#39;velocity&#39;</span>
+    <span class="n">profile_velocity</span><span class="p">:</span> <span class="mi">2000</span>                    <span class="c1"># Optional; refer to the &#39;OperatingModes&#39; Service description file in the &#39;srv&#39; directory for a description; defaults to &#39;0&#39;</span>
+    <span class="n">profile_acceleration</span><span class="p">:</span> <span class="mi">1000</span>                <span class="c1"># Optional; refer to the &#39;OperatingModes&#39; Service description file in the &#39;srv&#39; directory for a description; defaults to &#39;0&#39;</span>
+    <span class="n">torque_enable</span><span class="p">:</span> <span class="n">true</span>                       <span class="c1"># Optional; whether the motors in this group should be torqued on or off by default; defaults to &#39;true&#39;</span>
+
+<span class="n">singles</span><span class="p">:</span>                                      <span class="c1"># Optional; specify the Operating Mode for individual joints (any joint specified in the &#39;motor_configs&#39; yaml file); parameters follow the same structure as above</span>
+  <span class="n">gripper</span><span class="p">:</span>
+    <span class="n">operating_mode</span><span class="p">:</span> <span class="n">pwm</span>
+    <span class="n">torque_enable</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="ROS 1 Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ros2.html" class="btn btn-neutral float-right" title="ROS 2 Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

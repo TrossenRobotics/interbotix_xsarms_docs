@@ -2,45 +2,34 @@
 ROS Interface
 =============
 
-This section details the ROS Interface for the Interbotix X-Series arms.
+This section details the ROS Interfaces for the Interbotix X-Series arms. Click on a block of
+supported distributions (either ROS 1 or ROS 2) to learn more about each ROS Interface.
+
+.. raw:: html
+
+    <div style="text-align: center;">
+        <a href="./ros_interface/ros1.html">
+            <h2 class="ros-distros-links-titles">Supported ROS 1 Distributions</h2>
+            <div class="ros-distros-links">
+                <img alt="ROS 1 Melodic" src="_static/melodic.png" title="ROS 1 Melodic" height="220" />
+                <img alt="ROS 1 Noetic" src="_static/noetic.png" title="ROS 1 Noetic" height="220" />
+            </div>
+        </a>
+
+        <a href="./ros_interface/ros2.html">
+            <h2 class="ros-distros-links-titles">Supported ROS 2 Distributions</h2>
+            <div class="ros-distros-links">
+                <img alt="ROS 2 Galactic" src="_static/galactic.png" title="ROS 2 Galactic" height="220" />
+                <img alt="ROS 2 Humble" src="_static/humble.png" title="ROS 2 Humble" height="220" />
+                <img alt="ROS 2 Rolling" src="_static/rolling.png" title="ROS 2 Rolling" height="220" />
+            </div>
+        </a>
+    </div>
 
 .. toctree::
     :titlesonly:
     :hidden:
-    :caption: Contents:
+    :maxdepth: 1
 
-    ros_interface/software_setup.rst
-    ros_interface/raspberry_pi_setup.rst
-    ros_interface/quickstart.rst
-    ros_interface/ros2_software_setup.rst
-    ros_interface/ros2_quickstart.rst
-
-ROS 1
-=====
-
-The Interbotix X-Series Arms are compatible with the following ROS 1 distributions and platforms:
-
--   ROS 1 Melodic on Ubuntu Linux 18.04
--   ROS 1 Noetic on Ubuntu Linux 20.04
-
-To install the Interbotix X-Series Arm packages for any of the distributions above, go to the
-:doc:`ROS 1 Software Setup Guide<ros_interface/software_setup>`. If you are using a Raspberry Pi4b that you did
-not purchase from Trossen Robotics, see the :doc:`ROS Raspberry Pi 4B Setup
-Guide<ros_interface/raspberry_pi_setup>`.
-
-Once installed, follow the steps in the :doc:`ROS 1 Quickstart Guide<ros_interface/quickstart>` to get familiar
-with some of the basic features of the X-Series Arm packages.
-
-ROS 2
-=====
-
-The Interbotix X-Series Arms are compatible with the following ROS 2 distributions and platforms:
-
--   ROS 2 Galactic on Ubuntu Linux 20.04
--   ROS 2 Humble and Rolling on Ubuntu Linux 22.04
-
-To install the Interbotix X-Series Arm packages for any of the distributions above, go to the
-:doc:`ROS 2 Software Setup Guide<ros_interface/ros2_software_setup>`.
-
-Once installed, follow the steps in the :doc:`ROS 2 Quickstart Guide<ros_interface/ros2_quickstart>` to get
-familiar with some of the basic features of the X-Series Arm packages.
+    ros_interface/ros1.rst
+    ros_interface/ros2.rst

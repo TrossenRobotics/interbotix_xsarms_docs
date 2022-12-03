@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>interbotix_xs_sdk &mdash; Interbotix X-Series Arms Documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinx_collapse.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tr_style.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ROS 2 Standard Software Setup" href="../software_setup.html" />
+    <link rel="prev" title="interbotix_xs_msgs" href="xs_msgs.html" />
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PZQLS2V"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../ros_interface.html">ROS Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ros1.html">ROS 1 Interface</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../ros2.html">ROS 2 Interface</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../overview.html">ROS 2 Interface Overview</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../overview.html#structure">Structure</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="dxl_wb.html">DYNAMIXEL Workbench Toolbox</a></li>
+<li class="toctree-l5"><a class="reference internal" href="xs_driver.html">interbotix_xs_driver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="xs_msgs.html">interbotix_xs_msgs</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">interbotix_xs_sdk</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#publishers">Publishers</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#jointstate-publisher">JointState Publisher</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#subscribers">Subscribers</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#joint-group-command-subscriber">Joint Group Command Subscriber</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#joint-single-command-subscriber">Joint Single Command Subscriber</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#joint-trajectory-command-subscriber">Joint Trajectory Command Subscriber</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#services">Services</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#enable-disable-torque-service">Enable/Disable Torque Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#reboot-motors-service">Reboot Motors Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#get-robot-info-service">Get Robot Info Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#set-operating-modes-service">Set Operating Modes Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#set-motor-gains-service">Set Motor Gains Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#set-register-values-service">Set Register Values Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#get-register-values-service">Get Register Values Service</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#parameters">Parameters</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#motor-configs"><code class="docutils literal notranslate"><span class="pre">motor_configs</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#mode-configs"><code class="docutils literal notranslate"><span class="pre">mode_configs</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#load-configs"><code class="docutils literal notranslate"><span class="pre">load_configs</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_setup.html">ROS 2 Standard Software Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../quickstart.html">ROS 2 Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config.html">ROS 2 Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python_ros_interface.html">Python-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../matlab_ros_interface.html">MATLAB-ROS Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ros1_packages.html">ROS 1 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ros2_packages.html">ROS 2 Open Source Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Interbotix X-Series Manipulators Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../ros_interface.html">ROS Interface</a></li>
+          <li class="breadcrumb-item"><a href="../../ros2.html">ROS 2 Interface</a></li>
+          <li class="breadcrumb-item"><a href="../overview.html">ROS 2 Interface Overview</a></li>
+      <li class="breadcrumb-item active">interbotix_xs_sdk</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/ros_interface/ros2/overview/xs_sdk.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="interbotix-xs-sdk">
+<h1>interbotix_xs_sdk<a class="headerlink" href="#interbotix-xs-sdk" title="Permalink to this headline"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_core/tree/rolling/interbotix_ros_xseries/interbotix_xs_sdk"
+    class="docs-view-on-github-button"
+    target="_blank">
+    <img src="../../../_static/GitHub-Mark-Light-32px.png"
+        class="docs-view-on-github-button-gh-logo">
+    View Package on GitHub
+</a><div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>The Interbotix X-Series Arms ROS 1 Interface builds primarily on top of the interbotix_xs_sdk
+package. This package provides a driver, the <strong>xs_sdk</strong> node, that allows ROS to command, monitor,
+and configure the lower-level DYNAMIXEL servos through messages, services, and parameters. A
+simulated driver, the <strong>xs_sdk_sim</strong> node allows users to try out their programs in a safe
+environment before using them on their real robot.</p>
+<div class="section" id="publishers">
+<h3>Publishers<a class="headerlink" href="#publishers" title="Permalink to this headline"></a></h3>
+<div class="section" id="jointstate-publisher">
+<h4>JointState Publisher<a class="headerlink" href="#jointstate-publisher" title="Permalink to this headline"></a></h4>
+<p>The JointState Publisher ROS <a class="reference external" href="https://github.com/ros/common_msgs/blob/noetic-devel/sensor_msgs/msg/JointState.msg" rel="noopener noreferrer" target="_blank">sensor_msgs/JointState</a> messages at a user-desired frequency. In
+general, positions are given in radians, velocities are given in radians per second, and effort is
+given in milliamps. If the robot has a two-finger gripper, the positions for the ‘right_finger’ and
+‘left_finger’ joints are given in meters relative to a virtual ‘fingers_link’ placed dead center.
+You can launch a robot model in RViz to get familiar with the link and joint names/positions.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/joint_states</span></code></li>
+<li><strong>Message Type</strong>: <a class="reference external" href="https://github.com/ros/common_msgs/blob/noetic-devel/sensor_msgs/msg/JointState.msg" rel="noopener noreferrer" target="_blank">sensor_msgs/JointState</a></li>
+<li><strong>Simulation Differences</strong>: publishes ROS <a class="reference external" href="https://github.com/ros/common_msgs/blob/noetic-devel/sensor_msgs/msg/JointState.msg" rel="noopener noreferrer" target="_blank">sensor_msgs/JointState</a> messages at 20 Hz. Only the
+‘name’ and ‘position’ fields in the messages are populated. Otherwise, it behaves identically
+to the physical driver.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="subscribers">
+<h3>Subscribers<a class="headerlink" href="#subscribers" title="Permalink to this headline"></a></h3>
+<div class="section" id="joint-group-command-subscriber">
+<h4>Joint Group Command Subscriber<a class="headerlink" href="#joint-group-command-subscriber" title="Permalink to this headline"></a></h4>
+<p>The Joint Group Command Subscriber subscribes to interbotix_xs_msgs/JointGroupCommand messages;
+this topic is used to control a specified group of joints synchronously (which is more efficient
+than sending commands to individual joints consecutively). Refer to the message definition for
+implementation details. Any number of joint groups can be defined in the motor config file.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_group</span></code></li>
+<li><strong>Message Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-jointgroupcommand-ros2"><span class="std std-ref">interbotix_xs_msgs/JointGroupCommand</span></a></li>
+<li><strong>Simulation Differences</strong>: Behaves identically to the physical driver.</li>
+</ul>
+</div>
+<div class="section" id="joint-single-command-subscriber">
+<h4>Joint Single Command Subscriber<a class="headerlink" href="#joint-single-command-subscriber" title="Permalink to this headline"></a></h4>
+<p>The Joint Single Command Subscriber subscribes to interbotix_xs_msgs/JointSingleCommand messages.
+This topic is used to command a single joint. Refer to the message definition for implementation
+details.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_single</span></code></li>
+<li><strong>Message Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-jointsinglecommand-ros2"><span class="std std-ref">interbotix_xs_msgs/JointSingleCommand</span></a></li>
+<li><strong>Simulation Differences</strong>: Behaves identically to the physical driver.</li>
+</ul>
+</div>
+<div class="section" id="joint-trajectory-command-subscriber">
+<h4>Joint Trajectory Command Subscriber<a class="headerlink" href="#joint-trajectory-command-subscriber" title="Permalink to this headline"></a></h4>
+<p>Joint Trajectory Command Subscriber subscribes to interbotix_xs_msgs/JointTrajectoryCommand
+messages; this topic is used to send desired trajectories to a specified joint or joint group.
+Refer to the message definition for implementation details.</p>
+<ul class="simple">
+<li><strong>Topic</strong>:  <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_trajectory</span></code></li>
+<li><strong>Message Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-jointtrajectorycommand-ros2"><span class="std std-ref">interbotix_xs_msgs/JointTrajectoryCommand</span></a></li>
+<li><strong>Simulation Differences</strong>: Behaves identically to the physical driver.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="services">
+<h3>Services<a class="headerlink" href="#services" title="Permalink to this headline"></a></h3>
+<div class="section" id="enable-disable-torque-service">
+<h4>Enable/Disable Torque Service<a class="headerlink" href="#enable-disable-torque-service" title="Permalink to this headline"></a></h4>
+<p>The Enable/Disable Torque Service to torque on/off the specified motor or motors.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/torque_enable</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-torqueenable-ros2"><span class="std std-ref">interbotix_xs_msgs/TorqueEnable</span></a></li>
+<li><strong>Simulation Differences</strong>: messages are displayed showing that the desired motors were torqued
+on/off, but nothing actually happens.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The specified motors will torque off and the robot may collapse when this service is called.
+Make sure the robot is in its sleep pose or in a safe configuration before calling it.</p>
+</div>
+</div>
+<div class="section" id="reboot-motors-service">
+<h4>Reboot Motors Service<a class="headerlink" href="#reboot-motors-service" title="Permalink to this headline"></a></h4>
+<p>The Reboot Motors Service reboots the specified motor or motors.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/reboot_motors</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-reboot-ros2"><span class="std std-ref">interbotix_xs_msgs/Reboot</span></a></li>
+<li><strong>Simulation Differences</strong>: messages are displayed showing that the desired motors were rebooted,
+but nothing actually happens.</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The specified motors will torque off and the robot may collapse when this service is called.
+Make sure the robot is in its sleep pose or in a safe configuration before calling it.</p>
+</div>
+</div>
+<div class="section" id="get-robot-info-service">
+<h4>Get Robot Info Service<a class="headerlink" href="#get-robot-info-service" title="Permalink to this headline"></a></h4>
+<p>The Get Robot Info Service service to get robot information like joint limits, joint names, and
+joint ‘sleep’ positions.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/get_robot_info</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-robotinfo-ros2"><span class="std std-ref">interbotix_xs_msgs/RobotInfo</span></a></li>
+<li><strong>Simulation Differences</strong>: Behaves identically to the physical driver.</li>
+</ul>
+</div>
+<div class="section" id="set-operating-modes-service">
+<h4>Set Operating Modes Service<a class="headerlink" href="#set-operating-modes-service" title="Permalink to this headline"></a></h4>
+<p>The Set Operating Modes Service sets a motor’s or multiple motors’ operating modes (like position,
+velocity, current, etc…).</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/set_operating_modes</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-operatingmodes-ros2"><span class="std std-ref">interbotix_xs_msgs/OperatingModes</span></a></li>
+<li><strong>Simulation Differences</strong>: behaves exactly the same except setting the operating mode just</li>
+<li>changes how the desired motors will be simulated. Of course, nothing is torqued off either.
+Note that ‘current_based_position’, ‘ext_position’, and ‘position’ are all treated
+equivalently. Similarly, ‘pwm’ and ‘current’ modes are also treated the same, and
+masses/inertias of links are NOT considered. Additionally, when in a ‘position-type’ mode,
+motors should be using the ‘Time-based Profile’ Drive Mode as the ‘Profile_Velocity’ register
+is used to determine how long a motion should take (‘Profile Acceleration’ is ignored).</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The motors will torque off for a moment when changing operating modes so make sure that the
+robot is in its ‘sleep’ pose (defined in the <a class="reference internal" href="../config.html#motor-configs-file-ros2"><span class="std std-ref">motor config file</span></a>) or
+otherwise secured before calling this service.</p>
+</div>
+</div>
+<div class="section" id="set-motor-gains-service">
+<h4>Set Motor Gains Service<a class="headerlink" href="#set-motor-gains-service" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li>The Set Motor Gains Service service to set a motor’s or multiple motors’ internal
+PID gains for position/velocity control; refer to the <cite>interbotix_xs_msgs/MotorGains</cite> service
+description for implementation details.</li>
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/set_motor_pid_gains</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-motorgains-ros2"><span class="std std-ref">interbotix_xs_msgs/MotorGains</span></a></li>
+<li><strong>Simulation Differences</strong>: doesn’t affect anything; no messages are even displayed.</li>
+</ul>
+</div>
+<div class="section" id="set-register-values-service">
+<h4>Set Register Values Service<a class="headerlink" href="#set-register-values-service" title="Permalink to this headline"></a></h4>
+<p>The Set Register Values Service sets a motor’s or multiple motors’ register values simultaneously
+for a user-provided register name.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/set_motor_registers</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-registervalues-ros2"><span class="std std-ref">interbotix_xs_msgs/RegisterValues</span></a></li>
+<li><strong>Simulation Differences</strong>: only works the same if setting the ‘Profile_Velocity’ or
+‘Profile_Acceleration’ registers; otherwise, nothing happens.</li>
+</ul>
+</div>
+<div class="section" id="get-register-values-service">
+<h4>Get Register Values Service<a class="headerlink" href="#get-register-values-service" title="Permalink to this headline"></a></h4>
+<p>The Get Register Values Service gets a motor’s or multiple motors’ register values simultaneously
+for a user-provided register name.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/get_motor_registers</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference internal" href="xs_msgs.html#interbotix-xs-msgs-registervalues-ros2"><span class="std std-ref">interbotix_xs_msgs/RegisterValues</span></a></li>
+<li><strong>Simulation Differences</strong>: only works the same if getting the ‘Profile_Velocity’ or
+‘Profile_Acceleration’ registers; otherwise, an empty service message is returned.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h3>
+<div class="section" id="motor-configs">
+<span id="motor-configs-param-ros2"></span><h4><code class="docutils literal notranslate"><span class="pre">motor_configs</span></code><a class="headerlink" href="#motor-configs" title="Permalink to this headline"></a></h4>
+<p>The file path to the ‘motor config’ YAML file. Refer to the template below for details.</p>
+</div>
+<div class="section" id="mode-configs">
+<span id="mode-configs-param-ros2"></span><h4><code class="docutils literal notranslate"><span class="pre">mode_configs</span></code><a class="headerlink" href="#mode-configs" title="Permalink to this headline"></a></h4>
+<p>The file path to the ‘mode config’ YAML file. Refer to the template below for details.</p>
+</div>
+<div class="section" id="load-configs">
+<span id="load-configs-param-ros2"></span><h4><code class="docutils literal notranslate"><span class="pre">load_configs</span></code><a class="headerlink" href="#load-configs" title="Permalink to this headline"></a></h4>
+<p>A boolean that specifies whether or not the initial register values (under the ‘motors’ heading) in
+a motor config file should be written to the motors; as the values being written are stored in each
+motor’s EEPROM (which means the values are retained even after a power cycle), this can be set to
+<code class="docutils literal notranslate"><span class="pre">false</span></code> after the first time using the robot. Setting to <code class="docutils literal notranslate"><span class="pre">false</span></code> also shortens the node startup
+time by a few seconds and preserves the life of the EEPROM.</p>
+<ul class="simple">
+<li><strong>Simulation Differences</strong>: the <code class="docutils literal notranslate"><span class="pre">load_configs</span></code> parameter is unused.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="xs_msgs.html" class="btn btn-neutral float-left" title="interbotix_xs_msgs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../software_setup.html" class="btn btn-neutral float-right" title="ROS 2 Standard Software Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <!-- Socials -->
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

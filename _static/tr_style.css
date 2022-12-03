@@ -37,6 +37,12 @@
     cursor: pointer
 }
 
+/* Style term links */
+
+span.std-term {
+    font-weight: 600;
+}
+
 
 /* all links (visited or not) should be the same color */
 
@@ -1302,19 +1308,53 @@ div.carousel-thumbnail-container {
     margin-top: auto;
 }
 
-
-/* .static {
-    position: absolute;
-    background: white;
-} */
-
 .static:hover {
     opacity: 0;
 }
 
 
-/* If elemt I want effected is inside the container */
+/* If element I want effected is inside the container */
 
 label.static-container:hover .static {
     opacity: 0;
+}
+
+
+/* Style ROS Interface Distro link */
+
+div.ros-distros-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+h2.ros-distros-links-titles {
+    margin-bottom: 5px;
+}
+
+div.ros-distros-links img {
+    height: 220px;
+    width: auto;
+}
+
+/* Style sphinx_collapse divs */
+
+div.sphinx_collapse {
+    border-radius: 4px;
+    margin-bottom: 24px;
+    background-color: rgb(204 204 204 / 10%);
+    border-left: 4px solid #00b0f0;
+}
+div.sphinx_collapse:hover {
+    background-color: rgb(204 204 204 / 20%);
+}
+
+div.sphinx_collapse>label.sphinx_collapse__label {
+    margin-bottom: 0px;
+    padding: 10px 0 10px 14px;
+}
+
+div.sphinx_collapse__content {
+    margin-top: 0px;
 }

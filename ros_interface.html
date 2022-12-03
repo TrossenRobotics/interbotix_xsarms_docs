@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/tr_style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -24,7 +25,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ROS Standard Software Setup" href="ros_interface/software_setup.html" />
+    <link rel="next" title="ROS 1 Interface" href="ros_interface/ros1.html" />
     <link rel="prev" title="Pairing Your Controller" href="getting_started/pairing_controller.html" />
    
   <!-- Google Tag Manager (noscript) -->
@@ -60,13 +61,8 @@
 <li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ROS Interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ros_interface/software_setup.html">ROS Standard Software Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ros_interface/raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ros_interface/quickstart.html">ROS Quickstart Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ros_interface/ros2_software_setup.html">ROS 2 Standard Software Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ros_interface/ros2_quickstart.html">ROS 2 Quickstart Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ros-1">ROS 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ros-2">ROS 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_interface/ros1.html">ROS 1 Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_interface/ros2.html">ROS 2 Interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python_ros_interface.html">Python-ROS Interface</a></li>
@@ -102,34 +98,26 @@
              
   <div class="section" id="ros-interface">
 <h1>ROS Interface<a class="headerlink" href="#ros-interface" title="Permalink to this headline"></a></h1>
-<p>This section details the ROS Interface for the Interbotix X-Series arms.</p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="section" id="ros-1">
-<h2>ROS 1<a class="headerlink" href="#ros-1" title="Permalink to this headline"></a></h2>
-<p>The Interbotix X-Series Arms are compatible with the following ROS 1 distributions and platforms:</p>
-<ul class="simple">
-<li>ROS 1 Melodic on Ubuntu Linux 18.04</li>
-<li>ROS 1 Noetic on Ubuntu Linux 20.04</li>
-</ul>
-<p>To install the Interbotix X-Series Arm packages for any of the distributions above, go to the
-<a class="reference internal" href="ros_interface/software_setup.html"><span class="doc">ROS 1 Software Setup Guide</span></a>. If you are using a Raspberry Pi4b that you did
-not purchase from Trossen Robotics, see the <a class="reference internal" href="ros_interface/raspberry_pi_setup.html"><span class="doc">ROS Raspberry Pi 4B Setup
-Guide</span></a>.</p>
-<p>Once installed, follow the steps in the <a class="reference internal" href="ros_interface/quickstart.html"><span class="doc">ROS 1 Quickstart Guide</span></a> to get familiar
-with some of the basic features of the X-Series Arm packages.</p>
-</div>
-<div class="section" id="ros-2">
-<h2>ROS 2<a class="headerlink" href="#ros-2" title="Permalink to this headline"></a></h2>
-<p>The Interbotix X-Series Arms are compatible with the following ROS 2 distributions and platforms:</p>
-<ul class="simple">
-<li>ROS 2 Galactic on Ubuntu Linux 20.04</li>
-<li>ROS 2 Humble and Rolling on Ubuntu Linux 22.04</li>
-</ul>
-<p>To install the Interbotix X-Series Arm packages for any of the distributions above, go to the
-<a class="reference internal" href="ros_interface/ros2_software_setup.html"><span class="doc">ROS 2 Software Setup Guide</span></a>.</p>
-<p>Once installed, follow the steps in the <a class="reference internal" href="ros_interface/ros2_quickstart.html"><span class="doc">ROS 2 Quickstart Guide</span></a> to get
-familiar with some of the basic features of the X-Series Arm packages.</p>
+<p>This section details the ROS Interfaces for the Interbotix X-Series arms. Click on a block of
+supported distributions (either ROS 1 or ROS 2) to learn more about each ROS Interface.</p>
+<div style="text-align: center;">
+    <a href="./ros_interface/ros1.html">
+        <h2 class="ros-distros-links-titles">Supported ROS 1 Distributions</h2>
+        <div class="ros-distros-links">
+            <img alt="ROS 1 Melodic" src="_static/melodic.png" title="ROS 1 Melodic" height="220" />
+            <img alt="ROS 1 Noetic" src="_static/noetic.png" title="ROS 1 Noetic" height="220" />
+        </div>
+    </a>
+
+    <a href="./ros_interface/ros2.html">
+        <h2 class="ros-distros-links-titles">Supported ROS 2 Distributions</h2>
+        <div class="ros-distros-links">
+            <img alt="ROS 2 Galactic" src="_static/galactic.png" title="ROS 2 Galactic" height="220" />
+            <img alt="ROS 2 Humble" src="_static/humble.png" title="ROS 2 Humble" height="220" />
+            <img alt="ROS 2 Rolling" src="_static/rolling.png" title="ROS 2 Rolling" height="220" />
+        </div>
+    </a>
+</div><div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -138,7 +126,7 @@ familiar with some of the basic features of the X-Series Arm packages.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="getting_started/pairing_controller.html" class="btn btn-neutral float-left" title="Pairing Your Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ros_interface/software_setup.html" class="btn btn-neutral float-right" title="ROS Standard Software Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ros_interface/ros1.html" class="btn btn-neutral float-right" title="ROS 1 Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
