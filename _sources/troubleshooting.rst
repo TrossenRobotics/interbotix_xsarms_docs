@@ -127,6 +127,8 @@ This could happen due to a couple of reasons.
     the Wizard before running the ROS driver node. This way the port won't be busy when the driver
     node is run.
 
+.. _troubleshooting_incorrect_status_packet:
+
 Incorrect status packet
 -----------------------
 
@@ -148,16 +150,23 @@ of the 3-pin cables connecting the DYNAMIXELs together become loose during opera
 errors, just push in all loose cables.
 
 In some cases, you may need to replace the USB->Micro USB cable between the U2D2 your control
-computer, or even the 3-pin cables between servos. Contact `Trossen Robotics support`_ if this is
-the case.
+computer, or even the 3-pin cables between servos or the Power Hub. Contact `Trossen Robotics
+support`_ if this is the case.
 
 .. _`Trossen Robotics support`: https://www.trossenrobotics.com/contact.aspx
 
 Failed to write value[] on items[] to [ID : ]
 ---------------------------------------------
 
+.. code-block::
+
+    [ERROR] [xs_sdk] Failed to write value[131] on items[Velocity_Limit] to [ID : 5]
+    [FATAL] [xs_sdk] Failed to write configurations to all motors. Shutting down...
+
 This error message means that something went wrong when writing configurations to the EEPROM
-registers. This can be fixed by power-cycling the robot and re-launching the control software.
+registers. This can typically be fixed by power-cycling the robot and re-launching the control
+software. It may have the same root cause as the `Incorrect status packet error
+<troubleshooting_incorrect_status_packet>` and could have the same solution.
 
 [WARN] Writing startup register values to EEPROM.
 -------------------------------------------------

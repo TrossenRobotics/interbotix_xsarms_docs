@@ -220,7 +220,7 @@ node is run.</li>
 </ul>
 </div>
 <div class="section" id="incorrect-status-packet">
-<h3>Incorrect status packet<a class="headerlink" href="#incorrect-status-packet" title="Permalink to this headline"></a></h3>
+<span id="troubleshooting-incorrect-status-packet"></span><h3>Incorrect status packet<a class="headerlink" href="#incorrect-status-packet" title="Permalink to this headline"></a></h3>
 <p>If you see 4 repeating red error messages in the terminal during node operation
 that say</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[TxRxResult] Incorrect status packet!</span>
@@ -236,13 +236,19 @@ the microUSB cable connecting the computer to the U2D2 is not plugged in fully, 
 of the 3-pin cables connecting the DYNAMIXELs together become loose during operation. To stop these
 errors, just push in all loose cables.</p>
 <p>In some cases, you may need to replace the USB-&gt;Micro USB cable between the U2D2 your control
-computer, or even the 3-pin cables between servos. Contact <a class="reference external" href="https://www.trossenrobotics.com/contact.aspx" rel="noopener noreferrer" target="_blank">Trossen Robotics support</a> if this is
-the case.</p>
+computer, or even the 3-pin cables between servos or the Power Hub. Contact <a class="reference external" href="https://www.trossenrobotics.com/contact.aspx" rel="noopener noreferrer" target="_blank">Trossen Robotics
+support</a> if this is the case.</p>
 </div>
 <div class="section" id="failed-to-write-value-on-items-to-id">
 <h3>Failed to write value[] on items[] to [ID : ]<a class="headerlink" href="#failed-to-write-value-on-items-to-id" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">ERROR</span><span class="p">]</span> <span class="p">[</span><span class="n">xs_sdk</span><span class="p">]</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">write</span> <span class="n">value</span><span class="p">[</span><span class="mi">131</span><span class="p">]</span> <span class="n">on</span> <span class="n">items</span><span class="p">[</span><span class="n">Velocity_Limit</span><span class="p">]</span> <span class="n">to</span> <span class="p">[</span><span class="n">ID</span> <span class="p">:</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="n">FATAL</span><span class="p">]</span> <span class="p">[</span><span class="n">xs_sdk</span><span class="p">]</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">write</span> <span class="n">configurations</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">motors</span><span class="o">.</span> <span class="n">Shutting</span> <span class="n">down</span><span class="o">...</span>
+</pre></div>
+</div>
 <p>This error message means that something went wrong when writing configurations to the EEPROM
-registers. This can be fixed by power-cycling the robot and re-launching the control software.</p>
+registers. This can typically be fixed by power-cycling the robot and re-launching the control
+software. It may have the same root cause as the <cite>Incorrect status packet error
+&lt;troubleshooting_incorrect_status_packet&gt;</cite> and could have the same solution.</p>
 </div>
 <div class="section" id="warn-writing-startup-register-values-to-eeprom">
 <h3>[WARN] Writing startup register values to EEPROM.<a class="headerlink" href="#warn-writing-startup-register-values-to-eeprom" title="Permalink to this headline"></a></h3>
