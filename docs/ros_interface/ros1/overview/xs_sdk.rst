@@ -153,6 +153,51 @@ Set Motor Gains Service
 *   **Topic**: ``/<robot_name>/set_motor_pid_gains``
 *   **Service Type**: :ref:`interbotix_xs_msgs/MotorGains <interbotix_xs_msgs_MotorGains_ros1>`
 *   **Simulation Differences**: doesn't affect anything; no messages are even displayed.
+*   **Example Usage**: the below example calls the ``set_motor_pid_gains`` service to set the gains of
+    each servo in the ``arm`` group to its default value.
+
+    .. tabs::
+
+        .. group-tab:: Python
+
+            .. code-block:: python
+
+                srv_set_motor_gains = rospy.ServiceProxy(
+                    name='set_motor_pid_gains',
+                    service_class=MotorGains
+                )
+                rospy.wait_for_service(srv_motor_gains)
+                gains_request = MotorGainsRequest(
+                    cmd_type='group',
+                    name='arm',
+                    kp_pos=800,
+                    ki_pos=0,
+                    kd_pos=0,
+                    k1=0,
+                    k2=0,
+                    kp_vel=100,
+                    ki_vel=1920,
+                )
+                srv_set_motor_gains.call(gains_request)
+
+        .. group-tab:: C++
+
+            .. code-block:: c++
+
+                ros::ServiceClient srv_motor_gains = nh.serviceClient<interbotix_xs_msgs::MotorGains>("set_motor_pid_gains");
+                srv_motor_gains.waitForExistence();
+                interbotix_xs_msgs::MotorGains motor_gains;
+                motor_gains.request.cmd_type = "group";
+                motor_gains.request.name = "arm";
+                motor_gains.request.kp_pos = 800;
+                motor_gains.request.ki_pos = 0;
+                motor_gains.request.kd_pos = 0;
+                motor_gains.request.k1 = 0;
+                motor_gains.request.k2 = 0;
+                motor_gains.request.kp_vel = 100;
+                motor_gains.request.ki_vel = 1920;
+                srv_motor_gains.call(motor_gains);
+
 
 Set Register Values Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
