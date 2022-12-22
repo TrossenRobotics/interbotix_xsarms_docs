@@ -19,8 +19,11 @@ relevant section.
     getting_started/customized_grippers.rst
     getting_started/pairing_controller.rst
 
-Video Tutorial
-==============
+Video Tutorials
+===============
+
+X-Series Arm Hardware Setup
+---------------------------
 
 .. youtube:: o9EXEgzbAxQ
    :width: 70%

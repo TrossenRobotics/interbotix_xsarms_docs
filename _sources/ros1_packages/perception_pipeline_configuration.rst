@@ -233,8 +233,8 @@ is to give time (half a second or so) for the arm to settle before capturing the
 This is because the motion of the arm can cause the Kobuki base to wobble a bit - making the camera
 move as well.
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Python Perception
 -----------------

@@ -92,3 +92,13 @@ further customize with other launch file arguments.
     :file: ../_data/arm_remote_view_ros2.csv
     :header-rows: 1
     :widths: 20, 60, 20, 20
+
+Video Tutorials
+===============
+
+Arm Descriptions Package for ROS 2
+----------------------------------
+
+.. youtube:: c3oU_pygLZI
+    :width: 70%
+    :align: center

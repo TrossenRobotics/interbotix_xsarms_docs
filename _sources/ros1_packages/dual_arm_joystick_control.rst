@@ -73,8 +73,8 @@ table below:
 
 .. _`xsarm_dual_joy.launch`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual_joy/launch/xsarm_dual_joy.launch
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Using a Joystick to Control X-Series Arms
 -----------------------------------------

@@ -107,8 +107,8 @@ constructs its rosservice objects and can be safely ignored.
 
             $ roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=wx250 use_sim:=true
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Working with the Interbotix MATLAB API
 --------------------------------------

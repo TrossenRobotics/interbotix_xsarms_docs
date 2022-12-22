@@ -241,8 +241,8 @@ This error means that essential ROS services can't be found under the 'robot_nam
 that the robot name given to your robot and the xsarm_control robot_model/robot_name parameter
 match and that the **xs_sdk** node launched successfully.
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Working with the Interbotix Python API
 --------------------------------------

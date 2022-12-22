@@ -96,8 +96,8 @@ ducks. To run it in simulation, type...
 
     $ roslaunch interbotix_xsarm_puppet xsarm_puppet_single.launch robot_model:=wx250 use_sim:=true playback:=true bag_name:=duck_dunk
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Record & Playback X-Series Arm Demo
 -----------------------------------

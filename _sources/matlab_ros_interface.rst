@@ -357,8 +357,8 @@ instantiating an Interbotix module object.
     Error using InterbotixRobotXSCore (line 73)
     Cannot connect to ROS master at http://ROS_IP:11311. Check the specified address or hostname.
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Working with the Interbotix MATLAB-ROS API
 ------------------------------------------
