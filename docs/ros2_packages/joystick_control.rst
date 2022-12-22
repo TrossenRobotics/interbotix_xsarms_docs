@@ -85,3 +85,13 @@ is essentially the same:
 	:file: ../_data/joystick_control_buttons.csv
 	:header-rows: 1
 	:widths: 30, 70
+
+Video Tutorials
+===============
+
+Joystick Control Package for ROS 2
+----------------------------------
+
+.. youtube:: -Kw0zHTRrY4
+    :width: 70%
+    :align: center

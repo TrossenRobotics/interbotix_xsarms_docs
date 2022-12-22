@@ -226,8 +226,8 @@ addressed as soon as possible.
 .. 1.  Check if an update exists in any of the three repositories using the ``git fetch`` command.
 .. 2.  
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 X-Series Arm ROS Installation Guide
 -----------------------------------

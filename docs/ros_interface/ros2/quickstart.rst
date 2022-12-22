@@ -92,8 +92,11 @@ Afterwards, feel free to check out the demo projects like :doc:`Joystick Control
 </ros2_packages/joystick_control>`, or any of the other :doc:`ROS 2 Open Source Packages
 </ros2_packages>`.
 
-Video Tutorial
-==============
+Video Tutorials
+===============
+
+ROS 2 Quickstart
+----------------
 
 .. youtube:: vGCIU6CX72M
     :width: 70%

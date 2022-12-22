@@ -106,8 +106,8 @@ case, the CSV file and picture in that directory show diagnostics for the waist 
 
 .. _data: https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/data
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Diagnostic Tool X-Series Arm Demo
 ---------------------------------

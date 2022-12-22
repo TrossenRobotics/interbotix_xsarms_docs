@@ -72,3 +72,13 @@ To further customize this launch file at run-time, refer to the table below, or 
     :file: ../_data/arm_control_ros2.csv
     :header-rows: 1
     :widths: 20, 60, 20, 20
+
+Video Tutorials
+===============
+
+Arm Control Package for ROS 2
+-----------------------------
+
+.. youtube:: tE2nuXhJTiA
+    :width: 70%
+    :align: center

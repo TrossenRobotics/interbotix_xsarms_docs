@@ -71,8 +71,8 @@ further customize with other launch file arguments.
 
 .. _`xsarm_gazebo.launch`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/interbotix_xsarm_gazebo/launch/xsarm_gazebo.launch
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Working with the Interbotix Arm in Gazebo
 -----------------------------------------

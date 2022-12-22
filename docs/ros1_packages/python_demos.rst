@@ -87,8 +87,8 @@ To make things easier, each script also outlines the commands necessary to get t
 
             $ roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=wx250 use_sim:=true
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Working with the Interbotix Python API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

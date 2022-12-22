@@ -118,8 +118,8 @@ further customize with other launch file arguments.
 
 .. _`xsarm_moveit_interface.launch`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/launch/xsarm_moveit_interface.launch
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Using The Interbotix MoveIt Interface ROS Package
 -------------------------------------------------

@@ -121,3 +121,13 @@ further customize with other launch file arguments.
     :file: ../_data/moveit_interface_and_api_ros2.csv
     :header-rows: 1
     :widths: 20, 60, 20, 20
+
+Video Tutorials
+===============
+
+MoveIt2 Configuration for ROS 2
+-------------------------------
+
+.. youtube:: -Kw0zHTRrY4
+    :width: 70%
+    :align: center

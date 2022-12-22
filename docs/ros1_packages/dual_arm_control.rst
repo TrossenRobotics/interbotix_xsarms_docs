@@ -95,8 +95,8 @@ table below:
 
 .. _`xsarm_dual.launch`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/launch/xsarm_dual.launch
 
-Video Tutorial
-==============
+Video Tutorials
+===============
 
 Working With Multiple Arms
 --------------------------
