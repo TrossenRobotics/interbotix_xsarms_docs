@@ -1,3 +1,34 @@
+/* Sidebar Docs Home Link */
+
+div.sidebartitle-docs-home a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex: 1;
+    font-weight: 700;
+}
+
+div.sidebartitle-docs-home a:hover {
+    background: hsla(0, 0%, 100%, .1);
+    outline: 0;
+}
+
+div.sidebartitle-docs-home-hr {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div.sidebartitle-docs-home-hr > hr {
+    margin: 5px 0;
+    max-width: 90%;
+    flex: 1;
+}
+
+
 /* Sidebar header (and topbar for mobile) */
 
 .wy-side-nav-search,
