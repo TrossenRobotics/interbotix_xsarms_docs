@@ -234,17 +234,17 @@ install the full desktop version of ROS 2 if it’s not yet on your system, ask 
 install the Interbotix Perception packages and ask you if you want to install the MATLAB-ROS API.
 The commands below demonstrate the process of running the installation script for ROS 2 Galactic.</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install curl
-<span class="gp">$ </span>curl <span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/amd64/xsarm_amd64_install.sh&#39;</span> &gt; xsarm_amd64_install.sh
-<span class="gp">$ </span>chmod +x xsarm_amd64_install.sh
-<span class="gp">$ </span>./xsarm_amd64_install.sh -d galactic
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
+<span class="gp">$ </span>curl<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/amd64/xsarm_amd64_install.sh&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>xsarm_amd64_install.sh
+<span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>xsarm_amd64_install.sh
+<span class="gp">$ </span>./xsarm_amd64_install.sh<span class="w"> </span>-d<span class="w"> </span>galactic
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>The install script provides more in-depth control of some installation options. Append the
 <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to see the help document like below:</p>
-<div class="last highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./xsarm_amd64_install.sh -h
+<div class="last highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./xsarm_amd64_install.sh<span class="w"> </span>-h
 <span class="go">USAGE: ./xsarm_amd64_install.sh [-h][-d DISTRO][-p PATH][-n]</span>
 
 <span class="go">...</span>
@@ -266,10 +266,10 @@ yet on your system, ask you for your desired robot model (ex. <code class="docut
 whether or not you’d like the Joystick ROS 2 package to start at boot. The commands below
 demonstrate the process of running the installation script for ROS 2 Galactic.</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install curl
-<span class="gp">$ </span>curl <span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span> &gt; xsarm_rpi4_install.sh
-<span class="gp">$ </span>chmod +x xsarm_rpi4_install.sh
-<span class="gp">$ </span>./xsarm_rpi4_install.sh -d galactic
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
+<span class="gp">$ </span>curl<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>xsarm_rpi4_install.sh
+<span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>xsarm_rpi4_install.sh
+<span class="gp">$ </span>./xsarm_rpi4_install.sh<span class="w"> </span>-d<span class="w"> </span>galactic
 </pre></div>
 </div>
 </div></blockquote>
@@ -280,7 +280,7 @@ PS4 controller with the Pi. Refer to the <a class="reference internal" href="../
 <p class="first admonition-title">Note</p>
 <p>The install script provides more in-depth control of some installation options. Append the
 <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to see the help document like below:</p>
-<div class="last highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./xsarm_rpi4_install.sh -h
+<div class="last highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./xsarm_rpi4_install.sh<span class="w"> </span>-h
 <span class="go">USAGE: ./xsarm_rpi4_install.sh [-h][-d DISTRO][-j ROBOT_MODEL][-p PATH][-n]</span>
 
 <span class="go">...</span>
@@ -296,7 +296,7 @@ PS4 controller with the Pi. Refer to the <a class="reference internal" href="../
 finding the U2D2 by checking that the port name shows up as <code class="docutils literal notranslate"><span class="pre">ttyDXL</span></code>. The command and the
 expected output are below:</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls /dev <span class="p">|</span> grep ttyDXL
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>/dev<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ttyDXL
 <span class="go">ttyDXL</span>
 </pre></div>
 </div>
@@ -328,7 +328,7 @@ addressed as soon as possible.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

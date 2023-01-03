@@ -168,18 +168,18 @@ plugin</li>
 <p>To run this package on the physical robot, type the line below in a terminal (assuming the
 PincherX-100 is being launched). Note that if you’re using a 5 or 6 dof arm, you should set the
 <code class="docutils literal notranslate"><span class="pre">dof</span></code> launch file argument appropriately.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_moveit xsarm_moveit.launch robot_model:<span class="o">=</span>px100 use_actual:<span class="o">=</span><span class="nb">true</span> dof:<span class="o">=</span><span class="m">4</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_moveit<span class="w"> </span>xsarm_moveit.launch<span class="w"> </span>robot_model:<span class="o">=</span>px100<span class="w"> </span>use_actual:<span class="o">=</span><span class="nb">true</span><span class="w"> </span>dof:<span class="o">=</span><span class="m">4</span>
 </pre></div>
 </div>
 <p>If running this package on a Gazebo simulated robot, type the line below in a terminal (assuming
 the ReactorX-200 is being launched). Don’t forget to unpause the Gazebo physics afterwards or
 MoveIt will never load!</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_moveit xsarm_moveit.launch robot_model:<span class="o">=</span>rx200 use_gazebo:<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_moveit<span class="w"> </span>xsarm_moveit.launch<span class="w"> </span>robot_model:<span class="o">=</span>rx200<span class="w"> </span>use_gazebo:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>If running this package on a MoveIt generated fake robot, type the line below in a terminal
 (assuming the WidowX-250 is being launched).</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_moveit xsarm_moveit.launch robot_model:<span class="o">=</span>wx250 use_fake:<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_moveit<span class="w"> </span>xsarm_moveit.launch<span class="w"> </span>robot_model:<span class="o">=</span>wx250<span class="w"> </span>use_fake:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>This is the bare minimum needed to get up and running. Take a look at the table below to see how to
@@ -290,7 +290,7 @@ the start and goal states for the arm respectively. To display them, navigate to
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

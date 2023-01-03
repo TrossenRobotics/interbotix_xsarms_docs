@@ -171,12 +171,12 @@ Gazebo world</li>
 <p>To run this package, type the line below in a terminal (assuming the WidowX-250 is being launched
 with trajectory controllers). Note that if you’re using a 4 or 6 dof arm, you should set the
 <code class="docutils literal notranslate"><span class="pre">dof</span></code> launch file argument appropriately.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_gazebo xsarm_gazebo.launch robot_model:<span class="o">=</span>wx250 use_trajectory_controllers:<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_gazebo<span class="w"> </span>xsarm_gazebo.launch<span class="w"> </span>robot_model:<span class="o">=</span>wx250<span class="w"> </span>use_trajectory_controllers:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>Since by default, Gazebo is started in a ‘paused’ state (this is done to give time for the
 controllers to kick in), unpause the physics once it is fully loaded by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rosservice call /gazebo/unpause_physics
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rosservice<span class="w"> </span>call<span class="w"> </span>/gazebo/unpause_physics
 </pre></div>
 </div>
 <p>This is the bare minimum needed to get up and running. Take a look at the table below to see how to
@@ -290,7 +290,7 @@ further customize with other launch file arguments.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

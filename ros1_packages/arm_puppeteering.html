@@ -167,7 +167,7 @@ both arms relative to the RViz ‘world’ frame</li>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To run this feature, plug two robots with the same number of joints (ex. the PincherX-150 and
 WidowX-250) into two USB ports and in a terminal, type:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_puppet xsarm_puppet.launch robot_model_master:<span class="o">=</span>px150 robot_model_puppet:<span class="o">=</span>wx250
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet.launch<span class="w"> </span>robot_model_master:<span class="o">=</span>px150<span class="w"> </span>robot_model_puppet:<span class="o">=</span>wx250
 </pre></div>
 </div>
 <p>It might be good idea to verify which robot is given ttyUSB0 as its port name so that you know
@@ -260,7 +260,7 @@ command line arguments for the ‘xsarm_puppet.launch’ file, refer to the tabl
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

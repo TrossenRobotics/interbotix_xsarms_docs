@@ -145,9 +145,9 @@ on any Interbotix X-Series Robot.</p>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>The X-Series Driver is compiled as a library and can be used in any C++ project by simply including
 its headers and linking against it.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;interbotix_xs_driver/xs_logging.hpp&quot;</span><span class="c1">  // Logging macros and utils</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;interbotix_xs_driver/xs_common.hpp&quot;</span><span class="c1">   // Common variables and types</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;interbotix_xs_driver/xs_driver.hpp&quot;</span><span class="c1">   // The InterbotixDriverXS class</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;interbotix_xs_driver/xs_logging.hpp&quot;</span><span class="c1">  // Logging macros and utils</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;interbotix_xs_driver/xs_common.hpp&quot;</span><span class="c1">   // Common variables and types</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;interbotix_xs_driver/xs_driver.hpp&quot;</span><span class="c1">   // The InterbotixDriverXS class</span>
 </pre></div>
 </div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">find_package</span><span class="p">(</span><span class="s">interbotix_xs_driver</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
@@ -164,11 +164,11 @@ its headers and linking against it.</p>
 “INFO”, “WARN”, “ERROR”, “FATAL”</li>
 </ul>
 <p>This initialization would look something like below:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">InterbotixDriverXS</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xs_driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">InterbotixDriverXS</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">filepath_motor_configs</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">filepath_mode_configs</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">write_eeprom_on_startup</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">logging_level</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">InterbotixDriverXS</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xs_driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">InterbotixDriverXS</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">    </span><span class="n">filepath_motor_configs</span><span class="p">,</span>
+<span class="w">    </span><span class="n">filepath_mode_configs</span><span class="p">,</span>
+<span class="w">    </span><span class="n">write_eeprom_on_startup</span><span class="p">,</span>
+<span class="w">    </span><span class="n">logging_level</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>See the package’s source code for more details.</p>
@@ -186,7 +186,7 @@ its headers and linking against it.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -173,7 +173,7 @@ plots joint temperature [C] vs. time [s].</li>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To use this package, first manually manipulate the arm (let’s say the PincherX-150) until the
 desired starting pose is reached. Then type the command below (if testing the waist joint):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_diagnostic_tool xsarm_diagnostic_tool.launch robot_model:<span class="o">=</span>px150 cmd_joint:<span class="o">=</span>waist observe_joint:<span class="o">=</span>waist bag_name:<span class="o">=</span>px150_diagnostics
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_diagnostic_tool<span class="w"> </span>xsarm_diagnostic_tool.launch<span class="w"> </span>robot_model:<span class="o">=</span>px150<span class="w"> </span>cmd_joint:<span class="o">=</span>waist<span class="w"> </span>observe_joint:<span class="o">=</span>waist<span class="w"> </span>bag_name:<span class="o">=</span>px150_diagnostics
 </pre></div>
 </div>
 <p>Keep holding the arm until the motors torque on. At this point, let go of the arm. Since the
@@ -186,11 +186,11 @@ launch file argument table below) at which point the arm will go to its ‘sleep
 launch file so that rosbag will stop recording data.</p>
 <p>To convert the <cite>rosbag</cite> data to a csv file, navigate to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/scripts" rel="noopener noreferrer" target="_blank">scripts</a> directory. If the
 ‘bag2csv.py’ program is not yet executable, make it so by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod a+x bag2csv.py
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span>a+x<span class="w"> </span>bag2csv.py
 </pre></div>
 </div>
 <p>Next, type:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python bag2csv.py px150 waist px150_diagnostics.bag px150_diagnostics.csv
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>bag2csv.py<span class="w"> </span>px150<span class="w"> </span>waist<span class="w"> </span>px150_diagnostics.bag<span class="w"> </span>px150_diagnostics.csv
 </pre></div>
 </div>
 <p>The command is pretty self explanatory - the arguments are the robot name, the name of the joint to
@@ -288,7 +288,7 @@ case, the CSV file and picture in that directory show diagnostics for the waist 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

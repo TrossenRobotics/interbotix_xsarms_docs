@@ -163,11 +163,11 @@ killing the node.</li>
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To get started, open up a terminal and run the command below (assuming a WidowX-250 is being
 launched).</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:<span class="o">=</span>wx250
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx250
 </pre></div>
 </div>
 <p>Then, in another terminal, navigate to this directory and enter…</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3 bartender.py
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>bartender.py
 </pre></div>
 </div>
 <p>You should observe the robot pick up a virtual bottle (from behind a virtual bar), rotate so that
@@ -182,7 +182,7 @@ To make things easier, each script also outlines the commands necessary to get t
 <p>If you want to test out your code first on a simulated arm, make sure to set the <code class="docutils literal notranslate"><span class="pre">use_sim</span></code>
 arg to true like this:</p>
 <blockquote class="last">
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:<span class="o">=</span>wx250 use_sim:<span class="o">=</span><span class="nb">true</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx250<span class="w"> </span>use_sim:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -201,7 +201,7 @@ arg to true like this:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

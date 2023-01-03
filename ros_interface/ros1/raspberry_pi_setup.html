@@ -191,25 +191,25 @@ something more unique than <code class="docutils literal notranslate"><span clas
 <ol class="arabic">
 <li><p class="first">To modify the <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> user name to something else (in this case <code class="docutils literal notranslate"><span class="pre">pibot</span></code>), we need to add a
 temporary new user to do the modifications.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo adduser temp
-<span class="gp">$ </span>sudo adduser temp sudo
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>adduser<span class="w"> </span>temp
+<span class="gp">$ </span>sudo<span class="w"> </span>adduser<span class="w"> </span>temp<span class="w"> </span>sudo
 <span class="gp">$ </span><span class="nb">exit</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Now login to the <code class="docutils literal notranslate"><span class="pre">temp</span></code> user, at which point you can modify the <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> user to be
 <code class="docutils literal notranslate"><span class="pre">pibot</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo usermod -l pibot ubuntu
-<span class="gp">$ </span>sudo groupmod -n pibot ubuntu
-<span class="gp">$ </span>sudo usermod -d /home/pibot -m pibot
-<span class="gp">$ </span>sudo usermod -c <span class="s2">&quot;pibot&quot;</span> pibot
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-l<span class="w"> </span>pibot<span class="w"> </span>ubuntu
+<span class="gp">$ </span>sudo<span class="w"> </span>groupmod<span class="w"> </span>-n<span class="w"> </span>pibot<span class="w"> </span>ubuntu
+<span class="gp">$ </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-d<span class="w"> </span>/home/pibot<span class="w"> </span>-m<span class="w"> </span>pibot
+<span class="gp">$ </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;pibot&quot;</span><span class="w"> </span>pibot
 <span class="gp">$ </span><span class="nb">exit</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Now login to the <code class="docutils literal notranslate"><span class="pre">pibot</span></code> user, at which point you can delete the temporary <code class="docutils literal notranslate"><span class="pre">temp</span></code> user…</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo deluser temp
-<span class="gp">$ </span>sudo rm -r /home/temp
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>deluser<span class="w"> </span>temp
+<span class="gp">$ </span>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/home/temp
 </pre></div>
 </div>
 </li>
@@ -218,14 +218,14 @@ temporary new user to do the modifications.</p>
 multiple Pis on the same network later.</p>
 <ol class="arabic">
 <li><p class="first">Change the ‘hostname’ (a.k.a computer name) from ‘ubuntu’ to ‘pibot’ in the file below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo nano /etc/hostname
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hostname
 </pre></div>
 </div>
 </li>
 <li><p class="first">At this point, it is a good idea to reboot to let the changes take effect. Before doing so,
 first type the command below to check if Linux is in the process of updating behind the scenes.
 It does this automatically for security updates.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ps aux <span class="p">|</span> grep -i apt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>apt
 </pre></div>
 </div>
 </li>
@@ -234,7 +234,7 @@ It does this automatically for security updates.</p>
 can verify that it’s done by running the above command every few minutes until apt.systemd.daily
 stops showing up. At that point, type:</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo reboot
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>reboot
 </pre></div>
 </div>
 </div></blockquote>
@@ -245,8 +245,8 @@ stops showing up. At that point, type:</p>
 <ol class="arabic">
 <li><p class="first">Login and type…</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
-<span class="gp">$ </span>sudo reboot
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+<span class="gp">$ </span>sudo<span class="w"> </span>reboot
 </pre></div>
 </div>
 </div></blockquote>
@@ -255,8 +255,8 @@ stops showing up. At that point, type:</p>
 will pop up in the middle of the install asking you to choose between ‘lightdm’ and ‘gdm3’ as
 the default display manager. As Ubuntu Mate uses the ‘lightdm’ display manager, make sure to
 select ‘lightdm’.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install ubuntu-mate-desktop
-<span class="gp">$ </span>sudo reboot
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ubuntu-mate-desktop
+<span class="gp">$ </span>sudo<span class="w"> </span>reboot
 </pre></div>
 </div>
 </li>
@@ -277,8 +277,8 @@ as the desktop environment. Then login. If you’d like to enable automatic logi
 upped to 2 GHz by following the commands below.</p>
 <ol class="arabic">
 <li><p class="first">Modify the boot config file</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> /boot/firmware/
-<span class="gp">$ </span>sudo nano usercfg.txt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>/boot/firmware/
+<span class="gp">$ </span>sudo<span class="w"> </span>nano<span class="w"> </span>usercfg.txt
 </pre></div>
 </div>
 </li>
@@ -294,7 +294,7 @@ upped to 2 GHz by following the commands below.</p>
 application.</p>
 </li>
 <li><p class="first">Save the file and reboot</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo reboot
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>reboot
 </pre></div>
 </div>
 </li>
@@ -326,24 +326,24 @@ following.</p>
 <ol class="arabic">
 <li><p class="first">Add the ubuntu-pi-flavour-makers repo that contains the pi-bluetooth package that’s necessary
 to enable Bluetooth on the Pi and install pi-bluetooth.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo add-apt-repository ppa:ubuntu-pi-flavour-makers/ppa
-<span class="gp">$ </span>sudo apt purge linux-firmware-raspi2
-<span class="gp">$ </span>sudo apt install pi-bluetooth
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:ubuntu-pi-flavour-makers/ppa
+<span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>purge<span class="w"> </span>linux-firmware-raspi2
+<span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pi-bluetooth
 </pre></div>
 </div>
 </li>
 <li><p class="first">Note that you will see a message about the <em>hciuart.service</em> not working correctly. This is ok
 though as after a reboot, it will work just fine.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install linux-firmware-raspi2
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>linux-firmware-raspi2
 </pre></div>
 </div>
 </li>
 <li><p class="first">After running the command above, you will see an error message about one package trying to
 overwrite a file in another package. This can be fixed by
 typing.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo dpkg -i --force-all /var/cache/apt/archives/linux-firmware-raspi2_XXXX_arm64.deb <span class="c1">#(The Xs are some arbitrary numbers which can be copied from the error message)</span>
-<span class="gp">$ </span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
-<span class="gp">$ </span>sudo reboot
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>--force-all<span class="w"> </span>/var/cache/apt/archives/linux-firmware-raspi2_XXXX_arm64.deb<span class="w"> </span><span class="c1">#(The Xs are some arbitrary numbers which can be copied from the error message)</span>
+<span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+<span class="gp">$ </span>sudo<span class="w"> </span>reboot
 </pre></div>
 </div>
 </li>
@@ -357,9 +357,9 @@ typing.</p>
 <p>Alternatively, you can use the xsarm convenience script we provide to install ROS, robot-specific
 packages, and configure any drivers and environment variables. The commands to download, configure
 and run the script are as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo apt install curl
-<span class="gp">$ </span>curl <span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span> &gt; xsarm_rpi4_install.sh
-<span class="gp">$ </span>chmod +x xsarm_rpi4_install.sh
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
+<span class="gp">$ </span>curl<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>xsarm_rpi4_install.sh
+<span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>xsarm_rpi4_install.sh
 <span class="gp">$ </span>./xsarm_rpi4_install.sh
 </pre></div>
 </div>
@@ -396,7 +396,7 @@ Internet connection with the Pi when needed.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

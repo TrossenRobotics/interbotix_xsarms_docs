@@ -168,18 +168,18 @@ the robot is able to manage the load or movements. The user would launch their a
 whatever method the application is deigned for (Python, rosrun, etc.).</p>
 <p>The user would then launch this program using the command below, making sure to specify the
 <code class="docutils literal notranslate"><span class="pre">bag_name</span></code> argument.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_diagnostic_tool xsarm_diagnostic_listener.launch robot_model:<span class="o">=</span>wx250s bag_name:<span class="o">=</span>wx250s_application_diagnostics
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_diagnostic_tool<span class="w"> </span>xsarm_diagnostic_listener.launch<span class="w"> </span>robot_model:<span class="o">=</span>wx250s<span class="w"> </span>bag_name:<span class="o">=</span>wx250s_application_diagnostics
 </pre></div>
 </div>
 <p>Once the control application is done, send the termination signal to the listener by entering
 <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> in its terminal.</p>
 <p>To convert the <cite>rosbag</cite> data to a csv file, navigate to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/scripts" rel="noopener noreferrer" target="_blank">scripts</a> directory. If the
 ‘bag2csv.py’ program is not yet executable, make it so by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod a+x bag2csv.py
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>chmod<span class="w"> </span>a+x<span class="w"> </span>bag2csv.py
 </pre></div>
 </div>
 <p>Next, type:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python bag2csv.py wx250s waist wx250s_application_diagnostics.bag wx250s_application_diagnostics.csv
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>bag2csv.py<span class="w"> </span>wx250s<span class="w"> </span>waist<span class="w"> </span>wx250s_application_diagnostics.bag<span class="w"> </span>wx250s_application_diagnostics.csv
 </pre></div>
 </div>
 <p>The command is pretty self explanatory - the arguments are the robot name, the name of the joint to
@@ -231,7 +231,7 @@ the desired CSV file name. To better understand how this program works, take a l
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

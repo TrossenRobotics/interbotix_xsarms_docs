@@ -166,7 +166,7 @@ assigns USB port names starting at 0 and going up. So the first U2D2 plugged in 
 <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB0</span></code> while the second U2D2 plugged in will be called <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB1</span></code>. If you’re
 familiar with udev rules, you can create a unique symlink for each U2D2 by finding its serial id
 with the following command (make sure you do this with only one U2D2 plugged in at a time)</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>udevadm info -a -n /dev/ttyUSB0 <span class="p">|</span> grep <span class="o">{</span>serial<span class="o">}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>udevadm<span class="w"> </span>info<span class="w"> </span>-a<span class="w"> </span>-n<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="o">{</span>serial<span class="o">}</span>
 </pre></div>
 </div>
 <p>The output should look similar to the below but with a different ID…</p>
@@ -182,11 +182,11 @@ below for each of your U2D2s. Note that we’ve used the serial ID above and gav
 <p>Now make sure to update the <code class="docutils literal notranslate"><span class="pre">port</span></code> name in the ‘modes.yaml’ files in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/config" rel="noopener noreferrer" target="_blank">config</a> directory to
 point to your new symlinks. Then unplug/replug the U2D2s to refresh the ports and run the launch
 file below.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_dual xsarm_dual.launch
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_dual<span class="w"> </span>xsarm_dual.launch
 </pre></div>
 </div>
 <p>Then navigate to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_dual/scripts" rel="noopener noreferrer" target="_blank">scripts</a> directory and run the command</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python xsarm_dual.py  <span class="c1"># python3 xsarm_dual.py if using ROS Noetic</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>xsarm_dual.py<span class="w">  </span><span class="c1"># python3 xsarm_dual.py if using ROS Noetic</span>
 </pre></div>
 </div>
 <p>To further customize the launch file at run-time (like with a different robot model), look at the
@@ -272,7 +272,7 @@ table below:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

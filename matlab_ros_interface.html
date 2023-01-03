@@ -359,20 +359,20 @@ GUI is also somewhat resource intensive so it is recommended to use the <code cl
 it in the terminal. An example script is provided:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-/path/to/matlab <span class="se">\</span>
-        -nodesktop <span class="se">\</span>
-        -sd /path/to/matlab_demos <span class="se">\</span>
-        -r <span class="s2">&quot;interbotix_matlab_ros_setup&quot;</span>
+/path/to/matlab<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-nodesktop<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-sd<span class="w"> </span>/path/to/matlab_demos<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-r<span class="w"> </span><span class="s2">&quot;interbotix_matlab_ros_setup&quot;</span>
 </pre></div>
 </div>
 <p>On our development computer, this script looks like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-~/matlab <span class="se">\</span>
-    -nodesktop <span class="se">\</span>
-    -nosplash <span class="se">\</span>
-    -sd ~/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/matlab_demos <span class="se">\</span>
-    -r <span class="s2">&quot;interbotix_matlab_ros_setup&quot;</span>
+~/matlab<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-nodesktop<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-nosplash<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-sd<span class="w"> </span>~/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/matlab_demos<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-r<span class="w"> </span><span class="s2">&quot;interbotix_matlab_ros_setup&quot;</span>
 </pre></div>
 </div>
 <p>Make sure to make the script executable by running the command:</p>
@@ -423,10 +423,10 @@ objects and can be safely ignored.</p>
 means that your ROS_IP or ROS_MASTER_URI is incorrect, or that you just don’t have a ROS process
 running. This is commonly seen when you forget to launch interbotix_xsarm_control before
 instantiating an Interbotix module object.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">terminate</span><span class="w"> </span><span class="s">called</span><span class="w"> </span><span class="s">after</span><span class="w"> </span><span class="s">throwing</span><span class="w"> </span><span class="s">an</span><span class="w"> </span><span class="s">instance</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">&#39;ros::ros1::serverException&#39;</span><span class="w"></span>
-<span class="nb">what</span><span class="p">():</span><span class="w">  </span><span class="nb">std</span><span class="p">::</span><span class="n">exception</span><span class="w"></span>
-<span class="n">Error</span><span class="w"> </span><span class="s">using</span><span class="w"> </span><span class="s">InterbotixRobotXSCore</span><span class="w"> </span><span class="s">(line</span><span class="w"> </span><span class="s">73)</span><span class="w"></span>
-<span class="n">Cannot</span><span class="w"> </span><span class="s">connect</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">ROS</span><span class="w"> </span><span class="s">master</span><span class="w"> </span><span class="s">at</span><span class="w"> </span><span class="s">http://ROS_IP:11311.</span><span class="w"> </span><span class="s">Check</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">specified</span><span class="w"> </span><span class="s">address</span><span class="w"> </span><span class="s">or</span><span class="w"> </span><span class="s">hostname.</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">terminate</span><span class="w"> </span><span class="s">called</span><span class="w"> </span><span class="s">after</span><span class="w"> </span><span class="s">throwing</span><span class="w"> </span><span class="s">an</span><span class="w"> </span><span class="s">instance</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">&#39;ros::ros1::serverException&#39;</span>
+<span class="nb">what</span><span class="p">():</span><span class="w">  </span><span class="nb">std</span><span class="p">::</span><span class="n">exception</span>
+<span class="n">Error</span><span class="w"> </span><span class="s">using</span><span class="w"> </span><span class="s">InterbotixRobotXSCore</span><span class="w"> </span><span class="s">(line</span><span class="w"> </span><span class="s">73)</span>
+<span class="n">Cannot</span><span class="w"> </span><span class="s">connect</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">ROS</span><span class="w"> </span><span class="s">master</span><span class="w"> </span><span class="s">at</span><span class="w"> </span><span class="s">http://ROS_IP:11311.</span><span class="w"> </span><span class="s">Check</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">specified</span><span class="w"> </span><span class="s">address</span><span class="w"> </span><span class="s">or</span><span class="w"> </span><span class="s">hostname.</span>
 </pre></div>
 </div>
 </div>
@@ -452,7 +452,7 @@ instantiating an Interbotix module object.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

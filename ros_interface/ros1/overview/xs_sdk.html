@@ -324,19 +324,19 @@ each servo in the <code class="docutils literal notranslate"><span class="pre">a
 <span class="n">srv_set_motor_gains</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">gains_request</span><span class="p">)</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ros</span><span class="o">::</span><span class="n">ServiceClient</span><span class="w"> </span><span class="n">srv_motor_gains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nh</span><span class="p">.</span><span class="n">serviceClient</span><span class="o">&lt;</span><span class="n">interbotix_xs_msgs</span><span class="o">::</span><span class="n">MotorGains</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;set_motor_pid_gains&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="n">srv_motor_gains</span><span class="p">.</span><span class="n">waitForExistence</span><span class="p">();</span><span class="w"></span>
-<span class="n">interbotix_xs_msgs</span><span class="o">::</span><span class="n">MotorGains</span><span class="w"> </span><span class="n">motor_gains</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">cmd_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;group&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arm&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">kp_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">800</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">ki_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">kd_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">k1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">kp_vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
-<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">ki_vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1920</span><span class="p">;</span><span class="w"></span>
-<span class="n">srv_motor_gains</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">motor_gains</span><span class="p">);</span><span class="w"></span>
+</div><div aria-labelledby="tab-0-Qysr" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Qysr" name="Qysr" role="tabpanel" tabindex="0"><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ros</span><span class="o">::</span><span class="n">ServiceClient</span><span class="w"> </span><span class="n">srv_motor_gains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nh</span><span class="p">.</span><span class="n">serviceClient</span><span class="o">&lt;</span><span class="n">interbotix_xs_msgs</span><span class="o">::</span><span class="n">MotorGains</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;set_motor_pid_gains&quot;</span><span class="p">);</span>
+<span class="n">srv_motor_gains</span><span class="p">.</span><span class="n">waitForExistence</span><span class="p">();</span>
+<span class="n">interbotix_xs_msgs</span><span class="o">::</span><span class="n">MotorGains</span><span class="w"> </span><span class="n">motor_gains</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">cmd_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;group&quot;</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;arm&quot;</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">kp_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">800</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">ki_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">kd_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">k1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">k2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">kp_vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">motor_gains</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">ki_vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1920</span><span class="p">;</span>
+<span class="n">srv_motor_gains</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">motor_gains</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></div>
@@ -402,7 +402,7 @@ time by a few seconds and preserves the life of the EEPROM.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

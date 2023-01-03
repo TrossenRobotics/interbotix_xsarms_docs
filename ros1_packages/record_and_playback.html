@@ -174,20 +174,20 @@ on state; the playback is delayed 3 seconds to give time for the <strong>xs_sdk<
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
 <p>To record joint commands while manipulating a single robot (let’s say the PincherX-150), type the
 following in a terminal:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_puppet xsarm_puppet_single.launch robot_model:<span class="o">=</span>px150 record:<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet_single.launch<span class="w"> </span>robot_model:<span class="o">=</span>px150<span class="w"> </span>record:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>Once the nodes finish launching, manually manipulate the arm and gripper through your desired
 motions. When done, return the robot to its initial starting position and <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd>
 the nodes so that rosbag stops recording. By default, the bag file will be saved in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet/bag" rel="noopener noreferrer" target="_blank">bag</a>
 directory. To playback the motion, type the following in the terminal:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_puppet xsarm_puppet_single.launch robot_model:<span class="o">=</span>px150 playback:<span class="o">=</span><span class="nb">true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet_single.launch<span class="w"> </span>robot_model:<span class="o">=</span>px150<span class="w"> </span>playback:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
 </div>
 <p>If you specified a custom bag file name, make sure to include the name in the above command as
 well. When the bag file finishes playing, you can restart it by navigating to the directory where
 the bag file is located and in a terminal, type:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rosbag play &lt;bag file name&gt;
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rosbag<span class="w"> </span>play<span class="w"> </span>&lt;bag<span class="w"> </span>file<span class="w"> </span>name&gt;
 </pre></div>
 </div>
 <p>The robot should now repeat the motions. When done, <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> to stop all nodes. To
@@ -250,7 +250,7 @@ below.</p>
 <p>There is a bag file in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet/bag" rel="noopener noreferrer" target="_blank">bag</a> directory. It was created using the ‘record/playback’ feature
 with the WidowX 250 arm. See if you can figure out what it does! As a hint, it involves rubber
 ducks. To run it in simulation, type…</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch interbotix_xsarm_puppet xsarm_puppet_single.launch robot_model:<span class="o">=</span>wx250 use_sim:<span class="o">=</span><span class="nb">true</span> playback:<span class="o">=</span><span class="nb">true</span> bag_name:<span class="o">=</span>duck_dunk
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet_single.launch<span class="w"> </span>robot_model:<span class="o">=</span>wx250<span class="w"> </span>use_sim:<span class="o">=</span><span class="nb">true</span><span class="w"> </span>playback:<span class="o">=</span><span class="nb">true</span><span class="w"> </span>bag_name:<span class="o">=</span>duck_dunk
 </pre></div>
 </div>
 </div>
@@ -275,7 +275,7 @@ ducks. To run it in simulation, type…</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

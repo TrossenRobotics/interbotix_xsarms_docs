@@ -132,9 +132,9 @@
 <h2>Network Configuration<a class="headerlink" href="#network-configuration" title="Permalink to this headline"></a></h2>
 <div class="section" id="ros-ip">
 <h3>ROS_IP<a class="headerlink" href="#ros-ip" title="Permalink to this headline"></a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="sb">`</span>hostname -I <span class="p">|</span> cut -d<span class="s2">&quot; &quot;</span> -f1<span class="sb">`</span><span class="k">)</span>
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$ROS_IP</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">export</span> <span class="nv">ROS_IP</span><span class="o">=</span><span class="m">127</span>.0.0.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s2">&quot; &quot;</span><span class="w"> </span>-f1<span class="sb">`</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ROS_IP</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">127</span>.0.0.1
 <span class="k">fi</span>
 </pre></div>
 </div>
@@ -158,7 +158,7 @@ configurations to take effect.</p>
 boot.</p>
 </div>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="9db41ee1-b8ba-4474-adc8-84e0a545091d" name="9db41ee1-b8ba-4474-adc8-84e0a545091d" type="checkbox"><label class="sphinx_collapse__label" for="9db41ee1-b8ba-4474-adc8-84e0a545091d"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="fbe8c022-3512-4830-9103-b75e1728da9d" name="fbe8c022-3512-4830-9103-b75e1728da9d" type="checkbox"><label class="sphinx_collapse__label" for="fbe8c022-3512-4830-9103-b75e1728da9d"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file &#39;organizes&#39; the motors in any Dynamixel-based robot into meaningful units. Every robot must</span>
 <span class="c1"># have at least one instance of this file located in a &#39;config&#39; directory in their root &#39;control&#39; ROS package.</span>
 <span class="c1"># Note that all parameters are mandatory unless stated otherwise. This file demos the setup for the VX300S robot.</span>
@@ -311,7 +311,7 @@ boot.</p>
 <p>The startup operating modes can be set on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#mode-configs-param-ros1"><span class="std std-ref">mode_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
 options is below:</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="e8757a86-043c-4de9-9cb9-c60737132674" name="e8757a86-043c-4de9-9cb9-c60737132674" type="checkbox"><label class="sphinx_collapse__label" for="e8757a86-043c-4de9-9cb9-c60737132674"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="2b8f8fda-8c0c-434d-9f15-46143a34cac6" name="2b8f8fda-8c0c-434d-9f15-46143a34cac6" type="checkbox"><label class="sphinx_collapse__label" for="2b8f8fda-8c0c-434d-9f15-46143a34cac6"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is used to customize the initial operating modes of all joint groups and individual joints in a robot.</span>
 <span class="c1"># It should be placed in the &#39;config&#39; directory of any ROS package that builds ontop of the interbotix_xs_sdk.</span>
 <span class="c1"># Example values are shown as well. All parameters are mandatory unless stated otherwise</span>
@@ -352,7 +352,7 @@ options is below:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Trossen Robotics.</p>
+    <p>&#169; Copyright 2023, Trossen Robotics.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
