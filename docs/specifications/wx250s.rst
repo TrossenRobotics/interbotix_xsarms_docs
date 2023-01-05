@@ -111,7 +111,7 @@ Product of Exponentials [`Learn More`_]
     0.0 & 0.0 & 0.0 & 1.0
     \end{bmatrix}
 
-    \\
+.. math::
 
     Slist & =
     \begin{bmatrix}
