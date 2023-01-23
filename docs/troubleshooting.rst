@@ -165,7 +165,7 @@ Failed to write value[] on items[] to [ID : ]
 
 This error message means that something went wrong when writing configurations to the EEPROM
 registers. This can typically be fixed by power-cycling the robot and re-launching the control
-software. It may have the same root cause as the `Incorrect status packet error
+software. It may have the same root cause as the :ref:`Incorrect status packet error
 <troubleshooting_incorrect_status_packet>` and could have the same solution.
 
 [WARN] Writing startup register values to EEPROM.
