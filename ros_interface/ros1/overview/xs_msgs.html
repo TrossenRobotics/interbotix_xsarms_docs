@@ -188,7 +188,7 @@ service in your program’s header.</p>
 based on the group’s operating mode. For example, if a group’s operating mode is set to ‘position’,
 the commands are interpreted as positions in radians</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="8cd2038f-2bbd-407c-b21f-725b7ed461dc" name="8cd2038f-2bbd-407c-b21f-725b7ed461dc" type="checkbox"><label class="sphinx_collapse__label" for="8cd2038f-2bbd-407c-b21f-725b7ed461dc"><i class="sphinx_collapse__icon"></i>JointGroupCommand Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="388cb0b3-163e-49fa-9c92-52c3e81ff03c" name="388cb0b3-163e-49fa-9c92-52c3e81ff03c" type="checkbox"><label class="sphinx_collapse__label" for="388cb0b3-163e-49fa-9c92-52c3e81ff03c"><i class="sphinx_collapse__icon"></i>JointGroupCommand Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">name</span>            <span class="c1"># Name of joint group</span>
 <span class="n">float32</span><span class="p">[]</span> <span class="n">cmd</span>          <span class="c1"># List of joint commands; order is dictated by the index of each joint name for the given group in the &#39;groups&#39; section of a &#39;motor_config&#39; yaml file</span>
 </pre></div>
@@ -202,7 +202,7 @@ the commands are interpreted as positions in radians</p>
 operating mode. For example, if a joint’s operating mode is set to ‘position’, the command is
 interpreted as a position in radians</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="57e68166-8374-41ad-a867-a6d6a9e52b61" name="57e68166-8374-41ad-a867-a6d6a9e52b61" type="checkbox"><label class="sphinx_collapse__label" for="57e68166-8374-41ad-a867-a6d6a9e52b61"><i class="sphinx_collapse__icon"></i>JointSingleCommand Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="41afe904-4fc1-4755-8561-194079071c6a" name="41afe904-4fc1-4755-8561-194079071c6a" type="checkbox"><label class="sphinx_collapse__label" for="41afe904-4fc1-4755-8561-194079071c6a"><i class="sphinx_collapse__icon"></i>JointSingleCommand Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">name</span>          <span class="c1"># Name of joint</span>
 <span class="n">float32</span> <span class="n">cmd</span>          <span class="c1"># Joint command</span>
 </pre></div>
@@ -217,7 +217,7 @@ differently based on the currently set operating mode. For example, if the opera
 ‘position’, the commands are interpreted as positions in radians. This message wraps the
 <a class="reference external" href="https://docs.ros.org/en/latest/api/trajectory_msgs/html/msg/JointTrajectory.html" rel="noopener noreferrer" target="_blank">trajectory_msgs/JointTrajectory</a> message.</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="9c2773b2-2964-4011-ad6e-5dd614076ae2" name="9c2773b2-2964-4011-ad6e-5dd614076ae2" type="checkbox"><label class="sphinx_collapse__label" for="9c2773b2-2964-4011-ad6e-5dd614076ae2"><i class="sphinx_collapse__icon"></i>JointTrajectoryCommand Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="dbadef77-65b0-4886-ae80-256f8d862749" name="dbadef77-65b0-4886-ae80-256f8d862749" type="checkbox"><label class="sphinx_collapse__label" for="dbadef77-65b0-4886-ae80-256f8d862749"><i class="sphinx_collapse__icon"></i>JointTrajectoryCommand Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>                               <span class="c1"># set to &#39;single&#39; for a single joint or &#39;group&#39; for a group of joints</span>
 <span class="n">string</span> <span class="n">name</span>                                   <span class="c1"># joint group name if &#39;cmd_type&#39; is set to &#39;group&#39; or joint name if &#39;cmd_type&#39; is set to &#39;single&#39;</span>
 <span class="n">trajectory_msgs</span><span class="o">/</span><span class="n">JointTrajectory</span> <span class="n">traj</span>          <span class="c1"># ROS trajectory message</span>
@@ -233,7 +233,7 @@ differently based on the currently set operating mode. For example, if the opera
 <span id="interbotix-xs-msgs-torqueenable-ros1"></span><h4>TorqueEnable<a class="headerlink" href="#torqueenable" title="Permalink to this headline"></a></h4>
 <p>Torque a joint or group of joints on/off.</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="ba7772d7-647e-4835-a50d-52bb40399a65" name="ba7772d7-647e-4835-a50d-52bb40399a65" type="checkbox"><label class="sphinx_collapse__label" for="ba7772d7-647e-4835-a50d-52bb40399a65"><i class="sphinx_collapse__icon"></i>TorqueEnable Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="105d5d5d-2710-44f2-9820-ae1d7ffe5cb6" name="105d5d5d-2710-44f2-9820-ae1d7ffe5cb6" type="checkbox"><label class="sphinx_collapse__label" for="105d5d5d-2710-44f2-9820-ae1d7ffe5cb6"><i class="sphinx_collapse__icon"></i>TorqueEnable Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>          <span class="c1"># set to &#39;group&#39; if commanding a joint group or &#39;single&#39; if commanding a single joint</span>
 <span class="n">string</span> <span class="n">name</span>              <span class="c1"># name of the group if commanding a joint group or joint if commanding a single joint</span>
 <span class="nb">bool</span> <span class="n">enable</span>              <span class="c1"># set to &#39;true&#39; to torque on or &#39;false&#39; to torque off</span>
@@ -266,7 +266,7 @@ Make sure the robot is in its sleep pose or in a safe configuration before calli
 RAM and EEPROM Control Tables for your specific motors, for example, the <a class="reference external" href="https://emanual.robotis.com/docs/en/dxl/x/xm430-w350/#area-eeprom-ram" rel="noopener noreferrer" target="_blank">XM430-W350</a>.</p>
 </div>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="9d97904b-a734-46b8-b6f5-8491c0737151" name="9d97904b-a734-46b8-b6f5-8491c0737151" type="checkbox"><label class="sphinx_collapse__label" for="9d97904b-a734-46b8-b6f5-8491c0737151"><i class="sphinx_collapse__icon"></i>Reboot Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="37d0ab81-2b99-48e2-8994-2dbf1bbf0e31" name="37d0ab81-2b99-48e2-8994-2dbf1bbf0e31" type="checkbox"><label class="sphinx_collapse__label" for="37d0ab81-2b99-48e2-8994-2dbf1bbf0e31"><i class="sphinx_collapse__icon"></i>Reboot Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>          <span class="c1"># set to &#39;group&#39; if commanding a joint group or &#39;single&#39; if commanding a single joint</span>
 <span class="n">string</span> <span class="n">name</span>              <span class="c1"># name of the group if commanding a joint group or joint if commanding a single joint</span>
 <span class="nb">bool</span> <span class="n">enable</span>              <span class="c1"># whether to torque the selected joints on after reboot</span>
@@ -287,7 +287,7 @@ RAM and EEPROM Control Tables for your specific motors, for example, the <a clas
 ‘left_finger’ joint</p>
 </div>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="bdcfaf87-4c20-485e-b2cb-20937b2befc7" name="bdcfaf87-4c20-485e-b2cb-20937b2befc7" type="checkbox"><label class="sphinx_collapse__label" for="bdcfaf87-4c20-485e-b2cb-20937b2befc7"><i class="sphinx_collapse__icon"></i>RobotInfo Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="17b522f6-989e-482f-8c24-26790969c9b4" name="17b522f6-989e-482f-8c24-26790969c9b4" type="checkbox"><label class="sphinx_collapse__label" for="17b522f6-989e-482f-8c24-26790969c9b4"><i class="sphinx_collapse__icon"></i>RobotInfo Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>                          <span class="c1"># set to &#39;group&#39; if requesting info about a joint group or &#39;single&#39; if requesting info about a single joint</span>
 <span class="n">string</span> <span class="n">name</span>                              <span class="c1"># the group name if requesting info about a group or the joint name if requesting info about a single joint</span>
 <span class="o">---</span>
@@ -345,7 +345,7 @@ is set to ‘time’, this parameter sets the time span (in milliseconds) that i
 the specified joint(s) to accelerate; to have an ‘infinite’ max limit, set to ‘0’.</li>
 </ul>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="946ffb1e-79c6-4be9-934f-47392920bca6" name="946ffb1e-79c6-4be9-934f-47392920bca6" type="checkbox"><label class="sphinx_collapse__label" for="946ffb1e-79c6-4be9-934f-47392920bca6"><i class="sphinx_collapse__icon"></i>OperatingModes Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="1f06d375-b799-423c-b496-a7765788a747" name="1f06d375-b799-423c-b496-a7765788a747" type="checkbox"><label class="sphinx_collapse__label" for="1f06d375-b799-423c-b496-a7765788a747"><i class="sphinx_collapse__icon"></i>OperatingModes Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>                     <span class="c1"># set to &#39;group&#39; if commanding a joint group or &#39;single&#39; if commanding a single joint</span>
 <span class="n">string</span> <span class="n">name</span>                         <span class="c1"># name of the group if commanding a joint group or joint if commanding a single joint</span>
 <span class="n">string</span> <span class="n">mode</span>                         <span class="c1"># desired operating mode as described above</span>
@@ -364,7 +364,7 @@ the specified joint(s) to accelerate; to have an ‘infinite’ max limit, set t
 <p>To get familiar with the various PID gains, go to the <a class="reference external" href="http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/" rel="noopener noreferrer" target="_blank">DYNAMIXEL Workbench E-Manual page</a>, click on a
 motor model, and scroll down to the ‘PID’ section.</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="51199f53-9e01-4fe4-8fb9-dc1436cad72b" name="51199f53-9e01-4fe4-8fb9-dc1436cad72b" type="checkbox"><label class="sphinx_collapse__label" for="51199f53-9e01-4fe4-8fb9-dc1436cad72b"><i class="sphinx_collapse__icon"></i>MotorGains Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="a2c98237-bcda-45f3-9e72-264dd2edf518" name="a2c98237-bcda-45f3-9e72-264dd2edf518" type="checkbox"><label class="sphinx_collapse__label" for="a2c98237-bcda-45f3-9e72-264dd2edf518"><i class="sphinx_collapse__icon"></i>MotorGains Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>          <span class="c1"># set to &#39;group&#39; if commanding a joint group or &#39;single&#39; if commanding a single joint</span>
 <span class="n">string</span> <span class="n">name</span>              <span class="c1"># name of the group if commanding a joint group or joint if commanding a single joint</span>
 <span class="n">int32</span> <span class="n">kp_pos</span>             <span class="c1"># acts as a pass-through to the Position_P_Gain register</span>
@@ -386,7 +386,7 @@ motor model, and scroll down to the ‘PID’ section.</p>
 <p>To get familiar with the register values, go to the <a class="reference external" href="http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/" rel="noopener noreferrer" target="_blank">DYNAMIXEL Workbench E-Manual page</a>, click on a
 motor model, and scroll down to the ‘Control Table of RAM Area’ section.</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="eece2f92-638f-404c-8a46-ca1271a4f1cb" name="eece2f92-638f-404c-8a46-ca1271a4f1cb" type="checkbox"><label class="sphinx_collapse__label" for="eece2f92-638f-404c-8a46-ca1271a4f1cb"><i class="sphinx_collapse__icon"></i>RegisterValues Definition</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="ec0fba48-ee4d-44b7-b71f-727439f60d0a" name="ec0fba48-ee4d-44b7-b71f-727439f60d0a" type="checkbox"><label class="sphinx_collapse__label" for="ec0fba48-ee4d-44b7-b71f-727439f60d0a"><i class="sphinx_collapse__icon"></i>RegisterValues Definition</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">cmd_type</span>          <span class="c1"># set to &#39;group&#39; if commanding a joint group or &#39;single&#39; if commanding a single joint</span>
 <span class="n">string</span> <span class="n">name</span>              <span class="c1"># name of the group if commanding a joint group or joint if commanding a single joint</span>
 <span class="n">string</span> <span class="n">reg</span>               <span class="c1"># register name (like Profile_Velocity, Profile_Acceleration, etc...)</span>
