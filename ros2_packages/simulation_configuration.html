@@ -149,9 +149,10 @@ can be used by itself via the JointTrajectoryController interface.</li>
 <cite>interbotix_xsarm_descriptions</cite> and other simulator’s ROS 2 compatibility packages. To get familiar
 with the nodes in the <cite>interbotix_xsarm_descriptions</cite> package, please look at its README. The other
 nodes are described below:</p>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>Gazebo Classic:</dt><dd><ul>
+<ul>
+<li><p class="first">Gazebo Classic:</p>
+<blockquote>
+<div><ul class="simple">
 <li><strong>gzserver</strong> - responsible for running the physics update-loop and sensor data generation</li>
 <li><strong>gzclient</strong> - provides a nice GUI to visualize the robot simulation</li>
 <li><strong>controller_manager</strong> - responsible for loading and starting a set of controllers at once,
@@ -159,8 +160,7 @@ as well as automatically stopping and unloading those same controllers</li>
 <li><strong>spawn_model</strong> - adds the robot model as defined in the ‘robot_description’ parameter into
 the Gazebo world</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ul>
 </div>

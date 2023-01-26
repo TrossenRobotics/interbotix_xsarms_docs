@@ -36,6 +36,7 @@ with the nodes in the `interbotix_xsarm_descriptions` package, please look at it
 nodes are described below:
 
 - Gazebo Classic:
+
     -   **gzserver** - responsible for running the physics update-loop and sensor data generation
     -   **gzclient** - provides a nice GUI to visualize the robot simulation
     -   **controller_manager** - responsible for loading and starting a set of controllers at once,
