@@ -5,6 +5,15 @@ ROS 2 Quickstart Guide
 This guide is intended to get the use familiar with the basic functions and interfaces of the ROS 2
 Interface.
 
+0.  Source your workspace by running the command below. This should be done in every new terminal
+    to properly configure your ROS environment. You can add this line to the end of your
+    ``~/.bashrc`` file for convenience to source the workspace in every new terminal. If you
+    installed the packages to a different location, update the command accordingly.
+
+    .. code-block:: console
+
+        $ source ~/interbotix_ws/install/setup.bash
+
 1.  Get familiar with the virtual robot model by launching it in RViz and playing with the
     `joint_state_publisher`. Note that you must specify which arm model is being used as a command
     line argument. For example, the WidowX-200 robot arm can be launched with the command below.
