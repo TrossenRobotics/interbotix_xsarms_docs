@@ -1,10 +1,10 @@
-=====================
-MoveIt2 Configuration
-=====================
+======================================
+MoveIt 2 Motion Planning Configuration
+======================================
 
 .. raw:: html
 
-    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_moveit"
+    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_moveit"
         class="docs-view-on-github-button"
         target="_blank">
         <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -16,10 +16,10 @@ Overview
 ========
 
 This package contains the necessary config files to get any of the many Interbotix X-Series arms
-working with MoveIt. This package makes use of the FollowJointTrajectory interface which seems to
-work pretty well in both simulation and on the physical robot. An entrypoint launch file is
-provided to allow a user to choose whether to have MoveIt work with the simulated version, the
-physical robot hardware, or a MoveIt-generated fake robot.
+working with MoveIt. This package makes use of the FollowJointTrajectory interface which works well
+in both simulation and on the physical robot. An entrypoint launch file is provided to allow a user
+to choose whether to have MoveIt work with the simulated version, the physical robot hardware, or a
+MoveIt-generated mock robot.
 
 Structure
 =========

@@ -8,9 +8,10 @@ Python-ROS Interface
     <ros_interface>` has already been installed.
 
 For usage and structure information on the Python interface that builds on top of ROS, check out
-the :doc:`Python Demos <ros1_packages/python_demos>` page. Further documentation of the Python
-API's functionality can be found on this page. Note that you can check the source code methods'
-docstrings for information on each method.
+the :doc:`Python Demos for ROS 1<ros1_packages/python_demos>` or the :doc:`Python Demos for ROS
+2<ros2_packages/python_demos>` pages. Further documentation of the Python API's functionality can
+be found on this page. Note that you can check the source code methods' docstrings for information
+on each method.
 
 .. TODO: include the different modules here from interbotix_xs_modules
 

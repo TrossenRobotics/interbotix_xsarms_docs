@@ -4,7 +4,7 @@ MoveIt2 Interface and API
 
 .. raw:: html
 
-    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface"
+    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface"
         class="docs-view-on-github-button"
         target="_blank">
         <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -56,7 +56,7 @@ familiar with that package, please refer to its documentation. The
     end-effector offset (when attaching the box) are stored in YAML files located in the `config`_
     directory
 
-.. _`config`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/config
+.. _`config`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/config
 
 .. note::
 
@@ -66,7 +66,7 @@ familiar with that package, please refer to its documentation. The
     instance of them in the toolbox repository instead of having duplicates in multiple
     repositories.
 
-.. _`interbotix_ros_toolboxes`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_common_toolbox/interbotix_moveit_interface
+.. _`interbotix_ros_toolboxes`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_common_toolbox/interbotix_moveit_interface
 
 Usage
 =====

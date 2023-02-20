@@ -4,7 +4,7 @@ Joystick Control
 
 .. raw:: html
 
-	<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_joy"
+	<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_joy"
 		class="docs-view-on-github-button"
 		target="_blank">
 		<img src="../_static/GitHub-Mark-Light-32px.png"
@@ -46,8 +46,8 @@ nodes are described below:
 	commands to the **xs_sdk** node; while the 'waist' joint can be directly controlled via the
 	PS3/PS4 joystick, other buttons allow position-ik to be performed using all the arm joints.
 
-.. _sensor_msgs/msg/Joy: http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Joy.html
-.. _ArmJoy: https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg
+.. _sensor_msgs/msg/Joy: http://docs.ros.org/latest/api/sensor_msgs/html/msg/Joy.html
+.. _ArmJoy: https://github.com/Interbotix/interbotix_ros_core/blob/rolling/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg
 
 Usage
 =====
@@ -70,8 +70,6 @@ run-time, look at the table below:
 	:file: ../_data/joystick_control_ros2.csv
 	:header-rows: 1
 	:widths: 20, 60, 20, 20
-
-.. _xsarm_control.launch: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_joy/launch/xsarm_control.launch
 
 To understand how the joystick buttons map to controlling the robot, look at the diagram and table
 below. Note that while the Xbox360 has a slightly different naming convention, the button placement

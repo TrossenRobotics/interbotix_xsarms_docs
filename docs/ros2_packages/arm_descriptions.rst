@@ -24,9 +24,9 @@ loaded to the parameter server (see the 'Usage' section below for details). Note
 Interbotix X-Series Arms core ROS packages in the sub-repo reference this package to launch the
 robot description.
 
-.. _`meshes`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes
-.. _`interbotix_black.png`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png
-.. _`urdf`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf
+.. _`meshes`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes
+.. _`interbotix_black.png`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png
+.. _`urdf`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf
 
 Structure
 =========
@@ -46,7 +46,7 @@ of the robot model. It launches up to four nodes as described below:
     robot and publish the results via the ``tf`` and ``tf_static`` topics.
 -   **rviz** - displays the virtual robot model using the transforms in the ``tf`` topic.
 
-.. _`xsarm_description.launch.py`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/launch/xsarm_description.launch.py
+.. _`xsarm_description.launch.py`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/launch/xsarm_description.launch.py
 
 Usage
 =====

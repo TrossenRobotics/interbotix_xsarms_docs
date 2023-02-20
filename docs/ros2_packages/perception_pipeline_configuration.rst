@@ -4,7 +4,7 @@ Perception Configuration
 
 .. raw:: html
 
-    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception"
+    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception"
         class="docs-view-on-github-button"
         target="_blank">
         <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -23,9 +23,9 @@ used, this package was mainly tested with the `D415`_ camera. See more details o
 works in the `interbotix_perception_modules`_ ROS package. To purchase our vision kit (which
 includes a D415 camera and stand), visit `its store page`_.
 
-.. _`perception pipelines`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_perception_toolbox/interbotix_perception_pipelines
+.. _`perception pipelines`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_perception_toolbox/interbotix_perception_pipelines
 .. _`D415`: https://www.intelrealsense.com/depth-camera-d415/
-.. _`interbotix_perception_modules`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_perception_toolbox/interbotix_perception_modules
+.. _`interbotix_perception_modules`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_perception_toolbox/interbotix_perception_modules
 .. _`its store page`: https://www.trossenrobotics.com/interbotix-arm-vision-kit.aspx
 
 Structure
@@ -55,7 +55,7 @@ Similarly, the workspace should not be in direct sunlight as that also interfere
 depth sensing abilities. Otherwise, the arm, camera, and small objects can be arbitrarily placed.
 For the `pick and place demo`, you should setup your workspace area as shown below.
 
-.. _`pick and place demo`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py
+.. _`pick and place demo`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py
 
 .. image:: images/pick_place_demo_setup.png
     :align: center
@@ -114,7 +114,7 @@ before torquing it off). Then, using the PointCloud Tuner GUI, tune the pointclo
 your specific use case. See `this guide`_ for how to go about doing this. Don't forget to save your
 configs after tuning them!
 
-.. _`this guide`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_perception_toolbox/interbotix_perception_modules
+.. _`this guide`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_perception_toolbox/interbotix_perception_modules
 
 Now you should be able to successfully run the `pick and place demo`_ script. First make sure to
 edit the robot name in the script to your robot model (if it's not the WidowX-200 arm). You can
@@ -136,7 +136,7 @@ After running the demo, :kbd:`Ctrl` + :kbd:`C` from the launch file. The 'camera
 transform will automatically be saved in a file called 'static_transforms.yaml' in the `config`_
 directory. Now, you can run the demo script headless - first by running the command below.
 
-.. _`config`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/config
+.. _`config`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/config
 
 .. code-block:: console
 
@@ -144,13 +144,13 @@ directory. Now, you can run the demo script headless - first by running the comm
 
 Then head over to the `demos`_ directory and running the `pick and place demo`_ script.
 
-.. _`demos`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/demos
+.. _`demos`: https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/demos
 
 For more info, check out the `Armtag`_ or `Pointcloud`_ Python APIs to reference the fully
 documented functions.
 
-.. _`Armtag`: https://github.com/Interbotix/interbotix_ros_toolboxes/blob/galactic/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/armtag.py
-.. _`Pointcloud`: https://github.com/Interbotix/interbotix_ros_toolboxes/blob/galactic/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/pointcloud.py
+.. _`Armtag`: https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/armtag.py
+.. _`Pointcloud`: https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/pointcloud.py
 
 Other launch file arguments for further customization can be seen below...
 
