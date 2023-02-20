@@ -4,7 +4,7 @@ Python Demos
 
 .. raw:: html
 
-    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_control/demos/python_ros2_api"
+    <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_control/demos/python_ros2_api"
         class="docs-view-on-github-button"
         target="_blank">
         <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -31,8 +31,8 @@ Furthermore, the API assumes that all the arm-joint motors' `Drive Mode`_ regist
 it very easy for you as the user to customize the duration and smoothness of an arm's motion from
 one pose to the next.
 
-.. _`Interbotix Python Arm Module`: https://github.com/Interbotix/interbotix_ros_toolboxes/blob/galactic/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot/arm.py
-.. _`interbotix_xs_modules.xs_robot library`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot
+.. _`Interbotix Python Arm Module`: https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot/arm.py
+.. _`interbotix_xs_modules.xs_robot library`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot
 .. _`Modern Robotics: Mechanics, Planning, and Control Code Library`: https://github.com/NxRLab/ModernRobotics
 .. _`Drive Mode`: http://emanual.robotis.com/docs/en/dxl/x/xm430-w350/#drive-mode
 .. _`Time-Based-Profile`: http://emanual.robotis.com/docs/en/dxl/x/xm430-w350/#profile-velocity112
@@ -64,7 +64,7 @@ launched).
 
     $ ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=wx250
 
-Then, in another terminal, navigate to this directory and enter...
+Then, in another terminal, navigate to the Python-ROS API demos directory and run the command
 
 .. code-block:: console
 

@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">MoveIt2 Interface and API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
@@ -111,7 +115,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">MoveIt2 Interface and API</li>
       <li class="wy-breadcrumbs-aside">
@@ -125,7 +129,7 @@
              
   <div class="section" id="moveit2-interface-and-api">
 <h1>MoveIt2 Interface and API<a class="headerlink" href="#moveit2-interface-and-api" title="Permalink to this headline"></a></h1>
-<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface"
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface"
     class="docs-view-on-github-button"
     target="_blank">
     <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -163,12 +167,12 @@ it uses the moveit_interface API to plan and execute trajectories</li>
 <li><strong>moveit_python_interface</strong> - a modified version of the script used in the <a class="reference external" href="https://github.com/ros-planning/moveit_tutorials/blob/482dc9db944c785870274c35223b4d06f2f0bc90/doc/move_group_python_interface/scripts/move_group_python_interface_tutorial.py" rel="noopener noreferrer" target="_blank">Move Group Python
 Interface Tutorial</a> that is meant to work with an Interbotix arm; just press ‘Enter’ in the
 terminal to walk through the different steps; the desired joint state goal, pose goal, and
-end-effector offset (when attaching the box) are stored in YAML files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/config" rel="noopener noreferrer" target="_blank">config</a>
+end-effector offset (when attaching the box) are stored in YAML files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface/config" rel="noopener noreferrer" target="_blank">config</a>
 directory</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Note that all the nodes defined above live in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_common_toolbox/interbotix_moveit_interface" rel="noopener noreferrer" target="_blank">interbotix_ros_toolboxes</a> repo. That is
+<p class="last">Note that all the nodes defined above live in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_common_toolbox/interbotix_moveit_interface" rel="noopener noreferrer" target="_blank">interbotix_ros_toolboxes</a> repo. That is
 because these nodes, besides for being used here, are also used in other repositories (like
 <cite>interbotix_ros_rovers</cite>). To make it easier to maintain, it made more sense to keep one
 instance of them in the toolbox repository instead of having duplicates in multiple

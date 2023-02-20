@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt2 Interface and API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
@@ -111,7 +115,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">Joystick Control</li>
       <li class="wy-breadcrumbs-aside">
@@ -125,7 +129,7 @@
              
   <div class="section" id="joystick-control">
 <h1>Joystick Control<a class="headerlink" href="#joystick-control" title="Permalink to this headline"></a></h1>
-<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/examples/interbotix_xsarm_joy"
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_joy"
         class="docs-view-on-github-button"
         target="_blank">
         <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -150,11 +154,11 @@ package. To get pointers about the nodes in that package, please look at its REA
 nodes are described below:</p>
 <ul class="simple">
 <li><strong>joy</strong> - a ROS driver for a generic Linux joystick; it reads data from a joystick over
-Bluetooth and publishes <a class="reference external" href="http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Joy.html" rel="noopener noreferrer" target="_blank">sensor_msgs/msg/Joy</a> messages to the <code class="docutils literal notranslate"><span class="pre">commands/joy_raw</span></code> topic</li>
-<li><strong>xsarm_joy</strong> - responsible for reading in raw <a class="reference external" href="http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Joy.html" rel="noopener noreferrer" target="_blank">sensor_msgs/msg/Joy</a> messages from the
-<code class="docutils literal notranslate"><span class="pre">commands/joy_raw</span></code> topic and converting them into <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg" rel="noopener noreferrer" target="_blank">ArmJoy</a> messages; this makes the code
+Bluetooth and publishes <a class="reference external" href="http://docs.ros.org/latest/api/sensor_msgs/html/msg/Joy.html" rel="noopener noreferrer" target="_blank">sensor_msgs/msg/Joy</a> messages to the <code class="docutils literal notranslate"><span class="pre">commands/joy_raw</span></code> topic</li>
+<li><strong>xsarm_joy</strong> - responsible for reading in raw <a class="reference external" href="http://docs.ros.org/latest/api/sensor_msgs/html/msg/Joy.html" rel="noopener noreferrer" target="_blank">sensor_msgs/msg/Joy</a> messages from the
+<code class="docutils literal notranslate"><span class="pre">commands/joy_raw</span></code> topic and converting them into <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/rolling/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg" rel="noopener noreferrer" target="_blank">ArmJoy</a> messages; this makes the code
 more readable and allows users to remap buttons very easily later.</li>
-<li><strong>xsarm_robot</strong> - responsible for reading in <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg" rel="noopener noreferrer" target="_blank">ArmJoy</a> messages and sending joint and gripper
+<li><strong>xsarm_robot</strong> - responsible for reading in <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/rolling/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg" rel="noopener noreferrer" target="_blank">ArmJoy</a> messages and sending joint and gripper
 commands to the <strong>xs_sdk</strong> node; while the ‘waist’ joint can be directly controlled via the
 PS3/PS4 joystick, other buttons allow position-ik to be performed using all the arm joints.</li>
 </ul>

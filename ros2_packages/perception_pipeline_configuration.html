@@ -26,7 +26,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MoveIt2 Interface and API" href="moveit_interface_and_api.html" />
-    <link rel="prev" title="MoveIt2 Configuration" href="moveit_motion_planning_configuration.html" />
+    <link rel="prev" title="MoveIt 2 Motion Planning Configuration" href="moveit_motion_planning_configuration.html" />
    
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Perception Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
@@ -122,7 +126,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">Perception Configuration</li>
       <li class="wy-breadcrumbs-aside">
@@ -136,7 +140,7 @@
              
   <div class="section" id="perception-configuration">
 <h1>Perception Configuration<a class="headerlink" href="#perception-configuration" title="Permalink to this headline"></a></h1>
-<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception"
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception"
     class="docs-view-on-github-button"
     target="_blank">
     <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -145,11 +149,11 @@
 </a><div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package contains the necessary config and launch files to get any of the many Interbotix
-X-Series arms working with any of the Interbotix <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_perception_toolbox/interbotix_perception_pipelines" rel="noopener noreferrer" target="_blank">perception pipelines</a>. The end result allows for
+X-Series arms working with any of the Interbotix <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_perception_toolbox/interbotix_perception_pipelines" rel="noopener noreferrer" target="_blank">perception pipelines</a>. The end result allows for
 an arm to pick up any small, non-reflective object from a tabletop-type surface that is within a
 RealSense color/depth camera’s field of view. While any Intel RealSense color/depth camera can be
 used, this package was mainly tested with the <a class="reference external" href="https://www.intelrealsense.com/depth-camera-d415/" rel="noopener noreferrer" target="_blank">D415</a> camera. See more details on how the pipeline
-works in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_perception_toolbox/interbotix_perception_modules" rel="noopener noreferrer" target="_blank">interbotix_perception_modules</a> ROS package. To purchase our vision kit (which
+works in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_perception_toolbox/interbotix_perception_modules" rel="noopener noreferrer" target="_blank">interbotix_perception_modules</a> ROS package. To purchase our vision kit (which
 includes a D415 camera and stand), visit <a class="reference external" href="https://www.trossenrobotics.com/interbotix-arm-vision-kit.aspx" rel="noopener noreferrer" target="_blank">its store page</a>.</p>
 </div>
 <div class="section" id="structure">
@@ -214,9 +218,9 @@ button until it looks alright.</p>
 <p>At this point, you should see a pointcloud version of your tabletop with the objects on it. If your
 arm is in the way, just torque it off and move it to its Sleep pose (make sure to hold the arm
 before torquing it off). Then, using the PointCloud Tuner GUI, tune the pointcloud parameters for
-your specific use case. See <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_perception_toolbox/interbotix_perception_modules" rel="noopener noreferrer" target="_blank">this guide</a> for how to go about doing this. Don’t forget to save your
+your specific use case. See <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_perception_toolbox/interbotix_perception_modules" rel="noopener noreferrer" target="_blank">this guide</a> for how to go about doing this. Don’t forget to save your
 configs after tuning them!</p>
-<p>Now you should be able to successfully run the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py" rel="noopener noreferrer" target="_blank">pick and place demo</a> script. First make sure to
+<p>Now you should be able to successfully run the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py" rel="noopener noreferrer" target="_blank">pick and place demo</a> script. First make sure to
 edit the robot name in the script to your robot model (if it’s not the WidowX-200 arm). You can
 also comment out line 76 that deals with getting the pose of the arm relative to the camera. As
 you’ve already done this above, there’s no need to do it again. However, the code is there just in
@@ -229,13 +233,13 @@ line up its <code class="docutils literal notranslate"><span class="pre">ee_grip
 hopefully pick up the objects.</p>
 <img alt="../_images/object_cluster_tf1.png" class="align-center" src="../_images/object_cluster_tf1.png" />
 <p>After running the demo, <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> from the launch file. The ‘camera to arm base_link’
-transform will automatically be saved in a file called ‘static_transforms.yaml’ in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/config" rel="noopener noreferrer" target="_blank">config</a>
+transform will automatically be saved in a file called ‘static_transforms.yaml’ in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/config" rel="noopener noreferrer" target="_blank">config</a>
 directory. Now, you can run the demo script headless - first by running the command below.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_perception<span class="w"> </span>xsarm_perception.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx200<span class="w"> </span>use_rviz:<span class="o">=</span><span class="nb">false</span>
 </pre></div>
 </div>
-<p>Then head over to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/demos" rel="noopener noreferrer" target="_blank">demos</a> directory and running the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py" rel="noopener noreferrer" target="_blank">pick and place demo</a> script.</p>
-<p>For more info, check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/galactic/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/armtag.py" rel="noopener noreferrer" target="_blank">Armtag</a> or <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/galactic/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/pointcloud.py" rel="noopener noreferrer" target="_blank">Pointcloud</a> Python APIs to reference the fully
+<p>Then head over to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/demos" rel="noopener noreferrer" target="_blank">demos</a> directory and running the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_perception/demos/pick_place.py" rel="noopener noreferrer" target="_blank">pick and place demo</a> script.</p>
+<p>For more info, check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/armtag.py" rel="noopener noreferrer" target="_blank">Armtag</a> or <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_perception_toolbox/interbotix_perception_modules/interbotix_perception_modules/pointcloud.py" rel="noopener noreferrer" target="_blank">Pointcloud</a> Python APIs to reference the fully
 documented functions.</p>
 <p>Other launch file arguments for further customization can be seen below…</p>
 <table border="1" class="colwidths-given docutils align-default">
@@ -519,7 +523,7 @@ move as well.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="moveit_motion_planning_configuration.html" class="btn btn-neutral float-left" title="MoveIt2 Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="moveit_motion_planning_configuration.html" class="btn btn-neutral float-left" title="MoveIt 2 Motion Planning Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="moveit_interface_and_api.html" class="btn btn-neutral float-right" title="MoveIt2 Interface and API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

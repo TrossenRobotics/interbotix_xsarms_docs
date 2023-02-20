@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -88,7 +92,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt2 Interface and API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
@@ -111,7 +115,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">Arm Control</li>
       <li class="wy-breadcrumbs-aside">
@@ -125,7 +129,7 @@
              
   <div class="section" id="arm-control">
 <h1>Arm Control<a class="headerlink" href="#arm-control" title="Permalink to this headline"></a></h1>
-<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_control"
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_control"
     class="docs-view-on-github-button"
     target="_blank">
     <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -135,23 +139,24 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package contains the configuration and launch files necessary to easily start the Interbotix
 Arm platform. This includes launching the <strong>xs_sdk</strong> node responsible for driving the DYNAMIXEL
-motors on the robot and loading the URDF to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter. Essentially, this
-package is what all ‘downstream’ ROS packages should reference to get the robot up and running.</p>
+motors on the robot and loading the URDF to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> launch configuration.
+Essentially, this package is what all ‘downstream’ ROS packages should reference to get the robot
+up and running.</p>
 </div>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_control_flowchart_ros2.png" class="align-center" src="../_images/xsarm_control_flowchart_ros2.png" />
 <p>As shown in the image above, the <cite>interbotix_xsarm_control</cite> package builds on top of the
-<a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> and <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/tree/galactic/interbotix_ros_xseries/interbotix_xs_sdk" rel="noopener noreferrer" target="_blank">interbotix_xs_sdk</a> packages. Please
-take a look at those packages to get familiar with their nodes. You will also notice a config
-directory containing many YAML files. Each file (beside the modes.yaml one) specifies the names and
-initial register values for all the motors that make up a specific robot arm. There is also some
-‘meta-info’ like names of joint groups, the desired joint-topic name and publishing frequency,
-etc… For a full explanation of each of these parameters, check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_sdk/config/motor_configs_template.yaml" rel="noopener noreferrer" target="_blank">Motor Config file
-template</a>. The other file located in that directory is the Mode Config one (a.k.a modes.yaml). The
-parameters in this file define the desired operating modes for either a group of joints or single
-joints, and whether or not they should be torqued on/off at node startup. See more by referencing
-the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/galactic/interbotix_ros_xseries/interbotix_xs_sdk/config/mode_configs_template.yaml" rel="noopener noreferrer" target="_blank">Mode Config file template</a>. Typically, the Motor Config file is only defined here while the
+<a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> and <a class="reference internal" href="../ros_interface/ros2/overview/xs_sdk.html"><span class="doc">interbotix_xs_sdk</span></a> packages. Please take a look at those packages to get
+familiar with their nodes. You will also notice a config directory containing many YAML files. Each
+file (beside the modes.yaml one) specifies the names and initial register values for all the motors
+that make up a specific robot arm. There is also some ‘meta-info’ like names of joint groups, the
+desired joint-topic name and publishing frequency, etc… For a full explanation of each of these
+parameters, check out the <a class="reference internal" href="../ros_interface/ros2/config.html#motor-configs-file-ros2"><span class="std std-ref">Motor Config file template</span></a>. The other
+file located in that directory is the Mode Config one (a.k.a modes.yaml). The parameters in this
+file define the desired operating modes for either a group of joints or single joints, and whether
+or not they should be torqued on/off at node startup. See more by referencing the <cite>Mode Config file
+template &lt;mode_configs_file_ros2&gt;</cite>. Typically, the Motor Config file is only defined here while the
 Mode Config file is also defined in any ‘downstream’ ROS package. This makes it easy for users to
 configure their desired motor operating modes depending on their project.</p>
 </div>

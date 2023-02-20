@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt2 Interface and API</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Python Demos</a><ul>
@@ -107,7 +111,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">Python Demos</li>
       <li class="wy-breadcrumbs-aside">
@@ -121,7 +125,7 @@
              
   <div class="section" id="python-demos">
 <h1>Python Demos<a class="headerlink" href="#python-demos" title="Permalink to this headline"></a></h1>
-<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/galactic/interbotix_ros_xsarms/interbotix_xsarm_control/demos/python_ros2_api"
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_control/demos/python_ros2_api"
     class="docs-view-on-github-button"
     target="_blank">
     <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -129,8 +133,8 @@
     View Package on GitHub
 </a><div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
-<p>These demos showcase various ways of using the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/galactic/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot/arm.py" rel="noopener noreferrer" target="_blank">Interbotix Python Arm Module</a> (click the link to
-see the fully documented code; also check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/galactic/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot" rel="noopener noreferrer" target="_blank">interbotix_xs_modules.xs_robot library</a> package
+<p>These demos showcase various ways of using the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot/arm.py" rel="noopener noreferrer" target="_blank">Interbotix Python Arm Module</a> (click the link to
+see the fully documented code; also check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot" rel="noopener noreferrer" target="_blank">interbotix_xs_modules.xs_robot library</a> package
 to get a better understanding on how this and other modules can be used). Simply put, this API was
 created so that users with little to no ROS experience would still have the ability to control any
 Interbotix Arm supported by the <cite>interbotix_xs_sdk</cite>. Specifically, the API also allows a user to
@@ -166,7 +170,7 @@ launched).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx250
 </pre></div>
 </div>
-<p>Then, in another terminal, navigate to this directory and enter…</p>
+<p>Then, in another terminal, navigate to the Python-ROS API demos directory and run the command</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3<span class="w"> </span>bartender.py
 </pre></div>
 </div>

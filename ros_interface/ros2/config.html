@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../../index.html">
-            <img src="../../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -109,7 +113,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../ros_interface.html">ROS Interface</a></li>
           <li class="breadcrumb-item"><a href="../ros2.html">ROS 2 Interface</a></li>
       <li class="breadcrumb-item active">ROS 2 Configuration</li>
@@ -145,7 +149,7 @@ configurations to take effect.</p>
 boot.</p>
 </div>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="5d46e657-87f1-49cf-844d-feb5a67f6f96" name="5d46e657-87f1-49cf-844d-feb5a67f6f96" type="checkbox"><label class="sphinx_collapse__label" for="5d46e657-87f1-49cf-844d-feb5a67f6f96"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="9a1bd4bf-1eb1-4574-9ad8-50c4760d3447" name="9a1bd4bf-1eb1-4574-9ad8-50c4760d3447" type="checkbox"><label class="sphinx_collapse__label" for="9a1bd4bf-1eb1-4574-9ad8-50c4760d3447"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file &#39;organizes&#39; the motors in any Dynamixel-based robot into meaningful units. Every robot must</span>
 <span class="c1"># have at least one instance of this file located in a &#39;config&#39; directory in their root &#39;control&#39; ROS package.</span>
 <span class="c1"># Note that all parameters are mandatory unless stated otherwise. This file demos the setup for the VX300S robot.</span>
@@ -298,7 +302,7 @@ boot.</p>
 <p>The startup operating modes can be set on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#mode-configs-param-ros2"><span class="std std-ref">mode_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
 options is below:</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="d3a9f46d-dc98-4be4-844b-516df27ad509" name="d3a9f46d-dc98-4be4-844b-516df27ad509" type="checkbox"><label class="sphinx_collapse__label" for="d3a9f46d-dc98-4be4-844b-516df27ad509"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="cfdd7aec-be09-4d4d-8762-47eed2575a0c" name="cfdd7aec-be09-4d4d-8762-47eed2575a0c" type="checkbox"><label class="sphinx_collapse__label" for="cfdd7aec-be09-4d4d-8762-47eed2575a0c"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is used to customize the initial operating modes of all joint groups and individual joints in a robot.</span>
 <span class="c1"># It should be placed in the &#39;config&#39; directory of any ROS package that builds ontop of the interbotix_xs_sdk.</span>
 <span class="c1"># Example values are shown as well. All parameters are mandatory unless stated otherwise</span>

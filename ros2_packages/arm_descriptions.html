@@ -55,12 +55,16 @@
     </div>
   </div>
   
-            <a href="../index.html">
-            <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo_xsarms.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -92,7 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt2 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perception_pipeline_configuration.html">Perception Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt2 Interface and API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
@@ -115,7 +119,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
       <li class="breadcrumb-item active">Arm Descriptions</li>
       <li class="wy-breadcrumbs-aside">
@@ -138,9 +142,9 @@
 </a><div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This package contains the URDFs and meshes for the many X-Series Interbotix Arms. The STL files for
-each robot are located in a unique folder inside the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes" rel="noopener noreferrer" target="_blank">meshes</a> directory. Also in the ‘meshes’
-directory is the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png" rel="noopener noreferrer" target="_blank">interbotix_black.png</a> picture. The appearance and texture of the robots come
-from this picture. Next, the URDFs for the robot are located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">urdf</a> directory. They are
+each robot are located in a unique folder inside the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes" rel="noopener noreferrer" target="_blank">meshes</a> directory. Also in the ‘meshes’
+directory is the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png" rel="noopener noreferrer" target="_blank">interbotix_black.png</a> picture. The appearance and texture of the robots come
+from this picture. Next, the URDFs for the robot are located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">urdf</a> directory. They are
 written in ‘xacro’ format so that users have the ability to customize what parts of the URDF get
 loaded to the parameter server (see the ‘Usage’ section below for details). Note that all the other
 Interbotix X-Series Arms core ROS packages in the sub-repo reference this package to launch the
@@ -149,7 +153,7 @@ robot description.</p>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <img alt="../_images/xsarm_descriptions_flowchart_ros2.png" class="align-center" src="../_images/xsarm_descriptions_flowchart_ros2.png" />
-<p>This package contains the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/launch/xsarm_description.launch.py" rel="noopener noreferrer" target="_blank">xsarm_description.launch.py</a> file responsible for loading parts or all
+<p>This package contains the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/launch/xsarm_description.launch.py" rel="noopener noreferrer" target="_blank">xsarm_description.launch.py</a> file responsible for loading parts or all
 of the robot model. It launches up to four nodes as described below:</p>
 <ul class="simple">
 <li><strong>joint_state_publisher</strong> - responsible for parsing the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> topic to find all
@@ -173,7 +177,7 @@ and parse the URDF, or can be launched to view any robot model’s URDF in RViz.
 <div class="section" id="id1">
 <h3>xsarm_description.launch.py<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>To run this launch file, enter the command below in a terminal. Note that the <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>
-argument must be specified as the name of one of the URDF files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/galactic/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">urdf</a> directory
+argument must be specified as the name of one of the URDF files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">urdf</a> directory
 (excluding the ‘.urdf.xacro’ part). For example, to launch the ReactorX-150 arm, type:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_descriptions<span class="w"> </span>xsarm_description.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>rx150<span class="w"> </span>use_joint_pub_gui:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
