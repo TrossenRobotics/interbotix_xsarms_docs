@@ -86,3 +86,13 @@ reference is located at the 'ee_gripper_link'.
 You may not see the Goal State (orange) and Start State (green) queries in the MoveIt by default.
 To display them, navigate to the **MotionPlanning -> Planning Request** dropdown in RViz and check
 the **Query Start State** and **Query Goal State** checkboxes.
+
+Video Tutorials
+===============
+
+MoveIt2 Configuration for ROS 2
+-------------------------------
+
+.. youtube:: f1P423PDRYw
+    :width: 70%
+    :align: center
