@@ -150,10 +150,7 @@ of the 3-pin cables connecting the DYNAMIXELs together become loose during opera
 errors, just push in all loose cables.
 
 In some cases, you may need to replace the USB->Micro USB cable between the U2D2 your control
-computer, or even the 3-pin cables between servos or the Power Hub. Contact `Trossen Robotics
-support`_ if this is the case.
-
-.. _`Trossen Robotics support`: https://www.trossenrobotics.com/contact.aspx
+computer, or even the 3-pin cables between servos or the Power Hub.
 
 Failed to write value[] on items[] to [ID : ]
 ---------------------------------------------
