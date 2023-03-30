@@ -77,9 +77,10 @@ received a response. This could happen due to a few reasons:
     fix this, head up to the `DYNAMIXEL Wizard 2.0 Tool`_ section above to learn how to set the
     correct baudrate.
 -   `No power` - In order for the ROS node to find the motors, let alone move them, the motor hub
-    must be plugged in to a 12V power supply (that can deliver at least 1A). For those connecting
-    your 12V power supply to power strips, verify that the power strip is connected to an outlet
-    and is turned on. If using a battery, make sure that it still has enough power.
+    must be plugged in to a 12V power supply (that can deliver at least 1A). Make sure the 12V
+    power supply is outputting 12V. For those connecting your 12V power supply to power strips,
+    verify that the power strip is connected to an outlet and is turned on. If using a battery,
+    make sure that it still has enough power.
 -   `Loose Cable` - Verify that all 3-pin cables chaining the DYNAMIXELs together (including the
     U2D2 and power hub) are snugly fit into their housings. If not, use a finger to press them in,
     and try again.
