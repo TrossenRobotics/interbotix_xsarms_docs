@@ -186,14 +186,66 @@ PS4 controller with the Pi. Refer to the :ref:`RPi PS4 Controller Setup Guide
 Installation Checks
 ===================
 
-After running the installation script on the robot computer, verify that it was successful in
-finding the U2D2 by checking that the port name shows up as ``ttyDXL``. The command and the
-expected output are below:
+
+After running the installation script on the robot computer, we can verify that the script ran successfully.
+
+udev Rules
+----------
+
+Check that the udev rules were configured correctly and that they are triggered by the U2D2. This
+can be done by checking that the port name shows up as ``ttyDXL`` when the U2D2 is plugged into a
+USB port. The command and the expected output are below:
 
     .. code-block:: console
 
         $ ls /dev | grep ttyDXL
         ttyDXL
+
+Interbotix ROS Packages
+-----------------------
+
+Check that the Interbotix ROS packages were installed correctly. The command and example output are
+below:
+
+    .. code-block:: console
+
+        $ source /opt/ros/$ROS_DISTRO/setup.bash
+        $ source ~/interbotix_ws/install/setup.bash
+        $ ros2 pkg list | grep interbotix
+        ...
+        interbotix_common_modules
+        interbotix_common_sim
+        interbotix_common_toolbox
+        interbotix_perception_modules
+        interbotix_perception_msgs
+        interbotix_perception_pipelines
+        interbotix_perception_toolbox
+        interbotix_ros_xsarms
+        interbotix_ros_xsarms_examples
+        interbotix_ros_xseries
+        interbotix_tf_tools
+        interbotix_xs_driver
+        interbotix_xs_modules
+        interbotix_xs_msgs
+        interbotix_xs_ros_control
+        interbotix_xs_rviz
+        interbotix_xs_sdk
+        interbotix_xs_toolbox
+        interbotix_xsarm_control
+        interbotix_xsarm_descriptions
+        interbotix_xsarm_dual
+        interbotix_xsarm_joy
+        interbotix_xsarm_moveit
+        interbotix_xsarm_moveit_interface
+        interbotix_xsarm_perception
+        interbotix_xsarm_ros_control
+        interbotix_xsarm_sim
+        ...
+
+Specific packages you should confirm have been built are `interbotix_xs_sdk`, `interbotix_xs_msgs`,
+`interbotix_common_modules`, and `interbotix_xs_modules`. These serve as the fundamental core of
+the ROS 2 Interface and are required to use it. If these are missing, check the installation
+script's output for errors.
 
 Next Steps
 ==========

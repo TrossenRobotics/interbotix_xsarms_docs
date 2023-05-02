@@ -188,14 +188,61 @@ its ROS Master.
 Installation Checks
 ===================
 
-After running the installation script on the robot computer, verify that it was successful in
-finding the U2D2 by checking that the port name shows up as ``ttyDXL``. The command and the
-expected output are below:
+After running the installation script on the robot computer, we can verify that the script ran successfully.
+
+udev Rules
+----------
+
+Check that the udev rules were configured correctly and that they are triggered by the U2D2. This
+can be done by checking that the port name shows up as ``ttyDXL`` when the U2D2 is plugged into a
+USB port. The command and the expected output are below:
 
     .. code-block:: console
 
         $ ls /dev | grep ttyDXL
         ttyDXL
+
+Interbotix ROS Packages
+-----------------------
+
+Check that the Interbotix ROS packages were installed correctly. The command and example output are
+below:
+
+    .. code-block:: console
+
+        $ source /opt/ros/$ROS_DISTRO/setup.bash
+        $ source ~/interbotix_ws/devel/setup.bash
+        $ rospack list | grep interbotix
+        ...
+        interbotix_common_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_common_modules
+        interbotix_landmark_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_landmark_modules
+        interbotix_moveit_interface /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_moveit_interface
+        interbotix_perception_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_perception_toolbox/interbotix_perception_modules
+        interbotix_tf_tools /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_tf_tools
+        interbotix_xs_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_modules
+        interbotix_xs_msgs /home/$USER/interbotix_ws/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs
+        interbotix_xs_ros_control /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control
+        interbotix_xs_rviz /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_rviz
+        interbotix_xs_sdk /home/$USER/interbotix_ws/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk
+        interbotix_xsarm_control /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_control
+        interbotix_xsarm_descriptions /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions
+        interbotix_xsarm_diagnostic_tool /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool
+        interbotix_xsarm_dual /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_dual
+        interbotix_xsarm_dual_joy /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_dual_joy
+        interbotix_xsarm_gazebo /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_gazebo
+        interbotix_xsarm_joy /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_joy
+        interbotix_xsarm_moveit /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_moveit
+        interbotix_xsarm_moveit_dual /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_ros_xsarms_dual_moveit
+        interbotix_xsarm_moveit_interface /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface
+        interbotix_xsarm_perception /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_perception
+        interbotix_xsarm_pid /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_pid
+        interbotix_xsarm_puppet /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet
+        interbotix_xsarm_ros_control /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_ros_control
+        ...
+
+Specific packages you should confirm have been built are `interbotix_xs_sdk`, `interbotix_xs_msgs`,
+and `interbotix_xs_modules`. These serve as the fundamental core of the ROS 1 Interface and are
+required to use it. If these are missing, check the installation script's output for errors.
 
 Next Steps
 ==========
