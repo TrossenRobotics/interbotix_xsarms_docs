@@ -86,7 +86,11 @@
 <li class="toctree-l5"><a class="reference internal" href="#raspberry-pi-4b-arm64-architecture">Raspberry Pi 4B (ARM64 Architecture)</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#installation-checks">Installation Checks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-checks">Installation Checks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#udev-rules">udev Rules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#interbotix-ros-packages">Interbotix ROS Packages</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
@@ -141,9 +145,13 @@
 <li><a class="reference internal" href="#raspberry-pi-4b-arm64-architecture" id="id6">Raspberry Pi 4B (ARM64 Architecture)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#installation-checks" id="id7">Installation Checks</a></li>
-<li><a class="reference internal" href="#next-steps" id="id8">Next Steps</a></li>
-<li><a class="reference internal" href="#troubleshooting" id="id9">Troubleshooting</a></li>
+<li><a class="reference internal" href="#installation-checks" id="id7">Installation Checks</a><ul>
+<li><a class="reference internal" href="#udev-rules" id="id8">udev Rules</a></li>
+<li><a class="reference internal" href="#interbotix-ros-packages" id="id9">Interbotix ROS Packages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#next-steps" id="id10">Next Steps</a></li>
+<li><a class="reference internal" href="#troubleshooting" id="id11">Troubleshooting</a></li>
 </ul>
 </div>
 <div class="section" id="compatible-models">
@@ -296,9 +304,12 @@ PS4 controller with the Pi. Refer to the <a class="reference internal" href="../
 </div>
 <div class="section" id="installation-checks">
 <span id="ros2-installation-checks-label"></span><h2><a class="toc-backref" href="#id7">Installation Checks</a><a class="headerlink" href="#installation-checks" title="Permalink to this headline"></a></h2>
-<p>After running the installation script on the robot computer, verify that it was successful in
-finding the U2D2 by checking that the port name shows up as <code class="docutils literal notranslate"><span class="pre">ttyDXL</span></code>. The command and the
-expected output are below:</p>
+<p>After running the installation script on the robot computer, we can verify that the script ran successfully.</p>
+<div class="section" id="udev-rules">
+<h3><a class="toc-backref" href="#id8">udev Rules</a><a class="headerlink" href="#udev-rules" title="Permalink to this headline"></a></h3>
+<p>Check that the udev rules were configured correctly and that they are triggered by the U2D2. This
+can be done by checking that the port name shows up as <code class="docutils literal notranslate"><span class="pre">ttyDXL</span></code> when the U2D2 is plugged into a
+USB port. The command and the expected output are below:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>/dev<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ttyDXL
 <span class="go">ttyDXL</span>
@@ -306,13 +317,59 @@ expected output are below:</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="interbotix-ros-packages">
+<h3><a class="toc-backref" href="#id9">Interbotix ROS Packages</a><a class="headerlink" href="#interbotix-ros-packages" title="Permalink to this headline"></a></h3>
+<p>Check that the Interbotix ROS packages were installed correctly. The command and example output are
+below:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>/opt/ros/<span class="nv">$ROS_DISTRO</span>/setup.bash
+<span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>~/interbotix_ws/install/setup.bash
+<span class="gp">$ </span>ros2<span class="w"> </span>pkg<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>interbotix
+<span class="go">...</span>
+<span class="go">interbotix_common_modules</span>
+<span class="go">interbotix_common_sim</span>
+<span class="go">interbotix_common_toolbox</span>
+<span class="go">interbotix_perception_modules</span>
+<span class="go">interbotix_perception_msgs</span>
+<span class="go">interbotix_perception_pipelines</span>
+<span class="go">interbotix_perception_toolbox</span>
+<span class="go">interbotix_ros_xsarms</span>
+<span class="go">interbotix_ros_xsarms_examples</span>
+<span class="go">interbotix_ros_xseries</span>
+<span class="go">interbotix_tf_tools</span>
+<span class="go">interbotix_xs_driver</span>
+<span class="go">interbotix_xs_modules</span>
+<span class="go">interbotix_xs_msgs</span>
+<span class="go">interbotix_xs_ros_control</span>
+<span class="go">interbotix_xs_rviz</span>
+<span class="go">interbotix_xs_sdk</span>
+<span class="go">interbotix_xs_toolbox</span>
+<span class="go">interbotix_xsarm_control</span>
+<span class="go">interbotix_xsarm_descriptions</span>
+<span class="go">interbotix_xsarm_dual</span>
+<span class="go">interbotix_xsarm_joy</span>
+<span class="go">interbotix_xsarm_moveit</span>
+<span class="go">interbotix_xsarm_moveit_interface</span>
+<span class="go">interbotix_xsarm_perception</span>
+<span class="go">interbotix_xsarm_ros_control</span>
+<span class="go">interbotix_xsarm_sim</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Specific packages you should confirm have been built are <cite>interbotix_xs_sdk</cite>, <cite>interbotix_xs_msgs</cite>,
+<cite>interbotix_common_modules</cite>, and <cite>interbotix_xs_modules</cite>. These serve as the fundamental core of
+the ROS 2 Interface and are required to use it. If these are missing, check the installation
+script’s output for errors.</p>
+</div>
+</div>
 <div class="section" id="next-steps">
-<h2><a class="toc-backref" href="#id8">Next Steps</a><a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id10">Next Steps</a><a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
 <p>If the ROS 2 Interface installed properly, you can continue on to the <a class="reference internal" href="quickstart.html"><span class="doc">ROS 2 Interface
 Quickstart Guide</span></a>.</p>
 </div>
 <div class="section" id="troubleshooting">
-<span id="ros2-troubleshooting-label"></span><h2><a class="toc-backref" href="#id9">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<span id="ros2-troubleshooting-label"></span><h2><a class="toc-backref" href="#id11">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
 <p>Refer to the <a class="reference internal" href="../../troubleshooting.html"><span class="doc">X-Series Troubleshooting guide</span></a> to try to solve your
 problem. If you still need help, feel free to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues" rel="noopener noreferrer" target="_blank">open an Issue</a> on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same

@@ -86,7 +86,11 @@
 <li class="toctree-l5"><a class="reference internal" href="#remote-install">Remote Install</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#installation-checks">Installation Checks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation-checks">Installation Checks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#udev-rules">udev Rules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#interbotix-ros-packages">Interbotix ROS Packages</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#video-tutorials">Video Tutorials</a><ul>
@@ -148,11 +152,15 @@
 <li><a class="reference internal" href="#remote-install" id="id7">Remote Install</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#installation-checks" id="id8">Installation Checks</a></li>
-<li><a class="reference internal" href="#next-steps" id="id9">Next Steps</a></li>
-<li><a class="reference internal" href="#troubleshooting" id="id10">Troubleshooting</a></li>
-<li><a class="reference internal" href="#video-tutorials" id="id11">Video Tutorials</a><ul>
-<li><a class="reference internal" href="#x-series-arm-ros-installation-guide" id="id12">X-Series Arm ROS Installation Guide</a></li>
+<li><a class="reference internal" href="#installation-checks" id="id8">Installation Checks</a><ul>
+<li><a class="reference internal" href="#udev-rules" id="id9">udev Rules</a></li>
+<li><a class="reference internal" href="#interbotix-ros-packages" id="id10">Interbotix ROS Packages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#next-steps" id="id11">Next Steps</a></li>
+<li><a class="reference internal" href="#troubleshooting" id="id12">Troubleshooting</a></li>
+<li><a class="reference internal" href="#video-tutorials" id="id13">Video Tutorials</a><ul>
+<li><a class="reference internal" href="#x-series-arm-ros-installation-guide" id="id14">X-Series Arm ROS Installation Guide</a></li>
 </ul>
 </li>
 </ul>
@@ -333,9 +341,12 @@ its ROS Master.</p>
 </div>
 <div class="section" id="installation-checks">
 <span id="installation-checks-label"></span><h2><a class="toc-backref" href="#id8">Installation Checks</a><a class="headerlink" href="#installation-checks" title="Permalink to this headline"></a></h2>
-<p>After running the installation script on the robot computer, verify that it was successful in
-finding the U2D2 by checking that the port name shows up as <code class="docutils literal notranslate"><span class="pre">ttyDXL</span></code>. The command and the
-expected output are below:</p>
+<p>After running the installation script on the robot computer, we can verify that the script ran successfully.</p>
+<div class="section" id="udev-rules">
+<h3><a class="toc-backref" href="#id9">udev Rules</a><a class="headerlink" href="#udev-rules" title="Permalink to this headline"></a></h3>
+<p>Check that the udev rules were configured correctly and that they are triggered by the U2D2. This
+can be done by checking that the port name shows up as <code class="docutils literal notranslate"><span class="pre">ttyDXL</span></code> when the U2D2 is plugged into a
+USB port. The command and the expected output are below:</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls<span class="w"> </span>/dev<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ttyDXL
 <span class="go">ttyDXL</span>
@@ -343,13 +354,55 @@ expected output are below:</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="interbotix-ros-packages">
+<h3><a class="toc-backref" href="#id10">Interbotix ROS Packages</a><a class="headerlink" href="#interbotix-ros-packages" title="Permalink to this headline"></a></h3>
+<p>Check that the Interbotix ROS packages were installed correctly. The command and example output are
+below:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>/opt/ros/<span class="nv">$ROS_DISTRO</span>/setup.bash
+<span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>~/interbotix_ws/devel/setup.bash
+<span class="gp">$ </span>rospack<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>interbotix
+<span class="go">...</span>
+<span class="go">interbotix_common_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_common_modules</span>
+<span class="go">interbotix_landmark_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_landmark_modules</span>
+<span class="go">interbotix_moveit_interface /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_moveit_interface</span>
+<span class="go">interbotix_perception_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_perception_toolbox/interbotix_perception_modules</span>
+<span class="go">interbotix_tf_tools /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_tf_tools</span>
+<span class="go">interbotix_xs_modules /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_modules</span>
+<span class="go">interbotix_xs_msgs /home/$USER/interbotix_ws/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_msgs</span>
+<span class="go">interbotix_xs_ros_control /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control</span>
+<span class="go">interbotix_xs_rviz /home/$USER/interbotix_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_rviz</span>
+<span class="go">interbotix_xs_sdk /home/$USER/interbotix_ws/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk</span>
+<span class="go">interbotix_xsarm_control /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_control</span>
+<span class="go">interbotix_xsarm_descriptions /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_descriptions</span>
+<span class="go">interbotix_xsarm_diagnostic_tool /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool</span>
+<span class="go">interbotix_xsarm_dual /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_dual</span>
+<span class="go">interbotix_xsarm_dual_joy /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_dual_joy</span>
+<span class="go">interbotix_xsarm_gazebo /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_gazebo</span>
+<span class="go">interbotix_xsarm_joy /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_joy</span>
+<span class="go">interbotix_xsarm_moveit /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_moveit</span>
+<span class="go">interbotix_xsarm_moveit_dual /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_ros_xsarms_dual_moveit</span>
+<span class="go">interbotix_xsarm_moveit_interface /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_moveit_interface</span>
+<span class="go">interbotix_xsarm_perception /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_perception</span>
+<span class="go">interbotix_xsarm_pid /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_pid</span>
+<span class="go">interbotix_xsarm_puppet /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet</span>
+<span class="go">interbotix_xsarm_ros_control /home/$USER/interbotix_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/interbotix_xsarm_ros_control</span>
+<span class="go">...</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Specific packages you should confirm have been built are <cite>interbotix_xs_sdk</cite>, <cite>interbotix_xs_msgs</cite>,
+and <cite>interbotix_xs_modules</cite>. These serve as the fundamental core of the ROS 1 Interface and are
+required to use it. If these are missing, check the installation script’s output for errors.</p>
+</div>
+</div>
 <div class="section" id="next-steps">
-<h2><a class="toc-backref" href="#id9">Next Steps</a><a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id11">Next Steps</a><a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
 <p>If the ROS Interface installed properly, you can continue on to the <a class="reference internal" href="quickstart.html"><span class="doc">ROS Interface Quickstart
 Guide</span></a>.</p>
 </div>
 <div class="section" id="troubleshooting">
-<span id="troubleshooting-label"></span><h2><a class="toc-backref" href="#id10">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<span id="troubleshooting-label"></span><h2><a class="toc-backref" href="#id12">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
 <p>Refer to the <a class="reference internal" href="../../troubleshooting.html"><span class="doc">X-Series Troubleshooting guide</span></a> to try to solve your
 problem. If you still need help, feel free to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues" rel="noopener noreferrer" target="_blank">open an Issue</a> on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same
@@ -357,9 +410,9 @@ difficulty can benefit. This repository is actively maintained and any open Issu
 addressed as soon as possible.</p>
 </div>
 <div class="section" id="video-tutorials">
-<h2><a class="toc-backref" href="#id11">Video Tutorials</a><a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id13">Video Tutorials</a><a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
 <div class="section" id="x-series-arm-ros-installation-guide">
-<h3><a class="toc-backref" href="#id12">X-Series Arm ROS Installation Guide</a><a class="headerlink" href="#x-series-arm-ros-installation-guide" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id14">X-Series Arm ROS Installation Guide</a><a class="headerlink" href="#x-series-arm-ros-installation-guide" title="Permalink to this headline"></a></h3>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/kZx2tNVfQAQ" style="border: 0; height: 345px; width: 560px">
 </iframe></div></div>
