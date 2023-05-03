@@ -137,12 +137,11 @@
   <div class="section" id="ros-raspberry-pi-4b-setup">
 <h1>ROS Raspberry Pi 4B Setup<a class="headerlink" href="#ros-raspberry-pi-4b-setup" title="Permalink to this headline"></a></h1>
 <p>This tutorial will walk you through how to get Ubuntu Linux and ROS working on a Raspberry Pi 4B
-from scratch. Specifically, it explains how the microSD card image found on any Interbotix robot
-sporting a RPi4 was created. By way of introduction, many types of operating systems exist for the
-Pi. This includes Ubuntu, Debian, and Raspbian. However, in order to get optimal compatibility with
-ROS, Ubuntu is really the way to go. As it turns out, the folks that maintain Ubuntu (a.k.a
-Canonical) maintain support for the Raspberry Pi 2, 3, and 4 as well. You can download these images
-from the <a class="reference external" href="https://ubuntu.com/download/raspberry-pi" rel="noopener noreferrer" target="_blank">Ubuntu Raspberry Pi page</a>.</p>
+from scratch. By way of introduction, many types of operating systems exist for the Pi. This
+includes Ubuntu, Debian, and Raspbian. However, in order to get optimal compatibility with ROS,
+Ubuntu is really the way to go. As it turns out, the folks that maintain Ubuntu (a.k.a Canonical)
+maintain support for the Raspberry Pi 2, 3, and 4 as well. You can download these images from the
+<a class="reference external" href="https://ubuntu.com/download/raspberry-pi" rel="noopener noreferrer" target="_blank">Ubuntu Raspberry Pi page</a>.</p>
 <p>Now, as the name suggests, these are Server images, so they do not come with desktops. Similar to
 the operating systems, there a quite a number of desktop experiences one can choose from - like
 <cite>ubuntu-desktop</cite>, <cite>kubuntu-desktop</cite>, <cite>xubuntu-desktop</cite> to name a few. After doing some
@@ -171,16 +170,15 @@ to <code class="docutils literal notranslate"><span class="pre">catkin_make</spa
 <div class="section" id="flashing-ubuntu">
 <h3>Flashing Ubuntu<a class="headerlink" href="#flashing-ubuntu" title="Permalink to this headline"></a></h3>
 <ol class="arabic simple">
-<li>First, download the <a class="reference external" href="https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04.2&amp;architecture=server-arm64+raspi" rel="noopener noreferrer" target="_blank">Ubuntu 20.04.2 64-bit Server Image</a> for the Raspberry
-Pi 4.</li>
-<li>Using a tool like <a class="reference external" href="https://www.balena.io/etcher/" rel="noopener noreferrer" target="_blank">balenaEtcher</a>, flash the OS image to the 32GB microSD
-card using your laptop or desktop computer. The process will take a few
-minutes.</li>
+<li>First, download the <a class="reference external" href="https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04.2&amp;architecture=server-arm64+raspi" rel="noopener noreferrer" target="_blank">Ubuntu 20.04.2 64-bit Server Image</a> for the Raspberry Pi 4.</li>
+<li>Using a tool like <a class="reference external" href="https://www.balena.io/etcher/" rel="noopener noreferrer" target="_blank">balenaEtcher</a>, flash the OS image to the 32GB microSD card using your
+laptop or desktop computer. The process will take a few minutes.</li>
 <li>When done, eject the SD card and insert it into the Pi 4. Then connect the HDMI monitor, mouse,
 keyboard, and Ethernet cable to the Pi. Finally, connect the power cable, and turn the Pi on.</li>
 <li>After waiting a minute or so (in which time, some debugging messages will appear on the
-screen), you will be prompted to login. The default computer and user name is ubuntu, so just
-type ubuntu. At this point, you will be prompted to create a password which you should do.</li>
+screen), you will be prompted to login. The default computer and user name is <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code>, so
+just type <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code>. At this point, you will be prompted to create a password which you should
+do.</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

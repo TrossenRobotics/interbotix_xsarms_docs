@@ -281,16 +281,11 @@ the installation script for ROS 1 Noetic.</p>
 </div>
 <div class="section" id="raspberry-pi-4b-arm64-architecture">
 <h3><a class="toc-backref" href="#id6">Raspberry Pi 4B (ARM64 Architecture)</a><a class="headerlink" href="#raspberry-pi-4b-arm64-architecture" title="Permalink to this headline"></a></h3>
-<p>If you purchased a Raspberry Pi 4B Kit with an arm from our website, there is no need to install
-anything as the Pi should already come preloaded with all the necessary software. If you purchased
-your own Raspberry Pi 4B from a third party, feel free to follow the <a class="reference external" href="./raspberry_pi_setup.html" rel="noopener noreferrer" target="_blank">Raspberry Pi 4B Setup
-instructions</a> to get it properly setup before following the commands below. If you only purchased
-the stand-alone Raspberry Pi 4B Kit from our store (which comes pre-configured with Ubuntu and
-ROS), and would like to use it with an arm, then follow the commands below to download and run the
-installation script. Note that the script will install the full desktop version of ROS if it’s not
-yet on your system, ask you for your desired robot model (ex. wx200), and prompt you about whether
-or not you’d like the Joystick ROS package to start at boot. The commands below
-demonstrate the process of running the installation script for ROS 1 Noetic.</p>
+<p>Follow the <a class="reference external" href="./raspberry_pi_setup.html" rel="noopener noreferrer" target="_blank">Raspberry Pi 4B Setup instructions</a> to get your Raspberry Pi properly setup before
+following the commands below. Note that the script will install the full desktop version of ROS if
+it’s not yet on your system, ask you for your desired robot model (ex. wx200), and prompt you about
+whether or not you’d like the Joystick ROS package to start at boot. The commands below demonstrate
+the process of running the installation script for ROS 1 Noetic.</p>
 <blockquote>
 <div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
 <span class="gp">$ </span>curl<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>xsarm_rpi4_install.sh
@@ -298,11 +293,7 @@ demonstrate the process of running the installation script for ROS 1 Noetic.</p>
 <span class="gp">$ </span>./xsarm_rpi4_install.sh<span class="w"> </span>-d<span class="w"> </span>noetic
 </pre></div>
 </div>
-</div></blockquote>
-<p>If you <strong>do</strong> want to have the Joystick ROS package start at boot, you will first have to pair your
-PS4 controller with the Pi. Refer to the <a class="reference internal" href="../../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">RPi PS4 Controller Setup Guide</span></a> for details.</p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>The install script provides more in-depth control of some installation options. Append the
 <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to see the help document like below:</p>
@@ -314,6 +305,8 @@ PS4 controller with the Pi. Refer to the <a class="reference internal" href="../
 </div>
 </div>
 </div></blockquote>
+<p>If you <strong>do</strong> want to have the Joystick ROS package start at boot, you will first have to pair your
+PS4 controller with the Pi. Refer to the <a class="reference internal" href="../../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">RPi PS4 Controller Setup Guide</span></a> for details.</p>
 </div>
 <div class="section" id="remote-install">
 <h3><a class="toc-backref" href="#id7">Remote Install</a><a class="headerlink" href="#remote-install" title="Permalink to this headline"></a></h3>

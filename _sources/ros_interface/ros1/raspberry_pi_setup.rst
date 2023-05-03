@@ -3,12 +3,11 @@ ROS Raspberry Pi 4B Setup
 =========================
 
 This tutorial will walk you through how to get Ubuntu Linux and ROS working on a Raspberry Pi 4B
-from scratch. Specifically, it explains how the microSD card image found on any Interbotix robot
-sporting a RPi4 was created. By way of introduction, many types of operating systems exist for the
-Pi. This includes Ubuntu, Debian, and Raspbian. However, in order to get optimal compatibility with
-ROS, Ubuntu is really the way to go. As it turns out, the folks that maintain Ubuntu (a.k.a
-Canonical) maintain support for the Raspberry Pi 2, 3, and 4 as well. You can download these images
-from the `Ubuntu Raspberry Pi page`_.
+from scratch. By way of introduction, many types of operating systems exist for the Pi. This
+includes Ubuntu, Debian, and Raspbian. However, in order to get optimal compatibility with ROS,
+Ubuntu is really the way to go. As it turns out, the folks that maintain Ubuntu (a.k.a Canonical)
+maintain support for the Raspberry Pi 2, 3, and 4 as well. You can download these images from the
+`Ubuntu Raspberry Pi page`_.
 
 .. _Ubuntu Raspberry Pi page: https://ubuntu.com/download/raspberry-pi
 
@@ -45,16 +44,15 @@ Setup
 Flashing Ubuntu
 ---------------
 
-1.  First, download the `Ubuntu 20.04.2 64-bit Server Image`_ for the Raspberry
-    Pi 4.
-2.  Using a tool like `balenaEtcher`_, flash the OS image to the 32GB microSD
-    card using your laptop or desktop computer. The process will take a few
-    minutes.
+1.  First, download the `Ubuntu 20.04.2 64-bit Server Image`_ for the Raspberry Pi 4.
+2.  Using a tool like `balenaEtcher`_, flash the OS image to the 32GB microSD card using your
+    laptop or desktop computer. The process will take a few minutes.
 3.  When done, eject the SD card and insert it into the Pi 4. Then connect the HDMI monitor, mouse,
     keyboard, and Ethernet cable to the Pi. Finally, connect the power cable, and turn the Pi on.
 4.  After waiting a minute or so (in which time, some debugging messages will appear on the
-    screen), you will be prompted to login. The default computer and user name is ubuntu, so just
-    type ubuntu. At this point, you will be prompted to create a password which you should do.
+    screen), you will be prompted to login. The default computer and user name is ``ubuntu``, so
+    just type ``ubuntu``. At this point, you will be prompted to create a password which you should
+    do.
 
 .. note::
 
