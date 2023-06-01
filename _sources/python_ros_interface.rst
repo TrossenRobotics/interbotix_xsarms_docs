@@ -13,6 +13,10 @@ the :doc:`Python Demos for ROS 1<ros1_packages/python_demos>` or the :doc:`Pytho
 be found on this page. Note that you can check the source code methods' docstrings for information
 on each method.
 
+.. attention::
+
+    The Python-ROS API is not compatible with Gazebo-simulation robots.
+
 .. TODO: include the different modules here from interbotix_xs_modules
 
 Terminology
