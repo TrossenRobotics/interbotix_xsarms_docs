@@ -23,6 +23,11 @@ docstrings for information on each method.
 
 .. _`ROS System Requirements page`: https://www.mathworks.com/help/ros/gs/ros-system-requirements.html
 
+
+.. attention::
+
+    The MATLAB-ROS API is not compatible with Gazebo-simulation robots.
+
 Setup
 =====
 
