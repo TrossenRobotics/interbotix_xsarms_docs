@@ -28,6 +28,11 @@ docstrings for information on each method.
 
     The MATLAB-ROS API is not compatible with Gazebo-simulation robots.
 
+.. attention::
+
+    The MATLAB-ROS API is currently only compatible with the ROS 1 interface. ROS 2 support is not
+    planned at this time.
+
 Setup
 =====
 
