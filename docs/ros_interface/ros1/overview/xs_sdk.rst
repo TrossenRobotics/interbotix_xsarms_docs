@@ -221,6 +221,37 @@ for a user-provided register name.
 *   **Simulation Differences**: only works the same if getting the 'Profile_Velocity' or
     'Profile_Acceleration' registers; otherwise, an empty service message is returned.
 
+Gripper Calibration Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Gripper Calibration Service gets the calibration offset value of a specific gripper name.
+
+*   **Topic**: ``/<robot_name>/gripper_calibration``
+*   **Service Type**: :ref:`interbotix_xs_msgs/GripperCalib <interbotix_xs_msgs_GripperCalib_ros1>`
+*   **Simulation Differences**: behaves exactly the same in simulation. this routine is executed upon startup 
+    of the SDK.
+
+.. warning::
+
+    This service is for internal use to enable communication between gripper_calib.cpp script and the SDK. It must not be called manually for executing gripper calibration. For executing Gripper Calibration check out the next section.
+
+Gripper Calibration Routine
+---------------------------
+
+Executes the gripper calibration node in the SDK.
+This node is called upon startup and performs the gripper calibration operation
+to derive a constant offset value for the gripper.
+
+
+**Algorithm:**
+    
+#.  Apply a PWM value to the gripper actuator to move it inwards.
+#.  Calculate the error between the previous position and the current position of the gripper.
+#.  Repeat steps 1 and 2 until the gripper reaches its minimum position.
+#.  When there is no longer an error between the current and previous positions, stop the gripper and use the current position value as the offset.
+#. Send the offset and gripper name to the SDK using the Gripper Calibration Service.
+#. The SDK uses this offset value to map between the minimum and maximum position values.
+
 Parameters
 ----------
 
