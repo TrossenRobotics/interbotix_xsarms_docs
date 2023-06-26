@@ -242,7 +242,6 @@ Executes the gripper calibration node in the SDK.
 This node is called upon startup and performs the gripper calibration operation
 to derive a constant offset value for the gripper.
 
-
 **Algorithm:**
     
 #.  Apply a PWM value to the gripper actuator to move it inwards.
