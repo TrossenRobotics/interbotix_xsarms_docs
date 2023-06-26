@@ -101,8 +101,10 @@
 <li class="toctree-l8"><a class="reference internal" href="#set-motor-gains-service">Set Motor Gains Service</a></li>
 <li class="toctree-l8"><a class="reference internal" href="#set-register-values-service">Set Register Values Service</a></li>
 <li class="toctree-l8"><a class="reference internal" href="#get-register-values-service">Get Register Values Service</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#gripper-calibration-service">Gripper Calibration Service</a></li>
 </ul>
 </li>
+<li class="toctree-l7"><a class="reference internal" href="#gripper-calibration-routine">Gripper Calibration Routine</a></li>
 <li class="toctree-l7"><a class="reference internal" href="#parameters">Parameters</a><ul>
 <li class="toctree-l8"><a class="reference internal" href="#motor-configs"><code class="docutils literal notranslate"><span class="pre">motor_configs</span></code></a></li>
 <li class="toctree-l8"><a class="reference internal" href="#mode-configs"><code class="docutils literal notranslate"><span class="pre">mode_configs</span></code></a></li>
@@ -369,6 +371,37 @@ for a user-provided register name.</p>
 ‘Profile_Acceleration’ registers; otherwise, an empty service message is returned.</li>
 </ul>
 </div>
+<div class="section" id="gripper-calibration-service">
+<h4>Gripper Calibration Service<a class="headerlink" href="#gripper-calibration-service" title="Permalink to this headline"></a></h4>
+<p>The Gripper Calibration Service gets the calibration offset value of a specific gripper name.</p>
+<ul class="simple">
+<li><strong>Topic</strong>: <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/gripper_calibration</span></code></li>
+<li><strong>Service Type</strong>: <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_msgs/srv/GripperCalib.srv" rel="noopener noreferrer" target="_blank">interbotix_xs_msgs/GripperCalib</a></li>
+<li><strong>Simulation Differences</strong>: behaves exactly the same in simulation. this routine is executed upon startup
+of the SDK.</li>
+<li><strong>Service Definition</strong>: <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/77ebd0c13a778111e36eb83710a8020cc9303d99/interbotix_ros_xseries/interbotix_xs_sdk/src/xs_sdk_obj.cpp#L1097" rel="noopener noreferrer" target="_blank">InterbotixRobotXS::robot_srv_gripper_calib</a></li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This service is for internal use to enable communication between gripper_calib.cpp script and the SDK. It must not be called manually for executing gripper calibration. For executing Gripper Calibration check out the next section.</p>
+</div>
+</div>
+</div>
+<div class="section" id="gripper-calibration-routine">
+<h3>Gripper Calibration Routine<a class="headerlink" href="#gripper-calibration-routine" title="Permalink to this headline"></a></h3>
+<p>Executes the gripper calibration node in the SDK.
+This node is called upon startup and performs the gripper calibration operation
+to derive a constant offset value for the gripper.</p>
+<p><a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_sdk/src/gripper_calib.cpp" rel="noopener noreferrer" target="_blank">Gripper Calibration Node</a></p>
+<p><strong>Algorithm:</strong></p>
+<ol class="arabic simple">
+<li>Apply a PWM value to the gripper actuator to move it inwards.</li>
+<li>Calculate the error between the previous position and the current position of the gripper.</li>
+<li>Repeat steps 1 and 2 until the gripper reaches its minimum position.</li>
+<li>When there is no longer an error between the current and previous positions, stop the gripper and use the current position value as the offset.</li>
+<li>Send the offset and gripper name to the SDK using the Gripper Calibration Service.</li>
+<li>The SDK uses this offset value to map between the minimum and maximum position values.</li>
+</ol>
 </div>
 <div class="section" id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h3>
