@@ -227,9 +227,11 @@ Gripper Calibration Service
 The Gripper Calibration Service gets the calibration offset value of a specific gripper name.
 
 *   **Topic**: ``/<robot_name>/gripper_calibration``
-*   **Service Type**: :ref:`interbotix_xs_msgs/GripperCalib <interbotix_xs_msgs_GripperCalib_ros1>`
+*   **Service Type**: `interbotix_xs_msgs/GripperCalib <https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_msgs/srv/GripperCalib.srv>`_
 *   **Simulation Differences**: behaves exactly the same in simulation. this routine is executed upon startup 
     of the SDK.
+*   **Service Definition**: `InterbotixRobotXS::robot_srv_gripper_calib <https://github.com/Interbotix/interbotix_ros_core/blob/77ebd0c13a778111e36eb83710a8020cc9303d99/interbotix_ros_xseries/interbotix_xs_sdk/src/xs_sdk_obj.cpp#L1097>`_
+
 
 .. warning::
 
@@ -241,6 +243,8 @@ Gripper Calibration Routine
 Executes the gripper calibration node in the SDK.
 This node is called upon startup and performs the gripper calibration operation
 to derive a constant offset value for the gripper.
+
+`Gripper Calibration Node  <https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_sdk/src/gripper_calib.cpp>`_
 
 **Algorithm:**
     
