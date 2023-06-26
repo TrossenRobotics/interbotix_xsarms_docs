@@ -221,6 +221,40 @@ for a user-provided register name.
 *   **Simulation Differences**: only works the same if getting the 'Profile_Velocity' or
     'Profile_Acceleration' registers; otherwise, an empty service message is returned.
 
+Gripper Calibration Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Gripper Calibration Service gets the calibration offset value of a specific gripper name.
+
+*   **Topic**: ``/<robot_name>/gripper_calibration``
+*   **Service Type**: `interbotix_xs_msgs/GripperCalib <https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_msgs/srv/GripperCalib.srv>`_
+*   **Simulation Differences**: behaves exactly the same in simulation. this routine is executed upon startup 
+    of the SDK.
+*   **Service Definition**: `InterbotixRobotXS::robot_srv_gripper_calib <https://github.com/Interbotix/interbotix_ros_core/blob/77ebd0c13a778111e36eb83710a8020cc9303d99/interbotix_ros_xseries/interbotix_xs_sdk/src/xs_sdk_obj.cpp#L1097>`_
+
+
+.. warning::
+
+    This service is for internal use to enable communication between gripper_calib.cpp script and the SDK. It must not be called manually for executing gripper calibration. For executing Gripper Calibration check out the next section.
+
+Gripper Calibration Routine
+---------------------------
+
+Executes the gripper calibration node in the SDK.
+This node is called upon startup and performs the gripper calibration operation
+to derive a constant offset value for the gripper.
+
+`Gripper Calibration Node  <https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_sdk/src/gripper_calib.cpp>`_
+
+**Algorithm:**
+    
+#.  Apply a PWM value to the gripper actuator to move it inwards.
+#.  Calculate the error between the previous position and the current position of the gripper.
+#.  Repeat steps 1 and 2 until the gripper reaches its minimum position.
+#.  When there is no longer an error between the current and previous positions, stop the gripper and use the current position value as the offset.
+#. Send the offset and gripper name to the SDK using the Gripper Calibration Service.
+#. The SDK uses this offset value to map between the minimum and maximum position values.
+
 Parameters
 ----------
 
