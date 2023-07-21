@@ -71,7 +71,7 @@ The process for building the messages is as follows:
 
     d.  Clear all classes and rehash the toolbox cache.
 
-    e.  Check that an ``interbotix_xs_sdk/`` message appears in the list generated from the
+    e.  Check that an ``interbotix_xs_msgs/`` message appears in the list generated from the
         ``rosmsg("list")`` command.
 
     f.  If this process works, the function will return true. Otherwise, it will return false with
