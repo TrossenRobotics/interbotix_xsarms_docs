@@ -33,6 +33,8 @@ docstrings for information on each method.
     The MATLAB-ROS API is currently only compatible with the ROS 1 interface. ROS 2 support is not
     planned at this time.
 
+.. _matlab-ros-interface-label:
+
 Setup
 =====
 
