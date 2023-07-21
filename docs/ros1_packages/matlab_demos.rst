@@ -58,9 +58,9 @@ Usage
 =====
 
 To get started with the MATLAB demos, you must first build the Interbotix messages and setup your
-MATLAB workspace. Follow the `MATLAB Setup Guide`_ for this process.
+MATLAB workspace. Follow the :ref:`MATLAB Setup Guide <matlab-ros-interface-label>` for this process.
 
-.. _`MATLAB Setup Guide`: ../matlab_ros_interface/index.html#setup
+.. _`MATLAB Setup Guide`: ../matlab_ros_interface.html#setup
 
 Once your MATLAB workspace is properly configured, open up a terminal and type (assuming a
 WidowX-250 is being launched)...
