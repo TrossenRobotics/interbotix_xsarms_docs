@@ -112,7 +112,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/moveit_motion_planning_configuration.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/moveit_motion_planning_configuration.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -177,7 +177,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/gazebo_simulation_configuration.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/gazebo_simulation_configuration.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -235,7 +235,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/joystick_control.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/joystick_control.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -299,7 +299,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/dual_arm_control.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/dual_arm_control.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -363,7 +363,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/perception_pipeline_configuration.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/perception_pipeline_configuration.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -421,7 +421,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/moveit_interface_and_api.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/moveit_interface_and_api.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -485,7 +485,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_diagnostic_tool.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/arm_diagnostic_tool.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -543,7 +543,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/pid_gains_test_environment.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/pid_gains_test_environment.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -607,7 +607,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/dual_arm_joystick_control.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/dual_arm_joystick_control.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -671,7 +671,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_puppeteering.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/arm_puppeteering.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -728,7 +728,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_puppeteering.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/arm_puppeteering.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
@@ -792,7 +792,7 @@ those packages is below in order of importance:
                                         <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-grey.png" class="grey-icon"
                                             data-image="0">
 
-                                        <a href="https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/python_demos.html"
+                                        <a href="https://docs.trossenrobotics.com/interbotix_xsarms_docs/ros1_packages/python_demos.html"
                                             target="_blank" rel="noopener noreferrer">
                                             <img src="https://trossenrobotics.com/Shared/Social%20Media%20Icons/book-blue.png" class="blue-icon"
                                                 data-image="0">
