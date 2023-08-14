@@ -23,6 +23,6 @@ See the :doc:`ROS 1 Interface Overview <ros1/overview>` for details.
 
     ros1/overview.rst
     ros1/software_setup.rst
-    ros1/raspberry_pi_setup.rst
     ros1/quickstart.rst
     ros1/config.rst
+    ros1/raspberry_pi_setup.rst

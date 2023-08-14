@@ -25,7 +25,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ROS 2 Interface" href="../ros2.html" />
+    <link rel="next" title="ROS Raspberry Pi 4B Setup" href="raspberry_pi_setup.html" />
     <link rel="prev" title="ROS 1 Quickstart Guide" href="quickstart.html" />
    
   <!-- Google Tag Manager (noscript) -->
@@ -78,7 +78,6 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../ros1.html">ROS 1 Interface</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="overview.html">ROS 1 Interface Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="software_setup.html">ROS Standard Software Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">ROS 1 Quickstart Guide</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">ROS 1 Configuration</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#network-configuration">Network Configuration</a><ul>
@@ -92,6 +91,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="raspberry_pi_setup.html">ROS Raspberry Pi 4B Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../ros2.html">ROS 2 Interface</a></li>
@@ -162,7 +162,7 @@ configurations to take effect.</p>
 boot.</p>
 </div>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="0e0441b2-03e8-48e8-a872-aeb181c29ecc" name="0e0441b2-03e8-48e8-a872-aeb181c29ecc" type="checkbox"><label class="sphinx_collapse__label" for="0e0441b2-03e8-48e8-a872-aeb181c29ecc"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="38ad65db-82b6-4b21-9395-4f4e15a4bbd0" name="38ad65db-82b6-4b21-9395-4f4e15a4bbd0" type="checkbox"><label class="sphinx_collapse__label" for="38ad65db-82b6-4b21-9395-4f4e15a4bbd0"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file &#39;organizes&#39; the motors in any Dynamixel-based robot into meaningful units. Every robot must</span>
 <span class="c1"># have at least one instance of this file located in a &#39;config&#39; directory in their root &#39;control&#39; ROS package.</span>
 <span class="c1"># Note that all parameters are mandatory unless stated otherwise. This file demos the setup for the VX300S robot.</span>
@@ -315,7 +315,7 @@ boot.</p>
 <p>The startup operating modes can be set on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#mode-configs-param-ros1"><span class="std std-ref">mode_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
 options is below:</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="83be385f-fd15-4215-8cc8-192a7a474a5f" name="83be385f-fd15-4215-8cc8-192a7a474a5f" type="checkbox"><label class="sphinx_collapse__label" for="83be385f-fd15-4215-8cc8-192a7a474a5f"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="5929be70-bc66-4edd-ae1d-be8b9af63e61" name="5929be70-bc66-4edd-ae1d-be8b9af63e61" type="checkbox"><label class="sphinx_collapse__label" for="5929be70-bc66-4edd-ae1d-be8b9af63e61"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is used to customize the initial operating modes of all joint groups and individual joints in a robot.</span>
 <span class="c1"># It should be placed in the &#39;config&#39; directory of any ROS package that builds ontop of the interbotix_xs_sdk.</span>
 <span class="c1"># Example values are shown as well. All parameters are mandatory unless stated otherwise</span>
@@ -350,7 +350,7 @@ options is below:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="quickstart.html" class="btn btn-neutral float-left" title="ROS 1 Quickstart Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../ros2.html" class="btn btn-neutral float-right" title="ROS 2 Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="raspberry_pi_setup.html" class="btn btn-neutral float-right" title="ROS Raspberry Pi 4B Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

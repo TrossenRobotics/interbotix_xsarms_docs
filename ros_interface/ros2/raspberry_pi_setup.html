@@ -25,8 +25,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ROS 2 Interface" href="../ros2.html" />
-    <link rel="prev" title="ROS 1 Configuration" href="config.html" />
+    <link rel="next" title="Python-ROS Interface" href="../../python_ros_interface.html" />
+    <link rel="prev" title="ROS 2 Configuration" href="config.html" />
    
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -75,11 +75,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../specifications.html">Specifications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../ros_interface.html">ROS Interface</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../ros1.html">ROS 1 Interface</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="overview.html">ROS 1 Interface Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="software_setup.html">ROS Standard Software Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="quickstart.html">ROS 1 Quickstart Guide</a></li>
-<li class="toctree-l3"><a class="reference internal" href="config.html">ROS 1 Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros1.html">ROS 1 Interface</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ros2.html">ROS 2 Interface</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html">ROS 2 Interface Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software_setup.html">ROS 2 Standard Software Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">ROS 2 Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html">ROS 2 Configuration</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">ROS Raspberry Pi 4B Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setup">Setup</a><ul>
@@ -98,7 +99,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../ros2.html">ROS 2 Interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../python_ros_interface.html">Python-ROS Interface</a></li>
@@ -123,10 +123,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../ros_interface.html">ROS Interface</a></li>
-          <li class="breadcrumb-item"><a href="../ros1.html">ROS 1 Interface</a></li>
+          <li class="breadcrumb-item"><a href="../ros2.html">ROS 2 Interface</a></li>
       <li class="breadcrumb-item active">ROS Raspberry Pi 4B Setup</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/docs/ros_interface/ros1/raspberry_pi_setup.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/docs/ros_interface/ros2/raspberry_pi_setup.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -147,8 +147,8 @@ the operating systems, there a quite a number of desktop experiences one can cho
 <cite>ubuntu-desktop</cite>, <cite>kubuntu-desktop</cite>, <cite>xubuntu-desktop</cite> to name a few. After doing some
 experimenting, We’ve found that the <cite>ubuntu-mate-desktop</cite> experience provided a pretty nice desktop
 experience and took up the least amount of RAM.</p>
-<p>Since we’re using the Pi 4, and the 64-bit has better performance, you should choose the <strong>20.04.2
-64-bit</strong> option.</p>
+<p>Since we’re using the Pi 4, and the 64-bit has better performance, you should choose the 64-bit
+option of the Ubuntu distro you want to use. In this guide, we will installed Ubuntu 20.04.2.</p>
 <div class="section" id="hardware-requirements">
 <h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline"></a></h2>
 <p>Instead of purchasing components separately, it’s much easier to get a Raspberry Pi 4B Kit (from
@@ -157,8 +157,8 @@ mini-to-full-size HDMI cable, case, fan, heatsinks, a class 10 microSD card (at 
 course, the Pi itself (4GB RAM option seems to be pretty good, and is what we use at Interbotix).
 Note that using less than 4GB RAM on the RPi 4 can result in it freezing during code compilation
 (like when running the installation script for any of our RPi compatible robots). To get around
-this, you can change any mention of the <code class="docutils literal notranslate"><span class="pre">catkin_make</span></code> command in the robot installation scripts
-to <code class="docutils literal notranslate"><span class="pre">catkin_make</span> <span class="pre">-j1</span></code>.</p>
+this, you can change any mention of the <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span></code> command in the robot installation scripts
+to <code class="docutils literal notranslate"><span class="pre">colcon</span> <span class="pre">build</span> <span class="pre">--executor</span> <span class="pre">sequential</span></code>.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://www.amazon.com/Vilros-Raspberry-Complete-Transparent-Cooled/dp/B07VFCB192/ref=sr_1_8?dchild=1&amp;keywords=rpi+4+kit&amp;qid=1615835937&amp;sr=8-8" rel="noopener noreferrer" target="_blank">Raspberry Pi 4B Kit</a></li>
 <li>HDMI monitor, mouse, Ethernet cable (that connects to Internet), and keyboard</li>
@@ -354,15 +354,15 @@ typing.</p>
 </div>
 <div class="section" id="install-ros">
 <h3>Install ROS<a class="headerlink" href="#install-ros" title="Permalink to this headline"></a></h3>
-<p>At this point, you can follow the instructions on the ROS Wiki to install <a class="reference external" href="http://wiki.ros.org/melodic/Installation/Ubuntu" rel="noopener noreferrer" target="_blank">ROS Melodic</a> (Ubuntu
-18.04) or <a class="reference external" href="http://wiki.ros.org/noetic/Installation/Ubuntu" rel="noopener noreferrer" target="_blank">ROS Noetic</a> (Ubuntu 20.04).</p>
+<p>At this point, you can follow the instructions on the ROS Wiki to install the distro compatible with your Ubuntu version.
+Because we installed Ubuntu 20.04, we will now install <a class="reference external" href="https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html" rel="noopener noreferrer" target="_blank">ROS Galactic</a>.</p>
 <p>Alternatively, you can use the xsarm convenience script we provide to install ROS, robot-specific
 packages, and configure any drivers and environment variables. The commands to download, configure
 and run the script are as follows:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
 <span class="gp">$ </span>curl<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/rpi4/xsarm_rpi4_install.sh&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>xsarm_rpi4_install.sh
 <span class="gp">$ </span>chmod<span class="w"> </span>+x<span class="w"> </span>xsarm_rpi4_install.sh
-<span class="gp">$ </span>./xsarm_rpi4_install.sh
+<span class="gp">$ </span>./xsarm_rpi4_install.sh<span class="w"> </span>-d<span class="w"> </span>galactic
 </pre></div>
 </div>
 </div>
@@ -391,8 +391,8 @@ Internet connection with the Pi when needed.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="config.html" class="btn btn-neutral float-left" title="ROS 1 Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../ros2.html" class="btn btn-neutral float-right" title="ROS 2 Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="config.html" class="btn btn-neutral float-left" title="ROS 2 Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../python_ros_interface.html" class="btn btn-neutral float-right" title="Python-ROS Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
