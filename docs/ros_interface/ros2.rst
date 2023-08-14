@@ -24,3 +24,4 @@ See the :doc:`ROS 2 Interface Overview <ros2/overview>` for details.
     ros2/software_setup.rst
     ros2/quickstart.rst
     ros2/config.rst
+    ros2/raspberry_pi_setup.rst

@@ -123,16 +123,14 @@ Raspberry Pi 4B (ARM64 Architecture)
 
 If you purchased a Raspberry Pi 4B Kit with an arm from our website, there is no need to install
 anything as the Pi should already come preloaded with all the necessary software. If you purchased
-your own Raspberry Pi 4B from a third party, feel free to follow the `Raspberry Pi 4B Setup
-instructions`_ to get it properly setup before following the commands below. If you only purchased
+your own Raspberry Pi 4B from a third party, feel free to follow the :doc:`Raspberry Pi 4B Setup
+instructions <./raspberry_pi_setup>` to get it properly setup before following the commands below. If you only purchased
 the stand-alone Raspberry Pi 4B Kit from our store (which comes pre-configured with Ubuntu and
 ROS 2), and would like to use it with an arm, then follow the commands below to download and run the
 installation script. Note that the script will install the full desktop version of ROS 2 if it's not
 yet on your system, ask you for your desired robot model (ex. ``wx200``), and prompt you about
 whether or not you'd like the Joystick ROS 2 package to start at boot. The commands below
 demonstrate the process of running the installation script for ROS 2 Galactic.
-
-.. _Raspberry Pi 4B Setup instructions: ./raspberry_pi_setup.html
 
     .. code-block:: console
 
