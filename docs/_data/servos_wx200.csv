@@ -3,6 +3,6 @@ ID,Joint Name,Servo,Baudrate
 2,shoulder,XM430-W350,1Mbps
 3,shoulder_shadow,XM430-W350,1Mbps
 4,elbow,XM430-W350,1Mbps
-5,wrist_angle,XL430-W250,1Mbps
+5,wrist_angle,XM430-W350,1Mbps
 6,wrist_rotate,XL430-W250,1Mbps
 7,gripper,XL430-W250,1Mbps
