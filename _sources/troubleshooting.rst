@@ -133,8 +133,7 @@ This could happen due to a couple of reasons.
 Incorrect status packet
 -----------------------
 
-If you see 4 repeating red error messages in the terminal during node operation
-that say
+If you see 4 repeating red error messages in the terminal during node operation that say
 
 .. code-block:: console
 
@@ -179,6 +178,20 @@ constructor argument should be set to ``false``.
 
 Less Common Issues
 ==================
+
+U2D2 not detected
+-----------------
+
+Sometimes, a U2D2 is not recognized by your computer, i.e. ``lsusb`` does not show a device from
+Future Technology Devices International or ``ttyUSB*`` entires are not created in the ``/dev``
+directory. There are a few troubleshooting steps to try to fix this issue.
+
+-   `Check the microUSB cable` - Verify that the microUSB cable connecting the U2D2 to your
+    computer is not damaged. If it is, replace it with a new one.
+-   `Check the USB port` - Try plugging the U2D2 into a different USB port on your computer. USB
+    3.0 ports are preferred; these are typically blue in color.
+-   `Check the computer` - Try plugging the U2D2 into a different computer. If it is recognized,
+    then the issue is with the original computer. If not, then the issue is with the U2D2.
 
 U2D2 not recognized (no symlink created)
 ----------------------------------------

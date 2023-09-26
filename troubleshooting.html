@@ -90,6 +90,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#less-common-issues">Less Common Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#u2d2-not-detected">U2D2 not detected</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#u2d2-not-recognized-no-symlink-created">U2D2 not recognized (no symlink created)</a></li>
 </ul>
 </li>
@@ -236,8 +237,7 @@ node is run.</li>
 </div>
 <div class="section" id="incorrect-status-packet">
 <span id="troubleshooting-incorrect-status-packet"></span><h3>Incorrect status packet<a class="headerlink" href="#incorrect-status-packet" title="Permalink to this headline"></a></h3>
-<p>If you see 4 repeating red error messages in the terminal during node operation
-that say</p>
+<p>If you see 4 repeating red error messages in the terminal during node operation that say</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[TxRxResult] Incorrect status packet!</span>
 <span class="go">groupSyncRead getdata failed</span>
 <span class="go">groupSyncRead getdata failed</span>
@@ -275,6 +275,20 @@ constructor argument should be set to <code class="docutils literal notranslate"
 </div>
 <div class="section" id="less-common-issues">
 <h2>Less Common Issues<a class="headerlink" href="#less-common-issues" title="Permalink to this headline"></a></h2>
+<div class="section" id="u2d2-not-detected">
+<h3>U2D2 not detected<a class="headerlink" href="#u2d2-not-detected" title="Permalink to this headline"></a></h3>
+<p>Sometimes, a U2D2 is not recognized by your computer, i.e. <code class="docutils literal notranslate"><span class="pre">lsusb</span></code> does not show a device from
+Future Technology Devices International or <code class="docutils literal notranslate"><span class="pre">ttyUSB*</span></code> entires are not created in the <code class="docutils literal notranslate"><span class="pre">/dev</span></code>
+directory. There are a few troubleshooting steps to try to fix this issue.</p>
+<ul class="simple">
+<li><cite>Check the microUSB cable</cite> - Verify that the microUSB cable connecting the U2D2 to your
+computer is not damaged. If it is, replace it with a new one.</li>
+<li><cite>Check the USB port</cite> - Try plugging the U2D2 into a different USB port on your computer. USB
+3.0 ports are preferred; these are typically blue in color.</li>
+<li><cite>Check the computer</cite> - Try plugging the U2D2 into a different computer. If it is recognized,
+then the issue is with the original computer. If not, then the issue is with the U2D2.</li>
+</ul>
+</div>
 <div class="section" id="u2d2-not-recognized-no-symlink-created">
 <h3>U2D2 not recognized (no symlink created)<a class="headerlink" href="#u2d2-not-recognized-no-symlink-created" title="Permalink to this headline"></a></h3>
 <p>You may run into an issue where the computer is able to detect that it is connected to a device via
