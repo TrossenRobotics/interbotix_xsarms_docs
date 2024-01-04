@@ -71,8 +71,7 @@ ViperX-300 is being launched). Note that if you're using a 4 or 6 dof arm, you s
 
 .. code-block:: console
 
-    $ roslaunch interbotix_xsarm_moveit_interface xsarm_moveit_interface.launch robot_model:=vx300
-    use_cpp_interface:=true use_actual:=true
+    $ roslaunch interbotix_xsarm_moveit_interface xsarm_moveit_interface.launch robot_model:=vx300 use_cpp_interface:=true use_actual:=true
 
 A GUI should pop-up similar to the one below. In it, a user should specify the desired position and
 orientation of the end-effector (as defined by the 'ee_gripper_link' w.r.t. the 'world' frame).
