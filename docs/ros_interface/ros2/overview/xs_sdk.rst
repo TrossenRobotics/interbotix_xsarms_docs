@@ -22,10 +22,10 @@ simulated driver, the **xs_sdk_sim** node allows users to try out their programs
 environment before using them on their real robot.
 
 Publishers
-----------
+==========
 
 JointState Publisher
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 The JointState Publisher ROS `sensor_msgs/JointState`_ messages at a user-desired frequency. In
 general, positions are given in radians, velocities are given in radians per second, and effort is
@@ -42,10 +42,10 @@ You can launch a robot model in RViz to get familiar with the link and joint nam
 .. _`sensor_msgs/JointState`: https://github.com/ros/common_msgs/blob/noetic-devel/sensor_msgs/msg/JointState.msg
 
 Subscribers
------------
+===========
 
 Joint Group Command Subscriber
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 The Joint Group Command Subscriber subscribes to interbotix_xs_msgs/JointGroupCommand messages;
 this topic is used to control a specified group of joints synchronously (which is more efficient
@@ -57,7 +57,7 @@ implementation details. Any number of joint groups can be defined in the motor c
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Joint Single Command Subscriber
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 The Joint Single Command Subscriber subscribes to interbotix_xs_msgs/JointSingleCommand messages.
 This topic is used to command a single joint. Refer to the message definition for implementation
@@ -68,7 +68,7 @@ details.
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Joint Trajectory Command Subscriber
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 Joint Trajectory Command Subscriber subscribes to interbotix_xs_msgs/JointTrajectoryCommand
 messages; this topic is used to send desired trajectories to a specified joint or joint group.
@@ -79,10 +79,10 @@ Refer to the message definition for implementation details.
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Services
---------
+========
 
 Enable/Disable Torque Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 The Enable/Disable Torque Service to torque on/off the specified motor or motors.
 
@@ -97,7 +97,7 @@ The Enable/Disable Torque Service to torque on/off the specified motor or motors
     Make sure the robot is in its sleep pose or in a safe configuration before calling it.
 
 Reboot Motors Service
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 The Reboot Motors Service reboots the specified motor or motors.
 
@@ -112,7 +112,7 @@ The Reboot Motors Service reboots the specified motor or motors.
     Make sure the robot is in its sleep pose or in a safe configuration before calling it.
 
 Get Robot Info Service
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 The Get Robot Info Service service to get robot information like joint limits, joint names, and
 joint 'sleep' positions.
@@ -122,7 +122,7 @@ joint 'sleep' positions.
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Set Operating Modes Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 The Set Operating Modes Service sets a motor's or multiple motors' operating modes (like position,
 velocity, current, etc...).
@@ -144,7 +144,7 @@ velocity, current, etc...).
     otherwise secured before calling this service.
 
 Set Motor Gains Service
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 *   The Set Motor Gains Service service to set a motor's or multiple motors' internal
     PID gains for position/velocity control; refer to the `interbotix_xs_msgs/MotorGains` service
@@ -155,7 +155,7 @@ Set Motor Gains Service
 *   **Simulation Differences**: doesn't affect anything; no messages are even displayed.
 
 Set Register Values Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 The Set Register Values Service sets a motor's or multiple motors' register values simultaneously
 for a user-provided register name.
@@ -166,7 +166,7 @@ for a user-provided register name.
     'Profile_Acceleration' registers; otherwise, nothing happens.
 
 Get Register Values Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 The Get Register Values Service gets a motor's or multiple motors' register values simultaneously
 for a user-provided register name.
@@ -177,26 +177,26 @@ for a user-provided register name.
     'Profile_Acceleration' registers; otherwise, an empty service message is returned.
 
 Parameters
-----------
+==========
 
 .. _motor_configs_param_ros2:
 
 ``motor_configs``
-^^^^^^^^^^^^^^^^^
+-----------------
 
 The file path to the 'motor config' YAML file. Refer to the template below for details.
 
 .. _mode_configs_param_ros2:
 
 ``mode_configs``
-^^^^^^^^^^^^^^^^
+----------------
 
 The file path to the 'mode config' YAML file. Refer to the template below for details.
 
 .. _load_configs_param_ros2:
 
 ``load_configs``
-^^^^^^^^^^^^^^^^
+----------------
 
 A boolean that specifies whether or not the initial register values (under the 'motors' heading) in
 a motor config file should be written to the motors; as the values being written are stored in each

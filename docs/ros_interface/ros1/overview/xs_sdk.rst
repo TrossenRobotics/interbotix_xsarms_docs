@@ -22,10 +22,10 @@ simulated driver, the **xs_sdk_sim** node allows users to try out their programs
 environment before using them on their real robot.
 
 Publishers
-----------
+==========
 
 JointState Publisher
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 The JointState Publisher ROS `sensor_msgs/JointState`_ messages at a user-desired frequency. In
 general, positions are given in radians, velocities are given in radians per second, and effort is
@@ -42,10 +42,10 @@ You can launch a robot model in RViz to get familiar with the link and joint nam
 .. _`sensor_msgs/JointState`: https://github.com/ros/common_msgs/blob/noetic-devel/sensor_msgs/msg/JointState.msg
 
 Subscribers
------------
+===========
 
 Joint Group Command Subscriber
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 The Joint Group Command Subscriber subscribes to interbotix_xs_msgs/JointGroupCommand messages;
 this topic is used to control a specified group of joints synchronously (which is more efficient
@@ -57,7 +57,7 @@ implementation details. Any number of joint groups can be defined in the motor c
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Joint Single Command Subscriber
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 The Joint Single Command Subscriber subscribes to interbotix_xs_msgs/JointSingleCommand messages.
 This topic is used to command a single joint. Refer to the message definition for implementation
@@ -68,7 +68,7 @@ details.
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Joint Trajectory Command Subscriber
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 Joint Trajectory Command Subscriber subscribes to interbotix_xs_msgs/JointTrajectoryCommand
 messages; this topic is used to send desired trajectories to a specified joint or joint group.
@@ -79,10 +79,10 @@ Refer to the message definition for implementation details.
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Services
---------
+========
 
 Enable/Disable Torque Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 The Enable/Disable Torque Service to torque on/off the specified motor or motors.
 
@@ -97,7 +97,7 @@ The Enable/Disable Torque Service to torque on/off the specified motor or motors
     Make sure the robot is in its sleep pose or in a safe configuration before calling it.
 
 Reboot Motors Service
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 The Reboot Motors Service reboots the specified motor or motors.
 
@@ -112,7 +112,7 @@ The Reboot Motors Service reboots the specified motor or motors.
     Make sure the robot is in its sleep pose or in a safe configuration before calling it.
 
 Get Robot Info Service
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 The Get Robot Info Service service to get robot information like joint limits, joint names, and
 joint 'sleep' positions.
@@ -122,7 +122,7 @@ joint 'sleep' positions.
 *   **Simulation Differences**: Behaves identically to the physical driver.
 
 Set Operating Modes Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 The Set Operating Modes Service sets a motor's or multiple motors' operating modes (like position,
 velocity, current, etc...).
@@ -144,7 +144,7 @@ velocity, current, etc...).
     <motor_configs_file_ros1>`) or otherwise secured before calling this service.
 
 Set Motor Gains Service
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 *   The Set Motor Gains Service service to set a motor's or multiple motors' internal
     PID gains for position/velocity control; refer to the `interbotix_xs_msgs/MotorGains` service
@@ -153,8 +153,8 @@ Set Motor Gains Service
 *   **Topic**: ``/<robot_name>/set_motor_pid_gains``
 *   **Service Type**: :ref:`interbotix_xs_msgs/MotorGains <interbotix_xs_msgs_MotorGains_ros1>`
 *   **Simulation Differences**: doesn't affect anything; no messages are even displayed.
-*   **Example Usage**: the below example calls the ``set_motor_pid_gains`` service to set the gains of
-    each servo in the ``arm`` group to its default value.
+*   **Example Usage**: the below example calls the ``set_motor_pid_gains`` service to set the gains
+    of each servo in the ``arm`` group to its default value.
 
     .. tabs::
 
@@ -200,7 +200,7 @@ Set Motor Gains Service
 
 
 Set Register Values Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 The Set Register Values Service sets a motor's or multiple motors' register values simultaneously
 for a user-provided register name.
@@ -211,7 +211,7 @@ for a user-provided register name.
     'Profile_Acceleration' registers; otherwise, nothing happens.
 
 Get Register Values Service
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 The Get Register Values Service gets a motor's or multiple motors' register values simultaneously
 for a user-provided register name.
@@ -228,7 +228,7 @@ The Gripper Calibration Service gets the calibration offset value of a specific 
 
 *   **Topic**: ``/<robot_name>/gripper_calibration``
 *   **Service Type**: `interbotix_xs_msgs/GripperCalib <https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_msgs/srv/GripperCalib.srv>`_
-*   **Simulation Differences**: behaves exactly the same in simulation. this routine is executed upon startup 
+*   **Simulation Differences**: behaves exactly the same in simulation. this routine is executed upon startup
     of the SDK.
 *   **Service Definition**: `InterbotixRobotXS::robot_srv_gripper_calib <https://github.com/Interbotix/interbotix_ros_core/blob/77ebd0c13a778111e36eb83710a8020cc9303d99/interbotix_ros_xseries/interbotix_xs_sdk/src/xs_sdk_obj.cpp#L1097>`_
 
@@ -247,7 +247,7 @@ to derive a constant offset value for the gripper.
 `Gripper Calibration Node  <https://github.com/Interbotix/interbotix_ros_core/blob/devel/interbotix_ros_xseries/interbotix_xs_sdk/src/gripper_calib.cpp>`_
 
 **Algorithm:**
-    
+
 #.  Apply a PWM value to the gripper actuator to move it inwards.
 #.  Calculate the error between the previous position and the current position of the gripper.
 #.  Repeat steps 1 and 2 until the gripper reaches its minimum position.
@@ -256,26 +256,26 @@ to derive a constant offset value for the gripper.
 #. The SDK uses this offset value to map between the minimum and maximum position values.
 
 Parameters
-----------
+==========
 
 .. _motor_configs_param_ros1:
 
 ``motor_configs``
-^^^^^^^^^^^^^^^^^
+-----------------
 
 The file path to the 'motor config' YAML file. Refer to the template below for details.
 
 .. _mode_configs_param_ros1:
 
 ``mode_configs``
-^^^^^^^^^^^^^^^^
+----------------
 
 The file path to the 'mode config' YAML file. Refer to the template below for details.
 
 .. _load_configs_param_ros1:
 
 ``load_configs``
-^^^^^^^^^^^^^^^^
+----------------
 
 A boolean that specifies whether or not the initial register values (under the 'motors' heading) in
 a motor config file should be written to the motors; as the values being written are stored in each
