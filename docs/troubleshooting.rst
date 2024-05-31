@@ -238,3 +238,20 @@ carefully rotate the waist/pan motor in the direction that 'straightens' the cab
 you can check the 'straightness' of the cable without flipping the robot by checking its tautness
 from the hole by the shoulder/tilt motors. If it feels too taught, rotate the waist/pan motor in
 the direction that loosens it.
+
+DYNAMIXEL Firmware Recovery
+---------------------------
+
+If a DYNAMIXEL motor suddenly exhibits unexpected behavior, firmware recovery may fix it.
+Follow the instructions in the video below from ROBOTIS.
+
+.. youtube:: PgbIAK2Qg1Y
+    :align: center
+
+.. tip::
+
+    Check the specifications page for your arm to see the motor model at each joint.
+
+.. warning::
+
+    Only one motor can be connected to the U2D2 during the firmware recovery process.
