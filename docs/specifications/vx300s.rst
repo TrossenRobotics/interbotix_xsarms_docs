@@ -15,8 +15,8 @@ the heart of the ViperX-300 6DOF is the Robotis DYNAMIXEL U2D2 which enables eas
 DYNAMIXEL Wizard software as well as ROS. The ViperX-300 6DOF offers 6 degree of freedom and a full
 360 degree of rotation.
 
-.. _`XM540-W270`: https://www.trossenrobotics.com/dynamixel-xm540-w270-t.aspx
-.. _`XM430-W350`: https://www.trossenrobotics.com/dynamixel-xm430-w350-t.aspx
+.. _`XM540-W270`: https://store.trossenrobotics.com/products/dynamixel-xm540-w270-t-robot-actuator
+.. _`XM430-W350`: https://store.trossenrobotics.com/products/dynamixel-xm430-w350-t-robot-actuator
 
 The main advantage to using a 6 degree of freedom arm is the increased maneuverability it provides.
 In general, the pose of an arm's end-effector can be described by its position (x, y, z) and
