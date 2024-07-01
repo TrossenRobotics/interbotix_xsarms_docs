@@ -22,9 +22,11 @@ specifications.
     specifications/wx200.rst
     specifications/wx250.rst
     specifications/wx250s.rst
+    specifications/awx250s.rst
     specifications/vx250.rst
     specifications/vx300.rst
     specifications/vx300s.rst
+    specifications/avx300s.rst
 
 Hardware
 ========
