@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PincherX-100 &mdash; Interbotix X-Series Arms Documentation</title>
+  <title>ALOHA WidowX-250 6DOF &mdash; Interbotix X-Series Arms Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
@@ -22,12 +22,11 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PincherX-150" href="px150.html" />
-    <link rel="prev" title="Specifications" href="../specifications.html" />
+    <link rel="next" title="ViperX-250" href="vx250.html" />
+    <link rel="prev" title="WidowX-250 6DOF" href="wx250s.html" />
    
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -75,28 +74,20 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../specifications.html">Specifications</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../specifications.html#in-depth-specifications">In-Depth Specifications</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">PincherX-100</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#default-joint-limits">Default Joint Limits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#default-servo-configurations">Default Servo Configurations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#kinematic-properties">Kinematic Properties</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#product-of-exponentials-learn-more">Product of Exponentials [Learn More]</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#drawings-and-cad-files">Drawings and CAD Files</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#standard-version">Standard Version</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mobile-version">Mobile Version</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="px100.html">PincherX-100</a></li>
 <li class="toctree-l3"><a class="reference internal" href="px150.html">PincherX-150</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rx150.html">ReactorX-150</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rx200.html">ReactorX-200</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wx200.html">WidowX-200</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wx250.html">WidowX-250</a></li>
 <li class="toctree-l3"><a class="reference internal" href="wx250s.html">WidowX-250 6DOF</a></li>
-<li class="toctree-l3"><a class="reference internal" href="awx250s.html">ALOHA WidowX-250 6DOF</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ALOHA WidowX-250 6DOF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-joint-limits">Default Joint Limits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-servo-configurations">Default Servo Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#drawings-and-cad-files">Drawings and CAD Files</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="vx250.html">ViperX-250</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vx300.html">ViperX-300</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vx300s.html">ViperX-300 6DOF</a></li>
@@ -135,9 +126,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../specifications.html">Specifications</a></li>
-      <li class="breadcrumb-item active">PincherX-100</li>
+      <li class="breadcrumb-item active">ALOHA WidowX-250 6DOF</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/docs/specifications/px100.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/docs/specifications/awx250s.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -145,25 +136,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="pincherx-100">
-<h1>PincherX-100<a class="headerlink" href="#pincherx-100" title="Permalink to this headline"></a></h1>
+  <div class="section" id="aloha-widowx-250-6dof">
+<h1>ALOHA WidowX-250 6DOF<a class="headerlink" href="#aloha-widowx-250-6dof" title="Permalink to this headline"></a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
-<p>The PincherX-100 Robot Arm belongs to the Interbotix X-Series family of arms featuring the
-DYNAMIXEL X-Series Smart Servo Motors. The X-Series actuators offer high torque, efficient heat
-dissipation and great durability all at a smaller form factor over previous DYNAMIXEL servos. The
-DYNAMIXEL <a class="reference external" href="https://www.trossenrobotics.com/dynamixel-xl430-w250-t.aspx" rel="noopener noreferrer" target="_blank">XL430-W250</a> servos offer high resolution of 4096 positions and user definable PID
-parameters, temperature monitoring, positional feedback, as well as voltage levels, load, and
-compliance settings are user accessible as well. At the heart of the PincherX-100 is the Robotis
-DYNAMIXEL U2D2 which enables easy access to DYNAMIXEL Wizard software as well as ROS. The
-PincherX-100 offers 4 degree of freedom and a full 360 degree of rotation.</p>
+<p>The ALOHA WidowX-250s 6DOF Robot Arm is a variant of the WidowX-250s 6DOF with improvements following those proposed in <a class="reference external" href="https://aloha-2.github.io/" rel="noopener noreferrer" target="_blank">ALOHA 2</a>.</p>
+<p>See the <a class="reference internal" href="wx250s.html#widowx-250-6dof"><span class="std std-ref">WidowX-250 6DOF</span></a> specifications page for more details.</p>
 <table border="1" class="docutils align-center">
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><img alt="../_images/px100.png" class="first last align-center" src="../_images/px100.png" style="width: 600px;" />
+<tr class="row-odd"><td><img alt="../_images/awx250s.png" class="first last align-center" src="../_images/awx250s.png" style="width: 500px;" />
 </td>
 <td><table border="1" class="first last docutils align-center">
 <colgroup>
@@ -171,33 +156,33 @@ PincherX-100 offers 4 degree of freedom and a full 360 degree of rotation.</p>
 <col width="49%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2"><strong>PincherX-100</strong></th>
+<tr class="row-odd"><th class="head" colspan="2"><strong>ALOHA WidowX-250 6DOF</strong></th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Degrees of Freedom</td>
-<td>4</td>
+<td>6</td>
 </tr>
 <tr class="row-odd"><td>Reach</td>
-<td>300mm</td>
+<td>650mm</td>
 </tr>
 <tr class="row-even"><td>Total Span</td>
-<td>600mm</td>
+<td>1300mm</td>
 </tr>
 <tr class="row-odd"><td>Repeatability</td>
-<td>5mm</td>
+<td>1mm</td>
 </tr>
 <tr class="row-even"><td>Accuracy</td>
-<td>8mm</td>
+<td>5 - 8mm</td>
 </tr>
 <tr class="row-odd"><td>Working Payload</td>
-<td>50g*</td>
+<td>250g*</td>
 </tr>
 <tr class="row-even"><td>Total Servos</td>
-<td>5</td>
+<td>9</td>
 </tr>
 <tr class="row-odd"><td>Wrist Rotate</td>
-<td>No</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
@@ -207,17 +192,17 @@ PincherX-100 offers 4 degree of freedom and a full 360 degree of rotation.</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">* Working Payload for the PincherX-100 is inside its maximum reach, if intending to use a 50g
-weight we recommend no more than a 50% extension of the arm.</p>
+<p class="last">* Working Payload for the WidowX-250 6DOF is inside its maximum reach.
+If intending to use a 250g weight we recommend no more than a 50% extension of the arm.</p>
 </div>
 </div>
 <div class="section" id="default-joint-limits">
 <h2>Default Joint Limits<a class="headerlink" href="#default-joint-limits" title="Permalink to this headline"></a></h2>
-<p>Default joint limits are the safe range of operation for each joint. These are set in the firmware,
-defined as degrees from Zero (servo centered).</p>
+<p>Default joint limits are the safe range of operation for each joint.
+These are set in the firmware, defined as degrees from Zero (servo centered).</p>
 <table border="1" class="docutils align-center">
 <colgroup>
-<col width="33%" />
+<col width="35%" />
 <col width="18%" />
 <col width="15%" />
 <col width="33%" />
@@ -236,24 +221,34 @@ defined as degrees from Zero (servo centered).</p>
 <td>1</td>
 </tr>
 <tr class="row-odd"><td>Shoulder</td>
-<td>-111</td>
-<td>107</td>
-<td>2</td>
+<td>-108</td>
+<td>114</td>
+<td>2+3</td>
 </tr>
 <tr class="row-even"><td>Elbow</td>
-<td>-121</td>
+<td>-123</td>
 <td>92</td>
-<td>3</td>
+<td>4+5</td>
 </tr>
-<tr class="row-odd"><td>Wrist Angle</td>
+<tr class="row-odd"><td>Forearm Roll</td>
+<td>-180</td>
+<td>180</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>Wrist Angle</td>
 <td>-100</td>
 <td>123</td>
-<td>4</td>
+<td>7</td>
+</tr>
+<tr class="row-odd"><td>Wrist Rotate</td>
+<td>-180</td>
+<td>180</td>
+<td>8</td>
 </tr>
 <tr class="row-even"><td>Gripper</td>
 <td>30mm</td>
 <td>74mm</td>
-<td>5</td>
+<td>9</td>
 </tr>
 </tbody>
 </table>
@@ -277,92 +272,56 @@ defined as degrees from Zero (servo centered).</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>waist</td>
-<td>XL430-W250</td>
+<td>XM430-W350</td>
 <td>1Mbps</td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>shoulder</td>
-<td>XL430-W250</td>
+<td>XM430-W350</td>
 <td>1Mbps</td>
 </tr>
 <tr class="row-even"><td>3</td>
-<td>elbow</td>
-<td>XL430-W250</td>
+<td>shoulder_shadow</td>
+<td>XM430-W350</td>
 <td>1Mbps</td>
 </tr>
 <tr class="row-odd"><td>4</td>
-<td>wrist_angle</td>
-<td>XL430-W250</td>
+<td>elbow</td>
+<td>XM430-W350</td>
 <td>1Mbps</td>
 </tr>
 <tr class="row-even"><td>5</td>
+<td>elbow_shadow</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>forearm_roll</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>wrist_angle</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>wrist_rotate</td>
+<td>XM430-W350</td>
+<td>1Mbps</td>
+</tr>
+<tr class="row-even"><td>9</td>
 <td>gripper</td>
-<td>XL430-W250</td>
+<td>XC430-W150</td>
 <td>1Mbps</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="kinematic-properties">
-<h2>Kinematic Properties<a class="headerlink" href="#kinematic-properties" title="Permalink to this headline"></a></h2>
-<div class="section" id="product-of-exponentials-learn-more">
-<h3>Product of Exponentials [<a class="reference external" href="https://en.wikipedia.org/wiki/Product_of_exponentials_formula" rel="noopener noreferrer" target="_blank">Learn More</a>]<a class="headerlink" href="#product-of-exponentials-learn-more" title="Permalink to this headline"></a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}M &amp; =
-\begin{bmatrix}
-1.0 &amp; 0.0 &amp; 0.0 &amp; 0.248575 \\
-0.0 &amp; 1.0 &amp; 0.0 &amp; 0.0      \\
-0.0 &amp; 0.0 &amp; 1.0 &amp; 0.1931  \\
-0.0 &amp; 0.0 &amp; 0.0 &amp; 1.0
-\end{bmatrix}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}Slist &amp; =
-\begin{bmatrix}
-0.0 &amp; 0.0 &amp; 1.0 &amp;  0.0    &amp; 0.0 &amp; 0.0   \\
-0.0 &amp; 1.0 &amp; 0.0 &amp; -0.0931 &amp; 0.0 &amp; 0.0   \\
-0.0 &amp; 1.0 &amp; 0.0 &amp; -0.1931 &amp; 0.0 &amp; 0.035 \\
-0.0 &amp; 1.0 &amp; 0.0 &amp; -0.1931 &amp; 0.0 &amp; 0.135
-\end{bmatrix}^T\end{split}\]</div>
-</div>
-</div>
 <div class="section" id="drawings-and-cad-files">
 <h2>Drawings and CAD Files<a class="headerlink" href="#drawings-and-cad-files" title="Permalink to this headline"></a></h2>
-<div class="section" id="standard-version">
-<h3>Standard Version<a class="headerlink" href="#standard-version" title="Permalink to this headline"></a></h3>
-<img alt="../_images/px100_drawing.png" class="align-center" src="../_images/px100_drawing.png" style="width: 70%;" />
-<p><a class="reference download internal" download="" href="../_downloads/a47606c93db680f50eeb3d7d508a8a2d/PincherX-100.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PincherX-100</span> <span class="pre">Technical</span> <span class="pre">Drawing</span></code></a></p>
-<iframe
-    src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd968b685364e8a30d183?mode=embed"
-    width="100%"
-    height="600px"
-    allowfullscreen="true"
-    webkitallowfullscreen="true"
-    mozallowfullscreen="true"
-    frameborder="0">
-</iframe><ul class="simple">
-<li><a class="reference download internal" download="" href="../_downloads/83da0a2cb4b8aaf99a7f047195fc25f8/1_PXA-100-A.zip"><code class="xref download docutils literal notranslate"><span class="pre">PincherX-100</span> <span class="pre">Solid</span> <span class="pre">STEP</span> <span class="pre">Files</span></code></a></li>
-<li><a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/px100_meshes" rel="noopener noreferrer" target="_blank">PincherX-100 Mesh STL Files</a></li>
-</ul>
-</div>
-<div class="section" id="mobile-version">
-<h3>Mobile Version<a class="headerlink" href="#mobile-version" title="Permalink to this headline"></a></h3>
-<p>The Mobile version of the PincherX-100 is a modified version to have a lower profile base which is
-easier to mount on mobile platforms. This base is compatible with the LoCoBot Platform.</p>
-<img alt="../_images/px100-mobile_drawing.png" class="align-center" src="../_images/px100-mobile_drawing.png" style="width: 70%;" />
-<p><a class="reference download internal" download="" href="../_downloads/a47606c93db680f50eeb3d7d508a8a2d/PincherX-100.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PincherX-100</span> <span class="pre">Technical</span> <span class="pre">Drawing</span></code></a></p>
-<iframe
-    src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd9689b47d308a8a2e2d5?mode=embed"
-    width="100%"
-    height="600px"
-    allowfullscreen="true"
-    webkitallowfullscreen="true"
-    mozallowfullscreen="true"
-    frameborder="0">
-</iframe><ul class="simple">
-<li><a class="reference download internal" download="" href="../_downloads/43c1e093aa74b2e42b2b2b9ee2d6ba1c/1_PXA-100-M.zip"><code class="xref download docutils literal notranslate"><span class="pre">Mobile</span> <span class="pre">PincherX-100</span> <span class="pre">Solid</span> <span class="pre">STEP</span> <span class="pre">Files</span></code></a></li>
-<li><a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/mobile_px100_meshes" rel="noopener noreferrer" target="_blank">Mobile PincherX-100 Mesh STL Files</a></li>
-</ul>
-</div>
+<img alt="../_images/awx250s_drawing.png" class="align-center" src="../_images/awx250s_drawing.png" style="width: 70%;" />
+<p><a class="reference download internal" download="" href="../_downloads/94f60d54b8ed4bb88a622b0b00cbe1fc/ALOHA%20WidowX-250s.pdf"><code class="xref download docutils literal notranslate"><span class="pre">ALOHA</span> <span class="pre">WidowX-250</span> <span class="pre">6DOF</span> <span class="pre">Technical</span> <span class="pre">Drawing</span></code></a></p>
 </div>
 </div>
 
@@ -370,8 +329,8 @@ easier to mount on mobile platforms. This base is compatible with the LoCoBot Pl
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../specifications.html" class="btn btn-neutral float-left" title="Specifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="px150.html" class="btn btn-neutral float-right" title="PincherX-150" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="wx250s.html" class="btn btn-neutral float-left" title="WidowX-250 6DOF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vx250.html" class="btn btn-neutral float-right" title="ViperX-250" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
