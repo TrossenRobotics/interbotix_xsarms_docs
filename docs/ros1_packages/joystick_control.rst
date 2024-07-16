@@ -46,7 +46,7 @@ nodes are described below:
 	commands to the **xs_sdk** node; while the 'waist' joint can be directly controlled via the
 	PS3/PS4 joystick, other buttons allow position-ik to be performed using all the arm joints.
 
-.. _sensor_msgs/Joy: http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Joy.html
+.. _sensor_msgs/Joy: http://docs.ros.org/latest/api/sensor_msgs/html/msg/Joy.html
 .. _ArmJoy: https://github.com/Interbotix/interbotix_ros_core/blob/main/interbotix_ros_xseries/interbotix_xs_msgs/msg/ArmJoy.msg
 
 Usage

@@ -242,10 +242,8 @@ The Bluetooth fix mentioned above can be found in `this Ubuntu Mate community th
 Install ROS
 -----------
 
-At this point, you can follow the instructions on the ROS Wiki to install `ROS Melodic`_ (Ubuntu
-18.04) or `ROS Noetic`_ (Ubuntu 20.04).
+At this point, you can follow the instructions on the ROS Wiki to install `ROS Noetic`_ (Ubuntu 20.04).
 
-.. _ROS Melodic: http://wiki.ros.org/melodic/Installation/Ubuntu
 .. _ROS Noetic: http://wiki.ros.org/noetic/Installation/Ubuntu
 
 Alternatively, you can use the xsarm convenience script we provide to install ROS, robot-specific
