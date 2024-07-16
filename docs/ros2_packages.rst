@@ -8,11 +8,11 @@ ROS 2 Open Source Packages
     installed. If you do not have these installed, follow the steps detailed in the :doc:`ROS 2
     Interface Setup<ros_interface>`.
 
-Below is a list of all ROS 2 packages meant to be used with the X-Series robotic arms sold by
-Trossen Robotics. Packages were tested on Ubuntu Linux 20.04 and 22.04 using ROS 2 Galactic and
-Humble & Rolling respectively. Additionally, all ROS 2 nodes were written using Python or C++.
-However, any programming language capable of sending ROS 2 messages can be used to control the
-robots. The core packages inside this repo are as follows:
+Below is a list of all ROS 2 packages meant to be used with the X-Series robotic arms sold by Trossen Robotics.
+Packages were tested on Ubuntu Linux 20.04 and 22.04 using ROS 2 Galactic and Humble respectively.
+Additionally, all ROS 2 nodes were written using Python or C++.
+However, any programming language capable of sending ROS 2 messages can be used to control the robots.
+The core packages inside this repo are as follows:
 
 -   :doc:`interbotix_xsarm_descriptions<ros2_packages/arm_descriptions>` - contains the meshes and URDFs
     (including accurate inertial models for the links) for all arm platforms

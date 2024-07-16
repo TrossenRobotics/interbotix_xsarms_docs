@@ -4,15 +4,14 @@ ROS 1 Open Source Packages
 
 .. note::
 
-    To use any of these packages, you must already have ROS and the X-Series Arm packages
-    installed. If you do not have these installed, follow the steps detailed in the :doc:`ROS
-    Interface Setup<ros_interface>`.
+    To use any of these packages, you must already have ROS and the X-Series Arm packages installed.
+    If you do not have these installed, follow the steps detailed in the :doc:`ROS Interface Setup<ros_interface>`.
 
-Below is a list of all ROS packages meant to be used with the many X-Series robotic arms sold by
-Trossen Robotics. Packages were tested on Ubuntu Linux 18.04 and 20.04 using ROS 1 Melodic and
-Noetic respectively. Additionally, all ROS nodes were written using Python or C++. However, any
-programming language capable of sending ROS messages can be used to control the robots. The core
-packages inside this repo are as follows:
+Below is a list of all ROS packages meant to be used with the many X-Series robotic arms sold by Trossen Robotics.
+Packages were tested on Ubuntu 20.04 using ROS 1 Noetic.
+Additionally, all ROS nodes were written using Python or C++.
+However, any programming language capable of sending ROS messages can be used to control the robots.
+The core packages inside this repo are as follows:
 
 -   :doc:`interbotix_xsarm_descriptions<ros1_packages/arm_descriptions>` - contains the meshes and URDFs
     (including accurate inertial models for the links) for all arm platforms
