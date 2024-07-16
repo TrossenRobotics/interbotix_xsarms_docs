@@ -23,7 +23,7 @@ ROS bag file. Then, you could 'play back' the bag file as many times as you like
 motions on the same robot later. This 'record/playback' feature is made possible by the
 **xsarm_puppet_single**.
 
-.. _`JointTrajectory`: http://docs.ros.org/melodic/api/trajectory_msgs/html/msg/JointTrajectory.html
+.. _`JointTrajectory`: http://docs.ros.org/latest/api/trajectory_msgs/html/msg/JointTrajectory.html
 
 Structure
 =========

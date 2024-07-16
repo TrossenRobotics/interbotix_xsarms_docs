@@ -4,7 +4,6 @@ ROS 1 Interface
 
 The Interbotix X-Series Arms are compatible with the following ROS 1 distributions and platforms:
 
--   ROS 1 Melodic on Ubuntu Linux 18.04
 -   ROS 1 Noetic on Ubuntu Linux 20.04
 
 To install the Interbotix X-Series Arm packages for any of the distributions above, go to the
