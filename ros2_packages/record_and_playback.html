@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arm Control &mdash; Interbotix X-Series Arms Documentation</title>
+  <title>Record And Playback &mdash; Interbotix X-Series Arms Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Simulation Configuration" href="simulation_configuration.html" />
-    <link rel="prev" title="Arm Descriptions" href="arm_descriptions.html" />
+    <link rel="next" title="Troubleshooting" href="../troubleshooting.html" />
+    <link rel="prev" title="Joystick Control" href="joystick_control.html" />
    
   <!-- Google Tag Manager (noscript) -->
   <noscript>
@@ -80,16 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ros1_packages.html">ROS 1 Open Source Packages</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../ros2_packages.html">ROS 2 Open Source Packages</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arm_descriptions.html">Arm Descriptions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Arm Control</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#video-tutorials">Video Tutorials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#arm-control-package-for-ros-2">Arm Control Package for ROS 2</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="arm_control.html">Arm Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="simulation_configuration.html">Simulation Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ros_control.html">ROS 2 Controllers Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="moveit_motion_planning_configuration.html">MoveIt 2 Motion Planning Configuration</a></li>
@@ -97,7 +88,12 @@
 <li class="toctree-l2"><a class="reference internal" href="moveit_interface_and_api.html">MoveIt2 Interface and API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Record And Playback</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
@@ -118,9 +114,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../ros2_packages.html">ROS 2 Open Source Packages</a></li>
-      <li class="breadcrumb-item active">Arm Control</li>
+      <li class="breadcrumb-item active">Record And Playback</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/docs/ros2_packages/arm_control.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/TrossenRobotics/interbotix_xsarms_docs/blob/main/docs/ros2_packages/record_and_playback.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -128,9 +124,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="arm-control">
-<h1>Arm Control<a class="headerlink" href="#arm-control" title="Permalink to this headline"></a></h1>
-<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_control"
+  <div class="section" id="record-and-playback">
+<h1>Record And Playback<a class="headerlink" href="#record-and-playback" title="Permalink to this headline"></a></h1>
+<a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet"
     class="docs-view-on-github-button"
     target="_blank">
     <img src="../_static/GitHub-Mark-Light-32px.png"
@@ -138,45 +134,48 @@
     View Package on GitHub
 </a><div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
-<p>This package contains the configuration and launch files necessary to easily start the Interbotix
-Arm platform. This includes launching the <strong>xs_sdk</strong> node responsible for driving the DYNAMIXEL
-motors on the robot and loading the URDF to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> launch configuration.
-Essentially, this package is what all ‘downstream’ ROS packages should reference to get the robot
-up and running.</p>
+<p>Imagine that you would like to have the robot arm perform some motions to achieve a specific task.
+One way of doing this would be to create a <a class="reference external" href="http://docs.ros.org/latest/api/trajectory_msgs/html/msg/JointTrajectory.html" rel="noopener noreferrer" target="_blank">JointTrajectory</a> of desired joint positions at specific times which you could then command the robot.
+Alternatively (and much less time consuming), you could manually manipulate the arm to do the specific motions and record them in a ROS bag file.
+Then, you could ‘play back’ the bag file as many times as you like to repeat the motions on the same robot later.
+This ‘record/playback’ feature is made possible by the <strong>xsarm_puppet_single</strong>.</p>
 </div>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
-<img alt="../_images/xsarm_control_flowchart_ros2.png" class="align-center" src="../_images/xsarm_control_flowchart_ros2.png" />
-<p>As shown in the image above, the <cite>interbotix_xsarm_control</cite> package builds on top of the
-<a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> and <a class="reference internal" href="../ros_interface/ros2/overview/xs_sdk.html"><span class="doc">interbotix_xs_sdk</span></a> packages. Please take a look at those packages to get
-familiar with their nodes. You will also notice a config directory containing many YAML files. Each
-file (beside the modes.yaml one) specifies the names and initial register values for all the motors
-that make up a specific robot arm. There is also some ‘meta-info’ like names of joint groups, the
-desired joint-topic name and publishing frequency, etc… For a full explanation of each of these
-parameters, check out the <a class="reference internal" href="../ros_interface/ros2/config.html#motor-configs-file-ros2"><span class="std std-ref">Motor Config file template</span></a>. The other
-file located in that directory is the Mode Config one (a.k.a modes.yaml). The parameters in this
-file define the desired operating modes for either a group of joints or single joints, and whether
-or not they should be torqued on/off at node startup. See more by referencing the <cite>Mode Config file
-template &lt;mode_configs_file_ros2&gt;</cite>. Typically, the Motor Config file is only defined here while the
-Mode Config file is also defined in any ‘downstream’ ROS package. This makes it easy for users to
-configure their desired motor operating modes depending on their project.</p>
+<p>As shown below, the <cite>interbotix_xsarm_puppet</cite> package builds on top of the <cite>interbotix_xsarm_control</cite> package.
+To get familiar with that package, please look at its README.
+The nodes specific to this package are described below.</p>
+<img alt="../_images/xsarm_puppet_single_flowchart1.png" class="align-center" src="../_images/xsarm_puppet_single_flowchart1.png" />
+<p>The above diagram shows the structure for the ‘record/playback’ feature.
+The two nodes involved are:</p>
+<ul class="simple">
+<li><strong>xsarm_puppet_single</strong> - responsible for reading the arm’s current joint states and publishing them as position commands to the <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_group</span></code> and <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_single</span></code> topics.
+Conveniently, as the arm is torqued off so that the user can manipulate it, the joints will not act upon these commands</li>
+<li><strong>record</strong> - responsible for recording the two topics mentioned above in a bag file so that they can be played back later</li>
+<li><strong>play</strong> - responsible for playing back the bag file mentioned above with the arm in a torqued on state; the playback is delayed 3 seconds to give time for the <strong>xs_sdk</strong> node to load</li>
+</ul>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
-<p>To run this package on a physical robot, run the command below in a terminal (assuming the
-WidowX-200 arm is being used).</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx200
+<p>To record joint commands while manipulating a single robot (let’s say the PincherX-150), type the following in a terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet_single.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>px150<span class="w"> </span>record_or_playback:<span class="o">=</span>record
 </pre></div>
 </div>
-<p>To run this package on a simulated robot, run the command below in a terminal (assuming the
-WidowX-200 arm is being used).</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx200<span class="w"> </span>use_sim:<span class="o">=</span><span class="nb">true</span>
+<p>Once the nodes finish launching, manually manipulate the arm and gripper through your desired motions.
+When done, return the robot to its initial starting position and <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> the nodes so that rosbag stops recording.
+By default, the bag file will be saved in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet/bag" rel="noopener noreferrer" target="_blank">bag</a> directory.
+To playback the motion, type the following in the terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet_single.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>px150<span class="w"> </span>record_or_playback:<span class="o">=</span>playback
 </pre></div>
 </div>
-<p>To further customize this launch file at run-time, refer to the table below, or run the command below</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>--show-args
+<p>If you specified a custom bag file name, make sure to include the name in the above command as well.
+When the bag file finishes playing, you can restart it by navigating to the directory where the bag file is located and in a terminal, type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </span>&lt;/path/to/bag&gt;
 </pre></div>
 </div>
+<p>The robot should now repeat the motions.
+When done, <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">C</kbd> to stop all nodes.
+To see other command line arguments for the ‘xsarm_puppet_single.launch.py’ file, refer to the table below.</p>
 <table border="1" class="colwidths-given docutils align-default">
 <colgroup>
 <col width="17%" />
@@ -195,7 +194,7 @@ WidowX-200 arm is being used).</p>
 <tr class="row-even"><td>robot_model</td>
 <td>model type of the Interbotix Arm such as <code class="docutils literal notranslate"><span class="pre">wx200</span></code> or <code class="docutils literal notranslate"><span class="pre">rx150</span></code>.</td>
 <td>&#160;</td>
-<td><code class="docutils literal notranslate"><span class="pre">px100</span></code>, <code class="docutils literal notranslate"><span class="pre">px150</span></code>, <code class="docutils literal notranslate"><span class="pre">rx150</span></code>, <code class="docutils literal notranslate"><span class="pre">rx200</span></code>, <code class="docutils literal notranslate"><span class="pre">wx200</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">vx250</span></code>, <code class="docutils literal notranslate"><span class="pre">vx300</span></code>, <code class="docutils literal notranslate"><span class="pre">vx300s</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_px100</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_wx200</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_wx250s</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">px100</span></code>, <code class="docutils literal notranslate"><span class="pre">px150</span></code>, <code class="docutils literal notranslate"><span class="pre">rx150</span></code>, <code class="docutils literal notranslate"><span class="pre">rx200</span></code>, <code class="docutils literal notranslate"><span class="pre">wx200</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">vx250</span></code>, <code class="docutils literal notranslate"><span class="pre">vx300</span></code>, <code class="docutils literal notranslate"><span class="pre">vx300s</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_px100</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_wx200</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile_wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">aloha_wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">aloha_vx300s</span></code></td>
 </tr>
 <tr class="row-odd"><td>robot_name</td>
 <td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything).</td>
@@ -207,28 +206,28 @@ WidowX-200 arm is being used).</p>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
-<tr class="row-odd"><td>motor_configs</td>
-<td>the file path to the ‘motor config’ YAML file.</td>
-<td>LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_control</span></code>) + ‘config’ + LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_model</span></code>)’) + ‘.yaml’</td>
+<tr class="row-odd"><td>record_or_playback</td>
+<td>‘record’ to record joint commands while physically manipulating the arm to a bagfile or ‘playback’ to play-back joint commands from a bagfile to a torqued on arm.</td>
+<td>&#160;</td>
+<td><code class="docutils literal notranslate"><span class="pre">record</span></code>, <code class="docutils literal notranslate"><span class="pre">playback</span></code></td>
+</tr>
+<tr class="row-even"><td>bag_name</td>
+<td>Desired ROS bag file name.</td>
+<td>LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_name</span></code>) + ‘_commands’</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>mode_configs</td>
-<td>the file path to the ‘mode config’ YAML file.</td>
-<td>LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_control</span></code>) + ‘config’ + ‘modes.yaml’’)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td>load_configs</td>
-<td>a boolean that specifies whether or not the initial register values (under the ‘motors’ heading) in a Motor Config file should be written to the motors; as the values being written are stored in each motor’s EEPROM (which means the values are retained even after a power cycle), this can be set to <code class="docutils literal notranslate"><span class="pre">false</span></code> after the first time using the robot. Setting to <code class="docutils literal notranslate"><span class="pre">false</span></code> also shortens the node startup time by a few seconds and preserves the life of the EEPROM.</td>
+<tr class="row-odd"><td>launch_driver</td>
+<td><code class="docutils literal notranslate"><span class="pre">true</span></code> if xsarm_control should be launched - set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you would like to run your own version of this file separately.</td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
-<tr class="row-even"><td>use_sim</td>
-<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the DYNAMIXEL simulator node is run; use RViz to visualize the robot’s motion; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the real DYNAMIXEL driver node is run.</td>
-<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
+<tr class="row-even"><td>xs_driver_logging_level</td>
+<td>set the logging level of the X-Series Driver.</td>
+<td><code class="docutils literal notranslate"><span class="pre">INFO</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">WARN</span></code>, <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, <code class="docutils literal notranslate"><span class="pre">FATAL</span></code></td>
 </tr>
-<tr class="row-odd"><td>use_sim_time</td>
-<td>tells ROS nodes asking for time to get the Gazebo-published simulation time, published over the ROS topic /clock; this value is automatically set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if using Gazebo hardware.</td>
+<tr class="row-odd"><td>use_sim</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the DYNAMIXEL simulator node is run; use RViz to visualize the robot’s motion; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the real DYNAMIXEL driver node is run.</td>
 <td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
@@ -238,27 +237,27 @@ WidowX-200 arm is being used).</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>use_gripper</td>
-<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the default gripper is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is left out; set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if not using the default gripper.</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the default gripper is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is left out; set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if not using the default gripper.</td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
 <tr class="row-even"><td>show_ar_tag</td>
-<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the AR tag mount is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is left out; set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if using the AR tag mount in your project.</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the AR tag mount is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, it is left out; set to <code class="docutils literal notranslate"><span class="pre">true</span></code> if using the AR tag mount in your project.</td>
 <td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
 <tr class="row-odd"><td>show_gripper_bar</td>
-<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the gripper_bar link is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the gripper_bar and finger links are not loaded. Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you have a custom gripper attachment.</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the gripper_bar link is included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the gripper_bar and finger links are not loaded. Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you have a custom gripper attachment.</td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
 <tr class="row-even"><td>show_gripper_fingers</td>
-<td>if true, the gripper fingers are included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the gripper finger links are not loaded. Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you have custom gripper fingers.</td>
+<td>if <code class="docutils literal notranslate"><span class="pre">true</span></code>, the gripper fingers are included in the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code>; if <code class="docutils literal notranslate"><span class="pre">false</span></code>, the gripper finger links are not loaded. Set to <code class="docutils literal notranslate"><span class="pre">false</span></code> if you have custom gripper fingers.</td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
 <tr class="row-odd"><td>use_world_frame</td>
-<td>set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> if you would like to load a ‘world’ frame to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter which is located exactly at the ‘base_link’ frame of the robot; if using multiple robots or if you would like to attach the ‘base_link’ frame of the robot to a different frame, set this to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</td>
+<td>set this to <code class="docutils literal notranslate"><span class="pre">true</span></code> if you would like to load a ‘world’ frame to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> which is located exactly at the ‘base_link’ frame of the robot; if using multiple robots or if you would like to attach the ‘base_link’ frame of the robot to a different frame, set this to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
@@ -268,7 +267,7 @@ WidowX-200 arm is being used).</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>hardware_type</td>
-<td>configures the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter to use the actual hardware, fake hardware, or hardware simulated in Gazebo.</td>
+<td>configures the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> to use the actual hardware, fake hardware, or hardware simulated in Gazebo.</td>
 <td><code class="docutils literal notranslate"><span class="pre">actual</span></code></td>
 <td><code class="docutils literal notranslate"><span class="pre">actual</span></code>, <code class="docutils literal notranslate"><span class="pre">fake</span></code>, <code class="docutils literal notranslate"><span class="pre">gz_classic</span></code></td>
 </tr>
@@ -280,22 +279,14 @@ WidowX-200 arm is being used).</p>
 </tbody>
 </table>
 </div>
-<div class="section" id="video-tutorials">
-<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
-<div class="section" id="arm-control-package-for-ros-2">
-<h3>Arm Control Package for ROS 2<a class="headerlink" href="#arm-control-package-for-ros-2" title="Permalink to this headline"></a></h3>
-<div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
-<iframe allowfullscreen="true" src="https://www.youtube.com/embed/tE2nuXhJTiA" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
-</iframe></div></div>
-</div>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="arm_descriptions.html" class="btn btn-neutral float-left" title="Arm Descriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="simulation_configuration.html" class="btn btn-neutral float-right" title="Simulation Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="joystick_control.html" class="btn btn-neutral float-left" title="Joystick Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
