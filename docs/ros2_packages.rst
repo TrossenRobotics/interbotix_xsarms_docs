@@ -40,3 +40,4 @@ those packages is below in order of importance:
     ros2_packages/moveit_interface_and_api.rst
     ros2_packages/python_demos.rst
     ros2_packages/joystick_control.rst
+    ros2_packages/record_and_playback.rst
