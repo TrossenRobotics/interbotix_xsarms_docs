@@ -79,7 +79,7 @@ You will see two other homogeneous transformation matrices in the code:
         is to be solved for.
 
     T_sy
-        The transform from the :term:`Body Frame` to a virtual frame with the exact same x, y, z,
+        The transform from the :term:`Space Frame` to a virtual frame with the exact same x, y, z,
         roll, and pitch as the :term:`Space Frame`. However, it contains the 'yaw' of the
         :term:`Body Frame`. Thus, if the end-effector is located at xyz = [0.2, 0.2, 0.2] with
         respect to the :term:`Space Frame`, this converts to xyz = [0.2828, 0, 0.2] with respect to
