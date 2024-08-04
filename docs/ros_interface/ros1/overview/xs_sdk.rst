@@ -162,11 +162,12 @@ Set Motor Gains Service
 
             .. code-block:: python
 
+                import rospy
+                from interbotix_xs_msgs.srv import MotorGains, MotorGainsRequest
                 srv_set_motor_gains = rospy.ServiceProxy(
                     name='set_motor_pid_gains',
                     service_class=MotorGains
                 )
-                rospy.wait_for_service(srv_motor_gains)
                 gains_request = MotorGainsRequest(
                     cmd_type='group',
                     name='arm',
