@@ -199,7 +199,6 @@ Set Motor Gains Service
                 motor_gains.request.ki_vel = 1920;
                 srv_motor_gains.call(motor_gains);
 
-
 Set Register Values Service
 ---------------------------
 
@@ -221,6 +220,39 @@ for a user-provided register name.
 *   **Service Type**: :ref:`interbotix_xs_msgs/RegisterValues <interbotix_xs_msgs_RegisterValues_ros1>`
 *   **Simulation Differences**: only works the same if getting the 'Profile_Velocity' or
     'Profile_Acceleration' registers; otherwise, an empty service message is returned.
+*   **Example Usage**: the below example calls the ``get_motor_registers`` service to get the
+*   ``Present_Temperature`` register value of each servo in the ``arm`` group.
+
+    .. tabs::
+
+        .. group-tab:: Python
+
+            .. code-block:: python
+
+                import rospy
+                from interbotix_xs_msgs.srv import RegisterValues, RegisterValuesRequest
+                srv_get_motor_registers = rospy.ServiceProxy(
+                    name='get_motor_registers',
+                    service_class=RegisterValues
+                )
+                gains_request = RegisterValuesRequest(
+                    cmd_type='group',
+                    name='arm',
+                    reg='Present_Temperature'
+                )
+                srv_get_motor_registers.call(gains_request)
+
+        .. group-tab:: C++
+
+            .. code-block:: c++
+
+                ros::ServiceClient srv_get_motor_registers = nh.serviceClient<interbotix_xs_msgs::RegisterValues>("get_motor_registers");
+                srv_get_motor_registers.waitForExistence();
+                interbotix_xs_msgs::RegisterValues register_values;
+                register_values.request.cmd_type = "group";
+                register_values.request.name = "arm";
+                register_values.request.reg = "Present_Temperature";
+                srv_get_motor_registers.call(register_values);
 
 Gripper Calibration Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
