@@ -15,8 +15,11 @@ Gravity Compensation
 Overview
 ========
 
-This package demos the interbotix_gravity_compensation package on an Interbotix arm.
-As of now, the supported arms include: WidowX-250 6DOF and ALOHA WidowX-250 6DOF.
+As its name suggests, gravity compensation cancels out the effect of the gravity on a system.
+In our case, we compensate the gravity on an interbotix arm with its joint motors.
+This feature is useful when we use the arm as a teleoperation remote or when we teach it a specific trajectory and don't want to keep holding the arm to avoid it from collapsing.
+
+.. note:: Currently supported arms include: WidowX-250 6DOF and ALOHA WidowX-250 6DOF.
 
 Configuration
 =============
