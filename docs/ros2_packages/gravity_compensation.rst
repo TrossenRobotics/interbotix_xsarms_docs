@@ -19,7 +19,9 @@ As its name suggests, gravity compensation cancels out the effect of the gravity
 In our case, we compensate the gravity on an Interbotix arm with its joint motors.
 This feature is useful when we use the arm as a teleoperation remote or when we teach it a specific trajectory and don't want to keep holding the arm to avoid it from collapsing.
 
-.. note:: Currently supported arms include: WidowX-250 6DOF and ALOHA WidowX-250 6DOF.
+.. note::
+
+    Currently supported arms include: WidowX-250 6DOF and ALOHA WidowX-250 6DOF.
 
 Configuration
 =============
@@ -112,7 +114,10 @@ A template file of the **motor_specs.yaml** is given below
         static_friction_coefficient: 0.0
         dither_speed: 0.0
 
-.. warning:: Excessive dithering WILL cause heat and wear on the joints. Please use it with caution.
+.. warning::
+
+    Excessive dithering WILL cause heat and wear on the joints.
+    Please use it with caution.
 
 Structure
 =========
@@ -148,9 +153,15 @@ Then, enable/disable the gravity compensation with the following service call:
 The arm will hold itself against gravity and can be moved freely when the gravity compensation is enabled.
 It will lock in its current position when the gravity compensation is disabled.
 
-.. warning:: The arm WILL torque off and drop for a short period of time while enabling/disabling. Please make sure it is in a resting position or manually held.
+.. warning::
 
-.. warning:: The joints not supporting current control WILL torque off. Please make sure to use an arm with at least the first three joints supporting current control, e.g., RX, WX, VX series.
+    The arm WILL torque off and drop for a short period of time while enabling/disabling.
+    Please make sure it is in a resting position or manually held.
+
+.. warning::
+
+    The joints not supporting current control WILL torque off.
+    Please make sure to use an arm with at least the first three joints supporting current control, e.g., RX, WX, VX series.
 
 This is the bare minimum needed to get up and running. Take a look at the table below to see how to further customize with other launch file arguments.
 
