@@ -1,5 +1,4 @@
 "Argument","Description","Default","Choices"
 "robot_model","model type of the Interbotix Arm.","","``aloha_wx250s``, ``wx250s``"
 "robot_name","name of the robot (typically equal to ``robot_model``, but could be anything).","LaunchConfig\(``robot_model``\)",""
-"motor_specs","the file path to the 'motor specs' YAML file.","LocalVar('FindPackageShare\(pkg= ``interbotix_xsarm_gravity_compensation``\) + 'config') + '/motor_specs\_' + LaunchConfig('robot_model') + '.yaml''",""
-"mode_configs","the file path to the 'mode config' YAML file.","LocalVar('FindPackageShare\(pkg= ``interbotix_xsarm_gravity_compensation``\) + 'config') + '/mode_configs\_' + LaunchConfig('robot_model') + '.yaml''",""
+"motor_specs","the file path to the 'motor specs' YAML file.","LocalVar('FindPackageShare\(pkg= ``interbotix_xsarm_gravity_compensation``\) + 'config' + 'motor_specs\_'') + LaunchConfig('robot_model') + '.yaml'",""

@@ -26,12 +26,8 @@ This feature is useful when we use the arm as a teleoperation remote or when we 
 Configuration
 =============
 
-Two configuration files are provided in the `config` directory:
-
--   **mode_configs.yaml** - contains the port and initial mode settings, whose details are given :ref:`here <mode_configs_file_ros2>`.
--   **motor_specs.yaml** - contains the motor specifications and options for motor assistance and dithering.
-
-A template file of the **motor_specs.yaml** is given below
+The **motor_specs.yaml** contains the motor specifications and options for motor assistance and dithering.
+A template file is given below
 
 .. code-block:: yaml
 
@@ -128,7 +124,7 @@ Structure
 As shown above, the `interbotix_xsarm_gravity_compensation` package builds on top of the `interbotix_xsarm_control` package whose details are given :doc:`here <./arm_control>`.
 
 This package contains a single node called **gravity_compensation**.
-It subscribes to the ``/<namespace>/joint_states`` topic, computes and publishes the desired current commands to the ``/<namespace>/commands/joint_group`` topic.
+It subscribes to the ``/<robot_name>/joint_states`` topic, computes and publishes the desired current commands to the ``/<robot_name>/commands/joint_group`` topic.
 Please refer to the GitHub `Readme <interbotix_gravity_compensation>`_ for more details on its derivations and implementation.
 
 .. _`interbotix_gravity_compensation`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/humble/interbotix_common_toolbox/interbotix_gravity_compensation
