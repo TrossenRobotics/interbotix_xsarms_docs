@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arm Control &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -130,7 +133,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="arm-control">
-<h1>Arm Control<a class="headerlink" href="#arm-control" title="Permalink to this headline"></a></h1>
+<h1>Arm Control<a class="headerlink" href="#arm-control" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_control"
     class="docs-view-on-github-button"
     target="_blank">
@@ -138,14 +141,14 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>This package contains the configuration and launch files necessary to easily start the Interbotix
 Arm platform. This includes launching the <strong>xs_sdk</strong> node responsible for driving the DYNAMIXEL
 motors on the robot and loading the URDF to the <code class="docutils literal notranslate"><span class="pre">robot_description</span></code> parameter. Essentially, this
 package is what all ‘downstream’ ROS packages should reference to get the robot up and running.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_control_flowchart.png" class="align-center" src="../_images/xsarm_control_flowchart.png" />
 <p>As shown in the image above, the <cite>interbotix_xsarm_control</cite> package builds on top of the
 <a class="reference internal" href="arm_descriptions.html"><span class="doc">interbotix_xsarm_descriptions</span></a> and <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_core/tree/main/interbotix_ros_xseries/interbotix_xs_sdk" rel="noopener noreferrer" target="_blank">interbotix_xs_sdk</a> packages. Please
@@ -162,7 +165,7 @@ Mode Config file is also defined in any ‘downstream’ ROS package. This makes
 configure their desired motor operating modes depending on their project.</p>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To run this package on the physical robot, type the line below in a terminal (assuming the
 WidowX-200 arm is being used).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>roslaunch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch<span class="w"> </span>robot_model:<span class="o">=</span>wx200

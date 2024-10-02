@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arm Diagnostic Listener &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -130,7 +133,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="arm-diagnostic-listener">
-<h1>Arm Diagnostic Listener<a class="headerlink" href="#arm-diagnostic-listener" title="Permalink to this headline"></a></h1>
+<h1>Arm Diagnostic Listener<a class="headerlink" href="#arm-diagnostic-listener" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool"
   class="docs-view-on-github-button"
   target="_blank">
@@ -138,7 +141,7 @@
       class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The diagnostic listener is intended to get joint information like present temperature from the
 robot while it executes any commanded trajectory. This is useful for when you would like the robot
 to move through a more complex motion than the more basic Diagnostic Tool is able to provide. The
@@ -147,7 +150,7 @@ Present_Temperature register from the DYNAMIXEL servos, and publishes the data t
 <code class="docutils literal notranslate"><span class="pre">temperatures/joint_group</span></code> topic.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_diagnostic_listener_flowchart.png" class="align-center" src="../_images/xsarm_diagnostic_listener_flowchart.png" style="width: 70%;" />
 <p>As shown above, the <cite>interbotix_xsarm_diagnostic_tool</cite> package relies on the existence of the
 <cite>interbotix_xs_sdk</cite> package. To get pointers about the nodes in the that package, please look at
@@ -159,7 +162,7 @@ user-specified bagfile</li>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To use this package, first configure the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/interbotix_xsarm_diagnostic_tool/config/listener.yaml" rel="noopener noreferrer" target="_blank">listener.yaml</a> file to the joints you
 wish to observe. The default observe_joint parameters assume that the user is listening to the
 joints of an X-Series 6DOF arm, say a WidowX-250 6DOF.</p>

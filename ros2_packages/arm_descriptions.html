@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arm Descriptions &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -99,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gravity_compensation.html">Gravity Compensation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
@@ -130,7 +134,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="arm-descriptions">
-<h1>Arm Descriptions<a class="headerlink" href="#arm-descriptions" title="Permalink to this headline"></a></h1>
+<h1>Arm Descriptions<a class="headerlink" href="#arm-descriptions" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions"
     class="docs-view-on-github-button"
     target="_blank">
@@ -138,7 +142,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>This package contains the URDFs and meshes for the many X-Series Interbotix Arms. The STL files for
 each robot are located in a unique folder inside the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes" rel="noopener noreferrer" target="_blank">meshes</a> directory. Also in the ‘meshes’
 directory is the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/interbotix_black.png" rel="noopener noreferrer" target="_blank">interbotix_black.png</a> picture. The appearance and texture of the robots come
@@ -149,7 +153,7 @@ Interbotix X-Series Arms core ROS packages in the sub-repo reference this packag
 robot description.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_descriptions_flowchart_ros2.png" class="align-center" src="../_images/xsarm_descriptions_flowchart_ros2.png" />
 <p>This package contains the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/launch/xsarm_description.launch.py" rel="noopener noreferrer" target="_blank">xsarm_description.launch.py</a> file responsible for loading parts or all
 of the robot model. It launches up to four nodes as described below:</p>
@@ -165,7 +169,7 @@ robot and publish the results via the <code class="docutils literal notranslate"
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>This package contains two launch files:</p>
 <ul class="simple">
 <li>xsarm_description.launch.py - should be included in any launch tree in which you want to load
@@ -173,7 +177,7 @@ and parse the URDF, or can be launched to view any robot model’s URDF in RViz.
 <li>remote_view.launch.py which simply loads RViz in the proper namespace.</li>
 </ul>
 <div class="section" id="id1">
-<h3>xsarm_description.launch.py<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>xsarm_description.launch.py<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <p>To run this launch file, enter the command below in a terminal. Note that the <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>
 argument must be specified as the name of one of the URDF files located in the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/rolling/interbotix_ros_xsarms/interbotix_xsarm_descriptions/urdf" rel="noopener noreferrer" target="_blank">urdf</a> directory
 (excluding the ‘.urdf.xacro’ part). For example, to launch the ReactorX-150 arm, type:</p>
@@ -281,7 +285,7 @@ further customize with other launch file arguments.</p>
 </table>
 </div>
 <div class="section" id="remote-view-launch-py">
-<h3>remote_view.launch.py<a class="headerlink" href="#remote-view-launch-py" title="Permalink to this headline"></a></h3>
+<h3>remote_view.launch.py<a class="headerlink" href="#remote-view-launch-py" title="Permalink to this heading"></a></h3>
 <p>To run this launch file, enter the command below in a terminal.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_descriptions<span class="w"> </span>remote_view.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>rx150<span class="w"> </span>use_joint_pub_gui:<span class="o">=</span><span class="nb">true</span>
 </pre></div>
@@ -318,9 +322,9 @@ further customize with other launch file arguments.</p>
 </div>
 </div>
 <div class="section" id="video-tutorials">
-<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
+<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this heading"></a></h2>
 <div class="section" id="arm-descriptions-package-for-ros-2">
-<h3>Arm Descriptions Package for ROS 2<a class="headerlink" href="#arm-descriptions-package-for-ros-2" title="Permalink to this headline"></a></h3>
+<h3>Arm Descriptions Package for ROS 2<a class="headerlink" href="#arm-descriptions-package-for-ros-2" title="Permalink to this heading"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/c3oU_pygLZI" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>

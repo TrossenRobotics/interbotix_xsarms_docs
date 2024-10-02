@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Demos &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -91,6 +94,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gravity_compensation.html">Gravity Compensation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
@@ -122,7 +126,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="python-demos">
-<h1>Python Demos<a class="headerlink" href="#python-demos" title="Permalink to this headline"></a></h1>
+<h1>Python Demos<a class="headerlink" href="#python-demos" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_control/demos/python_ros2_api"
     class="docs-view-on-github-button"
     target="_blank">
@@ -130,7 +134,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>These demos showcase various ways of using the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/blob/rolling/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot/arm.py" rel="noopener noreferrer" target="_blank">Interbotix Python Arm Module</a> (click the link to
 see the fully documented code; also check out the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/rolling/interbotix_xs_toolbox/interbotix_xs_modules/interbotix_xs_modules/xs_robot" rel="noopener noreferrer" target="_blank">interbotix_xs_modules.xs_robot library</a> package
 to get a better understanding on how this and other modules can be used). Simply put, this API was
@@ -147,7 +151,7 @@ it very easy for you as the user to customize the duration and smoothness of an 
 one pose to the next.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_python_demos_flowchart_ros2.png" class="align-center" src="../_images/xsarm_python_demos_flowchart_ros2.png" />
 <p>The Python Arm module (located in the <cite>interbotix_xs_modules</cite> ROS package) builds on top of the
 <cite>interbotix_xs_sdk</cite> package. To get familiar with the other nodes in the graph above, look at the
@@ -162,7 +166,7 @@ killing the node.</li>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To get started, open up a terminal and run the command below (assuming a WidowX-250 is being
 launched).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_control<span class="w"> </span>xsarm_control.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx250

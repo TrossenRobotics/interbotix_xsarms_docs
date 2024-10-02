@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python-ROS Interface &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
@@ -131,7 +134,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="python-ros-interface">
-<h1>Python-ROS Interface<a class="headerlink" href="#python-ros-interface" title="Permalink to this headline"></a></h1>
+<h1>Python-ROS Interface<a class="headerlink" href="#python-ros-interface" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The Interbotix Python-ROS Interface requires that the <a class="reference internal" href="ros_interface.html"><span class="doc">ROS Interface</span></a> has already been installed.</p>
@@ -146,9 +149,9 @@ on each method.</p>
 <p class="last">The Python-ROS API is not compatible with Gazebo-simulation robots.</p>
 </div>
 <div class="section" id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline"></a></h2>
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading"></a></h2>
 <div class="section" id="transforms">
-<h3>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline"></a></h3>
+<h3>Transforms<a class="headerlink" href="#transforms" title="Permalink to this heading"></a></h3>
 <img alt="_images/xsarm_demos_frames1.png" class="align-center" src="_images/xsarm_demos_frames1.png" style="width: 40%;" />
 <dl class="glossary docutils">
 <dt id="term-Body-Frame">Body Frame<a class="headerlink" href="#term-Body-Frame" title="Permalink to this term"></a></dt><dd>The frame at <cite>/&lt;robot_name&gt;/ee_gripper_link</cite></dd>
@@ -195,7 +198,7 @@ end-effector using the end-effector’s yaw as a basis for its frame of referenc
 </dl>
 </div>
 <div class="section" id="timing-parameters">
-<h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this headline"></a></h3>
+<h3>Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permalink to this heading"></a></h3>
 <p>The Python API uses five different timing parameters to shape the time profile of movements.</p>
 <p>The first two parameters are used to determine the time profile of the arm when completing moves
 from one pose to another. These can be set in the constructor of the object, or by using the
@@ -217,9 +220,9 @@ accelerating/decelerating (must be equal to or less than half of <a class="refer
 </div>
 </div>
 <div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
 <div class="section" id="set-ee-pose-matrix">
-<h3>set_ee_pose_matrix<a class="headerlink" href="#set-ee-pose-matrix" title="Permalink to this headline"></a></h3>
+<h3>set_ee_pose_matrix<a class="headerlink" href="#set-ee-pose-matrix" title="Permalink to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">set_ee_pose_matrix</span></code> allows the user to specify a desired pose in the form of the homogeneous
 transformation matrix, <a class="reference internal" href="#term-T_sd"><span class="xref std std-term">T_sd</span></a>. This method attempts to solve the inverse kinematics of the
 arm for the desired pose. If a solution is not found, the method returns <code class="docutils literal notranslate"><span class="pre">False</span></code>. If the IK
@@ -233,7 +236,7 @@ scripts.</p>
 </div>
 </div>
 <div class="section" id="set-ee-pose-components">
-<h3>set_ee_pose_components<a class="headerlink" href="#set-ee-pose-components" title="Permalink to this headline"></a></h3>
+<h3>set_ee_pose_components<a class="headerlink" href="#set-ee-pose-components" title="Permalink to this heading"></a></h3>
 <p>Some users prefer not to think in terms of transformation or rotation matrices. That’s where the
 <code class="docutils literal notranslate"><span class="pre">set_ee_pose_components</span></code> method comes in handy. In this method, you define <a class="reference internal" href="#term-T_sd"><span class="xref std std-term">T_sd</span></a> in terms
 of the components it represents - specifically the x, y, z, roll, pitch, and yaw of the <a class="reference internal" href="#term-Body-Frame"><span class="xref std std-term">Body
@@ -246,7 +249,7 @@ ignored.</p>
 </div>
 </div>
 <div class="section" id="set-ee-cartesian-trajectory">
-<h3>set_ee_cartesian_trajectory<a class="headerlink" href="#set-ee-cartesian-trajectory" title="Permalink to this headline"></a></h3>
+<h3>set_ee_cartesian_trajectory<a class="headerlink" href="#set-ee-cartesian-trajectory" title="Permalink to this heading"></a></h3>
 <p>When specifying a desired pose using the methods mentioned above, your arm will its end-effector to
 the desired pose in a curved path. This makes it difficult to perform movements that are
 ‘orientation-sensitive’ (like carrying a small cup of water without spilling). To get around this,
@@ -276,9 +279,9 @@ be defined as xyz = [0.412, 0.412, 0.2].</p>
 </div>
 </div>
 <div class="section" id="tips-best-practices">
-<h2>Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Permalink to this headline"></a></h2>
+<h2>Tips &amp; Best Practices<a class="headerlink" href="#tips-best-practices" title="Permalink to this heading"></a></h2>
 <div class="section" id="control-sequence">
-<h3>Control Sequence<a class="headerlink" href="#control-sequence" title="Permalink to this headline"></a></h3>
+<h3>Control Sequence<a class="headerlink" href="#control-sequence" title="Permalink to this heading"></a></h3>
 <p>The recommended way to control an arm through a series of movements from its Sleep pose is as
 follows:</p>
 <ol class="arabic simple">
@@ -294,7 +297,7 @@ times as necessary to do a task (pick, place, etc…).</li>
 <p>You can refer to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/blob/main/interbotix_ros_xsarms/examples/python_demos/bartender.py" rel="noopener noreferrer" target="_blank">bartender</a> script to see the above method put into action.</p>
 </div>
 <div class="section" id="miscellaneous-tips">
-<h3>Miscellaneous Tips<a class="headerlink" href="#miscellaneous-tips" title="Permalink to this headline"></a></h3>
+<h3>Miscellaneous Tips<a class="headerlink" href="#miscellaneous-tips" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If using a 6dof arm, it is also possible to use the <code class="docutils literal notranslate"><span class="pre">set_ee_cartesian_trajectory</span></code> method to
@@ -314,9 +317,9 @@ movements.</p>
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
 <div class="section" id="the-robot-robot-name-is-not-discoverable-did-you-enter-the-right-robot-model">
-<h3>The robot ‘robot_name’ is not discoverable. Did you enter the right robot_model?<a class="headerlink" href="#the-robot-robot-name-is-not-discoverable-did-you-enter-the-right-robot-model" title="Permalink to this headline"></a></h3>
+<h3>The robot ‘robot_name’ is not discoverable. Did you enter the right robot_model?<a class="headerlink" href="#the-robot-robot-name-is-not-discoverable-did-you-enter-the-right-robot-model" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The robot &#39;robot_name&#39; is not discoverable. Did you enter the right robot_model?
 </pre></div>
 </div>
@@ -326,9 +329,9 @@ match and that the <strong>xs_sdk</strong> node launched successfully.</p>
 </div>
 </div>
 <div class="section" id="video-tutorials">
-<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
+<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this heading"></a></h2>
 <div class="section" id="working-with-the-interbotix-python-api">
-<h3>Working with the Interbotix Python API<a class="headerlink" href="#working-with-the-interbotix-python-api" title="Permalink to this headline"></a></h3>
+<h3>Working with the Interbotix Python API<a class="headerlink" href="#working-with-the-interbotix-python-api" title="Permalink to this heading"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 22.500000%; padding-top: 30px; position: relative; text-align: center; width: 40%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/KoqBEvz4GII" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>

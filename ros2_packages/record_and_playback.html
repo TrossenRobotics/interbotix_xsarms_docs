@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Record And Playback &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,13 +21,14 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Troubleshooting" href="../troubleshooting.html" />
+    <link rel="next" title="Gravity Compensation" href="gravity_compensation.html" />
     <link rel="prev" title="Joystick Control" href="joystick_control.html" />
    
   <script type="text/javascript">
@@ -91,6 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="gravity_compensation.html">Gravity Compensation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
@@ -122,7 +126,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="record-and-playback">
-<h1>Record And Playback<a class="headerlink" href="#record-and-playback" title="Permalink to this headline"></a></h1>
+<h1>Record And Playback<a class="headerlink" href="#record-and-playback" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/examples/interbotix_xsarm_puppet"
     class="docs-view-on-github-button"
     target="_blank">
@@ -130,7 +134,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>Imagine that you would like to have the robot arm perform some motions to achieve a specific task.
 One way of doing this would be to create a <a class="reference external" href="http://docs.ros.org/latest/api/trajectory_msgs/html/msg/JointTrajectory.html" rel="noopener noreferrer" target="_blank">JointTrajectory</a> of desired joint positions at specific times which you could then command the robot.
 Alternatively (and much less time consuming), you could manually manipulate the arm to do the specific motions and record them in a ROS bag file.
@@ -138,7 +142,7 @@ Then, you could ‘play back’ the bag file as many times as you like to repeat
 This ‘record/playback’ feature is made possible by the <strong>xsarm_puppet_single</strong>.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <p>As shown below, the <cite>interbotix_xsarm_puppet</cite> package builds on top of the <cite>interbotix_xsarm_control</cite> package.
 To get familiar with that package, please look at its README.
 The nodes specific to this package are described below.</p>
@@ -153,7 +157,7 @@ Conveniently, as the arm is torqued off so that the user can manipulate it, the 
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To record joint commands while manipulating a single robot (let’s say the PincherX-150), type the following in a terminal:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_puppet<span class="w"> </span>xsarm_puppet_single.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>px150<span class="w"> </span>record_or_playback:<span class="o">=</span>record
 </pre></div>
@@ -283,7 +287,7 @@ To see other command line arguments for the ‘xsarm_puppet_single.launch.py’ 
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="joystick_control.html" class="btn btn-neutral float-left" title="Joystick Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gravity_compensation.html" class="btn btn-neutral float-right" title="Gravity Compensation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

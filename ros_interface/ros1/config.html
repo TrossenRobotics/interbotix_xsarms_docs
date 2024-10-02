@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROS 1 Configuration &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -128,11 +131,11 @@
            <div itemprop="articleBody">
              
   <div class="section" id="ros-1-configuration">
-<h1>ROS 1 Configuration<a class="headerlink" href="#ros-1-configuration" title="Permalink to this headline"></a></h1>
+<h1>ROS 1 Configuration<a class="headerlink" href="#ros-1-configuration" title="Permalink to this heading"></a></h1>
 <div class="section" id="network-configuration">
-<h2>Network Configuration<a class="headerlink" href="#network-configuration" title="Permalink to this headline"></a></h2>
+<h2>Network Configuration<a class="headerlink" href="#network-configuration" title="Permalink to this heading"></a></h2>
 <div class="section" id="ros-ip">
-<h3>ROS_IP<a class="headerlink" href="#ros-ip" title="Permalink to this headline"></a></h3>
+<h3>ROS_IP<a class="headerlink" href="#ros-ip" title="Permalink to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="sb">`</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s2">&quot; &quot;</span><span class="w"> </span>-f1<span class="sb">`</span><span class="k">)</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ROS_IP</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="m">127</span>.0.0.1
@@ -142,9 +145,9 @@
 </div>
 </div>
 <div class="section" id="x-series-sdk-configuration">
-<h2>X-Series SDK Configuration<a class="headerlink" href="#x-series-sdk-configuration" title="Permalink to this headline"></a></h2>
+<h2>X-Series SDK Configuration<a class="headerlink" href="#x-series-sdk-configuration" title="Permalink to this heading"></a></h2>
 <div class="section" id="motor-configs">
-<span id="motor-configs-file-ros1"></span><h3>Motor Configs<a class="headerlink" href="#motor-configs" title="Permalink to this headline"></a></h3>
+<span id="motor-configs-file-ros1"></span><h3>Motor Configs<a class="headerlink" href="#motor-configs" title="Permalink to this heading"></a></h3>
 <p>The motors can be configured on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#motor-configs-param-ros1"><span class="std std-ref">motor_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
 options is below:</p>
 <div class="admonition note">
@@ -159,7 +162,7 @@ configurations to take effect.</p>
 boot.</p>
 </div>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="fee2a2c7-a043-47a3-a87a-7d99d80b04e2" name="fee2a2c7-a043-47a3-a87a-7d99d80b04e2" type="checkbox"><label class="sphinx_collapse__label" for="fee2a2c7-a043-47a3-a87a-7d99d80b04e2"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="541ad4fc-66d2-4e09-ad2c-efcf8547fc41" name="541ad4fc-66d2-4e09-ad2c-efcf8547fc41" type="checkbox"><label class="sphinx_collapse__label" for="541ad4fc-66d2-4e09-ad2c-efcf8547fc41"><i class="sphinx_collapse__icon"></i>Motor Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file &#39;organizes&#39; the motors in any Dynamixel-based robot into meaningful units. Every robot must</span>
 <span class="c1"># have at least one instance of this file located in a &#39;config&#39; directory in their root &#39;control&#39; ROS package.</span>
 <span class="c1"># Note that all parameters are mandatory unless stated otherwise. This file demos the setup for the VX300S robot.</span>
@@ -308,11 +311,11 @@ boot.</p>
 </div>
 </div>
 <div class="section" id="mode-configs">
-<span id="mode-configs-file-ros1"></span><h3>Mode Configs<a class="headerlink" href="#mode-configs" title="Permalink to this headline"></a></h3>
+<span id="mode-configs-file-ros1"></span><h3>Mode Configs<a class="headerlink" href="#mode-configs" title="Permalink to this heading"></a></h3>
 <p>The startup operating modes can be set on startup by providing the <a class="reference internal" href="overview/xs_sdk.html#mode-configs-param-ros1"><span class="std std-ref">mode_configs parameter</span></a> to the xs_sdk. The expected format and explanation of the configuration
 options is below:</p>
 <div class="sphinx_collapse docutils container">
-<input class="sphinx_collapse__input" id="0c0c22f3-8646-4474-8b56-8cf18b0010b8" name="0c0c22f3-8646-4474-8b56-8cf18b0010b8" type="checkbox"><label class="sphinx_collapse__label" for="0c0c22f3-8646-4474-8b56-8cf18b0010b8"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
+<input class="sphinx_collapse__input" id="d1d00ee8-1875-4f06-ae8e-eb7de9368a42" name="d1d00ee8-1875-4f06-ae8e-eb7de9368a42" type="checkbox"><label class="sphinx_collapse__label" for="d1d00ee8-1875-4f06-ae8e-eb7de9368a42"><i class="sphinx_collapse__icon"></i>Mode Configs Template</label><div class="sphinx_collapse__content docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This file is used to customize the initial operating modes of all joint groups and individual joints in a robot.</span>
 <span class="c1"># It should be placed in the &#39;config&#39; directory of any ROS package that builds ontop of the interbotix_xs_sdk.</span>
 <span class="c1"># Example values are shown as well. All parameters are mandatory unless stated otherwise</span>

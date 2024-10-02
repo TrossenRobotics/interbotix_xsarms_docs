@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MoveIt Configuration &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -131,7 +134,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="moveit-configuration">
-<h1>MoveIt Configuration<a class="headerlink" href="#moveit-configuration" title="Permalink to this headline"></a></h1>
+<h1>MoveIt Configuration<a class="headerlink" href="#moveit-configuration" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_moveit"
     class="docs-view-on-github-button"
     target="_blank">
@@ -139,7 +142,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>This package contains the necessary config files to get any of the many Interbotix X-Series arms
 working with MoveIt. Originally, the MoveIt Setup Assistant wizard was used to generate a MoveIt
 package for each robot individually. The packages were then all merged into one and the launch
@@ -151,7 +154,7 @@ have MoveIt work with the simulated version, the physical robot hardware, or a M
 fake robot.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_moveit_flowchart.png" class="align-center" src="../_images/xsarm_moveit_flowchart.png" />
 <p>As shown above, this package builds on top of the <cite>interbotix_xsarm_gazebo</cite>,
 <cite>interbotix_xsarm_control</cite>, and <cite>interbotix_xsarm_descriptions</cite> packages. To get familiar with
@@ -165,7 +168,7 @@ plugin</li>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To run this package on the physical robot, type the line below in a terminal (assuming the
 PincherX-100 is being launched). Note that if you’re using a 5 or 6 dof arm, you should set the
 <code class="docutils literal notranslate"><span class="pre">dof</span></code> launch file argument appropriately.</p>
@@ -262,7 +265,7 @@ further customize with other launch file arguments.</p>
 </table>
 </div>
 <div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <p>Once the MoveIt GUI is fully loaded, take a look at the available planning groups. There should be
 two of them - one called ‘interbotix_arm’ and the other called ‘interbotix_gripper’. The
 ‘interbotix_arm’ group contains the joints needed to plan the trajectories for the whole arm

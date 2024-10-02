@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROS Raspberry Pi 4B Setup &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -132,7 +135,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="ros-raspberry-pi-4b-setup">
-<h1>ROS Raspberry Pi 4B Setup<a class="headerlink" href="#ros-raspberry-pi-4b-setup" title="Permalink to this headline"></a></h1>
+<h1>ROS Raspberry Pi 4B Setup<a class="headerlink" href="#ros-raspberry-pi-4b-setup" title="Permalink to this heading"></a></h1>
 <p>This tutorial will walk you through how to get Ubuntu Linux and ROS working on a Raspberry Pi 4B
 from scratch. By way of introduction, many types of operating systems exist for the Pi. This
 includes Ubuntu, Debian, and Raspbian. However, in order to get optimal compatibility with ROS,
@@ -147,7 +150,7 @@ experience and took up the least amount of RAM.</p>
 <p>Since we’re using the Pi 4, and the 64-bit has better performance, you should choose the 64-bit
 option of the Ubuntu distro you want to use. In this guide, we will installed Ubuntu 20.04.2.</p>
 <div class="section" id="hardware-requirements">
-<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline"></a></h2>
+<h2>Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this heading"></a></h2>
 <p>Instead of purchasing components separately, it’s much easier to get a Raspberry Pi 4B Kit (from
 Amazon or wherever) that comes with all necessary components. This includes a power cable,
 mini-to-full-size HDMI cable, case, fan, heatsinks, a class 10 microSD card (at least 32GB), and of
@@ -163,9 +166,9 @@ to <code class="docutils literal notranslate"><span class="pre">colcon</span> <s
 </ul>
 </div>
 <div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
 <div class="section" id="flashing-ubuntu">
-<h3>Flashing Ubuntu<a class="headerlink" href="#flashing-ubuntu" title="Permalink to this headline"></a></h3>
+<h3>Flashing Ubuntu<a class="headerlink" href="#flashing-ubuntu" title="Permalink to this heading"></a></h3>
 <ol class="arabic simple">
 <li>First, download the <a class="reference external" href="https://ubuntu.com/download/raspberry-pi/thank-you?version=20.04.2&amp;architecture=server-arm64+raspi" rel="noopener noreferrer" target="_blank">Ubuntu 20.04.2 64-bit Server Image</a> for the Raspberry Pi 4.</li>
 <li>Using a tool like <a class="reference external" href="https://www.balena.io/etcher/" rel="noopener noreferrer" target="_blank">balenaEtcher</a>, flash the OS image to the 32GB microSD card using your
@@ -183,7 +186,7 @@ do.</li>
 </div>
 </div>
 <div class="section" id="modifying-username-hostname">
-<h3>Modifying Username/Hostname<a class="headerlink" href="#modifying-username-hostname" title="Permalink to this headline"></a></h3>
+<h3>Modifying Username/Hostname<a class="headerlink" href="#modifying-username-hostname" title="Permalink to this heading"></a></h3>
 <p>Depending on your application, you may want to change either your username or computer name to be
 something more unique than <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code>. The commands below illustrate how to modify the default
 <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> username to <code class="docutils literal notranslate"><span class="pre">pibot</span></code>.</p>
@@ -239,7 +242,7 @@ stops showing up. At that point, type:</p>
 </div></blockquote>
 </div>
 <div class="section" id="installing-ubuntu-mate-desktop">
-<h3>Installing Ubuntu MATE Desktop<a class="headerlink" href="#installing-ubuntu-mate-desktop" title="Permalink to this headline"></a></h3>
+<h3>Installing Ubuntu MATE Desktop<a class="headerlink" href="#installing-ubuntu-mate-desktop" title="Permalink to this heading"></a></h3>
 <p>Now let’s do system updates.</p>
 <ol class="arabic">
 <li><p class="first">Login and type…</p>
@@ -271,7 +274,7 @@ as the desktop environment. Then login. If you’d like to enable automatic logi
 </ol>
 </div>
 <div class="section" id="custom-boot-configs">
-<h3>Custom Boot Configs<a class="headerlink" href="#custom-boot-configs" title="Permalink to this headline"></a></h3>
+<h3>Custom Boot Configs<a class="headerlink" href="#custom-boot-configs" title="Permalink to this heading"></a></h3>
 <p>By default, the Raspberry Pi 4B has a max CPU clock frequency of 1.5 GHz. However, this can be
 upped to 2 GHz by following the commands below.</p>
 <ol class="arabic">
@@ -305,7 +308,7 @@ mechanism (i.e. a fan).</p>
 </div>
 </div>
 <div class="section" id="privileges">
-<h3>Privileges<a class="headerlink" href="#privileges" title="Permalink to this headline"></a></h3>
+<h3>Privileges<a class="headerlink" href="#privileges" title="Permalink to this heading"></a></h3>
 <p>As with any Linux system, some operations will require the <code class="docutils literal notranslate"><span class="pre">sudo</span></code> command (with password) to
 work. This can become cumbersome if you are trying to automate a process on your Pi, and can’t
 because somebody needs to enter a password (as is the case when it comes to controlling NeoPixel
@@ -317,7 +320,7 @@ the bottom of which, you should add the following line:</p>
 </div>
 </div>
 <div class="section" id="fix-bluetooth-issue">
-<h3>Fix Bluetooth Issue<a class="headerlink" href="#fix-bluetooth-issue" title="Permalink to this headline"></a></h3>
+<h3>Fix Bluetooth Issue<a class="headerlink" href="#fix-bluetooth-issue" title="Permalink to this heading"></a></h3>
 <p>For whatever reason, the Bluetooth module on the Pi 4 is by default disabled. To enable on Ubuntu
 20.04, just type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">pi-bluetooth</span></code> in a terminal. If, for whatever reason, Ubuntu
 18.04 is installed on your Pi, it’s a bit more complicated. Just open a terminal and type the
@@ -350,7 +353,7 @@ typing.</p>
 <p>The Bluetooth fix mentioned above can be found in <a class="reference external" href="https://ubuntu-mate.community/t/error-updating-ubuntu-mate-18-04-on-pi-3b/20001/5" rel="noopener noreferrer" target="_blank">this Ubuntu Mate community thread</a>.</p>
 </div>
 <div class="section" id="install-ros">
-<h3>Install ROS<a class="headerlink" href="#install-ros" title="Permalink to this headline"></a></h3>
+<h3>Install ROS<a class="headerlink" href="#install-ros" title="Permalink to this heading"></a></h3>
 <p>At this point, you can follow the instructions on the ROS Wiki to install the distro compatible with your Ubuntu version.
 Because we installed Ubuntu 20.04, we will now install <a class="reference external" href="https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html" rel="noopener noreferrer" target="_blank">ROS Galactic</a>.</p>
 <p>Alternatively, you can use the xsarm convenience script we provide to install ROS, robot-specific
@@ -364,12 +367,12 @@ and run the script are as follows:</p>
 </div>
 </div>
 <div class="section" id="ps4-controller-setup">
-<h3>PS4 Controller Setup<a class="headerlink" href="#ps4-controller-setup" title="Permalink to this headline"></a></h3>
+<h3>PS4 Controller Setup<a class="headerlink" href="#ps4-controller-setup" title="Permalink to this heading"></a></h3>
 <p>See the <a class="reference internal" href="../../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">Raspberry Pi 4b &amp; SONY PS4 Controller</span></a>
 pairing guide.</p>
 </div>
 <div class="section" id="networking">
-<h3>Networking<a class="headerlink" href="#networking" title="Permalink to this headline"></a></h3>
+<h3>Networking<a class="headerlink" href="#networking" title="Permalink to this heading"></a></h3>
 <p>Most users usually work with a Raspberry Pi in a headless state via SSH. This can make updating
 software on the Pi difficult if the Pi does not automatically connect to the Internet when booted.
 Typically though, it’s bad practice to have any robot connected to the Internet since it makes it

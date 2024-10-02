@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulation Configuration &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -94,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gravity_compensation.html">Gravity Compensation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
@@ -125,7 +129,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="simulation-configuration">
-<h1>Simulation Configuration<a class="headerlink" href="#simulation-configuration" title="Permalink to this headline"></a></h1>
+<h1>Simulation Configuration<a class="headerlink" href="#simulation-configuration" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_sim"
     class="docs-view-on-github-button"
     target="_blank">
@@ -133,7 +137,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>This package contains the necessary config files to simulate any of the many Interbotix X-Series
 arms. For now, this package is only able to simulate the arms in Gazebo Classic. Below is a
 description of each supported simulation environment’s configuration.</p>
@@ -145,7 +149,7 @@ can be used by itself via the JointTrajectoryController interface.</li>
 </ul>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_gz_classic_flowchart_ros2.png" class="align-center" src="../_images/xsarm_gz_classic_flowchart_ros2.png" />
 <p>As shown above, the <cite>interbotix_xsarm_sim</cite> package builds on top of the
 <cite>interbotix_xsarm_descriptions</cite> and other simulator’s ROS 2 compatibility packages. To get familiar
@@ -167,9 +171,9 @@ the Gazebo world</li>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <div class="section" id="gazebo-classic">
-<h3>Gazebo Classic<a class="headerlink" href="#gazebo-classic" title="Permalink to this headline"></a></h3>
+<h3>Gazebo Classic<a class="headerlink" href="#gazebo-classic" title="Permalink to this heading"></a></h3>
 <p>To run this package, enter the command line below in a terminal (assuming the WidowX-250 is being
 launched).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_sim<span class="w"> </span>xsarm_gz_classic.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>wx250

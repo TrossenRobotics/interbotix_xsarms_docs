@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MoveIt 2 Motion Planning Configuration &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -96,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="python_demos.html">Python Demos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="joystick_control.html">Joystick Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gravity_compensation.html">Gravity Compensation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
@@ -127,7 +131,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="moveit-2-motion-planning-configuration">
-<h1>MoveIt 2 Motion Planning Configuration<a class="headerlink" href="#moveit-2-motion-planning-configuration" title="Permalink to this headline"></a></h1>
+<h1>MoveIt 2 Motion Planning Configuration<a class="headerlink" href="#moveit-2-motion-planning-configuration" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/rolling/interbotix_ros_xsarms/interbotix_xsarm_moveit"
     class="docs-view-on-github-button"
     target="_blank">
@@ -135,7 +139,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>This package contains the necessary config files to get any of the many Interbotix X-Series arms
 working with MoveIt. This package makes use of the FollowJointTrajectory interface which works well
 in both simulation and on the physical robot. An entrypoint launch file is provided to allow a user
@@ -143,7 +147,7 @@ to choose whether to have MoveIt work with the simulated version, the physical r
 MoveIt-generated mock robot.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_moveit_flowchart_ros2.png" class="align-center" src="../_images/xsarm_moveit_flowchart_ros2.png" />
 <p>As shown above, this package builds on top of the <cite>interbotix_xsarm_sim</cite>,
 <cite>interbotix_xsarm_control</cite>, and <cite>interbotix_xsarm_descriptions</cite> packages. To get familiar with
@@ -157,7 +161,7 @@ plugin</li>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To run this package on the physical robot, enter the command below in a terminal (assuming the
 PincherX-100 is being launched).</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_moveit<span class="w"> </span>xsarm_moveit.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>px100<span class="w"> </span>hardware_type:<span class="o">=</span>actual
@@ -284,7 +288,7 @@ further customize with other launch file arguments.</p>
 </table>
 </div>
 <div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <p>Once the MoveIt GUI is fully loaded, take a look at the available planning groups. There should be
 two of them - one called ‘interbotix_arm’ and the other called ‘interbotix_gripper’. The
 ‘interbotix_arm’ group contains the joints needed to plan the trajectories for the whole arm
@@ -300,9 +304,9 @@ To display them, navigate to the <strong>MotionPlanning -&gt; Planning Request</
 the <strong>Query Start State</strong> and <strong>Query Goal State</strong> checkboxes.</p>
 </div>
 <div class="section" id="video-tutorials">
-<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
+<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this heading"></a></h2>
 <div class="section" id="moveit2-configuration-for-ros-2">
-<h3>MoveIt2 Configuration for ROS 2<a class="headerlink" href="#moveit2-configuration-for-ros-2" title="Permalink to this headline"></a></h3>
+<h3>MoveIt2 Configuration for ROS 2<a class="headerlink" href="#moveit2-configuration-for-ros-2" title="Permalink to this heading"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/f1P423PDRYw" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>

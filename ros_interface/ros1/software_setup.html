@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROS Standard Software Setup &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -138,7 +141,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="ros-standard-software-setup">
-<h1>ROS Standard Software Setup<a class="headerlink" href="#ros-standard-software-setup" title="Permalink to this headline"></a></h1>
+<h1>ROS Standard Software Setup<a class="headerlink" href="#ros-standard-software-setup" title="Permalink to this heading"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#compatible-models" id="id2">Compatible Models</a></li>
@@ -163,7 +166,7 @@
 </ul>
 </div>
 <div class="section" id="compatible-models">
-<h2><a class="toc-backref" href="#id2">Compatible Models</a><a class="headerlink" href="#compatible-models" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">Compatible Models</a><a class="headerlink" href="#compatible-models" title="Permalink to this heading"></a></h2>
 <p>The ROS 1 Interface packages can be used with any of the Interbotix arm kits listed below. Next to
 each name is the codename used to describe it in software (specifically for the <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>
 argument in launch files). There are up to four parts in a name. In general, the first two letters
@@ -229,7 +232,7 @@ arm is designed to be mounted on a mobile base.</p>
 </table>
 </div>
 <div class="section" id="requirements">
-<h2><a class="toc-backref" href="#id3">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>Below is a list of the hardware you will need to get started:</p>
 <ul class="simple">
 <li>One of the X-Series Robot Arm Kits mentioned above</li>
@@ -241,11 +244,11 @@ arm is designed to be mounted on a mobile base.</p>
 </div>
 </div>
 <div class="section" id="software-installation">
-<h2><a class="toc-backref" href="#id4">Software Installation</a><a class="headerlink" href="#software-installation" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">Software Installation</a><a class="headerlink" href="#software-installation" title="Permalink to this heading"></a></h2>
 <p>To get all the code setup, refer to the computer platform types below and run the appropriate
 installation script. Afterwards, continue with the <a class="reference internal" href="#installation-checks">Installation Checks</a> sub-section.</p>
 <div class="section" id="amd64-architecture">
-<h3><a class="toc-backref" href="#id5">AMD64 Architecture</a><a class="headerlink" href="#amd64-architecture" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id5">AMD64 Architecture</a><a class="headerlink" href="#amd64-architecture" title="Permalink to this heading"></a></h3>
 <p>If your computer uses an Intel or AMD based processor (which is the case for NUCs, most laptops and
 desktop computers), follow the commands below to download and run the installation script. Specify
 the version of ROS that you want to install using the <code class="docutils literal notranslate"><span class="pre">-d</span></code> flag followed by the distribution’s
@@ -277,7 +280,7 @@ the installation script for ROS 1 Noetic.</p>
 </div></blockquote>
 </div>
 <div class="section" id="raspberry-pi-4b-arm64-architecture">
-<h3><a class="toc-backref" href="#id6">Raspberry Pi 4B (ARM64 Architecture)</a><a class="headerlink" href="#raspberry-pi-4b-arm64-architecture" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id6">Raspberry Pi 4B (ARM64 Architecture)</a><a class="headerlink" href="#raspberry-pi-4b-arm64-architecture" title="Permalink to this heading"></a></h3>
 <p>Follow the <a class="reference external" href="./raspberry_pi_setup.html" rel="noopener noreferrer" target="_blank">Raspberry Pi 4B Setup instructions</a> to get your Raspberry Pi properly setup before
 following the commands below. Note that the script will install the full desktop version of ROS if
 it’s not yet on your system, ask you for your desired robot model (ex. wx200), and prompt you about
@@ -306,7 +309,7 @@ the process of running the installation script for ROS 1 Noetic.</p>
 PS4 controller with the Pi. Refer to the <a class="reference internal" href="../../getting_started/pairing_controller.html#raspberry-pi-4b-sony-ps4-controller-label"><span class="std std-ref">RPi PS4 Controller Setup Guide</span></a> for details.</p>
 </div>
 <div class="section" id="remote-install">
-<h3><a class="toc-backref" href="#id7">Remote Install</a><a class="headerlink" href="#remote-install" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id7">Remote Install</a><a class="headerlink" href="#remote-install" title="Permalink to this heading"></a></h3>
 <p>For some robotic projects, you may want to run your robot in a ‘headless’ state on some computer
 (like a NUC or Raspberry Pi), and monitor the robot’s state (in RViz for example) on your personal
 (a.k.a remote) computer over a local network. For this to work, run the installation script below
@@ -330,10 +333,10 @@ its ROS Master.</p>
 </div>
 </div>
 <div class="section" id="installation-checks">
-<span id="installation-checks-label"></span><h2><a class="toc-backref" href="#id8">Installation Checks</a><a class="headerlink" href="#installation-checks" title="Permalink to this headline"></a></h2>
+<span id="installation-checks-label"></span><h2><a class="toc-backref" href="#id8">Installation Checks</a><a class="headerlink" href="#installation-checks" title="Permalink to this heading"></a></h2>
 <p>After running the installation script on the robot computer, we can verify that the script ran successfully.</p>
 <div class="section" id="udev-rules">
-<h3><a class="toc-backref" href="#id9">udev Rules</a><a class="headerlink" href="#udev-rules" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">udev Rules</a><a class="headerlink" href="#udev-rules" title="Permalink to this heading"></a></h3>
 <p>Check that the udev rules were configured correctly and that they are triggered by the U2D2. This
 can be done by checking that the port name shows up as <code class="docutils literal notranslate"><span class="pre">ttyDXL</span></code> when the U2D2 is plugged into a
 USB port. The command and the expected output are below:</p>
@@ -345,7 +348,7 @@ USB port. The command and the expected output are below:</p>
 </div></blockquote>
 </div>
 <div class="section" id="interbotix-ros-packages">
-<h3><a class="toc-backref" href="#id10">Interbotix ROS Packages</a><a class="headerlink" href="#interbotix-ros-packages" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id10">Interbotix ROS Packages</a><a class="headerlink" href="#interbotix-ros-packages" title="Permalink to this heading"></a></h3>
 <p>Check that the Interbotix ROS packages were installed correctly. The command and example output are
 below:</p>
 <blockquote>
@@ -387,12 +390,12 @@ required to use it. If these are missing, check the installation script’s outp
 </div>
 </div>
 <div class="section" id="next-steps">
-<h2><a class="toc-backref" href="#id11">Next Steps</a><a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id11">Next Steps</a><a class="headerlink" href="#next-steps" title="Permalink to this heading"></a></h2>
 <p>If the ROS Interface installed properly, you can continue on to the <a class="reference internal" href="quickstart.html"><span class="doc">ROS Interface Quickstart
 Guide</span></a>.</p>
 </div>
 <div class="section" id="troubleshooting">
-<span id="troubleshooting-label"></span><h2><a class="toc-backref" href="#id12">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<span id="troubleshooting-label"></span><h2><a class="toc-backref" href="#id12">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
 <p>Refer to the <a class="reference internal" href="../../troubleshooting.html"><span class="doc">X-Series Troubleshooting guide</span></a> to try to solve your
 problem. If you still need help, feel free to <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_manipulators/issues" rel="noopener noreferrer" target="_blank">open an Issue</a> on the ros_manipulators repo. We
 strongly recommend the latter option though so that other people who may be facing the same
@@ -400,9 +403,9 @@ difficulty can benefit. This repository is actively maintained and any open Issu
 addressed as soon as possible.</p>
 </div>
 <div class="section" id="video-tutorials">
-<h2><a class="toc-backref" href="#id13">Video Tutorials</a><a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id13">Video Tutorials</a><a class="headerlink" href="#video-tutorials" title="Permalink to this heading"></a></h2>
 <div class="section" id="x-series-arm-ros-installation-guide">
-<h3><a class="toc-backref" href="#id14">X-Series Arm ROS Installation Guide</a><a class="headerlink" href="#x-series-arm-ros-installation-guide" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id14">X-Series Arm ROS Installation Guide</a><a class="headerlink" href="#x-series-arm-ros-installation-guide" title="Permalink to this heading"></a></h3>
 <div class="video_wrapper align-center" style="text-align: center">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/kZx2tNVfQAQ" style="border: 0; height: 345px; width: 560px">
 </iframe></div></div>

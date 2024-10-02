@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perception Configuration &mdash; Interbotix X-Series Arms Documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinx_collapse.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tr_style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx_collapse.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tr_style.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -19,6 +21,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -149,7 +152,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="perception-configuration">
-<h1>Perception Configuration<a class="headerlink" href="#perception-configuration" title="Permalink to this headline"></a></h1>
+<h1>Perception Configuration<a class="headerlink" href="#perception-configuration" title="Permalink to this heading"></a></h1>
 <a href="https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_perception"
     class="docs-view-on-github-button"
     target="_blank">
@@ -157,7 +160,7 @@
         class="docs-view-on-github-button-gh-logo">
     View Package on GitHub
 </a><div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>This package contains the necessary config and launch files to get any of the many Interbotix
 X-Series arms working with the <a class="reference external" href="https://industrial-training-master.readthedocs.io/en/melodic/_source/session5/Building-a-Perception-Pipeline.html" rel="noopener noreferrer" target="_blank">perception pipeline</a>. The end result allows for an arm to pick up
 any small, non-reflective object from a tabletop-type surface that is within a RealSense
@@ -167,7 +170,7 @@ pipeline works in the <a class="reference external" href="https://github.com/Int
 (which includes a D415 camera and stand), visit <a class="reference external" href="https://www.trossenrobotics.com/interbotix-arm-vision-kit.aspx" rel="noopener noreferrer" target="_blank">its store page</a>.</p>
 </div>
 <div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
 <img alt="../_images/xsarm_perception_flowchart.png" class="align-center" src="../_images/xsarm_perception_flowchart.png" />
 <p>As shown above, this package builds on top of the <cite>interbotix_xsarm_control</cite> and
 <cite>interbotix_perception_modules</cite> packages. To get familiar with those packages, please refer to
@@ -178,7 +181,7 @@ their documentation. The other nodes are described below:</p>
 </ul>
 </div>
 <div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>To work with this package, first build your stand and secure the RealSense camera on the 1/4 inch
 screw at the top. Then place the stand in your work area and adjust the goose-neck or ball/socket
 joint such that the camera is pointed towards your tabletop. Next, place some small, non-reflective
@@ -405,32 +408,32 @@ documented functions.</p>
 </table>
 </div>
 <div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
 <p>Below are some common error messages, warnings, or issues you might see, and how to go about fixing
 them.</p>
 <div class="section" id="armtag-issues">
-<h3>ArmTag Issues<a class="headerlink" href="#armtag-issues" title="Permalink to this headline"></a></h3>
+<h3>ArmTag Issues<a class="headerlink" href="#armtag-issues" title="Permalink to this heading"></a></h3>
 <div class="section" id="could-not-find-ar-tag-returning-a-zero-pose">
-<h4>Could not find AR Tag. Returning a ‘zero’ Pose…<a class="headerlink" href="#could-not-find-ar-tag-returning-a-zero-pose" title="Permalink to this headline"></a></h4>
+<h4>Could not find AR Tag. Returning a ‘zero’ Pose…<a class="headerlink" href="#could-not-find-ar-tag-returning-a-zero-pose" title="Permalink to this heading"></a></h4>
 <p>This warning occurs if the camera cannot see the AprilTag or if the wrong AprilTag is present. To
 fix, make sure that the AprilTag is clearly visible to the camera when you try to ‘snap’ its pose.</p>
 </div>
 </div>
 <div class="section" id="pointcloud-filter-tuning-issues">
-<h3>PointCloud Filter Tuning Issues<a class="headerlink" href="#pointcloud-filter-tuning-issues" title="Permalink to this headline"></a></h3>
+<h3>PointCloud Filter Tuning Issues<a class="headerlink" href="#pointcloud-filter-tuning-issues" title="Permalink to this heading"></a></h3>
 <div class="section" id="incomplete-bulk-usb-transfer">
-<h4>Incomplete bulk usb transfer!<a class="headerlink" href="#incomplete-bulk-usb-transfer" title="Permalink to this headline"></a></h4>
+<h4>Incomplete bulk usb transfer!<a class="headerlink" href="#incomplete-bulk-usb-transfer" title="Permalink to this heading"></a></h4>
 <p>This is just a onetime error message that appears at launch when using the RealSense depth camera
 camera. It’s nothing to be worried about and can be safely ignored.</p>
 </div>
 <div class="section" id="no-stream-match-for-pointcloud-chosen-texture-process-color">
-<h4>No stream match for pointcloud chosen texture Process - Color<a class="headerlink" href="#no-stream-match-for-pointcloud-chosen-texture-process-color" title="Permalink to this headline"></a></h4>
+<h4>No stream match for pointcloud chosen texture Process - Color<a class="headerlink" href="#no-stream-match-for-pointcloud-chosen-texture-process-color" title="Permalink to this heading"></a></h4>
 <p>This is a warning that can appear occasionally (once every 5 minutes or so) when using a RealSense
 camera. It just means that a frame was dropped during serial communication, but it’s nothing to
 worry about and can be safely ignored.</p>
 </div>
 <div class="section" id="no-clusters-found">
-<h4>No clusters found…<a class="headerlink" href="#no-clusters-found" title="Permalink to this headline"></a></h4>
+<h4>No clusters found…<a class="headerlink" href="#no-clusters-found" title="Permalink to this heading"></a></h4>
 <p>This warning is outputted by the <code class="docutils literal notranslate"><span class="pre">get_cluster_positions</span></code> function in the
 InterbotixPointCloudInterface module if the algorithm could not find any clusters. Verify that you
 have non-reflective objects within the field of view of the camera and that the CropBox filter is
@@ -441,7 +444,7 @@ need to lower the minimum cluster size threshold; turn on the ‘ObjectPointClou
 the centroid of each of your clusters.</p>
 </div>
 <div class="section" id="found-x-clusters-instead-of-y-clusters">
-<h4>Found ‘x’ clusters instead of ‘y’ clusters…<a class="headerlink" href="#found-x-clusters-instead-of-y-clusters" title="Permalink to this headline"></a></h4>
+<h4>Found ‘x’ clusters instead of ‘y’ clusters…<a class="headerlink" href="#found-x-clusters-instead-of-y-clusters" title="Permalink to this heading"></a></h4>
 <p>This warning is outputted by the <code class="docutils literal notranslate"><span class="pre">get_cluster_positions</span></code> function in the
 InterbotixPointCloudInterface module if the algorithm found a different number of clusters over
 ‘num_samples’ iterations (when compared to the first set of cluster positions received). Similar to
@@ -453,7 +456,7 @@ tolerance threshold or physically move the two objects such that they are furthe
 other.</p>
 </div>
 <div class="section" id="could-not-match-the-cluster-please-tune-the-filter-parameters-such-that-all-spherical-object-markers-are-constant-in-their-respective-clusters-and-do-not-flicker">
-<h4>Could not match the cluster. Please tune the filter parameters such that all spherical ‘object markers’ are constant in their respective clusters and do not flicker<a class="headerlink" href="#could-not-match-the-cluster-please-tune-the-filter-parameters-such-that-all-spherical-object-markers-are-constant-in-their-respective-clusters-and-do-not-flicker" title="Permalink to this headline"></a></h4>
+<h4>Could not match the cluster. Please tune the filter parameters such that all spherical ‘object markers’ are constant in their respective clusters and do not flicker<a class="headerlink" href="#could-not-match-the-cluster-please-tune-the-filter-parameters-such-that-all-spherical-object-markers-are-constant-in-their-respective-clusters-and-do-not-flicker" title="Permalink to this heading"></a></h4>
 <p>Most likely, you’ll never run into this issue; but if you do, the fixes suggested in the ‘Found x
 clusters instead of y clusters…’ issue should resolve the problem. The issue essentially means
 that the detected position of a cluster in a later iteration is vastly different than the detected
@@ -467,9 +470,9 @@ move as well.</p>
 </div>
 </div>
 <div class="section" id="video-tutorials">
-<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this headline"></a></h2>
+<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this heading"></a></h2>
 <div class="section" id="python-perception">
-<h3>Python Perception<a class="headerlink" href="#python-perception" title="Permalink to this headline"></a></h3>
+<h3>Python Perception<a class="headerlink" href="#python-perception" title="Permalink to this heading"></a></h3>
 <div class="video_wrapper align-center" style="padding-bottom: 39.375000%; padding-top: 30px; position: relative; text-align: center; width: 70%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/03BZ6PLFOac" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
 </iframe></div></div>
