@@ -125,7 +125,7 @@ As shown above, the `interbotix_xsarm_gravity_compensation` package builds on to
 
 This package contains a single node called **gravity_compensation**.
 It subscribes to the ``/<robot_name>/joint_states`` topic, computes and publishes the desired current commands to the ``/<robot_name>/commands/joint_group`` topic.
-Please refer to the GitHub `Readme <interbotix_gravity_compensation>`_ for more details on its derivations and implementation.
+Please refer to the `interbotix_gravity_compensation`_ repository for more details on its derivations and implementation.
 
 .. _`interbotix_gravity_compensation`: https://github.com/Interbotix/interbotix_ros_toolboxes/tree/humble/interbotix_common_toolbox/interbotix_gravity_compensation
 
