@@ -91,9 +91,9 @@
 <li class="toctree-l2"><a class="reference internal" href="record_and_playback.html">Record And Playback</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Gravity Compensation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -144,10 +144,75 @@ This feature is useful when we use the arm as a teleoperation remote or when we 
 <p class="last">Currently supported arms include: WidowX-250 6DOF and ALOHA WidowX-250 6DOF.</p>
 </div>
 </div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
+<img alt="../_images/xsarm_gravity_compensation_flowchart_ros2.png" class="align-center" src="../_images/xsarm_gravity_compensation_flowchart_ros2.png" />
+<p>As shown above, the <cite>interbotix_xsarm_gravity_compensation</cite> package builds on top of the <cite>interbotix_xsarm_control</cite> package whose details are given <a class="reference internal" href="arm_control.html"><span class="doc">here</span></a>.</p>
+<p>This package contains a single node called <strong>gravity_compensation</strong>.
+It subscribes to the <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/joint_states</span></code> topic, computes and publishes the desired current commands to the <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_group</span></code> topic.
+Please refer to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/humble/interbotix_common_toolbox/interbotix_gravity_compensation" rel="noopener noreferrer" target="_blank">interbotix_gravity_compensation</a> repository for more details on its derivations and implementation.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<p>Run the following launch command, assuming the Aloha WidowX-250 arm is being used:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_gravity_compensation<span class="w"> </span>interbotix_gravity_compensation.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>aloha_wx250s
+</pre></div>
+</div>
+<p>It runs the <code class="docutils literal notranslate"><span class="pre">gravity_compensation</span></code> node and launches the <code class="docutils literal notranslate"><span class="pre">xsarm_control</span></code> script to bring up the arm.</p>
+<p>Then, enable/disable the gravity compensation with the following service call:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/aloha_wx250s/gravity_compensation_enable<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s1">&#39;data: [true/false]&#39;</span>
+</pre></div>
+</div>
+<p>The arm will hold itself against gravity and can be moved freely when the gravity compensation is enabled.
+It will lock in its current position when the gravity compensation is disabled.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The arm WILL torque off and drop for a short period of time while enabling/disabling.
+Please make sure it is in a resting position or manually held.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The joints not supporting current control WILL torque off.
+Please make sure to use an arm with at least the first three joints supporting current control, e.g., RX, WX, VX series.</p>
+</div>
+<p>This is the bare minimum needed to get up and running. Take a look at the table below to see how to further customize with other launch file arguments.</p>
+<table border="1" class="colwidths-given docutils align-default">
+<colgroup>
+<col width="17%" />
+<col width="50%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Argument</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+<th class="head">Choices</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robot_model</td>
+<td>model type of the Interbotix Arm.</td>
+<td>&#160;</td>
+<td><code class="docutils literal notranslate"><span class="pre">aloha_wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250s</span></code></td>
+</tr>
+<tr class="row-odd"><td>robot_name</td>
+<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything).</td>
+<td>LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_model</span></code>)</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>motor_specs</td>
+<td>the file path to the ‘motor specs’ YAML file.</td>
+<td>LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_gravity_compensation</span></code>) + ‘config’ + ‘motor_specs_’’) + LaunchConfig(‘robot_model’) + ‘.yaml’</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
 <p>The <strong>motor_specs.yaml</strong> contains the motor specifications and options for motor assistance and dithering.
-A template file is given below</p>
+Please check out the template file below for more details.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Motor Assist: scale the no-load currents which alleviate the effects of friction</span>
 <span class="c1"># If the values are invalid, they default to 0</span>
 <span class="c1"># Joints not specified in the motor_assist or motor_specs sections</span>
@@ -233,71 +298,6 @@ A template file is given below</p>
 <p class="last">Excessive dithering WILL cause heat and wear on the joints.
 Please use it with caution.</p>
 </div>
-</div>
-<div class="section" id="structure">
-<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h2>
-<img alt="../_images/xsarm_gravity_compensation_flowchart_ros2.png" class="align-center" src="../_images/xsarm_gravity_compensation_flowchart_ros2.png" />
-<p>As shown above, the <cite>interbotix_xsarm_gravity_compensation</cite> package builds on top of the <cite>interbotix_xsarm_control</cite> package whose details are given <a class="reference internal" href="arm_control.html"><span class="doc">here</span></a>.</p>
-<p>This package contains a single node called <strong>gravity_compensation</strong>.
-It subscribes to the <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/joint_states</span></code> topic, computes and publishes the desired current commands to the <code class="docutils literal notranslate"><span class="pre">/&lt;robot_name&gt;/commands/joint_group</span></code> topic.
-Please refer to the <a class="reference external" href="https://github.com/Interbotix/interbotix_ros_toolboxes/tree/humble/interbotix_common_toolbox/interbotix_gravity_compensation" rel="noopener noreferrer" target="_blank">interbotix_gravity_compensation</a> repository for more details on its derivations and implementation.</p>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
-<p>Run the following launch command, assuming the Aloha WidowX-250 arm is being used:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>launch<span class="w"> </span>interbotix_xsarm_gravity_compensation<span class="w"> </span>interbotix_gravity_compensation.launch.py<span class="w"> </span>robot_model:<span class="o">=</span>aloha_wx250s
-</pre></div>
-</div>
-<p>It runs the <code class="docutils literal notranslate"><span class="pre">gravity_compensation</span></code> node and launches the <code class="docutils literal notranslate"><span class="pre">xsarm_control</span></code> script to bring up the arm.</p>
-<p>Then, enable/disable the gravity compensation with the following service call:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/aloha_wx250s/gravity_compensation_enable<span class="w"> </span>std_srvs/srv/SetBool<span class="w"> </span><span class="s1">&#39;data: [true/false]&#39;</span>
-</pre></div>
-</div>
-<p>The arm will hold itself against gravity and can be moved freely when the gravity compensation is enabled.
-It will lock in its current position when the gravity compensation is disabled.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The arm WILL torque off and drop for a short period of time while enabling/disabling.
-Please make sure it is in a resting position or manually held.</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The joints not supporting current control WILL torque off.
-Please make sure to use an arm with at least the first three joints supporting current control, e.g., RX, WX, VX series.</p>
-</div>
-<p>This is the bare minimum needed to get up and running. Take a look at the table below to see how to further customize with other launch file arguments.</p>
-<table border="1" class="colwidths-given docutils align-default">
-<colgroup>
-<col width="17%" />
-<col width="50%" />
-<col width="17%" />
-<col width="17%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Argument</th>
-<th class="head">Description</th>
-<th class="head">Default</th>
-<th class="head">Choices</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>robot_model</td>
-<td>model type of the Interbotix Arm.</td>
-<td>&#160;</td>
-<td><code class="docutils literal notranslate"><span class="pre">aloha_wx250s</span></code>, <code class="docutils literal notranslate"><span class="pre">wx250s</span></code></td>
-</tr>
-<tr class="row-odd"><td>robot_name</td>
-<td>name of the robot (typically equal to <code class="docutils literal notranslate"><span class="pre">robot_model</span></code>, but could be anything).</td>
-<td>LaunchConfig(<code class="docutils literal notranslate"><span class="pre">robot_model</span></code>)</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td>motor_specs</td>
-<td>the file path to the ‘motor specs’ YAML file.</td>
-<td>LocalVar(‘FindPackageShare(pkg= <code class="docutils literal notranslate"><span class="pre">interbotix_xsarm_gravity_compensation</span></code>) + ‘config’ + ‘motor_specs_’’) + LaunchConfig(‘robot_model’) + ‘.yaml’</td>
-<td>&#160;</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 
