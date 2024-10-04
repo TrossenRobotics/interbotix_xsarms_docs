@@ -16,8 +16,7 @@ your own issue`_.
 .. important::
 
     This guide assumes that the latest version of the software packages is used.
-    Before proceeding, please check that the software packages are up to date.
-    Otherwise, a clean reinstallation is recommended: backup your ``interbotix_ws`` directory, remove it from the ``$HOME`` directory, and run through the installation section for :doc:`ROS1 </ros_interface/ros1/software_setup>` or :doc:`ROS2 </ros_interface/ros2/software_setup>`.
+    Before proceeding, please check that they are up to date.
 
 .. _`interbotix_ros_manipulators bug tracker`: https://github.com/Interbotix/interbotix_ros_manipulators/issues?q=is%3Aissue
 .. _`open your own issue`: https://github.com/Interbotix/interbotix_ros_manipulators/issues/new/choose
