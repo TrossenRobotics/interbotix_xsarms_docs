@@ -13,6 +13,11 @@ your own issue`_.
     20.04, ROS 2 Galactic on Ubuntu 20.04, and ROS 2 Humble, not on any other operating system (ex.
     Mac, Windows), or in a virtual machine.
 
+.. important::
+
+    This guide assumes that the latest version of the software packages is used.
+    Before proceeding, please check that they are up to date.
+
 .. _`interbotix_ros_manipulators bug tracker`: https://github.com/Interbotix/interbotix_ros_manipulators/issues?q=is%3Aissue
 .. _`open your own issue`: https://github.com/Interbotix/interbotix_ros_manipulators/issues/new/choose
 
