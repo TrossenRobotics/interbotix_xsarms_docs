@@ -121,17 +121,5 @@ Drawings and CAD Files
 
 :download:`ReactorX-150 Technical Drawing </_downloads/ReactorX-150.pdf>`
 
-.. raw:: html
-
-    <iframe
-        src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd9688c82f5047467465e?mode=embed"
-        width="100%"
-        height="600px"
-        allowfullscreen="true"
-        webkitallowfullscreen="true"
-        mozallowfullscreen="true"
-        frameborder="0">
-    </iframe>
-
 - :download:`ReactorX-150 Solid STEP Files </_downloads/solids/3_RXA-150-M.zip>`
 - `ReactorX-150 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/rx150_meshes>`_
