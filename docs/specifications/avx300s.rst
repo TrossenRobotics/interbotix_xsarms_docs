@@ -124,17 +124,5 @@ Drawings and CAD Files
 
 :download:`ALOHA ViperX-300 6DOF Technical Drawing </_downloads/ALOHA ViperX-300s.pdf>`
 
-.. .. raw:: html
-
-..     <iframe
-..         src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd9680d0d9bb438fff39a?mode=embed"
-..         width="100%"
-..         height="600px"
-..         allowfullscreen="true"
-..         webkitallowfullscreen="true"
-..         mozallowfullscreen="true"
-..         frameborder="0">
-..     </iframe>
-
 .. - :download:`ViperX-300 6DOF Solid STEP Files </_downloads/solids/9_VXA-300S-M.zip>`
 .. - `ViperX-300 6DOF Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/vx300s_meshes>`_

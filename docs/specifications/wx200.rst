@@ -124,17 +124,5 @@ Drawings and CAD Files
 
 :download:`WidowX-200 Technical Drawing </_downloads/WidowX-200.pdf>`
 
-.. raw:: html
-
-    <iframe
-        src="https://trossenrobotics.autodesk360.com/shares/public/SH7f1edQT22b515c761ed068dac17391232a?mode=embed"
-        width="100%"
-        height="600px"
-        allowfullscreen="true"
-        webkitallowfullscreen="true"
-        mozallowfullscreen="true"
-        frameborder="0">
-    </iframe>
-
 - :download:`WidowX-200 Solid STEP Files </_downloads/solids/5_WXA-200-M.zip>`
 - `WidowX-200 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/wx200_meshes>`_

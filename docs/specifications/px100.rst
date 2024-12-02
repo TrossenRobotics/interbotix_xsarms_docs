@@ -123,18 +123,6 @@ Standard Version
 
 :download:`PincherX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
 
-.. raw:: html
-
-    <iframe
-        src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd968b685364e8a30d183?mode=embed"
-        width="100%"
-        height="600px"
-        allowfullscreen="true"
-        webkitallowfullscreen="true"
-        mozallowfullscreen="true"
-        frameborder="0">
-    </iframe>
-
 - :download:`PincherX-100 Solid STEP Files </_downloads/solids/1_PXA-100-A.zip>`
 - `PincherX-100 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/px100_meshes>`_
 
@@ -149,18 +137,6 @@ easier to mount on mobile platforms. This base is compatible with the LoCoBot Pl
     :width: 70%
 
 :download:`PincherX-100 Technical Drawing </_downloads/PincherX-100.pdf>`
-
-.. raw:: html
-
-    <iframe
-        src="https://trossenrobotics.autodesk360.com/shares/public/SH56a43QTfd62c1cd9689b47d308a8a2e2d5?mode=embed"
-        width="100%"
-        height="600px"
-        allowfullscreen="true"
-        webkitallowfullscreen="true"
-        mozallowfullscreen="true"
-        frameborder="0">
-    </iframe>
 
 - :download:`Mobile PincherX-100 Solid STEP Files </_downloads/solids/1_PXA-100-M.zip>`
 - `Mobile PincherX-100 Mesh STL Files <https://github.com/Interbotix/interbotix_ros_manipulators/tree/main/interbotix_ros_xsarms/interbotix_xsarm_descriptions/meshes/mobile_px100_meshes>`_
