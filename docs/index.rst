@@ -2,6 +2,11 @@
 Interbotix X-Series Arms
 ========================
 
+.. attention::
+
+  This documentation is for the Interbotix X-Series Arms from Trossen Robotics.
+  If you are looking for documentation on the Trossen AI Arms and related software and integrations, please visit the `Trossen AI Arms Documentation <https://docs.trossenrobotics.com/trossen_arm/main/index.html>`_.
+
 .. image:: images/xsarm_family.png
     :width: 80%
     :align: center

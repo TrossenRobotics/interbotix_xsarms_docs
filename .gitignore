@@ -58,3 +58,4 @@ tags
 .pytest_cache/
 scripts/travis/elasticsearch*
 .vscode/
+*venv/
