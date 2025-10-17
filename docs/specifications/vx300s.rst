@@ -127,6 +127,14 @@ Product of Exponentials
 
 .. _`Read more about the product of exponential approach.`: https://en.wikipedia.org/wiki/Product_of_exponentials_formula
 
+Dynamical Model
+===============
+
+The Euler-Lagrange dynamical model of the ViperX-300s 6DOF arm was derived by Mu'taz Momani and Mehdi Hosseinzadeh and is available in the following paper:
+`Physically feasible dynamic model identification and constrained control of robotic arms: A case study on the ViperX-300 6-DoF robotic manipulator`_.
+
+.. _`Physically feasible dynamic model identification and constrained control of robotic arms: A case study on the ViperX-300 6-DoF robotic manipulator`: https://doi.org/10.1016/j.mechatronics.2025.103419
+
 Drawings and CAD Files
 ======================
 
